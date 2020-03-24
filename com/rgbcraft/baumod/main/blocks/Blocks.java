@@ -1,5 +1,7 @@
 package com.rgbcraft.baumod.main.blocks;
 
+import java.awt.List;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
@@ -44,8 +46,8 @@ public class Blocks {
 
 	// Tutti i modelli Techne
 	public static Block ParabolaSat, AntennaGroundPlane, AntennaSettore900MHz, AntennaSettore2100MHz, AntennaYagiVHF,
-			AntennaYagiUHF, AntennaLogperiodica, Traliccio;
-	public static Block LampadaOlceseRicci, NeonPiatto, Lampadario;
+			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat;
+	public static Block LampadaOlceseRicci, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro;
 	public static Block AtariST;
 
 	public static void InizializzaBlocchi() {
@@ -60,6 +62,9 @@ public class Blocks {
 		AntennaYagiUHF = new AntennaYagiUHFBlock(851, 0);
 		AntennaLogperiodica = new AntennaLogperiodicaBlock(852, 0);
 		Traliccio = new TraliccioBlock(859, 0);
+		TraliccioBraccettoSingolo = new TraliccioBraccettoSingoloBlock(858, 0);
+		//TraliccioBraccettoDoppio = new TraliccioBraccettoDoppioBlock(857, 0);
+		TraliccioBraccettoSat = new TraliccioBraccettoSatBlock(856, 0);
 
 		// atari ST
 
@@ -68,6 +73,10 @@ public class Blocks {
 		// lampade
 		NeonPiatto = new NeonPiattoBlock(880, 0);
 		Lampadario = new LampadarioBlock(881, 0);
+		LampadaScrivania = new LampadaScrivaniaBlock(882, 0);
+		LampioneGiardino = new LampioneGiardinoBlock(883, 0);
+		LampioneMuro = new LampioneMuroBlock(884,0);
+		Faro = new FaroBlock(885,0);
 
 		// altri
 		unbreakableStone = new Block(173, 1, Material.rock).setCreativeTab(CreativeTabs.tabBlock)
@@ -334,7 +343,13 @@ public class Blocks {
 		GameRegistry.registerBlock(Traliccio, "Traliccio");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTraliccio.class,
 				"TraliccioTileEntity");
-
+		GameRegistry.registerBlock(TraliccioBraccettoSingolo, "TraliccioBraccettoSingolo");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTraliccioBraccettoSingolo.class,
+				"TraliccioBraccettoSingoloTileEntity");
+		GameRegistry.registerBlock(TraliccioBraccettoSat, "TraliccioBraccettoSat");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTraliccioBraccettoSat.class,
+				"TraliccioBraccettoSatTileEntity");
+		
 		// Atari ST
 
 
@@ -347,6 +362,14 @@ public class Blocks {
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityNeonPiatto.class, "NeonPiatto");
 		GameRegistry.registerBlock(Lampadario, "Lampadario");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityLampadario.class, "Lampadario");
+		GameRegistry.registerBlock(LampadaScrivania, "LampadaScrivania");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityLampadaScrivania.class, "LampadaScrivania");
+		GameRegistry.registerBlock(LampioneGiardino, "LampioneGiardino");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityLampioneGiardino.class, "LampioneGiardino");
+		GameRegistry.registerBlock(LampioneMuro, "LampioneMuro");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityLampioneMuro.class, "LampioneMuro");
+		GameRegistry.registerBlock(Faro, "Faro");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityFaro.class, "Faro");
 	}
 
 	public static void RegistraLingua() {
@@ -364,10 +387,16 @@ public class Blocks {
 		LanguageRegistry.addName(AntennaLogperiodica, "Log-periodic antenna");
 		
 		LanguageRegistry.addName(Traliccio, "Lattice Post");
+		LanguageRegistry.addName(TraliccioBraccettoSingolo, "Single Bracket");
+		LanguageRegistry.addName(TraliccioBraccettoSat, "Satellite Dish Bracket");
 
 		// Lampade
 		LanguageRegistry.addName(NeonPiatto, "Fluorescent Fixture");
 		LanguageRegistry.addName(Lampadario, "Pendant Fixture");
+		LanguageRegistry.addName(LampadaScrivania, "Desk Lamp");
+		LanguageRegistry.addName(LampioneGiardino, "Garden Light");
+		LanguageRegistry.addName(LampioneMuro, "Wall-mount Street Light");
+		LanguageRegistry.addName(Faro, "Floodlight");
 
 		// altro
 		LanguageRegistry.addName(AtariST, "Personal Computer");
@@ -515,17 +544,30 @@ public class Blocks {
 				new Object[] { "I  ", "RII", "I  ", 'I', Item.ingotIron, 'R', Item.redstone });
 		GameRegistry.addRecipe(new ItemStack(AntennaSettore900MHz, 1),
 				new Object[] { " I ", "RRR", " I ", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(Traliccio, 1),
+		GameRegistry.addRecipe(new ItemStack(Traliccio, 4),
 				new Object[] { "I I", "III", "I I", 'I', Item.ingotIron});
+		GameRegistry.addRecipe(new ItemStack(TraliccioBraccettoSat, 1),
+				new Object[] { "   ", " TI", "   ", 'I', Item.ingotIron, 'T', Traliccio});
+		GameRegistry.addRecipe(new ItemStack(TraliccioBraccettoSingolo, 1),
+				new Object[] { "   ", "TII", "   ", 'I', Item.ingotIron, 'T', Traliccio});
 
 		// Lampade
 		GameRegistry.addRecipe(new ItemStack(NeonPiatto, 1), new Object[] { "IGI", "GLG", "IGI", 'I', Item.ingotIron,
 				'G', Block.thinGlass, 'L', Item.lightStoneDust });
 		GameRegistry.addRecipe(new ItemStack(Lampadario, 1), new Object[] { " I ", "III", " L ", 'I', Item.ingotIron,
 				'L', Item.lightStoneDust });
+		GameRegistry.addRecipe(new ItemStack(LampadaScrivania, 1), new Object[] { "III", "I L", "I  ", 'I', Item.ingotIron,
+				'L', Item.lightStoneDust});
+		GameRegistry.addRecipe(new ItemStack(LampioneMuro, 1), new Object[] { "III", "  L", "   ", 'I', Item.ingotIron,
+				'L', Item.lightStoneDust});
+		GameRegistry.addRecipe(new ItemStack(LampioneGiardino, 1), new Object[] { " R ", " L ", " I ", 'I', Item.ingotIron,
+				'L', Item.lightStoneDust, 'R', Item.redstone});
+		GameRegistry.addRecipe(new ItemStack(Faro, 1), new Object[] { "ILI", "ILI", " I ", 'I', Item.ingotIron,
+				'L', Item.lightStoneDust});
+		
 
 		//Confuser
-		GameRegistry.addRecipe(new ItemStack(NeonPiatto, 1), new Object[] { "IRI", "ILI", "IGI", 'I', Item.ingotIron,
+		GameRegistry.addRecipe(new ItemStack(AtariST, 1), new Object[] { "IRI", "ILI", "IGI", 'I', Item.ingotIron,
 				'R', Item.redstone, 'L', Item.lightStoneDust, 'G', Block.thinGlass });
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(grassPath, 1), new Object[] { Block.dirt });

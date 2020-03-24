@@ -39,9 +39,15 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAntennaSettore900MHz.class,
 				new RenderTableAntennaSettore900MHz());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTraliccio.class, new RenderTableTraliccio());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTraliccioBraccettoSingolo.class, new RenderTableTraliccioBraccettoSingolo());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTraliccioBraccettoSat.class, new RenderTableTraliccioBraccettoSat());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityNeonPiatto.class, new RenderTableNeonPiatto());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampadario.class, new RenderTableLampadario());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampioneGiardino.class, new RenderTableLampioneGiardino());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampioneMuro.class, new RenderTableLampioneMuro());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampadaScrivania.class, new RenderTableLampadaScrivania());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAtariST.class, new RenderTableAtariST());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFaro.class, new RenderTableFaro());
 	}
 
 	@Mod.PostInit
