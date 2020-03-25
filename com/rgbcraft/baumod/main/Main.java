@@ -15,19 +15,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraft.client.Minecraft;
 import net.minecraft.src.BaseMod;
-/*import net.minecraft.block.Block;
-import net.minecraft.block.BlockDoor;
-import net.minecraft.block.BlockHalfSlab;
-import net.minecraft.block.BlockStep;
-import net.minecraft.block.BlockWoodSlab;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;*/
 
-@Mod(name="Eyecandycraft", version="1.6", modid="baumod")
+@Mod(name="Eyecandycraft", version="1.7", modid="baumod")
 public class Main extends BaseMod{
 
 	//proxy per padella
@@ -36,7 +27,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.6";
+		return "1.7";
 	}
 
 	@Override
@@ -48,6 +39,7 @@ public class Main extends BaseMod{
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		System.out.println("VIVA LA DMU MANLEY-MOREL");
+		
 	}
 	
 	@Init

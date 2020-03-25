@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
+import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.BlockStep;
 import net.minecraft.block.BlockWoodSlab;
@@ -47,12 +48,14 @@ public class Blocks {
 	// Tutti i modelli Techne
 	public static Block ParabolaSat, AntennaGroundPlane, AntennaSettore900MHz, AntennaSettore2100MHz, AntennaYagiVHF,
 			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat;
-	public static Block LampadaOlceseRicci, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro;
-	public static Block AtariST;
+	public static Block Microfono, Telecamera;
+	public static Block LampadaOlceseRicci, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, LampionePaloModerno, LampionePaloVecchio;
+	public static Block AtariST, Portatile;
+	
 
 	public static void InizializzaBlocchi() {
 		// dichiara i blocchi
-
+		
 		// padella
 		ParabolaSat = new ParabolaBlock(846, 0);
 		AntennaGroundPlane = new AntennaGroundPlaneBlock(847, 0);
@@ -69,6 +72,7 @@ public class Blocks {
 		// atari ST
 
 		AtariST = new AtariSTBlock(890, 0);
+		Portatile = new PortatileBlock(891, 0);
 
 		// lampade
 		NeonPiatto = new NeonPiattoBlock(880, 0);
@@ -77,6 +81,13 @@ public class Blocks {
 		LampioneGiardino = new LampioneGiardinoBlock(883, 0);
 		LampioneMuro = new LampioneMuroBlock(884,0);
 		Faro = new FaroBlock(885,0);
+		LampionePaloModerno = new LampionePaloModernoBlock(886, 0);
+		LampionePaloVecchio = new LampionePaloVecchioBlock(887, 0);
+		
+		//roba studio TV/radio
+		
+		Microfono = new MicrofonoBlock(910, 0);
+		Telecamera = new TelecameraBlock(911, 0);
 
 		// altri
 		unbreakableStone = new Block(173, 1, Material.rock).setCreativeTab(CreativeTabs.tabBlock)
@@ -351,10 +362,12 @@ public class Blocks {
 				"TraliccioBraccettoSatTileEntity");
 		
 		// Atari ST
-
-
+	
 		GameRegistry.registerBlock(AtariST, "Atari ST");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityAtariST.class, "AtariSTTileEntity");
+		
+		GameRegistry.registerBlock(Portatile, "Portatile");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityPortatile.class, "PortatileTileEntity");
 
 		// Lampade
 
@@ -370,6 +383,18 @@ public class Blocks {
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityLampioneMuro.class, "LampioneMuro");
 		GameRegistry.registerBlock(Faro, "Faro");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityFaro.class, "Faro");
+		GameRegistry.registerBlock(LampionePaloVecchio, "LampionePaloVecchio");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityLampionePaloVecchio.class, "LampionePaloVecchio");
+		GameRegistry.registerBlock(LampionePaloModerno, "LampionePaloModerno");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityLampionePaloModerno.class, "LampionePaloModerno");
+	
+		//studio TV/radio
+		
+		GameRegistry.registerBlock(Microfono, "Microfono");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityMicrofono.class, "Microfono");
+		GameRegistry.registerBlock(Telecamera, "Telecamera");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTelecamera.class, "Telecamera");
+		
 	}
 
 	public static void RegistraLingua() {
@@ -395,11 +420,19 @@ public class Blocks {
 		LanguageRegistry.addName(Lampadario, "Pendant Fixture");
 		LanguageRegistry.addName(LampadaScrivania, "Desk Lamp");
 		LanguageRegistry.addName(LampioneGiardino, "Garden Light");
-		LanguageRegistry.addName(LampioneMuro, "Wall-mount Street Light");
+		LanguageRegistry.addName(LampioneMuro, "Old Street Light (wall-mount)");
+		LanguageRegistry.addName(LampionePaloVecchio, "Old Street Light (pole-mount)");
+		LanguageRegistry.addName(LampionePaloModerno, "Modern Street Light (pole-mount)");
 		LanguageRegistry.addName(Faro, "Floodlight");
 
+		//roba tv/studio radio
+		
+		LanguageRegistry.addName(Microfono, "Studio Microphone");
+		LanguageRegistry.addName(Telecamera, "TV Camera");
+		
 		// altro
 		LanguageRegistry.addName(AtariST, "Personal Computer");
+		LanguageRegistry.addName(Portatile, "Laptop Computer");
 
 		LanguageRegistry.addName(unbreakableStone, "Unbreakable Stone");
 		LanguageRegistry.addName(ubstonebricks, "Unbreakable Stone Bricks");
@@ -562,6 +595,10 @@ public class Blocks {
 				'L', Item.lightStoneDust});
 		GameRegistry.addRecipe(new ItemStack(LampioneGiardino, 1), new Object[] { " R ", " L ", " I ", 'I', Item.ingotIron,
 				'L', Item.lightStoneDust, 'R', Item.redstone});
+		GameRegistry.addRecipe(new ItemStack(LampionePaloModerno, 1), new Object[] { "   ", "IIL", "   ", 'I', Item.ingotIron,
+				'L', Item.lightStoneDust});
+		GameRegistry.addRecipe(new ItemStack(LampionePaloVecchio, 1), new Object[] { "   ", "III", "  L", 'I', Item.ingotIron,
+				'L', Item.lightStoneDust});
 		GameRegistry.addRecipe(new ItemStack(Faro, 1), new Object[] { "ILI", "ILI", " I ", 'I', Item.ingotIron,
 				'L', Item.lightStoneDust});
 		
@@ -569,6 +606,14 @@ public class Blocks {
 		//Confuser
 		GameRegistry.addRecipe(new ItemStack(AtariST, 1), new Object[] { "IRI", "ILI", "IGI", 'I', Item.ingotIron,
 				'R', Item.redstone, 'L', Item.lightStoneDust, 'G', Block.thinGlass });
+		GameRegistry.addRecipe(new ItemStack(Portatile, 1), new Object[] { "ILI", "IGI", "IRI", 'I', Item.ingotIron,
+				'R', Item.redstone, 'L', Item.lightStoneDust, 'G', Block.thinGlass });
+		
+		//Studio TV
+		GameRegistry.addRecipe(new ItemStack(Microfono, 1), new Object[] { "IRI", "I I", " I ", 'I', Item.ingotIron,
+				'R', Item.redstone});
+		GameRegistry.addRecipe(new ItemStack(Telecamera, 1), new Object[] { "  I", "RII", " II", 'I', Item.ingotIron,
+				'R', Item.redstone});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(grassPath, 1), new Object[] { Block.dirt });
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.wheat, 9), new Object[] { hay });

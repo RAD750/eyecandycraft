@@ -10,6 +10,8 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import com.rgbcraft.baumod.main.entities.*;
 import com.rgbcraft.baumod.main.models.*;
+
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy extends CommonProxy {
@@ -47,7 +49,12 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampioneMuro.class, new RenderTableLampioneMuro());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampadaScrivania.class, new RenderTableLampadaScrivania());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAtariST.class, new RenderTableAtariST());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPortatile.class, new RenderTablePortatile());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFaro.class, new RenderTableFaro());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMicrofono.class, new RenderTableMicrofono());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTelecamera.class, new RenderTableTelecamera());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampionePaloModerno.class, new RenderTableLampionePaloModerno());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampionePaloVecchio.class, new RenderTableLampionePaloVecchio());
 	}
 
 	@Mod.PostInit
