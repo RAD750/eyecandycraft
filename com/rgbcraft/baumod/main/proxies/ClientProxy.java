@@ -10,9 +10,9 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import com.rgbcraft.baumod.main.entities.*;
 import com.rgbcraft.baumod.main.models.*;
-
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.common.MinecraftForge;
 
 public class ClientProxy extends CommonProxy {
 	public ClientProxy() {
@@ -21,6 +21,7 @@ public class ClientProxy extends CommonProxy {
 	@Mod.PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
+		
 	}
 
 	@Mod.Init
@@ -29,7 +30,10 @@ public class ClientProxy extends CommonProxy {
 		// Preloading texture per evitare bug
 		MinecraftForgeClient.preloadTexture("/com/rgbcraft/baumod/textures/textures.png");
 		MinecraftForgeClient.preloadTexture("/com/rgbcraft/baumod/textures/items.png");
+		
+		System.out.println("[Eyecandycraft] Preloading texture completato, fanculo a greg");
 
+		
 		// Registra le tile entities
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityParabolaSat.class, new RenderTableParabolaSat());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAntennaGroundPlane.class,
@@ -44,6 +48,7 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTraliccioBraccettoSingolo.class, new RenderTableTraliccioBraccettoSingolo());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTraliccioBraccettoSat.class, new RenderTableTraliccioBraccettoSat());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityNeonPiatto.class, new RenderTableNeonPiatto());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityNeon.class, new RenderTableNeon());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampadario.class, new RenderTableLampadario());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampioneGiardino.class, new RenderTableLampioneGiardino());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampioneMuro.class, new RenderTableLampioneMuro());
@@ -53,6 +58,8 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFaro.class, new RenderTableFaro());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMicrofono.class, new RenderTableMicrofono());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTelecamera.class, new RenderTableTelecamera());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityConsoleRegia.class, new RenderTableConsoleRegia());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityRackRF.class, new RenderTableRackRF());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampionePaloModerno.class, new RenderTableLampionePaloModerno());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampionePaloVecchio.class, new RenderTableLampionePaloVecchio());
 	}

@@ -17,8 +17,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.src.BaseMod;
+import net.minecraftforge.common.MinecraftForge;
 
-@Mod(name="Eyecandycraft", version="1.7", modid="baumod")
+
+@Mod(name="Eyecandycraft", version="1.8", modid="baumod")
 public class Main extends BaseMod{
 
 	//proxy per padella
@@ -27,7 +29,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.7";
+		return "1.8";
 	}
 
 	@Override
@@ -38,8 +40,7 @@ public class Main extends BaseMod{
 	
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
-		System.out.println("VIVA LA DMU MANLEY-MOREL");
-		
+		System.out.println("VIVA LA DMU MANLEY-MOREL");		
 	}
 	
 	@Init

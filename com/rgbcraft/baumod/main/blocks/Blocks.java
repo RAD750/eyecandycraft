@@ -2,6 +2,8 @@ package com.rgbcraft.baumod.main.blocks;
 
 import java.awt.List;
 
+import com.rgbcraft.baumod.main.disks.*;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
@@ -18,7 +20,16 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 
+
 public class Blocks {
+	
+	//ITEMS
+	public static Item molten_glass, straw;
+	
+	//DISCHI
+	
+	public static Item ArrakisDisk, SavaraDisk, DaggerfallDisk;
+	
 	// Tutto il resto
 	public static Block unbreakableStone, ubLog, ubCobble, ubstonebricks, ubbirch, ubspruce, grassPath, hay, mortar,
 			timberframe, timberframecrossbrace, thatch, plaster, hazardstripe, doorSpruce, black_tintedGlass;
@@ -40,18 +51,18 @@ public class Blocks {
 			yellow_tintedGlass, lime_tintedGlass, pink_tintedGlass, gray_tintedGlass, light_gray_tintedGlass,
 			cyan_tintedGlass, blue_tintedGlass, purple_tintedGlass, green_tintedGlass, brown_tintedGlass,
 			red_tintedGlass;
-	public static Item molten_glass;
-
-	// Items
-	public static Item itemDC, straw;
 
 	// Tutti i modelli Techne
 	public static Block ParabolaSat, AntennaGroundPlane, AntennaSettore900MHz, AntennaSettore2100MHz, AntennaYagiVHF,
 			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat;
-	public static Block Microfono, Telecamera;
-	public static Block LampadaOlceseRicci, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, LampionePaloModerno, LampionePaloVecchio;
-	public static Block AtariST, Portatile;
+	public static Block Microfono, Telecamera, ConsoleRegia;
+	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, LampionePaloModerno, LampionePaloVecchio;
+	public static Block AtariST, Portatile, RadioScanner;
+	public static Block RackRF, RackIT, RackNet;
 	
+	//rotaia
+    public static Block LungaRotaiaSaldata;
+   
 
 	public static void InizializzaBlocchi() {
 		// dichiara i blocchi
@@ -83,11 +94,15 @@ public class Blocks {
 		Faro = new FaroBlock(885,0);
 		LampionePaloModerno = new LampionePaloModernoBlock(886, 0);
 		LampionePaloVecchio = new LampionePaloVecchioBlock(887, 0);
+		Neon = new NeonBlock(888, 0);
 		
 		//roba studio TV/radio
 		
 		Microfono = new MicrofonoBlock(910, 0);
 		Telecamera = new TelecameraBlock(911, 0);
+		ConsoleRegia = new ConsoleRegiaBlock(912, 0);
+		RackRF = new RackRFBlock(913, 0);
+		
 
 		// altri
 		unbreakableStone = new Block(173, 1, Material.rock).setCreativeTab(CreativeTabs.tabBlock)
@@ -107,8 +122,6 @@ public class Blocks {
 				.setStepSound(Block.soundGrassFootstep);
 		hay = new HayBlock(180, 12, Material.leaves).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
 				.setBlockName("hay").setCreativeTab(CreativeTabs.tabDecorations).setHardness(0.2f);
-		straw = new Item(24000).setTextureFile("/com/rgbcraft/baumod/textures/items.png").setIconCoord(0, 0)
-				.setCreativeTab(CreativeTabs.tabMaterials).setItemName("straw");
 		mortar = new Block(183, 48, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
 				.setCreativeTab(CreativeTabs.tabBlock).setBlockName("mortar").setHardness(1.2f);
 		timberframe = new TimberFrame(184, 14, Material.rock, 1)
@@ -205,9 +218,6 @@ public class Blocks {
 
 		// Vetri colorati
 
-		// MoltenGlass (per craftare gli altri)
-		molten_glass = new Item(24100).setTextureFile("/com/rgbcraft/baumod/textures/items.png").setIconIndex(1)
-				.setCreativeTab(CreativeTabs.tabMaterials).setItemName("molten_glass").setMaxStackSize(8);
 		// I vetri veri e propri
 		black_tintedGlass = new TintedGlass(196, 96, Material.glass).setCreativeTab(CreativeTabs.tabDecorations)
 				.setBlockName("black_tintedGlass").setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
@@ -258,6 +268,26 @@ public class Blocks {
 				.setBlockName("brown_tintedGlass").setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
 				.setHardness(0.2f).setStepSound(Block.soundGlassFootstep);
 
+		//
+		// OGGETTI (SI LO SO CHE NON DEVONO STARE IN BLOCKS MA ALTRIMENTI MINEKRAFFEN CRASHA)
+		//
+		
+		molten_glass = new Item(24100).setTextureFile("/com/rgbcraft/baumod/textures/items.png").setIconIndex(1)
+				.setCreativeTab(CreativeTabs.tabMaterials).setItemName("molten_glass").setMaxStackSize(8);
+		
+		straw = new Item(24000).setTextureFile("/com/rgbcraft/baumod/textures/items.png").setIconCoord(0, 0)
+				.setCreativeTab(CreativeTabs.tabMaterials).setItemName("straw");
+		
+		//DISCHI
+		
+		ArrakisDisk = new ArrakisDisk(24200);
+		GameRegistry.registerItem(ArrakisDisk, "ArrakisDisk");
+		SavaraDisk = new SavaraDisk(24201);
+		GameRegistry.registerItem(SavaraDisk, "SavaraDisk");
+		DaggerfallDisk = new DaggerfallDisk(24202);
+		GameRegistry.registerItem(DaggerfallDisk, "DaggerfallDisk");
+		
+		
 		//
 		// REGISTRA TUTTI I BLOCCHI
 		//
@@ -373,6 +403,8 @@ public class Blocks {
 
 		GameRegistry.registerBlock(NeonPiatto, "NeonPiatto");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityNeonPiatto.class, "NeonPiatto");
+		GameRegistry.registerBlock(Neon, "Neon");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityNeon.class, "Neon");
 		GameRegistry.registerBlock(Lampadario, "Lampadario");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityLampadario.class, "Lampadario");
 		GameRegistry.registerBlock(LampadaScrivania, "LampadaScrivania");
@@ -394,6 +426,10 @@ public class Blocks {
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityMicrofono.class, "Microfono");
 		GameRegistry.registerBlock(Telecamera, "Telecamera");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTelecamera.class, "Telecamera");
+		GameRegistry.registerBlock(ConsoleRegia, "ConsoleRegia");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityConsoleRegia.class, "ConsoleRegia");
+		GameRegistry.registerBlock(RackRF, "RackRF");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityRackRF.class, "RackRF");
 		
 	}
 
@@ -416,7 +452,8 @@ public class Blocks {
 		LanguageRegistry.addName(TraliccioBraccettoSat, "Satellite Dish Bracket");
 
 		// Lampade
-		LanguageRegistry.addName(NeonPiatto, "Fluorescent Fixture");
+		LanguageRegistry.addName(NeonPiatto, "LED Panel Fixture");
+		LanguageRegistry.addName(Neon, "Fluorescent Fixture");
 		LanguageRegistry.addName(Lampadario, "Pendant Fixture");
 		LanguageRegistry.addName(LampadaScrivania, "Desk Lamp");
 		LanguageRegistry.addName(LampioneGiardino, "Garden Light");
@@ -429,6 +466,8 @@ public class Blocks {
 		
 		LanguageRegistry.addName(Microfono, "Studio Microphone");
 		LanguageRegistry.addName(Telecamera, "TV Camera");
+		LanguageRegistry.addName(ConsoleRegia, "Studio Editing Console");
+		LanguageRegistry.addName(RackRF, "RF Equipment Rack");
 		
 		// altro
 		LanguageRegistry.addName(AtariST, "Personal Computer");
@@ -442,7 +481,7 @@ public class Blocks {
 		LanguageRegistry.addName(ubbirch, "Unbreakable Birch Planks");
 		LanguageRegistry.addName(grassPath, "Grass Path");
 		LanguageRegistry.addName(hay, "Hay Block");
-		LanguageRegistry.addName(straw, "Straw");
+
 		LanguageRegistry.addName(mortar, "Mortar Wall");
 		LanguageRegistry.addName(timberframe, "Timberframe");
 		LanguageRegistry.addName(timberframecrossbrace, "Timberframe Cross-Brace");
@@ -488,7 +527,6 @@ public class Blocks {
 		// TODO Mattonella
 
 		// TintedGlass
-		LanguageRegistry.addName(molten_glass, "Molten Glass");
 		LanguageRegistry.addName(black_tintedGlass, "Black Tinted Glass");
 		LanguageRegistry.addName(gray_tintedGlass, "Gray Tinted Glass");
 		LanguageRegistry.addName(light_gray_tintedGlass, "Light Gray Tinted Glass");
@@ -505,6 +543,13 @@ public class Blocks {
 		LanguageRegistry.addName(magenta_tintedGlass, "Magenta Tinted Glass");
 		LanguageRegistry.addName(pink_tintedGlass, "Pink Tinted Glass");
 		LanguageRegistry.addName(brown_tintedGlass, "Brown Tinted Glass");
+		
+		
+		//ITEMS (VEDI SOPRA)
+		
+		LanguageRegistry.addName(straw, "Straw");
+		LanguageRegistry.addName(molten_glass, "Molten Glass");
+		
 	}
 
 	public static void AggiungiAttributi() {
@@ -601,6 +646,7 @@ public class Blocks {
 				'L', Item.lightStoneDust});
 		GameRegistry.addRecipe(new ItemStack(Faro, 1), new Object[] { "ILI", "ILI", " I ", 'I', Item.ingotIron,
 				'L', Item.lightStoneDust});
+		GameRegistry.addRecipe(new ItemStack(Neon, 1), new Object[] { "ILI", "I I", "III", 'I', Item.ingotIron, 'L', Item.lightStoneDust });
 		
 
 		//Confuser
