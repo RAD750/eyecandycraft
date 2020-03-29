@@ -4,10 +4,12 @@ import java.awt.List;
 
 import com.rgbcraft.baumod.main.disks.*;
 
+import buildcraft.api.transport.FacadeManager;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSign;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockFenceGate;
@@ -62,6 +64,11 @@ public class Blocks {
 	
 	//rotaia
     public static Block LungaRotaiaSaldata;
+    
+    //TEST NON RIMUOVERE
+    
+    public static Item TestItem;
+    public static Block TestBlock;
    
 
 	public static void InizializzaBlocchi() {
@@ -286,6 +293,7 @@ public class Blocks {
 		GameRegistry.registerItem(SavaraDisk, "SavaraDisk");
 		DaggerfallDisk = new DaggerfallDisk(24202);
 		GameRegistry.registerItem(DaggerfallDisk, "DaggerfallDisk");
+		
 		
 		
 		//
@@ -550,6 +558,10 @@ public class Blocks {
 		LanguageRegistry.addName(straw, "Straw");
 		LanguageRegistry.addName(molten_glass, "Molten Glass");
 		
+		LanguageRegistry.addName(DaggerfallDisk, "Music Disc");
+		LanguageRegistry.addName(ArrakisDisk, "Music Disc");
+		LanguageRegistry.addName(SavaraDisk, "Music Disc");
+		
 	}
 
 	public static void AggiungiAttributi() {
@@ -565,6 +577,7 @@ public class Blocks {
 		MinecraftForge.setBlockHarvestLevel(thatch, "axe", 0);
 		MinecraftForge.setBlockHarvestLevel(plaster, "pickaxe", 0);
 		MinecraftForge.setBlockHarvestLevel(hazardstripe, "pickaxe", 0);
+		MinecraftForge.setBlockHarvestLevel(mortar, "pickaxe", 0);
 
 		// Plaster colorati
 		MinecraftForge.setBlockHarvestLevel(black_plaster, "pickaxe", 0);
@@ -603,6 +616,48 @@ public class Blocks {
 
 	}
 
+	public static void RegistraFacade() {
+		FacadeManager.addFacade(new ItemStack(terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(gray_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(light_gray_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(white_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(red_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(orange_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(yellow_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(lime_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(green_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(cyan_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(light_blue_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(blue_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(purple_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(magenta_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(pink_terracotta, 1));
+		FacadeManager.addFacade(new ItemStack(brown_terracotta, 1));
+		
+		FacadeManager.addFacade(new ItemStack(plaster, 1));
+		FacadeManager.addFacade(new ItemStack(gray_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(light_gray_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(plaster, 1));
+		FacadeManager.addFacade(new ItemStack(red_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(orange_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(yellow_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(lime_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(green_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(cyan_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(light_blue_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(blue_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(purple_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(magenta_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(pink_plaster, 1));
+		FacadeManager.addFacade(new ItemStack(brown_plaster, 1));
+		
+		FacadeManager.addFacade(new ItemStack(thatch, 1));
+		FacadeManager.addFacade(new ItemStack(timberframe, 1));
+		FacadeManager.addFacade(new ItemStack(timberframecrossbrace, 1));
+		FacadeManager.addFacade(new ItemStack(hazardstripe, 1));
+		FacadeManager.addFacade(new ItemStack(hazardstripe, 1));
+	}
+	
 	public static void AggiungiCrafting() {
 
 		//

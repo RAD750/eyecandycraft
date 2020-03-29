@@ -18,13 +18,13 @@ public class ClientProxy extends CommonProxy {
 	public ClientProxy() {
 	}
 
-	@Mod.PreInit
+	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
 		
 	}
 
-	@Mod.Init
+	@Init
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		// Preloading texture per evitare bug
