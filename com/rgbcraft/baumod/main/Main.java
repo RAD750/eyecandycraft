@@ -2,7 +2,6 @@ package com.rgbcraft.baumod.main;
 
 import com.rgbcraft.baumod.main.blocks.*;
 import com.rgbcraft.baumod.main.proxies.CommonProxy;
-import com.rgbcraft.baumod.main.proxies.SoundHandler;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -21,7 +20,7 @@ import net.minecraft.src.BaseMod;
 import net.minecraftforge.common.MinecraftForge;
 
 
-@Mod(name="Eyecandycraft", version="1.9", modid="baumod")
+@Mod(name="Eyecandycraft", version="1.91", modid="baumod")
 public class Main extends BaseMod{
 
 	//proxy per padella
@@ -30,7 +29,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.9";
+		return "1.91";
 	}
 
 	@Override
@@ -42,8 +41,6 @@ public class Main extends BaseMod{
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		System.out.println("VIVA LA DMU MANLEY-MOREL");		
-        MinecraftForge.EVENT_BUS.register(new SoundHandler());
-
 	}
 	
 	@Init
