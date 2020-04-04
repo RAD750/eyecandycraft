@@ -1,6 +1,9 @@
 package com.rgbcraft.baumod.main;
 
 import com.rgbcraft.baumod.main.blocks.*;
+import com.rgbcraft.baumod.main.handlers.CraftingHandler;
+import com.rgbcraft.baumod.main.handlers.FacadeHandler;
+import com.rgbcraft.baumod.main.items.Items;
 import com.rgbcraft.baumod.main.proxies.CommonProxy;
 
 import cpw.mods.fml.common.Mod;
@@ -15,12 +18,13 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.Side;
 import net.minecraft.client.Minecraft;
 import net.minecraft.src.BaseMod;
 import net.minecraftforge.common.MinecraftForge;
 
 
-@Mod(name="Eyecandycraft", version="1.91", modid="baumod")
+@Mod(name="Eyecandycraft", version="1.10", modid="baumod")
 public class Main extends BaseMod{
 
 	//proxy per padella
@@ -29,7 +33,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.91";
+		return "1.10";
 	}
 
 	@Override
@@ -43,6 +47,7 @@ public class Main extends BaseMod{
 		System.out.println("VIVA LA DMU MANLEY-MOREL");		
 	}
 	
+	
 	@Init
 	public void init(FMLInitializationEvent event) {
 		
@@ -50,9 +55,11 @@ public class Main extends BaseMod{
 		proxy.init(event);
 		Blocks.InizializzaBlocchi();
 		Blocks.RegistraLingua();
-		Blocks.AggiungiCrafting();
 		Blocks.AggiungiAttributi();
-		Blocks.RegistraFacade();
+		Items.InizializzaItem();
+		Items.RegistraLingua();
+		CraftingHandler.AggiungiCrafting();
+		FacadeHandler.RegistraFacade();
 	}
 	
 	

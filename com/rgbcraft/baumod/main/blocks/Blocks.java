@@ -4,7 +4,7 @@ import java.awt.List;
 
 import com.rgbcraft.baumod.main.disks.*;
 
-import buildcraft.api.transport.FacadeManager;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
@@ -12,29 +12,24 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemSign;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
+import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockHalfSlab;
+import net.minecraft.block.BlockPane;
 import net.minecraft.block.BlockStep;
 import net.minecraft.block.BlockWoodSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 
 
 public class Blocks {
 	
-	//ITEMS
-	public static Item molten_glass, straw;
-	
-	//DISCHI
-	
-	public static Item ArrakisDisk, SavaraDisk, DaggerfallDisk;
+
 	
 	// Tutto il resto
 	public static Block unbreakableStone, ubLog, ubCobble, ubstonebricks, ubbirch, ubspruce, grassPath, hay, mortar,
-			timberframe, timberframecrossbrace, thatch, plaster, hazardstripe, doorSpruce, black_tintedGlass;
+			timberframe, timberframecrossbrace, thatch, plaster, hazardstripe, doorSpruce, black_tintedGlass, fakeSolarPanel;
 
 	// Plasters
 	public static Block orange_plaster, magenta_plaster, light_blue_plaster, yellow_plaster, lime_plaster, pink_plaster,
@@ -55,11 +50,11 @@ public class Blocks {
 			red_tintedGlass;
 
 	// Tutti i modelli Techne
-	public static Block ParabolaSat, AntennaGroundPlane, AntennaSettore900MHz, AntennaSettore2100MHz, AntennaYagiVHF,
+	public static Block ParabolaSat, ParabolaSatTest2, AntennaGroundPlane, AntennaSettore900MHz, AntennaSettore2100MHz, AntennaYagiVHF,
 			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat;
 	public static Block Microfono, Telecamera, ConsoleRegia;
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, LampionePaloModerno, LampionePaloVecchio;
-	public static Block AtariST, Portatile, RadioScanner;
+	public static Block AtariST, AtariST2, Portatile, RadioScanner;
 	public static Block RackRF, RackIT, RackNet;
 	
 	//rotaia
@@ -70,6 +65,7 @@ public class Blocks {
     public static Item TestItem;
     public static Block TestBlock;
    
+    public static String ComputerTexture;
 
 	public static void InizializzaBlocchi() {
 		// dichiara i blocchi
@@ -88,9 +84,11 @@ public class Blocks {
 		TraliccioBraccettoSat = new TraliccioBraccettoSatBlock(856, 0);
 
 		// atari ST
+		
 
 		AtariST = new AtariSTBlock(890, 0);
 		Portatile = new PortatileBlock(891, 0);
+		AtariST2 = new AtariSTBlock(892, 0);
 
 		// lampade
 		NeonPiatto = new NeonPiattoBlock(880, 0);
@@ -112,6 +110,10 @@ public class Blocks {
 		
 
 		// altri
+	
+		fakeSolarPanel = new FakeSolarPanelBlock(244, 112, Material.iron).setCreativeTab(CreativeTabs.tabBlock)
+				.setBlockName("fakeSolarPanel").setHardness(0.5f).setTextureFile("/com/rgbcraft/baumod/textures/textures.png");
+		
 		unbreakableStone = new Block(173, 1, Material.rock).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("ubstone").setHardness(-1);
 		ubLog = new Block(174, 4, Material.wood).setHardness(-1).setCreativeTab(CreativeTabs.tabBlock)
@@ -274,25 +276,6 @@ public class Blocks {
 		brown_tintedGlass = new TintedGlass(845, 111, Material.glass).setCreativeTab(CreativeTabs.tabDecorations)
 				.setBlockName("brown_tintedGlass").setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
 				.setHardness(0.2f).setStepSound(Block.soundGlassFootstep);
-
-		//
-		// OGGETTI (SI LO SO CHE NON DEVONO STARE IN BLOCKS MA ALTRIMENTI MINEKRAFFEN CRASHA)
-		//
-		
-		molten_glass = new Item(24100).setTextureFile("/com/rgbcraft/baumod/textures/items.png").setIconIndex(1)
-				.setCreativeTab(CreativeTabs.tabMaterials).setItemName("molten_glass").setMaxStackSize(8);
-		
-		straw = new Item(24000).setTextureFile("/com/rgbcraft/baumod/textures/items.png").setIconCoord(0, 0)
-				.setCreativeTab(CreativeTabs.tabMaterials).setItemName("straw");
-		
-		//DISCHI
-		
-		ArrakisDisk = new ArrakisDisk(24200);
-		GameRegistry.registerItem(ArrakisDisk, "ArrakisDisk");
-		SavaraDisk = new SavaraDisk(24201);
-		GameRegistry.registerItem(SavaraDisk, "SavaraDisk");
-		DaggerfallDisk = new DaggerfallDisk(24202);
-		GameRegistry.registerItem(DaggerfallDisk, "DaggerfallDisk");
 		
 		
 		
@@ -300,6 +283,8 @@ public class Blocks {
 		// REGISTRA TUTTI I BLOCCHI
 		//
 
+		GameRegistry.registerBlock(fakeSolarPanel, "fakeSolarPanel");
+		
 		GameRegistry.registerBlock(unbreakableStone, "ubstone");
 		GameRegistry.registerBlock(ubCobble, "ubcobble");
 		GameRegistry.registerBlock(ubLog, "ubLog");
@@ -400,9 +385,11 @@ public class Blocks {
 				"TraliccioBraccettoSatTileEntity");
 		
 		// Atari ST
-	
+		
+		ComputerTexture = "/com/rgbcraft/baumod/textures/AtariST.png";
 		GameRegistry.registerBlock(AtariST, "Atari ST");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityAtariST.class, "AtariSTTileEntity");
+
 		
 		GameRegistry.registerBlock(Portatile, "Portatile");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityPortatile.class, "PortatileTileEntity");
@@ -446,6 +433,8 @@ public class Blocks {
 		// LINGUA
 		//
 
+		LanguageRegistry.addName(fakeSolarPanel, "Fake Solar Panel");
+		
 		// Parabola e antenne
 
 		LanguageRegistry.addName(ParabolaSat, "Satellite Dish");
@@ -554,13 +543,7 @@ public class Blocks {
 		
 		
 		//ITEMS (VEDI SOPRA)
-		
-		LanguageRegistry.addName(straw, "Straw");
-		LanguageRegistry.addName(molten_glass, "Molten Glass");
-		
-		LanguageRegistry.addName(DaggerfallDisk, "Music Disc");
-		LanguageRegistry.addName(ArrakisDisk, "Music Disc");
-		LanguageRegistry.addName(SavaraDisk, "Music Disc");
+	
 		
 	}
 
@@ -616,231 +599,5 @@ public class Blocks {
 
 	}
 
-	public static void RegistraFacade() {
-		FacadeManager.addFacade(new ItemStack(terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(gray_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(light_gray_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(white_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(red_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(orange_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(yellow_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(lime_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(green_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(cyan_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(light_blue_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(blue_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(purple_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(magenta_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(pink_terracotta, 1));
-		FacadeManager.addFacade(new ItemStack(brown_terracotta, 1));
-		
-		FacadeManager.addFacade(new ItemStack(plaster, 1));
-		FacadeManager.addFacade(new ItemStack(gray_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(light_gray_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(plaster, 1));
-		FacadeManager.addFacade(new ItemStack(red_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(orange_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(yellow_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(lime_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(green_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(cyan_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(light_blue_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(blue_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(purple_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(magenta_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(pink_plaster, 1));
-		FacadeManager.addFacade(new ItemStack(brown_plaster, 1));
-		
-		FacadeManager.addFacade(new ItemStack(thatch, 1));
-		FacadeManager.addFacade(new ItemStack(timberframe, 1));
-		FacadeManager.addFacade(new ItemStack(timberframecrossbrace, 1));
-		FacadeManager.addFacade(new ItemStack(hazardstripe, 1));
-		FacadeManager.addFacade(new ItemStack(hazardstripe, 1));
-	}
 	
-	public static void AggiungiCrafting() {
-
-		//
-		// RECIPE CRAFTING
-		//
-
-		// Antenne
-		GameRegistry.addRecipe(new ItemStack(ParabolaSat, 1),
-				new Object[] { "II ", "II ", "  R", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(AntennaGroundPlane, 1),
-				new Object[] { " I ", " R ", "I I", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(AntennaLogperiodica, 1),
-				new Object[] { "II ", "RII", "II ", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(AntennaYagiVHF, 1),
-				new Object[] { "I I", "III", "IRI", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(AntennaYagiUHF, 1),
-				new Object[] { "I  ", "RII", "I  ", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(AntennaSettore900MHz, 1),
-				new Object[] { " I ", "RRR", " I ", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(Traliccio, 4),
-				new Object[] { "I I", "III", "I I", 'I', Item.ingotIron});
-		GameRegistry.addRecipe(new ItemStack(TraliccioBraccettoSat, 1),
-				new Object[] { "   ", " TI", "   ", 'I', Item.ingotIron, 'T', Traliccio});
-		GameRegistry.addRecipe(new ItemStack(TraliccioBraccettoSingolo, 1),
-				new Object[] { "   ", "TII", "   ", 'I', Item.ingotIron, 'T', Traliccio});
-
-		// Lampade
-		GameRegistry.addRecipe(new ItemStack(NeonPiatto, 1), new Object[] { "IGI", "GLG", "IGI", 'I', Item.ingotIron,
-				'G', Block.thinGlass, 'L', Item.lightStoneDust });
-		GameRegistry.addRecipe(new ItemStack(Lampadario, 1), new Object[] { " I ", "III", " L ", 'I', Item.ingotIron,
-				'L', Item.lightStoneDust });
-		GameRegistry.addRecipe(new ItemStack(LampadaScrivania, 1), new Object[] { "III", "I L", "I  ", 'I', Item.ingotIron,
-				'L', Item.lightStoneDust});
-		GameRegistry.addRecipe(new ItemStack(LampioneMuro, 1), new Object[] { "III", "  L", "   ", 'I', Item.ingotIron,
-				'L', Item.lightStoneDust});
-		GameRegistry.addRecipe(new ItemStack(LampioneGiardino, 1), new Object[] { " R ", " L ", " I ", 'I', Item.ingotIron,
-				'L', Item.lightStoneDust, 'R', Item.redstone});
-		GameRegistry.addRecipe(new ItemStack(LampionePaloModerno, 1), new Object[] { "   ", "IIL", "   ", 'I', Item.ingotIron,
-				'L', Item.lightStoneDust});
-		GameRegistry.addRecipe(new ItemStack(LampionePaloVecchio, 1), new Object[] { "   ", "III", "  L", 'I', Item.ingotIron,
-				'L', Item.lightStoneDust});
-		GameRegistry.addRecipe(new ItemStack(Faro, 1), new Object[] { "ILI", "ILI", " I ", 'I', Item.ingotIron,
-				'L', Item.lightStoneDust});
-		GameRegistry.addRecipe(new ItemStack(Neon, 1), new Object[] { "ILI", "I I", "III", 'I', Item.ingotIron, 'L', Item.lightStoneDust });
-		
-
-		//Confuser
-		GameRegistry.addRecipe(new ItemStack(AtariST, 1), new Object[] { "IRI", "ILI", "IGI", 'I', Item.ingotIron,
-				'R', Item.redstone, 'L', Item.lightStoneDust, 'G', Block.thinGlass });
-		GameRegistry.addRecipe(new ItemStack(Portatile, 1), new Object[] { "ILI", "IGI", "IRI", 'I', Item.ingotIron,
-				'R', Item.redstone, 'L', Item.lightStoneDust, 'G', Block.thinGlass });
-		
-		//Studio TV
-		GameRegistry.addRecipe(new ItemStack(Microfono, 1), new Object[] { "IRI", "I I", " I ", 'I', Item.ingotIron,
-				'R', Item.redstone});
-		GameRegistry.addRecipe(new ItemStack(Telecamera, 1), new Object[] { "  I", "RII", " II", 'I', Item.ingotIron,
-				'R', Item.redstone});
-		
-		GameRegistry.addShapelessRecipe(new ItemStack(grassPath, 1), new Object[] { Block.dirt });
-		GameRegistry.addShapelessRecipe(new ItemStack(Item.wheat, 9), new Object[] { hay });
-		GameRegistry.addShapelessRecipe(new ItemStack(hay, 1), new Object[] { Item.wheat, Item.wheat, Item.wheat,
-				Item.wheat, Item.wheat, Item.wheat, Item.wheat, Item.wheat, Item.wheat });
-		GameRegistry.addSmelting(296, new ItemStack(straw, 1), 0.15f);
-		GameRegistry.addShapelessRecipe(new ItemStack(mortar, 16),
-				new Object[] { Item.clay, Item.clay, Item.clay, Item.clay, Item.bucketWater });
-		GameRegistry.addRecipe(new ItemStack(timberframecrossbrace, 16),
-				new Object[] { "LCL", "CLC", "LCL", 'L', Block.wood, 'C', Item.clay });
-		GameRegistry.addRecipe(new ItemStack(timberframe, 16),
-				new Object[] { "LCL", "LCL", "LCL", 'L', Block.wood, 'C', Item.clay });
-		GameRegistry.addRecipe(new ItemStack(thatch, 16), new Object[] { "   ", "SS ", "SS ", 'S', straw });
-		GameRegistry.addRecipe(new ItemStack(plaster, 16), new Object[] { "   ", " T ", "MCW", 'T', straw, 'M',
-				new ItemStack(Item.dyePowder, 1, 15), 'C', Item.clay, 'W', Item.bucketWater });
-		GameRegistry.addRecipe(new ItemStack(hazardstripe, 16), new Object[] { "YBY", "BMB", "YBY", 'Y',
-				new ItemStack(Item.dyePowder, 1, 11), 'B', new ItemStack(Item.dyePowder, 1, 0), 'M', mortar });
-
-		// Plaster colorati
-		GameRegistry.addShapelessRecipe(new ItemStack(black_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 0) });
-		GameRegistry.addShapelessRecipe(new ItemStack(red_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 1) });
-		GameRegistry.addShapelessRecipe(new ItemStack(green_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 2) });
-		GameRegistry.addShapelessRecipe(new ItemStack(brown_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 3) });
-		GameRegistry.addShapelessRecipe(new ItemStack(blue_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 4) });
-		GameRegistry.addShapelessRecipe(new ItemStack(purple_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 5) });
-		GameRegistry.addShapelessRecipe(new ItemStack(cyan_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 6) });
-		GameRegistry.addShapelessRecipe(new ItemStack(light_gray_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 7) });
-		GameRegistry.addShapelessRecipe(new ItemStack(gray_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 8) });
-		GameRegistry.addShapelessRecipe(new ItemStack(pink_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 9) });
-		GameRegistry.addShapelessRecipe(new ItemStack(lime_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 10) });
-		GameRegistry.addShapelessRecipe(new ItemStack(yellow_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 11) });
-		GameRegistry.addShapelessRecipe(new ItemStack(light_blue_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 12) });
-		GameRegistry.addShapelessRecipe(new ItemStack(magenta_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 13) });
-		GameRegistry.addShapelessRecipe(new ItemStack(orange_plaster, 1),
-				new Object[] { plaster, new ItemStack(Item.dyePowder, 1, 14) });
-
-		// Terracotta
-
-		// Prima fase cuoci l'argilla
-		GameRegistry.addSmelting(82, new ItemStack(terracotta), 0.15f);
-
-		// Poi colora l'argilla
-		GameRegistry.addShapelessRecipe(new ItemStack(red_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 1) });
-		GameRegistry.addShapelessRecipe(new ItemStack(green_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 2) });
-		GameRegistry.addShapelessRecipe(new ItemStack(brown_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 3) });
-		GameRegistry.addShapelessRecipe(new ItemStack(blue_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 4) });
-		GameRegistry.addShapelessRecipe(new ItemStack(purple_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 5) });
-		GameRegistry.addShapelessRecipe(new ItemStack(cyan_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 6) });
-		GameRegistry.addShapelessRecipe(new ItemStack(light_gray_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 7) });
-		GameRegistry.addShapelessRecipe(new ItemStack(gray_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 8) });
-		GameRegistry.addShapelessRecipe(new ItemStack(pink_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 9) });
-		GameRegistry.addShapelessRecipe(new ItemStack(lime_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 10) });
-		GameRegistry.addShapelessRecipe(new ItemStack(yellow_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 11) });
-		GameRegistry.addShapelessRecipe(new ItemStack(light_blue_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 12) });
-		GameRegistry.addShapelessRecipe(new ItemStack(magenta_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 13) });
-		GameRegistry.addShapelessRecipe(new ItemStack(orange_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 14) });
-		GameRegistry.addShapelessRecipe(new ItemStack(white_terracotta, 1),
-				new Object[] { terracotta, new ItemStack(Item.dyePowder, 1, 15) });
-
-		// Tintet glss
-
-		// Prima cosa fondi il vetro
-		GameRegistry.addSmelting(20, new ItemStack(molten_glass), 0.15f);
-
-		// Poi colora il vetro
-		GameRegistry.addShapelessRecipe(new ItemStack(black_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 0) });
-		GameRegistry.addShapelessRecipe(new ItemStack(red_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 1) });
-		GameRegistry.addShapelessRecipe(new ItemStack(green_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 2) });
-		GameRegistry.addShapelessRecipe(new ItemStack(brown_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 3) });
-		GameRegistry.addShapelessRecipe(new ItemStack(blue_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 4) });
-		GameRegistry.addShapelessRecipe(new ItemStack(purple_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 5) });
-		GameRegistry.addShapelessRecipe(new ItemStack(cyan_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 6) });
-		GameRegistry.addShapelessRecipe(new ItemStack(light_gray_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 7) });
-		GameRegistry.addShapelessRecipe(new ItemStack(gray_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 8) });
-		GameRegistry.addShapelessRecipe(new ItemStack(pink_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 9) });
-		GameRegistry.addShapelessRecipe(new ItemStack(lime_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 10) });
-		GameRegistry.addShapelessRecipe(new ItemStack(yellow_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 11) });
-		GameRegistry.addShapelessRecipe(new ItemStack(light_blue_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 12) });
-		GameRegistry.addShapelessRecipe(new ItemStack(magenta_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 13) });
-		GameRegistry.addShapelessRecipe(new ItemStack(orange_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 14) });
-		GameRegistry.addShapelessRecipe(new ItemStack(white_tintedGlass, 1),
-				new Object[] { molten_glass, new ItemStack(Item.dyePowder, 1, 15) });
-
-	}
-
 }
