@@ -16,6 +16,10 @@ public class CraftingHandler {
 		// RECIPE CRAFTING
 		//
 
+	
+		GameRegistry.addRecipe(new ItemStack(Blocks.litplaster, 1),
+				new Object[] { "WLW", "LPL", "WLW", 'L', Item.lightStoneDust, 'W', Item.bucketWater, 'P', Blocks.plaster});
+		
 		// Antenne
 		GameRegistry.addRecipe(new ItemStack(Blocks.ParabolaSat, 1),
 				new Object[] { "II ", "II ", "  R", 'I', Item.ingotIron, 'R', Item.redstone });
@@ -68,6 +72,16 @@ public class CraftingHandler {
 		GameRegistry.addRecipe(new ItemStack(Blocks.Telecamera, 1), new Object[] { "  I", "RII", " II", 'I', Item.ingotIron,
 				'R', Item.redstone});
 		
+		GameRegistry.addRecipe(new ItemStack(Blocks.TVLCD, 1), new Object [] { "GGG", "GLG", "IRI", 'I',
+				Item.ingotIron, 'G', Block.thinGlass, 'L', Item.lightStoneDust});
+		GameRegistry.addRecipe(new ItemStack(Blocks.TVOLED, 1), new Object [] { "GGG", "LLL", "IRI", 'I',
+				Item.ingotIron, 'G', Block.thinGlass, 'L', Item.lightStoneDust});
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.CCTVCam, 1), new Object [] { "GR ", " I ", " II", 'I',
+				Item.ingotIron, 'G', Block.thinGlass, 'R', Item.redstone});
+		GameRegistry.addRecipe(new ItemStack(Blocks.CCTVCamPTZ, 1), new Object [] { " II", " I ", " GR", 'I',
+				Item.ingotIron, 'G', Block.thinGlass, 'R', Item.redstone});
+		
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.grassPath, 1), new Object[] { Block.dirt });
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.wheat, 9), new Object[] { Blocks.hay });
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.hay, 1), new Object[] { Item.wheat, Item.wheat, Item.wheat,
@@ -85,6 +99,8 @@ public class CraftingHandler {
 		GameRegistry.addRecipe(new ItemStack(Blocks.hazardstripe, 16), new Object[] { "YBY", "BMB", "YBY", 'Y',
 				new ItemStack(Item.dyePowder, 1, 11), 'B', new ItemStack(Item.dyePowder, 1, 0), 'M', Blocks.mortar });
 
+		
+		
 		// Plaster colorati
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.black_plaster, 1),
 				new Object[] { Blocks.plaster, new ItemStack(Item.dyePowder, 1, 0) });

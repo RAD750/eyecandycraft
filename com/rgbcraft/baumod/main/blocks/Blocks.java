@@ -29,7 +29,7 @@ public class Blocks {
 	
 	// Tutto il resto
 	public static Block unbreakableStone, ubLog, ubCobble, ubstonebricks, ubbirch, ubspruce, grassPath, hay, mortar,
-			timberframe, timberframecrossbrace, thatch, plaster, hazardstripe, doorSpruce, black_tintedGlass, fakeSolarPanel;
+			timberframe, timberframecrossbrace, thatch, plaster, litplaster, hazardstripe, doorSpruce, black_tintedGlass, fakeSolarPanel;
 
 	// Plasters
 	public static Block orange_plaster, magenta_plaster, light_blue_plaster, yellow_plaster, lime_plaster, pink_plaster,
@@ -52,7 +52,7 @@ public class Blocks {
 	// Tutti i modelli Techne
 	public static Block ParabolaSat, ParabolaSatTest2, AntennaGroundPlane, AntennaSettore900MHz, AntennaSettore2100MHz, AntennaYagiVHF,
 			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat;
-	public static Block Microfono, Telecamera, ConsoleRegia;
+	public static Block Microfono, Telecamera, ConsoleRegia, TVLCD, TVOLED, CCTVCam, CCTVCamPTZ;
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, LampionePaloModerno, LampionePaloVecchio;
 	public static Block AtariST, AtariST2, Portatile, RadioScanner;
 	public static Block RackRF, RackIT, RackNet;
@@ -107,13 +107,19 @@ public class Blocks {
 		Telecamera = new TelecameraBlock(911, 0);
 		ConsoleRegia = new ConsoleRegiaBlock(912, 0);
 		RackRF = new RackRFBlock(913, 0);
+		TVLCD = new TVLCDBlock(914, 0);
+		TVOLED = new TVOLEDBlock(915, 0);
+		CCTVCam = new CCTVCamBlock(916, 0);
+		CCTVCamPTZ = new CCTVCamPTZBlock(917, 0);
 		
 
 		// altri
 	
-		fakeSolarPanel = new FakeSolarPanelBlock(244, 112, Material.iron).setCreativeTab(CreativeTabs.tabBlock)
+		fakeSolarPanel = new FakeSolarPanelBlock(190, 112, Material.iron).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("fakeSolarPanel").setHardness(0.5f).setTextureFile("/com/rgbcraft/baumod/textures/textures.png");
-		
+		litplaster = new Block(940, 67, Material.glass).setCreativeTab(CreativeTabs.tabDecorations).setBlockName("litplaster").setHardness(0.2f).setLightValue(1.0F)
+				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setStepSound(Block.soundGlassFootstep);
+				
 		unbreakableStone = new Block(173, 1, Material.rock).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("ubstone").setHardness(-1);
 		ubLog = new Block(174, 4, Material.wood).setHardness(-1).setCreativeTab(CreativeTabs.tabBlock)
@@ -284,7 +290,7 @@ public class Blocks {
 		//
 
 		GameRegistry.registerBlock(fakeSolarPanel, "fakeSolarPanel");
-		
+		GameRegistry.registerBlock(litplaster, "litplaster");
 		GameRegistry.registerBlock(unbreakableStone, "ubstone");
 		GameRegistry.registerBlock(ubCobble, "ubcobble");
 		GameRegistry.registerBlock(ubLog, "ubLog");
@@ -425,6 +431,14 @@ public class Blocks {
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityConsoleRegia.class, "ConsoleRegia");
 		GameRegistry.registerBlock(RackRF, "RackRF");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityRackRF.class, "RackRF");
+		GameRegistry.registerBlock(TVLCD, "TVLCD");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTVLCD.class, "TVLCD");
+		GameRegistry.registerBlock(TVOLED, "TVOLED");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTVOLED.class, "TVOLED");
+		GameRegistry.registerBlock(CCTVCam, "CCTVCam");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityCCTVCam.class, "CCTVCam");
+		GameRegistry.registerBlock(CCTVCamPTZ, "CCTVCamPTZ");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityCCTVCamPTZ.class, "CCTVCamPTZ");
 		
 	}
 
@@ -434,6 +448,7 @@ public class Blocks {
 		//
 
 		LanguageRegistry.addName(fakeSolarPanel, "Fake Solar Panel");
+		LanguageRegistry.addName(litplaster, "Lit Plaster");
 		
 		// Parabola e antenne
 
@@ -465,6 +480,10 @@ public class Blocks {
 		LanguageRegistry.addName(Telecamera, "TV Camera");
 		LanguageRegistry.addName(ConsoleRegia, "Studio Editing Console");
 		LanguageRegistry.addName(RackRF, "RF Equipment Rack");
+		LanguageRegistry.addName(TVLCD, "LCD Television");
+		LanguageRegistry.addName(TVOLED, "OLED Television");
+		LanguageRegistry.addName(CCTVCam, "CCTV Camera");
+		LanguageRegistry.addName(CCTVCamPTZ, "CCTV Camera (with PTZ function)");
 		
 		// altro
 		LanguageRegistry.addName(AtariST, "Personal Computer");
