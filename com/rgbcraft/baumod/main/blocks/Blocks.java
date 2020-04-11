@@ -51,10 +51,10 @@ public class Blocks {
 
 	// Tutti i modelli Techne
 	public static Block ParabolaSat, ParabolaSatTest2, AntennaGroundPlane, AntennaSettore900MHz, AntennaSettore2100MHz, AntennaYagiVHF,
-			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat;
+			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat, TraliccioBraccettoCCTV;
 	public static Block Microfono, Telecamera, ConsoleRegia, TVLCD, TVOLED, CCTVCam, CCTVCamPTZ;
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, LampionePaloModerno, LampionePaloVecchio;
-	public static Block AtariST, AtariST2, Portatile, RadioScanner;
+	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat;
 	public static Block RackRF, RackIT, RackNet;
 	
 	//rotaia
@@ -82,6 +82,7 @@ public class Blocks {
 		TraliccioBraccettoSingolo = new TraliccioBraccettoSingoloBlock(858, 0);
 		//TraliccioBraccettoDoppio = new TraliccioBraccettoDoppioBlock(857, 0);
 		TraliccioBraccettoSat = new TraliccioBraccettoSatBlock(856, 0);
+		TraliccioBraccettoCCTV = new TraliccioBraccettoCCTVBlock(855, 0);
 
 		// atari ST
 		
@@ -89,6 +90,7 @@ public class Blocks {
 		AtariST = new AtariSTBlock(890, 0);
 		Portatile = new PortatileBlock(891, 0);
 		AtariST2 = new AtariSTBlock(892, 0);
+		ModemSat = new ModemSatBlock(893, 0);
 
 		// lampade
 		NeonPiatto = new NeonPiattoBlock(880, 0);
@@ -111,6 +113,7 @@ public class Blocks {
 		TVOLED = new TVOLEDBlock(915, 0);
 		CCTVCam = new CCTVCamBlock(916, 0);
 		CCTVCamPTZ = new CCTVCamPTZBlock(917, 0);
+		Estintore = new EstintoreBlock(918, 0);
 		
 
 		// altri
@@ -389,6 +392,9 @@ public class Blocks {
 		GameRegistry.registerBlock(TraliccioBraccettoSat, "TraliccioBraccettoSat");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTraliccioBraccettoSat.class,
 				"TraliccioBraccettoSatTileEntity");
+		GameRegistry.registerBlock(TraliccioBraccettoCCTV, "TraliccioBraccettoCCTV");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTraliccioBraccettoCCTV.class,
+				"TraliccioBraccettoCCTVTileEntity");
 		
 		// Atari ST
 		
@@ -399,6 +405,8 @@ public class Blocks {
 		
 		GameRegistry.registerBlock(Portatile, "Portatile");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityPortatile.class, "PortatileTileEntity");
+		GameRegistry.registerBlock(ModemSat, "ModemSat");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityModemSat.class, "ModemSat");
 
 		// Lampade
 
@@ -439,6 +447,8 @@ public class Blocks {
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityCCTVCam.class, "CCTVCam");
 		GameRegistry.registerBlock(CCTVCamPTZ, "CCTVCamPTZ");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityCCTVCamPTZ.class, "CCTVCamPTZ");
+		GameRegistry.registerBlock(Estintore, "Estintore");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityEstintore.class, "Estintore");
 		
 	}
 
@@ -460,8 +470,10 @@ public class Blocks {
 		LanguageRegistry.addName(AntennaLogperiodica, "Log-periodic antenna");
 		
 		LanguageRegistry.addName(Traliccio, "Lattice Post");
-		LanguageRegistry.addName(TraliccioBraccettoSingolo, "Single Bracket");
-		LanguageRegistry.addName(TraliccioBraccettoSat, "Satellite Dish Bracket");
+		LanguageRegistry.addName(TraliccioBraccettoSingolo, "Lattice Bracket - Antenna");
+		LanguageRegistry.addName(TraliccioBraccettoSat, "Lattice Bracket - Satellite Dish");
+		LanguageRegistry.addName(TraliccioBraccettoCCTV, "Lattice Bracket - CCTV Camera");
+		
 
 		// Lampade
 		LanguageRegistry.addName(NeonPiatto, "LED Panel Fixture");
@@ -484,10 +496,13 @@ public class Blocks {
 		LanguageRegistry.addName(TVOLED, "OLED Television");
 		LanguageRegistry.addName(CCTVCam, "CCTV Camera");
 		LanguageRegistry.addName(CCTVCamPTZ, "CCTV Camera (with PTZ function)");
+		LanguageRegistry.addName(Estintore, "Fire extinguisher");
+		
 		
 		// altro
 		LanguageRegistry.addName(AtariST, "Personal Computer");
 		LanguageRegistry.addName(Portatile, "Laptop Computer");
+		LanguageRegistry.addName(ModemSat, "Satellite Modem");
 
 		LanguageRegistry.addName(unbreakableStone, "Unbreakable Stone");
 		LanguageRegistry.addName(ubstonebricks, "Unbreakable Stone Bricks");

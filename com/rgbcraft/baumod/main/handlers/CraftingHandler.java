@@ -39,6 +39,8 @@ public class CraftingHandler {
 				new Object[] { "   ", " TI", "   ", 'I', Item.ingotIron, 'T', Blocks.Traliccio});
 		GameRegistry.addRecipe(new ItemStack(Blocks.TraliccioBraccettoSingolo, 1),
 				new Object[] { "   ", "TII", "   ", 'I', Item.ingotIron, 'T', Blocks.Traliccio});
+		GameRegistry.addRecipe(new ItemStack(Blocks.TraliccioBraccettoSingolo, 1),
+				new Object[] { "   ", "ITI", "   ", 'I', Item.ingotIron, 'T', Blocks.Traliccio});
 
 		// Lampade
 		GameRegistry.addRecipe(new ItemStack(Blocks.NeonPiatto, 1), new Object[] { "IGI", "GLG", "IGI", 'I', Item.ingotIron,
@@ -65,6 +67,7 @@ public class CraftingHandler {
 				'R', Item.redstone, 'L', Item.lightStoneDust, 'G', Block.thinGlass });
 		GameRegistry.addRecipe(new ItemStack(Blocks.Portatile, 1), new Object[] { "ILI", "IGI", "IRI", 'I', Item.ingotIron,
 				'R', Item.redstone, 'L', Item.lightStoneDust, 'G', Block.thinGlass });
+		GameRegistry.addRecipe(new ItemStack(Blocks.ModemSat, 1), new Object[] { "   ", "III", "IRI", 'I', Item.ingotIron, 'R', Item.redstone});
 		
 		//Studio TV
 		GameRegistry.addRecipe(new ItemStack(Blocks.Microfono, 1), new Object[] { "IRI", "I I", " I ", 'I', Item.ingotIron,
@@ -99,7 +102,11 @@ public class CraftingHandler {
 		GameRegistry.addRecipe(new ItemStack(Blocks.hazardstripe, 16), new Object[] { "YBY", "BMB", "YBY", 'Y',
 				new ItemStack(Item.dyePowder, 1, 11), 'B', new ItemStack(Item.dyePowder, 1, 0), 'M', Blocks.mortar });
 
+		GameRegistry.addRecipe(new ItemStack(Blocks.Estintore, 1), new Object [] { " I ", "IBI", "IBI", 'I',
+				Item.ingotIron, 'B', Item.bucketWater});
 		
+		//ARGILLA DA BLOCCO
+		GameRegistry.addShapelessRecipe(new ItemStack(Item.clay, 4), new Object[]{new ItemStack(Block.blockClay)});
 		
 		// Plaster colorati
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.black_plaster, 1),
