@@ -128,8 +128,8 @@ public class Blocks {
 		fakeSolarPanel = new FakeSolarPanelBlock(190, 112, Material.iron).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("fakeSolarPanel").setHardness(0.5f).setTextureFile("/com/rgbcraft/baumod/textures/textures.png");
 		
-		permaDirt = new Block(200, 32, Material.ground).setCreativeTab(CreativeTabs.tabDecorations).setBlockName("permaDirt").setHardness(0.3f)
-				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setStepSound(Block.soundGravelFootstep);
+		/*permaDirt = new Block(200, 32, Material.ground).setCreativeTab(CreativeTabs.tabDecorations).setBlockName("permaDirt").setHardness(0.3f)
+				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setStepSound(Block.soundGravelFootstep);*/
 		
 		litplaster = new Block(940, 67, Material.glass).setCreativeTab(CreativeTabs.tabDecorations).setBlockName("litplaster").setHardness(0.2f).setLightValue(1.0F)
 				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setStepSound(Block.soundGlassFootstep);
