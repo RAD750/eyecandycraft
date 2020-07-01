@@ -305,7 +305,7 @@ public class Blocks {
 
 		GameRegistry.registerBlock(fakeSolarPanel, "fakeSolarPanel");
 		GameRegistry.registerBlock(litplaster, "litplaster");
-		GameRegistry.registerBlock(permaDirt, "permaDirt");
+//		GameRegistry.registerBlock(permaDirt, "permaDirt");
 		GameRegistry.registerBlock(unbreakableStone, "ubstone");
 		GameRegistry.registerBlock(ubCobble, "ubcobble");
 		GameRegistry.registerBlock(ubLog, "ubLog");
