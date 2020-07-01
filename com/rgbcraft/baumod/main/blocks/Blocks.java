@@ -29,7 +29,7 @@ public class Blocks {
 	
 	// Tutto il resto
 	public static Block unbreakableStone, ubLog, ubCobble, ubstonebricks, ubbirch, ubspruce, grassPath, hay, mortar,
-			timberframe, timberframecrossbrace, thatch, plaster, litplaster, hazardstripe, doorSpruce, black_tintedGlass, fakeSolarPanel;
+			timberframe, timberframecrossbrace, thatch, plaster, litplaster, hazardstripe, doorSpruce, black_tintedGlass, fakeSolarPanel, permaDirt;
 
 	// Plasters
 	public static Block orange_plaster, magenta_plaster, light_blue_plaster, yellow_plaster, lime_plaster, pink_plaster,
@@ -52,9 +52,9 @@ public class Blocks {
 	// Tutti i modelli Techne
 	public static Block ParabolaSat, ParabolaSatTest2, AntennaGroundPlane, AntennaSettore900MHz, AntennaSettore2100MHz, AntennaYagiVHF,
 			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat, TraliccioBraccettoCCTV;
-	public static Block Microfono, Telecamera, ConsoleRegia, TVLCD, TVOLED, CCTVCam, CCTVCamPTZ;
+	public static Block Microfono, Telecamera, ConsoleRegia, TVLCD, TVOLED, TVOLEDVESA, CCTVCam, CCTVCamPTZ;
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, LampionePaloModerno, LampionePaloVecchio;
-	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat;
+	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat, Clima, ClimaUE, Scrivania, Polycom;
 	public static Block RackRF, RackIT, RackNet;
 	
 	//rotaia
@@ -91,6 +91,8 @@ public class Blocks {
 		Portatile = new PortatileBlock(891, 0);
 		AtariST2 = new AtariSTBlock(892, 0);
 		ModemSat = new ModemSatBlock(893, 0);
+		Polycom = new PolycomBlock(894, 0);
+		
 
 		// lampade
 		NeonPiatto = new NeonPiattoBlock(880, 0);
@@ -115,11 +117,20 @@ public class Blocks {
 		CCTVCamPTZ = new CCTVCamPTZBlock(917, 0);
 		Estintore = new EstintoreBlock(918, 0);
 		
+		Clima = new ClimaBlock(919, 0);
+		ClimaUE = new ClimaUEBlock(920, 0);
+		TVOLEDVESA = new TVOLEDVESABlock(921, 0);
+		Scrivania = new ScrivaniaBlock(922, 0);
+		
 
 		// altri
 	
 		fakeSolarPanel = new FakeSolarPanelBlock(190, 112, Material.iron).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("fakeSolarPanel").setHardness(0.5f).setTextureFile("/com/rgbcraft/baumod/textures/textures.png");
+		
+		permaDirt = new Block(200, 32, Material.ground).setCreativeTab(CreativeTabs.tabDecorations).setBlockName("permaDirt").setHardness(0.3f)
+				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setStepSound(Block.soundGravelFootstep);
+		
 		litplaster = new Block(940, 67, Material.glass).setCreativeTab(CreativeTabs.tabDecorations).setBlockName("litplaster").setHardness(0.2f).setLightValue(1.0F)
 				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setStepSound(Block.soundGlassFootstep);
 				
@@ -136,7 +147,7 @@ public class Blocks {
 		ubbirch = new Block(178, 214, Material.wood).setHardness(-1).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("ubbirch");
 		grassPath = new GrassPath(179, Material.grass).setCreativeTab(CreativeTabs.tabBlock).setBlockName("grassPath")
-				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setHardness(0.2f)
+				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setHardness(0.3f)
 				.setStepSound(Block.soundGrassFootstep);
 		hay = new HayBlock(180, 12, Material.leaves).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
 				.setBlockName("hay").setCreativeTab(CreativeTabs.tabDecorations).setHardness(0.2f);
@@ -294,6 +305,7 @@ public class Blocks {
 
 		GameRegistry.registerBlock(fakeSolarPanel, "fakeSolarPanel");
 		GameRegistry.registerBlock(litplaster, "litplaster");
+		GameRegistry.registerBlock(permaDirt, "permaDirt");
 		GameRegistry.registerBlock(unbreakableStone, "ubstone");
 		GameRegistry.registerBlock(ubCobble, "ubcobble");
 		GameRegistry.registerBlock(ubLog, "ubLog");
@@ -443,12 +455,22 @@ public class Blocks {
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTVLCD.class, "TVLCD");
 		GameRegistry.registerBlock(TVOLED, "TVOLED");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTVOLED.class, "TVOLED");
+		GameRegistry.registerBlock(TVOLEDVESA, "TVOLEDVESA");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTVOLEDVESA.class, "TVOLEDVESA");
 		GameRegistry.registerBlock(CCTVCam, "CCTVCam");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityCCTVCam.class, "CCTVCam");
 		GameRegistry.registerBlock(CCTVCamPTZ, "CCTVCamPTZ");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityCCTVCamPTZ.class, "CCTVCamPTZ");
 		GameRegistry.registerBlock(Estintore, "Estintore");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityEstintore.class, "Estintore");
+		GameRegistry.registerBlock(Clima, "Clima");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityClima.class, "Clima");
+		GameRegistry.registerBlock(ClimaUE, "ClimaUE");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityClimaUE.class, "ClimaUE");
+		GameRegistry.registerBlock(Polycom, "Polycom");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityPolycom.class, "Polycom");
+		GameRegistry.registerBlock(Scrivania, "Scrivania");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityScrivania.class, "Scrivania");
 		
 	}
 
@@ -459,6 +481,10 @@ public class Blocks {
 
 		LanguageRegistry.addName(fakeSolarPanel, "Fake Solar Panel");
 		LanguageRegistry.addName(litplaster, "Lit Plaster");
+		LanguageRegistry.addName(Clima, "Air Conditioner");
+		LanguageRegistry.addName(ClimaUE, "Air Conditioner - Outdoor Unit");
+		LanguageRegistry.addName(Polycom, "Business Phone");
+		LanguageRegistry.addName(Scrivania, "Desk");
 		
 		// Parabola e antenne
 
@@ -494,6 +520,7 @@ public class Blocks {
 		LanguageRegistry.addName(RackRF, "RF Equipment Rack");
 		LanguageRegistry.addName(TVLCD, "LCD Television");
 		LanguageRegistry.addName(TVOLED, "OLED Television");
+		LanguageRegistry.addName(TVOLEDVESA, "OLED Television (wall mount)");
 		LanguageRegistry.addName(CCTVCam, "CCTV Camera");
 		LanguageRegistry.addName(CCTVCamPTZ, "CCTV Camera (with PTZ function)");
 		LanguageRegistry.addName(Estintore, "Fire extinguisher");

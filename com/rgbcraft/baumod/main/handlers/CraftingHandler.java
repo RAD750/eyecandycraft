@@ -41,7 +41,9 @@ public class CraftingHandler {
 				new Object[] { "   ", "TII", "   ", 'I', Item.ingotIron, 'T', Blocks.Traliccio});
 		GameRegistry.addRecipe(new ItemStack(Blocks.TraliccioBraccettoSingolo, 1),
 				new Object[] { "   ", "ITI", "   ", 'I', Item.ingotIron, 'T', Blocks.Traliccio});
-
+		GameRegistry.addRecipe(new ItemStack(Blocks.Scrivania, 1), new Object [] { "SSS", "I I", "I I", 'I',
+				Item.ingotIron, 'S', Block.stoneSingleSlab});
+		
 		// Lampade
 		GameRegistry.addRecipe(new ItemStack(Blocks.NeonPiatto, 1), new Object[] { "IGI", "GLG", "IGI", 'I', Item.ingotIron,
 				'G', Block.thinGlass, 'L', Item.lightStoneDust });
@@ -79,6 +81,8 @@ public class CraftingHandler {
 				Item.ingotIron, 'G', Block.thinGlass, 'L', Item.lightStoneDust});
 		GameRegistry.addRecipe(new ItemStack(Blocks.TVOLED, 1), new Object [] { "GGG", "LLL", "IRI", 'I',
 				Item.ingotIron, 'G', Block.thinGlass, 'L', Item.lightStoneDust});
+		GameRegistry.addRecipe(new ItemStack(Blocks.TVOLEDVESA, 1), new Object [] { "GGG", "LIL", "IRI", 'I',
+				Item.ingotIron, 'G', Block.thinGlass, 'L', Item.lightStoneDust});
 		
 		GameRegistry.addRecipe(new ItemStack(Blocks.CCTVCam, 1), new Object [] { "GR ", " I ", " II", 'I',
 				Item.ingotIron, 'G', Block.thinGlass, 'R', Item.redstone});
@@ -103,6 +107,14 @@ public class CraftingHandler {
 				new ItemStack(Item.dyePowder, 1, 11), 'B', new ItemStack(Item.dyePowder, 1, 0), 'M', Blocks.mortar });
 
 		GameRegistry.addRecipe(new ItemStack(Blocks.Estintore, 1), new Object [] { " I ", "IBI", "IBI", 'I',
+				Item.ingotIron, 'B', Item.bucketWater});
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.Polycom, 1), new Object [] { " I ", " N ", " I ", 'I',
+				Item.ingotIron, 'N', new ItemStack(Item.dyePowder, 1, 0)});
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.ClimaUE, 1), new Object [] { "IBI", "IBI", "IBI", 'I',
+				Item.ingotIron, 'B', Item.bucketWater});
+		GameRegistry.addRecipe(new ItemStack(Blocks.Clima, 1), new Object [] { "III", "IBI", "   ", 'I',
 				Item.ingotIron, 'B', Item.bucketWater});
 		
 		//ARGILLA DA BLOCCO
