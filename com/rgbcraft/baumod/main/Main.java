@@ -3,6 +3,7 @@ package com.rgbcraft.baumod.main;
 import com.rgbcraft.baumod.main.blocks.*;
 import com.rgbcraft.baumod.main.handlers.CraftingHandler;
 import com.rgbcraft.baumod.main.handlers.FacadeHandler;
+import com.rgbcraft.baumod.main.handlers.SoundHandler;
 import com.rgbcraft.baumod.main.items.Items;
 import com.rgbcraft.baumod.main.proxies.CommonProxy;
 
@@ -33,7 +34,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.16";
+		return "1.17";
 	}
 
 	@Override

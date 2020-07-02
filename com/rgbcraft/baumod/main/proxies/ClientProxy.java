@@ -9,8 +9,10 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import com.rgbcraft.baumod.main.entities.*;
+import com.rgbcraft.baumod.main.handlers.SoundHandler;
 import com.rgbcraft.baumod.main.models.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.SoundManager;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -33,6 +35,7 @@ public class ClientProxy extends CommonProxy {
 		
 		System.out.println("[Eyecandycraft] Preloading texture completato, fanculo a greg");
 
+		
 		
 		// Registra le tile entities
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityParabolaSat.class, new RenderTableParabolaSat());
@@ -72,9 +75,11 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityScrivania.class, new RenderTableScrivania());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTVOLEDVESA.class, new RenderTableTVOLEDVESA());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityModemSat.class, new RenderTableModemSat());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBocchettaAC.class, new RenderTableBocchettaAC());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampionePaloModerno.class, new RenderTableLampionePaloModerno());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampionePaloVecchio.class, new RenderTableLampionePaloVecchio());
 		
+
 	}
 
 	@Mod.PostInit

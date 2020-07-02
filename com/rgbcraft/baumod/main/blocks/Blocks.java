@@ -54,7 +54,7 @@ public class Blocks {
 			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat, TraliccioBraccettoCCTV;
 	public static Block Microfono, Telecamera, ConsoleRegia, TVLCD, TVOLED, TVOLEDVESA, CCTVCam, CCTVCamPTZ;
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, LampionePaloModerno, LampionePaloVecchio;
-	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat, Clima, ClimaUE, Scrivania, Polycom;
+	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat, Clima, ClimaUE, Scrivania, Polycom, BocchettaAC;
 	public static Block RackRF, RackIT, RackNet;
 	
 	//rotaia
@@ -121,6 +121,7 @@ public class Blocks {
 		ClimaUE = new ClimaUEBlock(920, 0);
 		TVOLEDVESA = new TVOLEDVESABlock(921, 0);
 		Scrivania = new ScrivaniaBlock(922, 0);
+		BocchettaAC = new BocchettaACBlock(923, 0);
 		
 
 		// altri
@@ -471,7 +472,8 @@ public class Blocks {
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityPolycom.class, "Polycom");
 		GameRegistry.registerBlock(Scrivania, "Scrivania");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityScrivania.class, "Scrivania");
-		
+		GameRegistry.registerBlock(BocchettaAC, "BocchettaAC");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityBocchettaAC.class, "BocchettaAC");
 	}
 
 	public static void RegistraLingua() {
@@ -485,6 +487,7 @@ public class Blocks {
 		LanguageRegistry.addName(ClimaUE, "Air Conditioner - Outdoor Unit");
 		LanguageRegistry.addName(Polycom, "Business Phone");
 		LanguageRegistry.addName(Scrivania, "Desk");
+		LanguageRegistry.addName(BocchettaAC, "HVAC Vent");
 		
 		// Parabola e antenne
 
