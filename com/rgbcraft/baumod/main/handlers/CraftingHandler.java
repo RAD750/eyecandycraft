@@ -189,6 +189,11 @@ public class CraftingHandler {
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.white_terracotta, 1),
 				new Object[] { Blocks.terracotta, new ItemStack(Item.dyePowder, 1, 15) });
 
+		// Metro
+		
+		GameRegistry.addRecipe(new ItemStack(Items.metro, 1), new Object[] { "   ", "YII", "   ", 'Y',
+				new ItemStack(Item.dyePowder, 1, 11), 'I', Item.ingotIron});
+		
 		// Tintet glss
 
 		// Prima cosa fondi il vetro

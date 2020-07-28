@@ -1,6 +1,7 @@
 package com.rgbcraft.baumod.main.items;
 
 import net.minecraft.creativetab.CreativeTabs;
+import com.rgbcraft.baumod.main.items.Metro;
 import net.minecraft.item.Item;
 import com.rgbcraft.baumod.main.disks.*;
 
@@ -10,7 +11,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class Items {
 	
 	//ITEMS
-	public static Item molten_glass, straw;
+	public static Item molten_glass, straw, metro;
 	
 	//DISCHI
 	
@@ -24,6 +25,10 @@ public class Items {
 	
 	straw = new Item(24000).setTextureFile("/com/rgbcraft/baumod/textures/items.png").setIconCoord(0, 0)
 			.setCreativeTab(CreativeTabs.tabMaterials).setItemName("straw");
+	
+	metro = new Metro(24101).setTextureFile("/com/rgbcraft/baumod/textures/items.png").setIconIndex(40)
+			.setCreativeTab(CreativeTabs.tabMaterials).setItemName("metro").setMaxStackSize(1);
+	
 	
 	//DISCHI
 	
@@ -49,6 +54,7 @@ public class Items {
 	
 	public static void RegistraLingua() {
 		LanguageRegistry.addName(straw, "Straw");
+		LanguageRegistry.addName(metro, "Tape Measure");
 		LanguageRegistry.addName(molten_glass, "Molten Glass");
 		LanguageRegistry.addName(DaggerfallDisk, "Music Disc");
 		LanguageRegistry.addName(ArrakisDisk, "Music Disc");
