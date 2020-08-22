@@ -27,7 +27,7 @@ public class Items {
 			.setCreativeTab(CreativeTabs.tabMaterials).setItemName("straw");
 	
 	metro = new Metro(24101).setTextureFile("/com/rgbcraft/baumod/textures/items.png").setIconIndex(40)
-			.setCreativeTab(CreativeTabs.tabMaterials).setItemName("metro").setMaxStackSize(1);
+			.setCreativeTab(CreativeTabs.tabTools).setItemName("metro").setMaxStackSize(1);
 	
 	
 	//DISCHI
