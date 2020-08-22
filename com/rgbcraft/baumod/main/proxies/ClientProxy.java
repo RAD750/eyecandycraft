@@ -52,6 +52,7 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTraliccioBraccettoSat.class, new RenderTableTraliccioBraccettoSat());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTraliccioBraccettoCCTV.class, new RenderTableTraliccioBraccettoCCTV());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityNeonPiatto.class, new RenderTableNeonPiatto());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampadaOlceseRicci.class, new RenderTableLampadaOlceseRicci());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityNeon.class, new RenderTableNeon());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampadario.class, new RenderTableLampadario());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampioneGiardino.class, new RenderTableLampioneGiardino());
@@ -60,6 +61,8 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAtariST.class, new RenderTableAtariST());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPortatile.class, new RenderTablePortatile());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFaro.class, new RenderTableFaro());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCroceSAndrea.class, new RenderTableCroceSAndrea());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFaroPavimento.class, new RenderTableFaroPavimento());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMicrofono.class, new RenderTableMicrofono());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTelecamera.class, new RenderTableTelecamera());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityConsoleRegia.class, new RenderTableConsoleRegia());
@@ -78,6 +81,9 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBocchettaAC.class, new RenderTableBocchettaAC());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampionePaloModerno.class, new RenderTableLampionePaloModerno());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLampionePaloVecchio.class, new RenderTableLampionePaloVecchio());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCartelloEndor.class, new RenderTableCartelloEndor());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBitta.class, new RenderTableBitta());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityOB.class, new RenderTableOB());
 		
 
 	}

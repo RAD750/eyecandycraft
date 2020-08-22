@@ -3,7 +3,7 @@ package com.rgbcraft.baumod.main.blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import com.rgbcraft.baumod.main.entities.TileEntityEstintore;
+import com.rgbcraft.baumod.main.entities.TileEntityBitta;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -15,17 +15,17 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class EstintoreBlock extends BlockContainer {
-	public static final String name = "Estintore";
+public class BittaBlock extends BlockContainer {
+	public static final String name = "Bitta";
 
-	public EstintoreBlock(int id, int texture) {
+	public BittaBlock(int id, int texture) {
 		super(id, Material.iron);
 		setHardness(0.5F);
 		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTabs.tabDecorations);
-		setBlockName("Estintore");
-		blockIndexInTexture = 32;
+		setBlockName("Bitta");
+		blockIndexInTexture = 43;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
@@ -40,26 +40,7 @@ public class EstintoreBlock extends BlockContainer {
 	}
 
 	public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int x, int y, int z) {
-		if (blockAccess.getBlockMetadata(x, y, z) == 1)
-	    {
-	      setBlockBounds(0.1F, 0.0F, 0.0F, 0.0F, 1.0F, 1.0F);
-
-
-	    }
-	    else if (blockAccess.getBlockMetadata(x, y, z) == 2)
-	    {
-	      setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.1F);
-
-
-	    }
-	    else if (blockAccess.getBlockMetadata(x, y, z) == 3)
-	    {
-	      setBlockBounds(1.0F, 0.0F, 0.0F, 0.9F, 1.0F, 1.0F);
-	    }
-	    else
-	    {
-	      setBlockBounds(0.0F, 0.0F, 0.9F, 1.0F, 1.0F, 1.0F);
-	    }
+		setBlockBounds(0.3F, 0.0F, 0.3F, 0.7F, 0.5F, 0.7F);
 	}
 
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity) {
@@ -72,7 +53,7 @@ public class EstintoreBlock extends BlockContainer {
 			yaw %= 360;
 			int facing = yaw / 45;
 
-			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.Estintore.blockID, facing / 2);
+			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.Bitta.blockID, facing / 2);
 		}
 	}
 
@@ -105,6 +86,6 @@ public class EstintoreBlock extends BlockContainer {
 	}
 
 	public TileEntity createTileEntity(World world, int meta) {
-		return new TileEntityEstintore();
+		return new TileEntityBitta();
 	}
 }

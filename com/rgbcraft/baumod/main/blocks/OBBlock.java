@@ -3,7 +3,7 @@ package com.rgbcraft.baumod.main.blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import com.rgbcraft.baumod.main.entities.TileEntityEstintore;
+import com.rgbcraft.baumod.main.entities.TileEntityOB;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -15,17 +15,17 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class EstintoreBlock extends BlockContainer {
-	public static final String name = "Estintore";
+public class OBBlock extends BlockContainer {
+	public static final String name = "OB";
 
-	public EstintoreBlock(int id, int texture) {
+	public OBBlock(int id, int texture) {
 		super(id, Material.iron);
 		setHardness(0.5F);
 		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTabs.tabDecorations);
-		setBlockName("Estintore");
-		blockIndexInTexture = 32;
+		setBlockName("OB");
+		blockIndexInTexture = 44;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
@@ -72,7 +72,7 @@ public class EstintoreBlock extends BlockContainer {
 			yaw %= 360;
 			int facing = yaw / 45;
 
-			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.Estintore.blockID, facing / 2);
+			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.OB.blockID, facing / 2);
 		}
 	}
 
@@ -105,6 +105,6 @@ public class EstintoreBlock extends BlockContainer {
 	}
 
 	public TileEntity createTileEntity(World world, int meta) {
-		return new TileEntityEstintore();
+		return new TileEntityOB();
 	}
 }

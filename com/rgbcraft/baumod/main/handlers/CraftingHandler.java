@@ -5,7 +5,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
 import com.rgbcraft.baumod.main.blocks.Blocks;
 import com.rgbcraft.baumod.main.items.Items;
 
@@ -19,6 +18,28 @@ public class CraftingHandler {
 	
 		GameRegistry.addRecipe(new ItemStack(Blocks.litplaster, 1),
 				new Object[] { "WLW", "LPL", "WLW", 'L', Item.lightStoneDust, 'W', Item.bucketWater, 'P', Blocks.plaster});
+		GameRegistry.addRecipe(new ItemStack(Blocks.permaDirt, 8),
+				new Object[] { "DDD", "DWD", "DDD", 'D', Block.dirt,  'W', Item.redstone});
+		
+		//cancelletti
+		GameRegistry.addRecipe(new ItemStack(Blocks.spruceGate),
+				new Object[] {"S S", "SWS", "SWS", 'W', new ItemStack(Block.planks, 1, 1),  'S', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(Blocks.birchGate),
+				new Object[] {"S S", "SWS", "SWS", 'W', new ItemStack(Block.planks, 1, 2),  'S', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(Blocks.jungleGate),
+				new Object[] {"S S", "SWS", "SWS", 'W', new ItemStack(Block.planks, 1, 3),  'S', Item.stick});
+		
+		//tronchi scortecciati
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.strippedOakLog, 2), new Object[] {new ItemStack(Block.wood, 1, 0), new ItemStack(Block.wood, 1, 0), });
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.strippedSpruceLog, 2), new Object[] {new ItemStack(Block.wood, 1, 1), new ItemStack(Block.wood, 1, 1), });
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.strippedBirchLog, 2), new Object[] {new ItemStack(Block.wood, 1, 2), new ItemStack(Block.wood, 1, 2), });
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.strippedJungleLog, 2), new Object[] {new ItemStack(Block.wood, 1, 3), new ItemStack(Block.wood, 1, 3), });
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.oakLog), new Object[] { "WW ", "WW ", 'W', new ItemStack(Block.wood, 1, 0) });
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.spruceLog), new Object[] { "WW ", "WW ", 'W', new ItemStack(Block.wood, 1, 1) });
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.birchLog), new Object[] { "WW ", "WW ", 'W', new ItemStack(Block.wood, 1, 2) });
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.jungleLog), new Object[] { "WW ", "WW ", 'W', new ItemStack(Block.wood, 1, 3) });
 		
 		// Antenne
 		GameRegistry.addRecipe(new ItemStack(Blocks.ParabolaSat, 1),
@@ -61,8 +82,14 @@ public class CraftingHandler {
 				'L', Item.lightStoneDust});
 		GameRegistry.addRecipe(new ItemStack(Blocks.Faro, 1), new Object[] { "ILI", "ILI", " I ", 'I', Item.ingotIron,
 				'L', Item.lightStoneDust});
+		GameRegistry.addRecipe(new ItemStack(Blocks.FaroPavimento, 1), new Object[] { "ILI", "ILI", "I I", 'I', Item.ingotIron,
+				'L', Item.lightStoneDust});
 		GameRegistry.addRecipe(new ItemStack(Blocks.Neon, 1), new Object[] { "ILI", "I I", "III", 'I', Item.ingotIron, 'L', Item.lightStoneDust });
-		
+		GameRegistry.addRecipe(new ItemStack(Blocks.LampadaOlceseRicci, 1), new Object[] { "   ", " B ", "BLB", 'B', Item.ingotGold, 'L', Item.lightStoneDust });
+		GameRegistry.addRecipe(new ItemStack(Blocks.CroceSAndrea, 1), new Object[] { "RIR", " R ", "RIR", 'R',
+				new ItemStack(Item.dyePowder, 1, 1), 'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Blocks.OB, 16), new Object[] { "YY ", "IY ", "YY ", 'Y',
+				new ItemStack(Item.dyePowder, 1, 11), 'I', Item.ingotIron });
 
 		//Confuser
 		GameRegistry.addRecipe(new ItemStack(Blocks.AtariST, 1), new Object[] { "IRI", "ILI", "IGI", 'I', Item.ingotIron,

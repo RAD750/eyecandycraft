@@ -10,13 +10,18 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSign;
+import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockFenceGate;
+import net.minecraft.block.BlockGlass;
 import net.minecraft.block.BlockHalfSlab;
+import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockPane;
+import net.minecraft.block.BlockSign;
 import net.minecraft.block.BlockStep;
+import net.minecraft.block.BlockTrapDoor;
 import net.minecraft.block.BlockWoodSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,14 +33,25 @@ public class Blocks {
 
 	
 	// Tutto il resto
-	public static Block unbreakableStone, ubLog, ubCobble, ubstonebricks, ubbirch, ubspruce, grassPath, hay, mortar,
-			timberframe, timberframecrossbrace, thatch, plaster, litplaster, hazardstripe, doorSpruce, black_tintedGlass, fakeSolarPanel, permaDirt;
+	public static Block unbreakableStone, ubLog, ubCobble, ubstonebricks, ubbirch, ubspruce, grassPath, hay, mortar, ubglass,
+			timberframe, timberframecrossbrace, thatch, plaster, litplaster, hazardstripe, black_tintedGlass, fakeSolarPanel, permaDirt;
 
 	// Plasters
 	public static Block orange_plaster, magenta_plaster, light_blue_plaster, yellow_plaster, lime_plaster, pink_plaster,
 			gray_plaster, light_gray_plaster, cyan_plaster, blue_plaster, purple_plaster, green_plaster, brown_plaster,
 			red_plaster, black_plaster;
 
+	// porte, trapdoor e cancelletti
+	
+	public static Block spruceGate, birchGate, jungleGate, spruceDoor, birchDoor, jungleDoor, spruceTrapdoor, birchTrapdoor, jungleTrapdoor;
+	
+	
+	//blocco scortecciato
+	public static Block strippedSpruceLog, strippedOakLog, strippedBirchLog, strippedJungleLog;
+	
+	//tronco
+	public static Block spruceLog, oakLog, birchLog, jungleLog;
+	
 	// Terracotta
 	public static Block terracotta, white_terracotta, orange_terracotta, magenta_terracotta, light_blue_terracotta,
 			yellow_terracotta, lime_terracotta, pink_terracotta, gray_terracotta, light_gray_terracotta,
@@ -53,9 +69,9 @@ public class Blocks {
 	public static Block ParabolaSat, ParabolaSatTest2, AntennaGroundPlane, AntennaSettore900MHz, AntennaSettore2100MHz, AntennaYagiVHF,
 			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat, TraliccioBraccettoCCTV;
 	public static Block Microfono, Telecamera, ConsoleRegia, TVLCD, TVOLED, TVOLEDVESA, CCTVCam, CCTVCamPTZ;
-	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, LampionePaloModerno, LampionePaloVecchio;
+	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, FaroPavimento, LampionePaloModerno, LampionePaloVecchio;
 	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat, Clima, ClimaUE, Scrivania, Polycom, BocchettaAC;
-	public static Block RackRF, RackIT, RackNet;
+	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta;
 	
 	//rotaia
     public static Block LungaRotaiaSaldata;
@@ -104,6 +120,8 @@ public class Blocks {
 		LampionePaloModerno = new LampionePaloModernoBlock(886, 0);
 		LampionePaloVecchio = new LampionePaloVecchioBlock(887, 0);
 		Neon = new NeonBlock(888, 0);
+		LampadaOlceseRicci = new LampadaOlceseRicciBlock(889,0);
+		FaroPavimento = new FaroPavimentoBlock(941,0);
 		
 		//roba studio TV/radio
 		
@@ -115,37 +133,61 @@ public class Blocks {
 		TVOLED = new TVOLEDBlock(915, 0);
 		CCTVCam = new CCTVCamBlock(916, 0);
 		CCTVCamPTZ = new CCTVCamPTZBlock(917, 0);
-		Estintore = new EstintoreBlock(918, 0);
-		
+		Estintore = new EstintoreBlock(918, 0);		
 		Clima = new ClimaBlock(919, 0);
 		ClimaUE = new ClimaUEBlock(920, 0);
 		TVOLEDVESA = new TVOLEDVESABlock(921, 0);
 		Scrivania = new ScrivaniaBlock(922, 0);
 		BocchettaAC = new BocchettaACBlock(923, 0);
+		CartelloEndor = new CartelloEndorBlock(924, 0);
+		CroceSAndrea = new CroceSAndreaBlock(925,0);
+		Bitta = new BittaBlock(927,0);
+		OB = new OBBlock(928,0);
 		
+		//cancelletto
+		
+		spruceGate = new BlockFenceGate(1500, 198).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setBlockName("spruceGate").setRequiresSelfNotify();
+		birchGate = new BlockFenceGate(1501, 214).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setBlockName("birchGate").setRequiresSelfNotify();
+		jungleGate = new BlockFenceGate(1502, 199).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setBlockName("jungleGate").setRequiresSelfNotify();
 
+		//TODO porta
+		//spruceTrapdoor = new Porte(1503, Material.wood).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("doorWood").setRequiresSelfNotify();
+		
+		//Blocchi scortecciati
+		strippedOakLog = new StrippedOakLog(1490, 114, Material.wood).setCreativeTab(CreativeTabs.tabBlock).setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setBlockName("strippedOakLog").setTextureFile("/com/rgbcraft/baumod/textures/textures.png");
+		strippedSpruceLog = new StrippedSpruceLog(1491, 116, Material.wood).setCreativeTab(CreativeTabs.tabBlock).setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setBlockName("strippedSpruceLog").setTextureFile("/com/rgbcraft/baumod/textures/textures.png");
+		strippedBirchLog = new StrippedBirchLog(1492, 118, Material.wood).setCreativeTab(CreativeTabs.tabBlock).setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setBlockName("strippedBirchLog").setTextureFile("/com/rgbcraft/baumod/textures/textures.png");
+		strippedJungleLog = new StrippedJungleLog(1493, 120, Material.wood).setCreativeTab(CreativeTabs.tabBlock).setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setBlockName("strippedJungleLog").setTextureFile("/com/rgbcraft/baumod/textures/textures.png");
+		
+		oakLog = new Block(1494, 20, Material.wood).setCreativeTab(CreativeTabs.tabBlock).setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setBlockName("oakLog");
+		spruceLog = new Block(1495, 116, Material.wood).setCreativeTab(CreativeTabs.tabBlock).setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setBlockName("spruceLog");
+		birchLog = new Block(1496, 117, Material.wood).setCreativeTab(CreativeTabs.tabBlock).setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setBlockName("birchLog");
+		jungleLog = new Block(1498, 153, Material.wood).setCreativeTab(CreativeTabs.tabBlock).setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setBlockName("jungleLog");
+		
+		
 		// altri
 	
 		fakeSolarPanel = new FakeSolarPanelBlock(190, 112, Material.iron).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("fakeSolarPanel").setHardness(0.5f).setTextureFile("/com/rgbcraft/baumod/textures/textures.png");
 		
-		/*permaDirt = new Block(200, 32, Material.ground).setCreativeTab(CreativeTabs.tabDecorations).setBlockName("permaDirt").setHardness(0.3f)
-				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setStepSound(Block.soundGravelFootstep);*/
+		permaDirt = new Block(870, 2, Material.ground).setCreativeTab(CreativeTabs.tabDecorations).setBlockName("permaDirt").setHardness(0.3f).setStepSound(Block.soundGravelFootstep);
 		
 		litplaster = new Block(940, 67, Material.glass).setCreativeTab(CreativeTabs.tabDecorations).setBlockName("litplaster").setHardness(0.2f).setLightValue(1.0F)
 				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setStepSound(Block.soundGlassFootstep);
-				
+		
+		ubglass = new BlockGlass(871, 49, Material.glass, false).setCreativeTab(CreativeTabs.tabBlock).setBlockUnbreakable().setResistance(6000000.0F)
+				.setBlockName("ubglass");
 		unbreakableStone = new Block(173, 1, Material.rock).setCreativeTab(CreativeTabs.tabBlock)
-				.setBlockName("ubstone").setHardness(-1);
-		ubLog = new Block(174, 4, Material.wood).setHardness(-1).setCreativeTab(CreativeTabs.tabBlock)
+				.setBlockName("ubstone").setBlockUnbreakable().setResistance(6000000.0F);
+		ubLog = new Block(174, 4, Material.wood).setBlockUnbreakable().setResistance(6000000.0F).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("ubLog");
-		ubCobble = new Block(175, 16, Material.rock).setHardness(-1).setCreativeTab(CreativeTabs.tabBlock)
+		ubCobble = new Block(175, 16, Material.rock).setBlockUnbreakable().setResistance(6000000.0F).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("ubCobble");
-		ubstonebricks = new Block(176, 54, Material.rock).setHardness(-1).setCreativeTab(CreativeTabs.tabBlock)
+		ubstonebricks = new Block(176, 54, Material.rock).setBlockUnbreakable().setResistance(6000000.0F).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("ubSBrick");
-		ubspruce = new Block(177, 198, Material.wood).setHardness(-1).setCreativeTab(CreativeTabs.tabBlock)
+		ubspruce = new Block(177, 198, Material.wood).setBlockUnbreakable().setResistance(6000000.0F).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("ubspruce");
-		ubbirch = new Block(178, 214, Material.wood).setHardness(-1).setCreativeTab(CreativeTabs.tabBlock)
+		ubbirch = new Block(178, 214, Material.wood).setBlockUnbreakable().setResistance(6000000.0F).setCreativeTab(CreativeTabs.tabBlock)
 				.setBlockName("ubbirch");
 		grassPath = new GrassPath(179, Material.grass).setCreativeTab(CreativeTabs.tabBlock).setBlockName("grassPath")
 				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setHardness(0.3f)
@@ -297,22 +339,44 @@ public class Blocks {
 		brown_tintedGlass = new TintedGlass(845, 111, Material.glass).setCreativeTab(CreativeTabs.tabDecorations)
 				.setBlockName("brown_tintedGlass").setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
 				.setHardness(0.2f).setStepSound(Block.soundGlassFootstep);
-		
-		
+
 		
 		//
 		// REGISTRA TUTTI I BLOCCHI
 		//
 
+		//cancelletti
+		
+		GameRegistry.registerBlock(spruceGate, "spruceGate");
+		GameRegistry.registerBlock(birchGate, "birchGate");
+		GameRegistry.registerBlock(jungleGate, "jungleGate");
+		
+		//TODO porta
+//		GameRegistry.registerBlock(spruceDoor, "spruceDoor");
+		
+		
+		//Blocchi scortecciati 
+		GameRegistry.registerBlock(strippedOakLog, "strippedOakLog");
+		GameRegistry.registerBlock(strippedSpruceLog, "strippedSpruce Log");
+		GameRegistry.registerBlock(strippedBirchLog, "strippedBirch Log");
+		GameRegistry.registerBlock(strippedJungleLog, "strippedJungle Log");
+		
+		GameRegistry.registerBlock(oakLog, "oakLog");
+		GameRegistry.registerBlock(spruceLog, "spruceLog");
+		GameRegistry.registerBlock(birchLog, "birchLog");
+		GameRegistry.registerBlock(jungleLog, "jungleLog");
+		
+		
 		GameRegistry.registerBlock(fakeSolarPanel, "fakeSolarPanel");
 		GameRegistry.registerBlock(litplaster, "litplaster");
-//		GameRegistry.registerBlock(permaDirt, "permaDirt");
+ 		GameRegistry.registerBlock(permaDirt, "permaDirt");
 		GameRegistry.registerBlock(unbreakableStone, "ubstone");
 		GameRegistry.registerBlock(ubCobble, "ubcobble");
 		GameRegistry.registerBlock(ubLog, "ubLog");
 		GameRegistry.registerBlock(ubstonebricks, "ubSBrick");
 		GameRegistry.registerBlock(ubspruce, "ubspruce");
 		GameRegistry.registerBlock(ubbirch, "ubbirch");
+		GameRegistry.registerBlock(ubglass, "ubglass");
 		GameRegistry.registerBlock(grassPath, "grassPath");
 		GameRegistry.registerBlock(hay, "hay");
 		GameRegistry.registerBlock(mortar, "mortar");
@@ -381,6 +445,9 @@ public class Blocks {
 		GameRegistry.registerBlock(ParabolaSat, "ParabolaSat");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityParabolaSat.class,
 				"ParabolaSatTileEntity");
+		GameRegistry.registerBlock(CartelloEndor, "CartelloEndor");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityCartelloEndor.class,
+				"CartelloEndorTileEntity");
 		GameRegistry.registerBlock(AntennaGroundPlane, "AntennaGroundPlane");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityAntennaGroundPlane.class,
 				"AntennaGroundPlaneTileEntity");
@@ -408,7 +475,12 @@ public class Blocks {
 		GameRegistry.registerBlock(TraliccioBraccettoCCTV, "TraliccioBraccettoCCTV");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityTraliccioBraccettoCCTV.class,
 				"TraliccioBraccettoCCTVTileEntity");
-		
+		GameRegistry.registerBlock(CroceSAndrea, "CroceSAndrea");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityCroceSAndrea.class,
+				"CroceSAndrea");
+		GameRegistry.registerBlock(OB, "OB");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityOB.class,
+				"OB");
 		// Atari ST
 		
 		ComputerTexture = "/com/rgbcraft/baumod/textures/AtariST.png";
@@ -425,6 +497,8 @@ public class Blocks {
 
 		GameRegistry.registerBlock(NeonPiatto, "NeonPiatto");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityNeonPiatto.class, "NeonPiatto");
+		GameRegistry.registerBlock(LampadaOlceseRicci, "LampadaOlceseRicci");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityNeonPiatto.class, "LampadaOlceseRicci");
 		GameRegistry.registerBlock(Neon, "Neon");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityNeon.class, "Neon");
 		GameRegistry.registerBlock(Lampadario, "Lampadario");
@@ -437,6 +511,8 @@ public class Blocks {
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityLampioneMuro.class, "LampioneMuro");
 		GameRegistry.registerBlock(Faro, "Faro");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityFaro.class, "Faro");
+		GameRegistry.registerBlock(FaroPavimento, "FaroPavimento");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityFaroPavimento.class, "FaroPavimento");
 		GameRegistry.registerBlock(LampionePaloVecchio, "LampionePaloVecchio");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityLampionePaloVecchio.class, "LampionePaloVecchio");
 		GameRegistry.registerBlock(LampionePaloModerno, "LampionePaloModerno");
@@ -474,6 +550,8 @@ public class Blocks {
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityScrivania.class, "Scrivania");
 		GameRegistry.registerBlock(BocchettaAC, "BocchettaAC");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityBocchettaAC.class, "BocchettaAC");
+		GameRegistry.registerBlock(Bitta, "Bitta");
+		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityBitta.class, "Bitta");
 	}
 
 	public static void RegistraLingua() {
@@ -488,6 +566,28 @@ public class Blocks {
 		LanguageRegistry.addName(Polycom, "Business Phone");
 		LanguageRegistry.addName(Scrivania, "Desk");
 		LanguageRegistry.addName(BocchettaAC, "HVAC Vent");
+		LanguageRegistry.addName(CartelloEndor, "ENDOR Warning Sign");
+		
+		//cancelletti
+		
+		LanguageRegistry.addName(spruceGate, "Spruce Fence Gate");
+		LanguageRegistry.addName(birchGate, "Birch Fence Gate");
+		LanguageRegistry.addName(jungleGate, "Jungle Fence Gate");
+		
+		//TODO porta
+
+		//LanguageRegistry.addName(spruceDoor, "Spruce Door");
+		
+		//Blocchi scortecciati
+		LanguageRegistry.addName(strippedOakLog, "Stripped Oak Log");
+		LanguageRegistry.addName(strippedSpruceLog, "Stripped Spruce Log");
+		LanguageRegistry.addName(strippedBirchLog, "Stripped Birch Log");
+		LanguageRegistry.addName(strippedJungleLog, "Stripped Jungle Log");
+		
+		LanguageRegistry.addName(oakLog, "Oak Log");
+		LanguageRegistry.addName(spruceLog, "Spruce Log");
+		LanguageRegistry.addName(birchLog, "Birch Log");
+		LanguageRegistry.addName(jungleLog, "Jungle Log");
 		
 		// Parabola e antenne
 
@@ -514,6 +614,8 @@ public class Blocks {
 		LanguageRegistry.addName(LampionePaloVecchio, "Old Street Light (pole-mount)");
 		LanguageRegistry.addName(LampionePaloModerno, "Modern Street Light (pole-mount)");
 		LanguageRegistry.addName(Faro, "Floodlight");
+		LanguageRegistry.addName(FaroPavimento, "Ground Floodlight");
+		LanguageRegistry.addName(LampadaOlceseRicci, "Marine Brass Lamp");
 
 		//roba tv/studio radio
 		
@@ -527,6 +629,9 @@ public class Blocks {
 		LanguageRegistry.addName(CCTVCam, "CCTV Camera");
 		LanguageRegistry.addName(CCTVCamPTZ, "CCTV Camera (with PTZ function)");
 		LanguageRegistry.addName(Estintore, "Fire extinguisher");
+		LanguageRegistry.addName(CroceSAndrea, "Level Crossing St.Andrews Cross");
+		LanguageRegistry.addName(Bitta, "Bollard");
+		LanguageRegistry.addName(OB, "Validating machine");
 		
 		
 		// altro
@@ -540,7 +645,9 @@ public class Blocks {
 		LanguageRegistry.addName(ubLog, "Unbreakable Oak Planks");
 		LanguageRegistry.addName(ubspruce, "Unbreakable Spruce Planks");
 		LanguageRegistry.addName(ubbirch, "Unbreakable Birch Planks");
+		LanguageRegistry.addName(ubglass, "Unbreakable Glass");
 		LanguageRegistry.addName(grassPath, "Grass Path");
+		LanguageRegistry.addName(permaDirt, "Permanent Dirt");
 		LanguageRegistry.addName(hay, "Hay Block");
 
 		LanguageRegistry.addName(mortar, "Mortar Wall");
