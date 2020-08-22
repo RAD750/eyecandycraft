@@ -88,7 +88,7 @@ public class CraftingHandler {
 		GameRegistry.addRecipe(new ItemStack(Blocks.LampadaOlceseRicci, 1), new Object[] { "   ", " B ", "BLB", 'B', Item.ingotGold, 'L', Item.lightStoneDust });
 		GameRegistry.addRecipe(new ItemStack(Blocks.CroceSAndrea, 1), new Object[] { "RIR", " R ", "RIR", 'R',
 				new ItemStack(Item.dyePowder, 1, 1), 'I', Item.ingotIron });
-		GameRegistry.addRecipe(new ItemStack(Blocks.OB, 16), new Object[] { "YY ", "IY ", "YY ", 'Y',
+		GameRegistry.addRecipe(new ItemStack(Blocks.OB, 1), new Object[] { "YY ", "IY ", "YY ", 'Y',
 				new ItemStack(Item.dyePowder, 1, 11), 'I', Item.ingotIron });
 
 		//Confuser

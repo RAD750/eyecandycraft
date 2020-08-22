@@ -25,7 +25,7 @@ import net.minecraft.src.BaseMod;
 import net.minecraftforge.common.MinecraftForge;
 
 
-@Mod(name="Eyecandycraft", version="1.30", modid="baumod")
+@Mod(name="Eyecandycraft", version="1.31", modid="baumod")
 public class Main extends BaseMod{
 
 	//proxy per padella
@@ -34,7 +34,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.30";
+		return "1.31";
 	}
 
 	@Override
