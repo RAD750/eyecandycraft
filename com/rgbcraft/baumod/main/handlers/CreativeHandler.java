@@ -1,7 +1,7 @@
-package com.indeng.core;
+package com.rgbcraft.baumod.main.handlers;
 
-import com.indeng.block.Blocks;
-import com.indeng.utils.LiquidUtils;
+
+
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,13 +12,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 
-public class ModCreativeTab extends CreativeTabs {
-	public static CreativeTabs IndEngGeneral = new ModCreativeTab(CreativeTabs.getNextID(), "Industrial Engeenering - General");
-	public static CreativeTabs IndEngLiquids = new ModCreativeTab(CreativeTabs.getNextID(), "Industrial Engeenering - Liquids");
+public class CreativeHandler extends CreativeTabs {
+	public static CreativeTabs ECCBlocks = new CreativeTab(CreativeTabs.getNextID(), "EyeCandyCraft Blocks");
+	public static CreativeTabs ECCDecorations = new CreativeTab(CreativeTabs.getNextID(), "EyeCandyCraft Decorations");
+	
+	
 
 	private String name;
 
-	public ModCreativeTab(int par1, String par2Str) {
+	public CreativeTab(int par1, String par2Str) {
 		super(par1, par2Str);
 		this.name = par2Str;
 	}
