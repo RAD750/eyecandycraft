@@ -120,7 +120,6 @@ public class Blocks {
 		LampionePaloModerno = new LampionePaloModernoBlock(886, 0);
 		LampionePaloVecchio = new LampionePaloVecchioBlock(887, 0);
 		Neon = new NeonBlock(888, 0);
-		LampadaOlceseRicci = new LampadaOlceseRicciBlock(889,0);
 		FaroPavimento = new FaroPavimentoBlock(941,0);
 		
 		//roba studio TV/radio
@@ -497,8 +496,6 @@ public class Blocks {
 
 		GameRegistry.registerBlock(NeonPiatto, "NeonPiatto");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityNeonPiatto.class, "NeonPiatto");
-		GameRegistry.registerBlock(LampadaOlceseRicci, "LampadaOlceseRicci");
-		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityNeonPiatto.class, "LampadaOlceseRicci");
 		GameRegistry.registerBlock(Neon, "Neon");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityNeon.class, "Neon");
 		GameRegistry.registerBlock(Lampadario, "Lampadario");
@@ -615,7 +612,6 @@ public class Blocks {
 		LanguageRegistry.addName(LampionePaloModerno, "Modern Street Light (pole-mount)");
 		LanguageRegistry.addName(Faro, "Floodlight");
 		LanguageRegistry.addName(FaroPavimento, "Ground Floodlight");
-		LanguageRegistry.addName(LampadaOlceseRicci, "Marine Brass Lamp");
 
 		//roba tv/studio radio
 		

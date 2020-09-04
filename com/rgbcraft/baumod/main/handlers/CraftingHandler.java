@@ -85,7 +85,6 @@ public class CraftingHandler {
 		GameRegistry.addRecipe(new ItemStack(Blocks.FaroPavimento, 1), new Object[] { "ILI", "ILI", "I I", 'I', Item.ingotIron,
 				'L', Item.lightStoneDust});
 		GameRegistry.addRecipe(new ItemStack(Blocks.Neon, 1), new Object[] { "ILI", "I I", "III", 'I', Item.ingotIron, 'L', Item.lightStoneDust });
-		GameRegistry.addRecipe(new ItemStack(Blocks.LampadaOlceseRicci, 1), new Object[] { "   ", " B ", "BLB", 'B', Item.ingotGold, 'L', Item.lightStoneDust });
 		GameRegistry.addRecipe(new ItemStack(Blocks.CroceSAndrea, 1), new Object[] { "RIR", " R ", "RIR", 'R',
 				new ItemStack(Item.dyePowder, 1, 1), 'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Blocks.OB, 1), new Object[] { "YY ", "IY ", "YY ", 'Y',
@@ -259,6 +258,269 @@ public class CraftingHandler {
 				new Object[] { Items.molten_glass, new ItemStack(Item.dyePowder, 1, 14) });
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.white_tintedGlass, 1),
 				new Object[] { Items.molten_glass, new ItemStack(Item.dyePowder, 1, 15) });
+		
+		//CARTELLI
+		
+		//OBBLIGO 1
+		GameRegistry.addRecipe(new ItemStack(Items.a_CentraleTermica, 2),
+				new Object[] { "WBB", "BIB", "BBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.a_LocalePompe, 2),
+				new Object[] { "BWB", "BIB", "BBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.a_LocaleCaldaie, 2),
+				new Object[] { "BBW", "BIB", "BBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.a_LocaleApplied, 2),
+				new Object[] { "BBB", "WIB", "BBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.a_LocaleLogistic, 2),
+				new Object[] { "BBB", "BIW", "BBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.a_ProprietaPrivata, 2),
+				new Object[] { "BBB", "BIB", "WBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.a_LocaleSerbatoi, 2),
+				new Object[] { "BBB", "BIB", "BWB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.a_CabinaElettrica, 2),
+				new Object[] { "BBB", "BIB", "BBW",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.ab_DPI, 2),
+				new Object[] { "WBB", "BIB", "WBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.ab_IndProtettivi, 2),
+				new Object[] { "BWB", "BIB", "WBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.ab_RTFM, 2),
+				new Object[] { "BBW", "BIB", "WBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.ab_RTFM, 2),
+				new Object[] { "WBB", "BIB", "BWB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.ab_ObbligoGenerico, 2),
+				new Object[] { "BWB", "BIB", "BWB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.a_IntElettricoGenerale, 2),
+				new Object[] { "BBW", "BIB", "BWB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 4),
+						'I', Item.ingotIron });
+		
+		//INCENDIO
+		
+		GameRegistry.addRecipe(new ItemStack(Items.f_Estintore, 2),
+				new Object[] { "WRR", "RIR", "RRR",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'R', new ItemStack(Item.dyePowder, 1, 1),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.f_AllarmeIncendio, 2),
+				new Object[] { "RWR", "RIR", "RRR",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'R', new ItemStack(Item.dyePowder, 1, 1),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.f_Sirena, 2),
+				new Object[] { "RRW", "RIR", "RRR",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'R', new ItemStack(Item.dyePowder, 1, 1),
+						'I', Item.ingotIron });
 
+		//EMERGENZA
+		
+		GameRegistry.addRecipe(new ItemStack(Items.e_Doccia, 2),
+				new Object[] { "WLL", "LIL", "LLL",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'L', new ItemStack(Item.dyePowder, 1, 10),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.e_ProntoSoccorso, 2),
+				new Object[] { "LWL", "LIL", "LLL",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'L', new ItemStack(Item.dyePowder, 1, 10),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.e_UscitaEmergenza, 2),
+				new Object[] { "LLW", "LIL", "LLL",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'L', new ItemStack(Item.dyePowder, 1, 10),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.e_Martelletto, 2),
+				new Object[] { "LLL", "WIL", "LLL",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'L', new ItemStack(Item.dyePowder, 1, 10),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.e_RompereVetro, 2),
+				new Object[] { "LLL", "LIW", "LLL",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'L', new ItemStack(Item.dyePowder, 1, 10),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.e_PuntoRitrovo, 2),
+				new Object[] { "LLL", "LIL", "WLL",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'L', new ItemStack(Item.dyePowder, 1, 10),
+						'I', Item.ingotIron });
+		
+		//PERICOLO
+		
+		GameRegistry.addRecipe(new ItemStack(Items.p_PericoloGenerico, 2),
+				new Object[] { "WYY", "YIY", "YYY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Esplosivo, 2),
+				new Object[] { "YWY", "YIY", "YYY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Laser, 2),
+				new Object[] { "YYW", "YIY", "YYY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Radioattivo, 2),
+				new Object[] { "YYY", "WIY", "YYY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Infiammabile, 2),
+				new Object[] { "YYY", "YIW", "YYY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Freddo, 2),
+				new Object[] { "YYY", "YIY", "WYY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Batterie, 2),
+				new Object[] { "YYY", "YIY", "YWY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Corrente, 2),
+				new Object[] { "YYY", "YIY", "YYW",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Tossico, 2),
+				new Object[] { "WWY", "YIY", "YYY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Biohaz, 2),
+				new Object[] { "WYW", "YIY", "YYY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Asfissiante, 2),
+				new Object[] { "WYY", "WIY", "YYY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Toro, 2),
+				new Object[] { "WYY", "YIW", "YYY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_EX, 2),
+				new Object[] { "WYY", "YIY", "WYY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_Corrente2, 2),
+				new Object[] { "WYY", "YIY", "YWY",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.p_IAEA, 2),
+				new Object[] { "WYY", "YIY", "YYW",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'Y', new ItemStack(Item.dyePowder, 1, 11),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.d_Persona, 2),
+				new Object[] { "RRR", "WIR", "RRR",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'R', new ItemStack(Item.dyePowder, 1, 1),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.d_Fiammifero, 2),
+				new Object[] { "RRR", "RIW", "RRR",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'R', new ItemStack(Item.dyePowder, 1, 1),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.d_BereAcqua, 2),
+				new Object[] { "RRR", "RIR", "WRR",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'R', new ItemStack(Item.dyePowder, 1, 1),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.d_Spegnere, 2),
+				new Object[] { "RRR", "RIR", "RWR",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'R', new ItemStack(Item.dyePowder, 1, 1),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.d_IncendioAcqua, 2),
+				new Object[] { "RRR", "RIR", "RRW",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'R', new ItemStack(Item.dyePowder, 1, 1),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.d_Ingresso, 2),
+				new Object[] { "WWR", "RIR", "RRR",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'R', new ItemStack(Item.dyePowder, 1, 1),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.d_Parkour, 2),
+				new Object[] { "WRW", "RIR", "RRR",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'R', new ItemStack(Item.dyePowder, 1, 1),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.d_Panino, 2),
+				new Object[] { "WRR", "WIR", "RRR",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'R', new ItemStack(Item.dyePowder, 1, 1),
+						'I', Item.ingotIron });
+		
+		
+		
+		GameRegistry.addRecipe(new ItemStack(Items.o_Cestino, 2),
+				new Object[] { "WBB", "BIB", "BBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 12),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.o_Ingranaggio, 2),
+				new Object[] { "BWB", "BIB", "BBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 12),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Items.o_RTFM, 2),
+				new Object[] { "BBW", "BIB", "BBB",
+						'W', new ItemStack(Item.dyePowder, 1, 15),
+						'B', new ItemStack(Item.dyePowder, 1, 12),
+						'I', Item.ingotIron });
+		
 	}
 }
