@@ -188,7 +188,7 @@ public class Blocks {
 		ubbirch = new Block(178, 214, Material.wood).setBlockUnbreakable().setResistance(6000000.0F).setCreativeTab(CreativeHandler.ECCBlocks)
 				.setBlockName("ubbirch");
 		grassPath = new GrassPath(179, Material.grass).setCreativeTab(CreativeHandler.ECCBlocks).setBlockName("grassPath")
-				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setHardness(0.3f)
+				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setHardness(0.5f)
 				.setStepSound(Block.soundGrassFootstep);
 		hay = new HayBlock(180, 12, Material.leaves).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
 				.setBlockName("hay").setCreativeTab(CreativeHandler.ECCBlocks).setHardness(0.2f);
