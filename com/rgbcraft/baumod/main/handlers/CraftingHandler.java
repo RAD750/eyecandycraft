@@ -273,7 +273,7 @@ public class CraftingHandler {
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.a_LocaleCaldaie, 2),
-				new Object[] { "BBW", "BIB", "BBB",
+				new Object[] { "BBW", "WIW", "BBB",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
@@ -283,7 +283,7 @@ public class CraftingHandler {
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.a_LocaleLogistic, 2),
-				new Object[] { "BBB", "BIW", "BBB",
+				new Object[] { "BBB", "WIW", "BBB",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
@@ -298,7 +298,7 @@ public class CraftingHandler {
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.a_CabinaElettrica, 2),
-				new Object[] { "BBB", "BIB", "BBW",
+				new Object[] { "WWW", "BIB", "BBW",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
@@ -328,7 +328,7 @@ public class CraftingHandler {
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.a_IntElettricoGenerale, 2),
-				new Object[] { "BBW", "BIB", "BWB",
+				new Object[] { "WBW", "BIB", "BWB",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
@@ -346,7 +346,7 @@ public class CraftingHandler {
 						'R', new ItemStack(Item.dyePowder, 1, 1),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.f_Sirena, 2),
-				new Object[] { "RRW", "RIR", "RRR",
+				new Object[] { "RRW", "RIR", "WRR",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'R', new ItemStack(Item.dyePowder, 1, 1),
 						'I', Item.ingotIron });
@@ -364,7 +364,7 @@ public class CraftingHandler {
 						'L', new ItemStack(Item.dyePowder, 1, 10),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.e_UscitaEmergenza, 2),
-				new Object[] { "LLW", "LIL", "LLL",
+				new Object[] { "WWW", "LIL", "LLL",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'L', new ItemStack(Item.dyePowder, 1, 10),
 						'I', Item.ingotIron });
@@ -374,7 +374,7 @@ public class CraftingHandler {
 						'L', new ItemStack(Item.dyePowder, 1, 10),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.e_RompereVetro, 2),
-				new Object[] { "LLL", "LIW", "LLL",
+				new Object[] { "LWW", "LIW", "LLL",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'L', new ItemStack(Item.dyePowder, 1, 10),
 						'I', Item.ingotIron });
@@ -397,7 +397,7 @@ public class CraftingHandler {
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.p_Laser, 2),
-				new Object[] { "YYW", "YIY", "YYY",
+				new Object[] { "YYW", "WIW", "YYY",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
@@ -407,7 +407,7 @@ public class CraftingHandler {
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.p_Infiammabile, 2),
-				new Object[] { "YYY", "YIW", "YYY",
+				new Object[] { "YWW", "YIW", "YYY",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
@@ -422,7 +422,7 @@ public class CraftingHandler {
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.p_Corrente, 2),
-				new Object[] { "YYY", "YIY", "YYW",
+				new Object[] { "YWW", "YIY", "YYW",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
@@ -468,7 +468,7 @@ public class CraftingHandler {
 						'R', new ItemStack(Item.dyePowder, 1, 1),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.d_Fiammifero, 2),
-				new Object[] { "RRR", "RIW", "RRR",
+				new Object[] { "RWW", "RIW", "RRR",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'R', new ItemStack(Item.dyePowder, 1, 1),
 						'I', Item.ingotIron });
@@ -517,10 +517,134 @@ public class CraftingHandler {
 						'B', new ItemStack(Item.dyePowder, 1, 12),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.o_RTFM, 2),
-				new Object[] { "BBW", "BIB", "BBB",
+				new Object[] { "BWW", "BIB", "BBB",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'B', new ItemStack(Item.dyePowder, 1, 12),
 						'I', Item.ingotIron });
 		
+		//PORTE
+		
+		GameRegistry.addRecipe(new ItemStack(Items.jungleDoor, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', new ItemStack(Block.planks, 1, 3),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.spruceDoor, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', new ItemStack(Block.planks, 1, 1),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.birchDoor, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', new ItemStack(Block.planks, 1, 2),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.apartmentDoor, 1),
+				new Object[] { "WI ", "WI ", "WI ",
+						'W', new ItemStack(Block.planks, 1, 1),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.jungleDoor, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', new ItemStack(Block.planks, 1, 3),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.jungleDoor2, 1),
+				new Object[] { "WI ", "WI ", "WI ",
+						'W', new ItemStack(Block.planks, 1, 3),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.glassDoor, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door0, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Item.reed,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door1, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.red_plaster,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door2, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.purple_plaster,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door3, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.cyan_plaster,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door4, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', new ItemStack(Block.planks, 1, 0),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door5, 1),
+				new Object[] { "WW ", "WI ", "WI ",
+						'W', new ItemStack(Block.planks, 1, 0),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door6, 1),
+				new Object[] { "WG ", "WI ", "WG ",
+						'W', new ItemStack(Block.planks, 1, 3),
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+
+		GameRegistry.addRecipe(new ItemStack(Items.door7, 1),
+				new Object[] { "GG ", "WI ", "WG ",
+						'W', new ItemStack(Block.planks, 1, 0),
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door8, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.light_blue_terracotta,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door9, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.red_terracotta,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door10, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.white_terracotta,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door11, 1),
+				new Object[] { "WG ", "WI ", "WW ",
+						'W', Block.planks,
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door12, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.thatch,
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door13, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.orange_terracotta,
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door14, 1),
+				new Object[] { "GG ", "WI ", "WW ",
+						'W', Blocks.thatch,
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door15, 1),
+				new Object[] { "WW ", "GI ", "WW ",
+						'W', Blocks.green_terracotta,
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+
 	}
 }

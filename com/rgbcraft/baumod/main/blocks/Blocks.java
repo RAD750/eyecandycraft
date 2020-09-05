@@ -3,7 +3,8 @@ package com.rgbcraft.baumod.main.blocks;
 import java.awt.List;
 
 import com.rgbcraft.baumod.main.disks.*;
-
+import com.rgbcraft.baumod.main.items.Items;
+import com.rgbcraft.baumod.main.items.ItemPorta;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -43,7 +44,9 @@ public class Blocks {
 
 	// porte, trapdoor e cancelletti
 	
-	public static Block spruceGate, birchGate, jungleGate, spruceDoor, birchDoor, jungleDoor, spruceTrapdoor, birchTrapdoor, jungleTrapdoor;
+	public static Block spruceGate, birchGate, jungleGate, spruceDoor, birchDoor, jungleDoor, spruceTrapdoor, birchTrapdoor, jungleTrapdoor, apartmentDoor, jungleDoor2, glassDoor;
+	
+	public static Block door0, door1, door2, door3, door4, door5, door6, door7, door8, door9, door10, door11, door12, door13, door14, door15;
 	
 	
 	//blocco scortecciato
@@ -148,9 +151,39 @@ public class Blocks {
 		spruceGate = new BlockFenceGate(1500, 198).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setBlockName("spruceGate").setRequiresSelfNotify();
 		birchGate = new BlockFenceGate(1501, 214).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setBlockName("birchGate").setRequiresSelfNotify();
 		jungleGate = new BlockFenceGate(1502, 199).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setBlockName("jungleGate").setRequiresSelfNotify();
-
+		
+		
+		
 		//TODO porta
 		//spruceTrapdoor = new Porte(1503, Material.wood).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("doorWood").setRequiresSelfNotify();
+		
+		spruceDoor = new BlockPorta(1503, 32, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("spruceDoor").setRequiresSelfNotify();
+		birchDoor = new BlockPorta(1504, 33, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("birchDoor").setRequiresSelfNotify();
+		jungleDoor = new BlockPorta(1505, 35, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("jungleDoor").setRequiresSelfNotify();
+		apartmentDoor = new BlockPorta(1506, 36, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("apartmentDoor").setRequiresSelfNotify();
+		jungleDoor2 = new BlockPorta(1507, 34, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("jungleDoor2").setRequiresSelfNotify();
+		glassDoor = new BlockPorta(1508, 37, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("glassDoor").setRequiresSelfNotify();
+		
+		door0 = new BlockPorta(1530, 144, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door0").setRequiresSelfNotify();
+		door1 = new BlockPorta(1531, 145, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door1").setRequiresSelfNotify();
+		door2 = new BlockPorta(1532, 146, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door2").setRequiresSelfNotify();
+		door3 = new BlockPorta(1533, 147, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door3").setRequiresSelfNotify();
+		door4 = new BlockPorta(1534, 148, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door4").setRequiresSelfNotify();
+		door5 = new BlockPorta(1535, 149, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door5").setRequiresSelfNotify();
+		door6 = new BlockPorta(1536, 150, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door6").setRequiresSelfNotify();
+		door7 = new BlockPorta(1537, 151, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door7").setRequiresSelfNotify();
+		door8 = new BlockPorta(1538, 152, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door8").setRequiresSelfNotify();
+		door9 = new BlockPorta(1539, 153, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door9").setRequiresSelfNotify();
+		door10 = new BlockPorta(1540, 154, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door10").setRequiresSelfNotify();
+		door11 = new BlockPorta(1541, 155, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door11").setRequiresSelfNotify();
+		door12 = new BlockPorta(1542, 156, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door12").setRequiresSelfNotify();
+		door13 = new BlockPorta(1543, 157, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door13").setRequiresSelfNotify();
+		door14 = new BlockPorta(1544, 158, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door14").setRequiresSelfNotify();
+		door15 = new BlockPorta(1545, 159, Material.wood).setStepSound(Block.soundWoodFootstep).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("door15").setRequiresSelfNotify();
+		
+		//((BlockPorta) Blocks.spruceDoor).setItemDropped(Items.spruceDoor.itemID);
+		
+		
 		
 		//Blocchi scortecciati
 		strippedOakLog = new StrippedOakLog(1490, 114, Material.wood).setCreativeTab(CreativeTabs.tabBlock).setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setBlockName("strippedOakLog").setTextureFile("/com/rgbcraft/baumod/textures/textures.png");
@@ -351,7 +384,6 @@ public class Blocks {
 		GameRegistry.registerBlock(jungleGate, "jungleGate");
 		
 		//TODO porta
-//		GameRegistry.registerBlock(spruceDoor, "spruceDoor");
 		
 		
 		//Blocchi scortecciati 
@@ -549,6 +581,7 @@ public class Blocks {
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityBocchettaAC.class, "BocchettaAC");
 		GameRegistry.registerBlock(Bitta, "Bitta");
 		GameRegistry.registerTileEntity(com.rgbcraft.baumod.main.entities.TileEntityBitta.class, "Bitta");
+		
 	}
 
 	public static void RegistraLingua() {
@@ -573,7 +606,7 @@ public class Blocks {
 		
 		//TODO porta
 
-		//LanguageRegistry.addName(spruceDoor, "Spruce Door");
+		LanguageRegistry.addName(spruceDoor, "Spruce Door");
 		
 		//Blocchi scortecciati
 		LanguageRegistry.addName(strippedOakLog, "Stripped Oak Log");

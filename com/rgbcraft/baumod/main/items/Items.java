@@ -1,11 +1,11 @@
 package com.rgbcraft.baumod.main.items;
 
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import com.rgbcraft.baumod.main.items.Metro;
 import net.minecraft.item.Item;
 
-
-
+import com.rgbcraft.baumod.main.blocks.Blocks;
 import com.rgbcraft.baumod.main.disks.*;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -29,6 +29,10 @@ public class Items {
 	public static Item d_Persona, d_Fiammifero, d_BereAcqua, d_Spegnere, d_IncendioAcqua, d_Ingresso, d_Parkour, d_Panino;
 	public static Item o_Ingranaggio, o_Cestino, o_RTFM;
 	
+	
+	public static Item spruceDoor, birchDoor, jungleDoor, apartmentDoor, jungleDoor2, glassDoor;
+	
+	public static Item door0, door1, door2, door3, door4, door5, door6, door7, door8, door9, door10, door11, door12, door13, door14, door15;
 	
 	public static void InizializzaItem() {
 
@@ -118,7 +122,39 @@ public class Items {
 	GameRegistry.registerItem(SolidAsARockDisk, "SolidAsARockDisk");
 	SixteenTonsDisk= new SixteenTonsDisk(24208);
 	GameRegistry.registerItem(SixteenTonsDisk, "SixteenTonsDisk");
+	
+	//PORTA
+	
+	spruceDoor = new ItemPorta(24400, 4, Blocks.spruceDoor).setItemName("itemSpruceDoor");
+	birchDoor = new ItemPorta(24401, 1, Blocks.birchDoor).setItemName("itemBirchDoor");
+	jungleDoor = new ItemPorta(24402, 0, Blocks.jungleDoor).setItemName("itemJungleDoor");
+	jungleDoor2 = new ItemPorta(24403, 3, Blocks.jungleDoor2).setItemName("itemJungleDoor2");
+	apartmentDoor = new ItemPorta(24404, 2, Blocks.apartmentDoor).setItemName("itemApartmentDoor");
+	
+	glassDoor = new ItemPorta(24405, 5, Blocks.glassDoor).setItemName("itemGlassDoor"); 
+	
+	door0 = new ItemPorta(24410, 16, Blocks.door0).setItemName("itemDoor0");
+	door1 = new ItemPorta(24411, 17, Blocks.door1).setItemName("itemDoor1");
+	door2 = new ItemPorta(24412, 18, Blocks.door2).setItemName("itemDoor2");
+	door3 = new ItemPorta(24413, 19, Blocks.door3).setItemName("itemDoor3");
+	door4 = new ItemPorta(24414, 20, Blocks.door4).setItemName("itemDoor4");
+	door5 = new ItemPorta(24415, 21, Blocks.door5).setItemName("itemDoor5");
+	door6 = new ItemPorta(24416, 22, Blocks.door6).setItemName("itemDoor6");
+	door7 = new ItemPorta(24417, 23, Blocks.door7).setItemName("itemDoor7");
+	door8 = new ItemPorta(24418, 24, Blocks.door8).setItemName("itemDoor8");
+	door9 = new ItemPorta(24419, 25, Blocks.door9).setItemName("itemDoor9");
+	door10 = new ItemPorta(24420, 26, Blocks.door10).setItemName("itemDoor10");
+	door11 = new ItemPorta(24421, 27, Blocks.door11).setItemName("itemDoor11");
+	door12 = new ItemPorta(24422, 28, Blocks.door12).setItemName("itemDoor12");
+	door13 = new ItemPorta(24423, 29, Blocks.door13).setItemName("itemDoor13");
+	door14 = new ItemPorta(24424, 30, Blocks.door14).setItemName("itemDoor14");
+	door15 = new ItemPorta(24425, 31, Blocks.door15).setItemName("itemDoor15");
+	
+	
 	}
+	
+	 
+	
 	
 	public static void RegistraLingua() {
 		LanguageRegistry.addName(straw, "Straw");
@@ -140,7 +176,7 @@ public class Items {
 		LanguageRegistry.addName(ab_DPI, "Cartello Obbligo DPI");
 		LanguageRegistry.addName(ab_IndProtettivi, "Cartello Obbligo Ind. Protettivi");
 		LanguageRegistry.addName(ab_RTFM, "Cartello Obbligo Lettura Istruzioni");
-		LanguageRegistry.addName(ab_ObbligoGenerico, "Cartello Obbligo Cenerico");
+		LanguageRegistry.addName(ab_ObbligoGenerico, "Cartello Obbligo Generico");
 		LanguageRegistry.addName(a_IntElettricoGenerale, "Cartello Interruttore Generale");
 		
 		LanguageRegistry.addName(f_Estintore, "Cartello Estintore");
@@ -181,6 +217,33 @@ public class Items {
 		LanguageRegistry.addName(o_Cestino, "Cartello Obbligo Buttare Rumenta nel Bidone");
 		LanguageRegistry.addName(o_RTFM, "Cartello Obbligo RTFM");
 		LanguageRegistry.addName(o_Ingranaggio, "Cartello Obbligo Uso Protezioni");
+		
+		//PORTA
+		
+		LanguageRegistry.addName(spruceDoor, "Spruce Door");
+		LanguageRegistry.addName(birchDoor, "Birch Door");
+		LanguageRegistry.addName(jungleDoor, "Jungle Door");
+		LanguageRegistry.addName(jungleDoor2, "Jungle Door (Variant)");
+		LanguageRegistry.addName(apartmentDoor, "Apartment Door");
+		LanguageRegistry.addName(glassDoor, "Glass Door");
+		
+		LanguageRegistry.addName(door0, "Door, Type 1");
+		LanguageRegistry.addName(door1, "Door, Type 2");
+		LanguageRegistry.addName(door2, "Door, Type 3");
+		LanguageRegistry.addName(door3, "Door, Type 4");
+		LanguageRegistry.addName(door4, "Door, Type 5");
+		LanguageRegistry.addName(door5, "Door, Type 6");
+		LanguageRegistry.addName(door6, "Door, Type 7");
+		LanguageRegistry.addName(door7, "Door, Type 8");
+		LanguageRegistry.addName(door8, "Door, Type 9");
+		LanguageRegistry.addName(door9, "Door, Type 10");
+		LanguageRegistry.addName(door10, "Door, Type 11");
+		LanguageRegistry.addName(door11, "Door, Type 12");
+		LanguageRegistry.addName(door12, "Door, Type 13");
+		LanguageRegistry.addName(door13, "Door, Type 14");
+		LanguageRegistry.addName(door14, "Door, Type 15");
+		LanguageRegistry.addName(door15, "Door, Type 16");
 	}
 }
+
 
