@@ -4,7 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import com.rgbcraft.baumod.main.entities.TileEntityCartelloEndor;
-import com.rgbcraft.baumod.main.handler.CreativeHandler;
+import com.rgbcraft.baumod.main.handlers.CreativeHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
