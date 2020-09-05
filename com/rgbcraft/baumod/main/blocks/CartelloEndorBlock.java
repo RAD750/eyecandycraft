@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import com.rgbcraft.baumod.main.entities.TileEntityCartelloEndor;
+import com.rgbcraft.baumod.main.handler.CreativeHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -23,7 +24,7 @@ public class CartelloEndorBlock extends BlockContainer {
 		setHardness(0.5F);
 		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
-		setCreativeTab(CreativeTabs.tabDecorations);
+		setCreativeTab(CreativeHandler.ECCDecorations);
 		setBlockName("CartelloEndor");
 		blockIndexInTexture = 41;
 	}
