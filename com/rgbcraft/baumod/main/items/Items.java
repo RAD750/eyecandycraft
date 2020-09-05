@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 
 
 import com.rgbcraft.baumod.main.disks.*;
+import com.rgbcraft.baumod.main.handlers.CreativeHandler;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -42,59 +43,59 @@ public class Items {
 	metro = new Metro(24101).setTextureFile("/com/rgbcraft/baumod/textures/items.png").setIconIndex(40)
 			.setCreativeTab(CreativeTabs.tabTools).setItemName("metro").setMaxStackSize(1);
 	
-	a_CentraleTermica = new Item(24301).setIconIndex(0).setItemName("a_CentraleTermica").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	a_LocalePompe = new Item(24302).setIconIndex(1).setItemName("a_LocalePompe").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	a_LocaleCaldaie = new Item(24303).setIconIndex(2).setItemName("a_LocaleCaldaie").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	a_LocaleApplied = new Item(24304).setIconIndex(3).setItemName("a_LocaleApplied").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	a_LocaleLogistic = new Item(24305).setIconIndex(4).setItemName("a_LocaleLogistic").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	a_ProprietaPrivata = new Item(24306).setIconIndex(5).setItemName("a_ProprietaPrivata").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	a_LocaleSerbatoi = new Item(24307).setIconIndex(6).setItemName("a_LocaleSerbatoi").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	a_CabinaElettrica = new Item(24308).setIconIndex(7).setItemName("a_CabinaElettrica").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	ab_DPI = new Item(24309).setIconIndex(8).setItemName("ab_DPI").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	ab_IndProtettivi = new Item(24310).setIconIndex(10).setItemName("ab_IndProtettivi").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	ab_RTFM = new Item(24311).setIconIndex(11).setItemName("ab_RTFM").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	ab_ObbligoGenerico = new Item(24312).setIconIndex(12).setItemName("ab_ObbligoGenerico").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	a_IntElettricoGenerale = new Item(24313).setIconIndex(13).setItemName("a_IntElettricoGenerale").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
+	a_CentraleTermica = new Item(24301).setIconIndex(0).setItemName("a_CentraleTermica").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	a_LocalePompe = new Item(24302).setIconIndex(1).setItemName("a_LocalePompe").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	a_LocaleCaldaie = new Item(24303).setIconIndex(2).setItemName("a_LocaleCaldaie").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	a_LocaleApplied = new Item(24304).setIconIndex(3).setItemName("a_LocaleApplied").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	a_LocaleLogistic = new Item(24305).setIconIndex(4).setItemName("a_LocaleLogistic").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	a_ProprietaPrivata = new Item(24306).setIconIndex(5).setItemName("a_ProprietaPrivata").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	a_LocaleSerbatoi = new Item(24307).setIconIndex(6).setItemName("a_LocaleSerbatoi").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	a_CabinaElettrica = new Item(24308).setIconIndex(7).setItemName("a_CabinaElettrica").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	ab_DPI = new Item(24309).setIconIndex(8).setItemName("ab_DPI").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	ab_IndProtettivi = new Item(24310).setIconIndex(10).setItemName("ab_IndProtettivi").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	ab_RTFM = new Item(24311).setIconIndex(11).setItemName("ab_RTFM").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	ab_ObbligoGenerico = new Item(24312).setIconIndex(12).setItemName("ab_ObbligoGenerico").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	a_IntElettricoGenerale = new Item(24313).setIconIndex(13).setItemName("a_IntElettricoGenerale").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
 	
-	f_Estintore = new Item(24314).setIconIndex(16).setItemName("f_Estintore").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	f_AllarmeIncendio = new Item(24315).setIconIndex(17).setItemName("f_AllarmeIncendio").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	f_Sirena = new Item(24316).setIconIndex(18).setItemName("f_Sirena").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
+	f_Estintore = new Item(24314).setIconIndex(16).setItemName("f_Estintore").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	f_AllarmeIncendio = new Item(24315).setIconIndex(17).setItemName("f_AllarmeIncendio").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	f_Sirena = new Item(24316).setIconIndex(18).setItemName("f_Sirena").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
 	
-	e_Doccia = new Item(24317).setIconIndex(32).setItemName("e_Doccia").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	e_ProntoSoccorso = new Item(24318).setIconIndex(33).setItemName("e_ProntoSoccorso").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	e_UscitaEmergenza = new Item(24319).setIconIndex(34).setItemName("e_UscitaEmergenza").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	e_Martelletto = new Item(24320).setIconIndex(35).setItemName("e_Martelletto").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	e_RompereVetro = new Item(24321).setIconIndex(36).setItemName("e_RompereVetro").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	e_PuntoRitrovo = new Item(24322).setIconIndex(37).setItemName("e_PuntoRitrovo").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
+	e_Doccia = new Item(24317).setIconIndex(32).setItemName("e_Doccia").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	e_ProntoSoccorso = new Item(24318).setIconIndex(33).setItemName("e_ProntoSoccorso").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	e_UscitaEmergenza = new Item(24319).setIconIndex(34).setItemName("e_UscitaEmergenza").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	e_Martelletto = new Item(24320).setIconIndex(35).setItemName("e_Martelletto").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	e_RompereVetro = new Item(24321).setIconIndex(36).setItemName("e_RompereVetro").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	e_PuntoRitrovo = new Item(24322).setIconIndex(37).setItemName("e_PuntoRitrovo").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
 	
-	p_PericoloGenerico = new Item(24323).setIconIndex(48).setItemName("p_PericoloGenerico").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Esplosivo = new Item(24324).setIconIndex(49).setItemName("p_Esplosivo").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Laser = new Item(24325).setIconIndex(50).setItemName("p_Laser").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Radioattivo = new Item(24326).setIconIndex(51).setItemName("p_Radioattivo").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Infiammabile = new Item(24327).setIconIndex(52).setItemName("p_Infiammabile").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Freddo = new Item(24328).setIconIndex(53).setItemName("p_Freddo").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Batterie = new Item(24329).setIconIndex(54).setItemName("p_Batterie").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Corrente = new Item(24330).setIconIndex(55).setItemName("p_Corrente").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Tossico = new Item(24331).setIconIndex(56).setItemName("p_Tossico").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Biohaz = new Item(24332).setIconIndex(57).setItemName("p_Biohaz").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Asfissiante = new Item(24333).setIconIndex(58).setItemName("p_Asfissiante").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Toro = new Item(24334).setIconIndex(59).setItemName("p_Toro").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_EX = new Item(24335).setIconIndex(60).setItemName("p_EX").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_Corrente2 = new Item(24336).setIconIndex(62).setItemName("p_Corrente2").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	p_IAEA = new Item(24337).setIconIndex(63).setItemName("p_IAEA").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
+	p_PericoloGenerico = new Item(24323).setIconIndex(48).setItemName("p_PericoloGenerico").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Esplosivo = new Item(24324).setIconIndex(49).setItemName("p_Esplosivo").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Laser = new Item(24325).setIconIndex(50).setItemName("p_Laser").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Radioattivo = new Item(24326).setIconIndex(51).setItemName("p_Radioattivo").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Infiammabile = new Item(24327).setIconIndex(52).setItemName("p_Infiammabile").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Freddo = new Item(24328).setIconIndex(53).setItemName("p_Freddo").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Batterie = new Item(24329).setIconIndex(54).setItemName("p_Batterie").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Corrente = new Item(24330).setIconIndex(55).setItemName("p_Corrente").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Tossico = new Item(24331).setIconIndex(56).setItemName("p_Tossico").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Biohaz = new Item(24332).setIconIndex(57).setItemName("p_Biohaz").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Asfissiante = new Item(24333).setIconIndex(58).setItemName("p_Asfissiante").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Toro = new Item(24334).setIconIndex(59).setItemName("p_Toro").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_EX = new Item(24335).setIconIndex(60).setItemName("p_EX").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_Corrente2 = new Item(24336).setIconIndex(62).setItemName("p_Corrente2").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	p_IAEA = new Item(24337).setIconIndex(63).setItemName("p_IAEA").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
 	
-	d_Persona = new Item(24338).setIconIndex(64).setItemName("p_Persona").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	d_Fiammifero = new Item(24339).setIconIndex(65).setItemName("p_Fiammifero").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	d_BereAcqua = new Item(24340).setIconIndex(66).setItemName("p_BereAcqua").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	d_Spegnere = new Item(24341).setIconIndex(67).setItemName("p_Spegnere").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	d_IncendioAcqua = new Item(24342).setIconIndex(68).setItemName("p_IncendioAcqua").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	d_Ingresso = new Item(24343).setIconIndex(69).setItemName("p_Ingresso").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	d_Parkour = new Item(24344).setIconIndex(70).setItemName("p_Parkour").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	d_Panino = new Item(24345).setIconIndex(71).setItemName("p_Panino").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
+	d_Persona = new Item(24338).setIconIndex(64).setItemName("p_Persona").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	d_Fiammifero = new Item(24339).setIconIndex(65).setItemName("p_Fiammifero").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	d_BereAcqua = new Item(24340).setIconIndex(66).setItemName("p_BereAcqua").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	d_Spegnere = new Item(24341).setIconIndex(67).setItemName("p_Spegnere").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	d_IncendioAcqua = new Item(24342).setIconIndex(68).setItemName("p_IncendioAcqua").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	d_Ingresso = new Item(24343).setIconIndex(69).setItemName("p_Ingresso").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	d_Parkour = new Item(24344).setIconIndex(70).setItemName("p_Parkour").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	d_Panino = new Item(24345).setIconIndex(71).setItemName("p_Panino").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
 	
-	o_Ingranaggio = new Item(24346).setIconIndex(80).setItemName("o_Ingranaggio").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	o_Cestino = new Item(24347).setIconIndex(81).setItemName("o_Cestino").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
-	o_RTFM = new Item(24348).setIconIndex(82).setItemName("o_RTFM").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
+	o_Ingranaggio = new Item(24346).setIconIndex(80).setItemName("o_Ingranaggio").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	o_Cestino = new Item(24347).setIconIndex(81).setItemName("o_Cestino").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
+	o_RTFM = new Item(24348).setIconIndex(82).setItemName("o_RTFM").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeHandler.ECCSigns);
 	
 	
 	
