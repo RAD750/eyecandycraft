@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import com.rgbcraft.baumod.main.entities.TileEntityAntennaGroundPlane;
+import com.rgbcraft.baumod.main.handlers.CreativeHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -21,7 +22,7 @@ public class AntennaGroundPlaneBlock extends BlockContainer {
 		setHardness(0.5F);
 		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
-		setCreativeTab(CreativeTabs.tabDecorations);
+		setCreativeTab(CreativeHandler.ECCDecorations);
 		setBlockName("AntennaGroundPlane");
 		blockIndexInTexture = 3;
 	}
