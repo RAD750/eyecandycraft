@@ -16,7 +16,7 @@ public class ModelLampadaScrivania extends ModelBase {
     ModelRenderer Paralume1;
     ModelRenderer Paralume3B;
     ModelRenderer Paralume3D;
-  
+
   public ModelLampadaScrivania()
   {
     textureWidth = 32;
