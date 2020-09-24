@@ -13,7 +13,7 @@ public class ModelEstintore extends ModelBase {
     ModelRenderer Testa;
     ModelRenderer Cima;
     ModelRenderer Maniglia;
-  
+
   public ModelEstintore()
   {
     textureWidth = 32;
