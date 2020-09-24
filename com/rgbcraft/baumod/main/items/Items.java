@@ -13,6 +13,20 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Items {
 	
+	//mattonelle
+	
+	public static Item black_tile_raw, white_tile_raw, orange_tile_raw, magenta_tile_raw, light_blue_tile_raw,
+	yellow_tile_raw, lime_tile_raw, pink_tile_raw, gray_tile_raw, light_gray_tile_raw,
+	cyan_tile_raw, blue_tile_raw, purple_tile_raw, green_tile_raw, brown_tile_raw, red_tile_raw;
+	
+	public static Item black_diag_tile_raw, white_diag_tile_raw, orange_diag_tile_raw, magenta_diag_tile_raw, light_blue_diag_tile_raw,
+	yellow_diag_tile_raw, lime_diag_tile_raw, pink_diag_tile_raw, gray_diag_tile_raw, light_gray_diag_tile_raw,
+	cyan_diag_tile_raw, blue_diag_tile_raw, purple_diag_tile_raw, green_diag_tile_raw, brown_diag_tile_raw, red_diag_tile_raw;
+	
+	public static Item black_small_tile_raw, white_small_tile_raw, orange_small_tile_raw, magenta_small_tile_raw, light_blue_small_tile_raw,
+	yellow_small_tile_raw, lime_small_tile_raw, pink_small_tile_raw, gray_small_tile_raw, light_gray_small_tile_raw,
+	cyan_small_tile_raw, blue_small_tile_raw, purple_small_tile_raw, green_small_tile_raw, brown_small_tile_raw, red_small_tile_raw;
+	
 	//ITEMS
 	public static Item molten_glass, straw, metro;
 	
@@ -45,6 +59,55 @@ public class Items {
 	
 	metro = new Metro(24101).setTextureFile("/com/rgbcraft/baumod/textures/items.png").setIconIndex(40)
 			.setCreativeTab(CreativeTabs.tabTools).setItemName("metro").setMaxStackSize(1);
+	
+	white_diag_tile_raw = new Item(24010).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(160).setItemName("white_diag_tile_raw");
+	light_gray_diag_tile_raw = new Item(24011).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(161).setItemName("light_gray_diag_tile_raw");
+	gray_diag_tile_raw = new Item(24012).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(162).setItemName("gray_diag_tile_raw");
+	black_diag_tile_raw = new Item(24013).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(163).setItemName("black_diag_tile_raw");
+	brown_diag_tile_raw = new Item(24014).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(164).setItemName("brown_diag_tile_raw");
+	red_diag_tile_raw = new Item(24015).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(165).setItemName("red_diag_tile_raw");
+	orange_diag_tile_raw = new Item(24016).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(166).setItemName("orange_diag_tile_raw");
+	yellow_diag_tile_raw = new Item(24017).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(167).setItemName("yellow_diag_tile_raw");
+	lime_diag_tile_raw = new Item(24018).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(168).setItemName("lime_diag_tile_raw");
+	green_diag_tile_raw = new Item(24019).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(169).setItemName("green_diag_tile_raw");
+	light_blue_diag_tile_raw = new Item(24020).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(170).setItemName("light_blue_diag_tile_raw");
+	cyan_diag_tile_raw = new Item(24021).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(171).setItemName("cyan_diag_tile_raw");
+	blue_diag_tile_raw = new Item(24022).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(172).setItemName("blue_diag_tile_raw");
+	purple_diag_tile_raw = new Item(24023).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(173).setItemName("purple_diag_tile_raw");
+	magenta_diag_tile_raw = new Item(24024).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(174).setItemName("magenta_diag_tile_raw");
+	
+	white_tile_raw = new Item(24030).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(176).setItemName("white_tile_raw");
+	light_gray_tile_raw = new Item(24031).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(177).setItemName("light_gray_tile_raw");
+	gray_tile_raw = new Item(24032).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(178).setItemName("gray_tile_raw");
+	black_tile_raw = new Item(24033).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(179).setItemName("black_tile_raw");
+	brown_tile_raw = new Item(24034).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(180).setItemName("brown_tile_raw");
+	red_tile_raw = new Item(24035).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(181).setItemName("red_tile_raw");
+	orange_tile_raw = new Item(24036).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(182).setItemName("orange_tile_raw");
+	yellow_tile_raw = new Item(24037).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(183).setItemName("yellow_tile_raw");
+	lime_tile_raw = new Item(24038).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(184).setItemName("lime_tile_raw");
+	green_tile_raw = new Item(24039).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(185).setItemName("green_tile_raw");
+	light_blue_tile_raw = new Item(24040).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(186).setItemName("light_blue_tile_raw");
+	cyan_tile_raw = new Item(24041).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(187).setItemName("cyan_tile_raw");
+	blue_tile_raw = new Item(24042).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(188).setItemName("blue_tile_raw");
+	purple_tile_raw = new Item(24043).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(189).setItemName("purple_tile_raw");
+	magenta_tile_raw = new Item(24044).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(190).setItemName("magenta_tile_raw");
+	
+	white_small_tile_raw = new Item(24050).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(192).setItemName("white_small_tile_raw");
+	light_gray_small_tile_raw = new Item(24051).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(193).setItemName("light_gray_small_tile_raw");
+	gray_small_tile_raw = new Item(24052).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(194).setItemName("gray_small_tile_raw");
+	black_small_tile_raw = new Item(24053).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(195).setItemName("black_small_tile_raw");
+	brown_small_tile_raw = new Item(24054).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(196).setItemName("brown_small_tile_raw");
+	red_small_tile_raw = new Item(24055).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(197).setItemName("red_small_tile_raw");
+	orange_small_tile_raw = new Item(24056).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(198).setItemName("orange_small_tile_raw");
+	yellow_small_tile_raw = new Item(24057).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(199).setItemName("yellow_small_tile_raw");
+	lime_small_tile_raw = new Item(24058).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(200).setItemName("lime_small_tile_raw");
+	green_small_tile_raw = new Item(24059).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(201).setItemName("green_small_tile_raw");
+	light_blue_small_tile_raw = new Item(24060).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(202).setItemName("light_blue_small_tile_raw");
+	cyan_small_tile_raw = new Item(24061).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(203).setItemName("cyan_small_tile_raw");
+	blue_small_tile_raw = new Item(24062).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(204).setItemName("blue_small_tile_raw");
+	purple_small_tile_raw = new Item(24063).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(205).setItemName("purple_small_tile_raw");
+	magenta_small_tile_raw = new Item(24064).setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setIconIndex(206).setItemName("magenta_small_tile_raw");
+	
 	
 	a_CentraleTermica = new Item(24301).setIconIndex(0).setItemName("a_CentraleTermica").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
 	a_LocalePompe = new Item(24302).setIconIndex(1).setItemName("a_LocalePompe").setTextureFile("/com/rgbcraft/baumod/textures/cartelli.png").setCreativeTab(CreativeTabs.tabDecorations);
@@ -243,6 +306,55 @@ public class Items {
 		LanguageRegistry.addName(door13, "Door, Type 14");
 		LanguageRegistry.addName(door14, "Door, Type 15");
 		LanguageRegistry.addName(door15, "Door, Type 16");
+		
+		LanguageRegistry.addName(white_small_tile_raw, "White Raw Small Tile");
+		LanguageRegistry.addName(light_gray_small_tile_raw, "Light_gray Raw Small Tile");
+		LanguageRegistry.addName(gray_small_tile_raw, "Gray Raw Small Tile");
+		LanguageRegistry.addName(black_small_tile_raw, "Black Raw Small Tile");
+		LanguageRegistry.addName(brown_small_tile_raw, "Brown Raw Small Tile");
+		LanguageRegistry.addName(red_small_tile_raw, "Red Raw Small Tile");
+		LanguageRegistry.addName(orange_small_tile_raw, "Orange Raw Small Tile");
+		LanguageRegistry.addName(yellow_small_tile_raw, "Yellow Raw Small Tile");
+		LanguageRegistry.addName(lime_small_tile_raw, "Lime Raw Small Tile");
+		LanguageRegistry.addName(green_small_tile_raw, "Green Raw Small Tile");
+		LanguageRegistry.addName(light_blue_small_tile_raw, "Light_blue Raw Small Tile");
+		LanguageRegistry.addName(cyan_small_tile_raw, "Cyan Raw Small Tile");
+		LanguageRegistry.addName(blue_small_tile_raw, "Blue Raw Small Tile");
+		LanguageRegistry.addName(purple_small_tile_raw, "Purple Raw Small Tile");
+		LanguageRegistry.addName(magenta_small_tile_raw, "Magenta Raw Small Tile");
+		
+		LanguageRegistry.addName(white_diag_tile_raw, "White Raw Diagonal Tile");
+		LanguageRegistry.addName(light_gray_diag_tile_raw, "Light_gray Raw Diagonal Tile");
+		LanguageRegistry.addName(gray_diag_tile_raw, "Gray Raw Diagonal Tile");
+		LanguageRegistry.addName(black_diag_tile_raw, "Black Raw Diagonal Tile");
+		LanguageRegistry.addName(brown_diag_tile_raw, "Brown Raw Diagonal Tile");
+		LanguageRegistry.addName(red_diag_tile_raw, "Red Raw Diagonal Tile");
+		LanguageRegistry.addName(orange_diag_tile_raw, "Orange Raw Diagonal Tile");
+		LanguageRegistry.addName(yellow_diag_tile_raw, "Yellow Raw Diagonal Tile");
+		LanguageRegistry.addName(lime_diag_tile_raw, "Lime Raw Diagonal Tile");
+		LanguageRegistry.addName(green_diag_tile_raw, "Green Raw Diagonal Tile");
+		LanguageRegistry.addName(light_blue_diag_tile_raw, "Light_blue Raw Diagonal Tile");
+		LanguageRegistry.addName(cyan_diag_tile_raw, "Cyan Raw Diagonal Tile");
+		LanguageRegistry.addName(blue_diag_tile_raw, "Blue Raw Diagonal Tile");
+		LanguageRegistry.addName(purple_diag_tile_raw, "Purple Raw Diagonal Tile");
+		LanguageRegistry.addName(magenta_diag_tile_raw, "Magenta Raw Diagonal Tile");
+		
+		LanguageRegistry.addName(white_tile_raw, "White Raw Tile");
+		LanguageRegistry.addName(light_gray_tile_raw, "Light_gray Raw Tile");
+		LanguageRegistry.addName(gray_tile_raw, "Gray Raw Tile");
+		LanguageRegistry.addName(black_tile_raw, "Black Raw Tile");
+		LanguageRegistry.addName(brown_tile_raw, "Brown Raw Tile");
+		LanguageRegistry.addName(red_tile_raw, "Red Raw Tile");
+		LanguageRegistry.addName(orange_tile_raw, "Orange Raw Tile");
+		LanguageRegistry.addName(yellow_tile_raw, "Yellow Raw Tile");
+		LanguageRegistry.addName(lime_tile_raw, "Lime Raw Tile");
+		LanguageRegistry.addName(green_tile_raw, "Green Raw Tile");
+		LanguageRegistry.addName(light_blue_tile_raw, "Light_blue Raw Tile");
+		LanguageRegistry.addName(cyan_tile_raw, "Cyan Raw Tile");
+		LanguageRegistry.addName(blue_tile_raw, "Blue Raw Tile");
+		LanguageRegistry.addName(purple_tile_raw, "Purple Raw Tile");
+		LanguageRegistry.addName(magenta_tile_raw, "Magenta Raw Tile");
+		
 	}
 }
 

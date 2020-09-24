@@ -60,8 +60,20 @@ public class Blocks {
 			yellow_terracotta, lime_terracotta, pink_terracotta, gray_terracotta, light_gray_terracotta,
 			cyan_terracotta, blue_terracotta, purple_terracotta, green_terracotta, brown_terracotta, red_terracotta;
 
-	// TODO Mattonella
-
+	// Mattonella
+	
+	public static Block black_tile, white_tile, orange_tile, magenta_tile, light_blue_tile,
+	yellow_tile, lime_tile, pink_tile, gray_tile, light_gray_tile,
+	cyan_tile, blue_tile, purple_tile, green_tile, brown_tile, red_tile;
+	
+	public static Block black_diag_tile, white_diag_tile, orange_diag_tile, magenta_diag_tile, light_blue_diag_tile,
+	yellow_diag_tile, lime_diag_tile, pink_diag_tile, gray_diag_tile, light_gray_diag_tile,
+	cyan_diag_tile, blue_diag_tile, purple_diag_tile, green_diag_tile, brown_diag_tile, red_diag_tile;
+	
+	public static Block black_small_tile, white_small_tile, orange_small_tile, magenta_small_tile, light_blue_small_tile,
+	yellow_small_tile, lime_small_tile, pink_small_tile, gray_small_tile, light_gray_small_tile,
+	cyan_small_tile, blue_small_tile, purple_small_tile, green_small_tile, brown_small_tile, red_small_tile;
+	
 	// Vetro colorato
 	public static Block tintedGlass, white_tintedGlass, orange_tintedGlass, magenta_tintedGlass, light_blue_tintedGlass,
 			yellow_tintedGlass, lime_tintedGlass, pink_tintedGlass, gray_tintedGlass, light_gray_tintedGlass,
@@ -88,6 +100,115 @@ public class Blocks {
 
 	public static void InizializzaBlocchi() {
 		// dichiara i blocchi
+		
+		//mattonella
+		
+		white_diag_tile = new Block(3310, 160, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("white_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		light_gray_diag_tile = new Block(3311, 161, Material.rock)
+				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setBlockName("light_gray_diag_tile")
+				.setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		gray_diag_tile = new Block(3312, 162, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("gray_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		black_diag_tile = new Block(3313, 163, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("black_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		brown_diag_tile = new Block(3314, 164, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("brown_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		red_diag_tile = new Block(3315, 165, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("red_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		orange_diag_tile = new Block(3316, 166, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("orange_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		yellow_diag_tile = new Block(3317, 167, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("yellow_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		lime_diag_tile = new Block(3318, 168, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("lime_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		green_diag_tile = new Block(3319, 169, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("green_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		light_blue_diag_tile = new Block(3320, 170, Material.rock)
+				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setBlockName("light_blue_diag_tile")
+				.setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		cyan_diag_tile = new Block(3321, 171, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("cyan_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		blue_diag_tile = new Block(3322, 172, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("blue_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		purple_diag_tile = new Block(3323, 173, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("purple_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		magenta_diag_tile = new Block(3324, 174, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("magenta_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		pink_diag_tile = new Block(3325, 175, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("pink_diag_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		
+		white_tile = new Block(3330, 176, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("white_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		light_gray_tile = new Block(3331, 177, Material.rock)
+				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setBlockName("light_gray_tile")
+				.setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		gray_tile = new Block(3332, 178, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("gray_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		black_tile = new Block(3333, 179, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("black_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		brown_tile = new Block(3334, 180, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("brown_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		red_tile = new Block(3335, 181, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("red_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		orange_tile = new Block(3336, 182, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("orange_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		yellow_tile = new Block(3337, 183, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("yellow_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		lime_tile = new Block(3338, 184, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("lime_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		green_tile = new Block(3339, 185, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("green_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		light_blue_tile = new Block(3340, 186, Material.rock)
+				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setBlockName("light_blue_tile")
+				.setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		cyan_tile = new Block(3341, 187, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("cyan_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		blue_tile = new Block(3342, 188, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("blue_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		purple_tile = new Block(3343, 189, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("purple_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		magenta_tile = new Block(3344, 190, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("magenta_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		pink_tile = new Block(3345, 191, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("pink_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		
+		white_small_tile = new Block(3350, 192, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("white_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		light_gray_small_tile = new Block(3351, 193, Material.rock)
+				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setBlockName("light_gray_small_tile")
+				.setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		gray_small_tile = new Block(3352, 194, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("gray_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		black_small_tile = new Block(3353, 195, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("black_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		brown_small_tile = new Block(3354, 196, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("brown_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		red_small_tile = new Block(3355, 197, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("red_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		orange_small_tile = new Block(3356, 198, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("orange_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		yellow_small_tile = new Block(3357, 199, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("yellow_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		lime_small_tile = new Block(3358, 200, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("lime_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		green_small_tile = new Block(3359, 201, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("green_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		light_blue_small_tile = new Block(3360, 202, Material.rock)
+				.setTextureFile("/com/rgbcraft/baumod/textures/textures.png").setBlockName("light_blue_small_tile")
+				.setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		cyan_small_tile = new Block(3361, 203, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("cyan_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		blue_small_tile = new Block(3362, 204, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("blue_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		purple_small_tile = new Block(3363, 205, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("purple_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		magenta_small_tile = new Block(3364, 206, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("magenta_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		pink_small_tile = new Block(3365, 207, Material.rock).setTextureFile("/com/rgbcraft/baumod/textures/textures.png")
+				.setBlockName("pink_small_tile").setCreativeTab(CreativeTabs.tabBlock).setHardness(1.0f);
+		
+		
 		
 		// padella
 		ParabolaSat = new ParabolaBlock(846, 0);
@@ -376,6 +497,61 @@ public class Blocks {
 		//
 		// REGISTRA TUTTI I BLOCCHI
 		//
+		
+		//mattonella
+		
+		GameRegistry.registerBlock(white_tile, "white_tile");
+		GameRegistry.registerBlock(black_tile, "black_tile");
+		GameRegistry.registerBlock(gray_tile, "gray_tile");
+		GameRegistry.registerBlock(light_gray_tile, "light_gray_tile");
+		GameRegistry.registerBlock(red_tile, "red_tile");
+		GameRegistry.registerBlock(orange_tile, "orange_tile");
+		GameRegistry.registerBlock(yellow_tile, "yellow_tile");
+		GameRegistry.registerBlock(lime_tile, "lime_tile");
+		GameRegistry.registerBlock(green_tile, "green_tile");
+		GameRegistry.registerBlock(cyan_tile, "cyan_tile");
+		GameRegistry.registerBlock(light_blue_tile, "light_blue_tile");
+		GameRegistry.registerBlock(blue_tile, "blue_tile");
+		GameRegistry.registerBlock(purple_tile, "purple_tile");
+		GameRegistry.registerBlock(magenta_tile, "magenta_tile");
+		GameRegistry.registerBlock(pink_tile, "pink_tile");
+		GameRegistry.registerBlock(brown_tile, "brown_tile");
+		
+		GameRegistry.registerBlock(white_diag_tile, "white_diag_tile");
+		GameRegistry.registerBlock(black_diag_tile, "black_diag_tile");
+		GameRegistry.registerBlock(gray_diag_tile, "gray_diag_tile");
+		GameRegistry.registerBlock(light_gray_diag_tile, "light_gray_diag_tile");
+		GameRegistry.registerBlock(red_diag_tile, "red_diag_tile");
+		GameRegistry.registerBlock(orange_diag_tile, "orange_diag_tile");
+		GameRegistry.registerBlock(yellow_diag_tile, "yellow_diag_tile");
+		GameRegistry.registerBlock(lime_diag_tile, "lime_diag_tile");
+		GameRegistry.registerBlock(green_diag_tile, "green_diag_tile");
+		GameRegistry.registerBlock(cyan_diag_tile, "cyan_diag_tile");
+		GameRegistry.registerBlock(light_blue_diag_tile, "light_blue_diag_tile");
+		GameRegistry.registerBlock(blue_diag_tile, "blue_diag_tile");
+		GameRegistry.registerBlock(purple_diag_tile, "purple_diag_tile");
+		GameRegistry.registerBlock(magenta_diag_tile, "magenta_diag_tile");
+		GameRegistry.registerBlock(pink_diag_tile, "pink_diag_tile");
+		GameRegistry.registerBlock(brown_diag_tile, "brown_diag_tile");
+		
+		GameRegistry.registerBlock(white_small_tile, "white_small_tile");
+		GameRegistry.registerBlock(black_small_tile, "black_small_tile");
+		GameRegistry.registerBlock(gray_small_tile, "gray_small_tile");
+		GameRegistry.registerBlock(light_gray_small_tile, "light_gray_small_tile");
+		GameRegistry.registerBlock(red_small_tile, "red_small_tile");
+		GameRegistry.registerBlock(orange_small_tile, "orange_small_tile");
+		GameRegistry.registerBlock(yellow_small_tile, "yellow_small_tile");
+		GameRegistry.registerBlock(lime_small_tile, "lime_small_tile");
+		GameRegistry.registerBlock(green_small_tile, "green_small_tile");
+		GameRegistry.registerBlock(cyan_small_tile, "cyan_small_tile");
+		GameRegistry.registerBlock(light_blue_small_tile, "light_blue_small_tile");
+		GameRegistry.registerBlock(blue_small_tile, "blue_small_tile");
+		GameRegistry.registerBlock(purple_small_tile, "purple_small_tile");
+		GameRegistry.registerBlock(magenta_small_tile, "magenta_small_tile");
+		GameRegistry.registerBlock(pink_small_tile, "pink_small_tile");
+		GameRegistry.registerBlock(brown_small_tile, "brown_small_tile");
+		
+		
 
 		//cancelletti
 		
@@ -588,6 +764,58 @@ public class Blocks {
 		//
 		// LINGUA
 		//
+		
+		//mattonelle
+		LanguageRegistry.addName(black_tile, "Black Tile");
+		LanguageRegistry.addName(gray_tile, "Gray Tile");
+		LanguageRegistry.addName(light_gray_tile, "Light Gray Tile");
+		LanguageRegistry.addName(white_tile, " White Tile");
+		LanguageRegistry.addName(red_tile, "Red Tile");
+		LanguageRegistry.addName(orange_tile, "Orange Tile");
+		LanguageRegistry.addName(yellow_tile, "Yellow Tile");
+		LanguageRegistry.addName(lime_tile, "Lime Tile");
+		LanguageRegistry.addName(green_tile, "Green Tile");
+		LanguageRegistry.addName(cyan_tile, "Cyan Tile");
+		LanguageRegistry.addName(light_blue_tile, "Light Blue Tile");
+		LanguageRegistry.addName(blue_tile, "Blue Tile");
+		LanguageRegistry.addName(purple_tile, "Purple Tile");
+		LanguageRegistry.addName(magenta_tile, "Magenta Tile");
+		LanguageRegistry.addName(pink_tile, "Pink Tile");
+		LanguageRegistry.addName(brown_tile, "Brown Tile");
+		
+		LanguageRegistry.addName(black_diag_tile, "Black Diagonal Tile");
+		LanguageRegistry.addName(gray_diag_tile, "Gray Diagonal Tile");
+		LanguageRegistry.addName(light_gray_diag_tile, "Light Gray Diagonal Tile");
+		LanguageRegistry.addName(white_diag_tile, " White Diagonal Tile");
+		LanguageRegistry.addName(red_diag_tile, "Red Diagonal Tile");
+		LanguageRegistry.addName(orange_diag_tile, "Orange Diagonal Tile");
+		LanguageRegistry.addName(yellow_diag_tile, "Yellow Diagonal Tile");
+		LanguageRegistry.addName(lime_diag_tile, "Lime Diagonal Tile");
+		LanguageRegistry.addName(green_diag_tile, "Green Diagonal Tile");
+		LanguageRegistry.addName(cyan_diag_tile, "Cyan Diagonal Tile");
+		LanguageRegistry.addName(light_blue_diag_tile, "Light Blue Diagonal Tile");
+		LanguageRegistry.addName(blue_diag_tile, "Blue Diagonal Tile");
+		LanguageRegistry.addName(purple_diag_tile, "Purple Diagonal Tile");
+		LanguageRegistry.addName(magenta_diag_tile, "Magenta Diagonal Tile");
+		LanguageRegistry.addName(pink_diag_tile, "Pink Diagonal Tile");
+		LanguageRegistry.addName(brown_diag_tile, "Brown Diagonal Tile");
+		
+		LanguageRegistry.addName(black_small_tile, "Black Small Tile");
+		LanguageRegistry.addName(gray_small_tile, "Gray Small Tile");
+		LanguageRegistry.addName(light_gray_small_tile, "Light Gray Small Tile");
+		LanguageRegistry.addName(white_small_tile, " White Small Tile");
+		LanguageRegistry.addName(red_small_tile, "Red Small Tile");
+		LanguageRegistry.addName(orange_small_tile, "Orange Small Tile");
+		LanguageRegistry.addName(yellow_small_tile, "Yellow Small Tile");
+		LanguageRegistry.addName(lime_small_tile, "Lime Small Tile");
+		LanguageRegistry.addName(green_small_tile, "Green Small Tile");
+		LanguageRegistry.addName(cyan_small_tile, "Cyan Small Tile");
+		LanguageRegistry.addName(light_blue_small_tile, "Light Blue Small Tile");
+		LanguageRegistry.addName(blue_small_tile, "Blue Small Tile");
+		LanguageRegistry.addName(purple_small_tile, "Purple Small Tile");
+		LanguageRegistry.addName(magenta_small_tile, "Magenta Small Tile");
+		LanguageRegistry.addName(pink_small_tile, "Pink Small Tile");
+		LanguageRegistry.addName(brown_small_tile, "Brown Small Tile");
 
 		LanguageRegistry.addName(fakeSolarPanel, "Fake Solar Panel");
 		LanguageRegistry.addName(litplaster, "Lit Plaster");
