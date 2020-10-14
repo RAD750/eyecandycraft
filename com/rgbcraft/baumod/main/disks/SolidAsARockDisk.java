@@ -13,16 +13,16 @@ import net.minecraft.world.World;
 public class SolidAsARockDisk
 extends ItemRecord
 {
-public String recordName = "solid-as-a-rock";
-public static final String name = "Solid as a Rock";
+public String recordName;
 
 public SolidAsARockDisk(int id)
 {
   super(id, "solid-as-a-rock");
   setCreativeTab(CreativeTabs.tabMisc);
+  setItemName("Music Disc");
   maxStackSize = 1;
   iconIndex = 7;
-  recordName = "solid-as-a-rock";
+  recordName = "Solid as a Rock";
 }
 
 public String getTextureFile()
@@ -60,6 +60,6 @@ public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
 
 public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
 {
-  par3List.add("Solid as a Rock");
+  par3List.add("lego11 - " + recordName);
 }
 }

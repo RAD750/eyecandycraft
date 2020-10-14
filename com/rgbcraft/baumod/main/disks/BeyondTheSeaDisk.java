@@ -13,16 +13,16 @@ import net.minecraft.world.World;
 public class BeyondTheSeaDisk
 extends ItemRecord
 {
-public String recordName = "beyond-the-sea";
-public static final String name = "Beyond the Sea";
+public String recordName;
 
 public BeyondTheSeaDisk(int id)
 {
   super(id, "beyond-the-sea");
   setCreativeTab(CreativeTabs.tabMisc);
+  setItemName("Music Disc");
   maxStackSize = 1;
   iconIndex = 6;
-  recordName = "beyond-the-sea";
+  recordName = "Beyond The Sea";
 }
 
 public String getTextureFile()
@@ -60,6 +60,6 @@ public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
 
 public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
 {
-  par3List.add("Beyond the Sea");
+  par3List.add("lego11 - " + recordName);
 }
 }

@@ -13,16 +13,16 @@ import net.minecraft.world.World;
 public class SavaraDisk
 extends ItemRecord
 {
-public String recordName = "savara";
-public static final String name = "Inno Savara";
+public String recordName;
 
 public SavaraDisk(int id)
 {
   super(id, "savara");
   setCreativeTab(CreativeTabs.tabMisc);
+  setItemName("Music Disc");
   maxStackSize = 1;
   iconIndex = 2;
-  recordName = "savara";
+  recordName = "Savara";
 }
 
 public String getTextureFile()
@@ -60,6 +60,6 @@ public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
 
 public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
 {
-  par3List.add("Inno Savara");
+  par3List.add("lego11 - " + recordName);
 }
 }

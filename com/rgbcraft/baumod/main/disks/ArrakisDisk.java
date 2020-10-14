@@ -13,26 +13,21 @@ import net.minecraft.world.World;
 public class ArrakisDisk
 extends ItemRecord
 {
-public String recordName = "arrakis";
-public static final String name = "Inno Arrakis";
+public String recordName;
 
 public ArrakisDisk(int id)
 {
   super(id, "arrakis");
   setCreativeTab(CreativeTabs.tabMisc);
+  setItemName("Music Disc");
   maxStackSize = 1;
   iconIndex = 0;
-  recordName = "arrakis";
+  recordName = "Arrakis";
 }
 
 public String getTextureFile()
 {
   return "/com/rgbcraft/baumod/textures/dischi.png";
-}
-
-public String getRecordTitle()
-{
-  return "lego11 - " + recordName;
 }
 
 public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
@@ -60,6 +55,6 @@ public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
 
 public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
 {
-  par3List.add("Inno Arrakis");
+  par3List.add("lego11 - " + recordName);
 }
 }

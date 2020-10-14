@@ -13,16 +13,16 @@ import net.minecraft.world.World;
 public class TakeTheATrainDisk
 extends ItemRecord
 {
-public String recordName = "take-the-a-train";
-public static final String name = "Take the 'A' Train";
+public String recordName;
 
 public TakeTheATrainDisk(int id)
 {
   super(id, "take-the-a-train");
   setCreativeTab(CreativeTabs.tabMisc);
+  setItemName("Music Disc");
   maxStackSize = 1;
   iconIndex = 4;
-  recordName = "take-the-a-train";
+  recordName = "Take the A train";
 }
 
 public String getTextureFile()
@@ -60,6 +60,6 @@ public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
 
 public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
 {
-  par3List.add("Take the 'A' Train");
+  par3List.add("lego11 - " + recordName);
 }
 }

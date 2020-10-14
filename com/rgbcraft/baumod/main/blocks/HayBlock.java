@@ -10,6 +10,7 @@ public class HayBlock extends Block{
 
 	public HayBlock(int par1, int par2, Material par3Material) {
 		super(par1, par2, par3Material);
+		setStepSound(Block.soundGrassFootstep);
 
 	}
 	

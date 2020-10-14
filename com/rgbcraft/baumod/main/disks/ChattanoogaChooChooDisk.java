@@ -13,16 +13,16 @@ import net.minecraft.world.World;
 public class ChattanoogaChooChooDisk
 extends ItemRecord
 {
-public String recordName = "chattanooga-choo-choo";
-public static final String name = "Chattanooga Choo-Choo";
+public String recordName;
 
 public ChattanoogaChooChooDisk(int id)
 {
   super(id, "chattanooga-choo-choo");
   setCreativeTab(CreativeTabs.tabMisc);
+  setItemName("Music Disc");
   maxStackSize = 1;
   iconIndex = 5;
-  recordName = "chattanooga-choo-choo";
+  recordName = "Chattanooga Choo-Choo";
 }
 
 public String getTextureFile()
@@ -60,6 +60,6 @@ public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
 
 public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
 {
-  par3List.add("Chattanooga Choo-Choo");
+  par3List.add("lego11 - " + recordName);
 }
 }

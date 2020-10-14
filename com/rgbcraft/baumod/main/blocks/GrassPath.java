@@ -43,7 +43,7 @@ public class GrassPath extends Block {
 	
 	public boolean renderAsNormalBlock()
     {
-        return false;
+        return true;
     }
 	
 	public boolean isOpaqueCube()

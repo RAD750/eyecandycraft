@@ -13,16 +13,16 @@ import net.minecraft.world.World;
 public class DaggerfallDisk
 extends ItemRecord
 {
-public String recordName = "daggerfall";
-public static final String name = "Inno Daggerfall";
+public String recordName;
 
 public DaggerfallDisk(int id)
 {
   super(id, "daggerfall");
   setCreativeTab(CreativeTabs.tabMisc);
+  setItemName("Music Disc");
   maxStackSize = 1;
   iconIndex = 1;
-  recordName = "daggerfall";
+  recordName = "Daggerfall";
 }
 
 public String getTextureFile()
@@ -60,6 +60,6 @@ public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
 
 public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
 {
-  par3List.add("Inno Daggerfall");
+  par3List.add("lego11 - " + recordName);
 }
 }

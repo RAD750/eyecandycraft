@@ -15,6 +15,157 @@ public class CraftingHandler {
 		// RECIPE CRAFTING
 		//
 
+		// mattonelle
+		
+		GameRegistry.addRecipe(new ItemStack(Items.gray_tile_raw, 9),
+			new Object[] { "###", "###", "###", '#', Item.clay});
+
+		GameRegistry.addRecipe(new ItemStack(Items.gray_diag_tile_raw, 5),
+			new Object[] { " # ", "###", " # ", '#', Item.clay});
+		
+		GameRegistry.addRecipe(new ItemStack(Items.gray_small_tile_raw, 5),
+			new Object[] { "# #", " # ", "# #", '#', Item.clay});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.white_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 15) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.light_gray_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 7) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.black_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 0) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.brown_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 3) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.red_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 1) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.orange_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 14) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.yellow_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 11) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.lime_tile_raw, 1),
+			new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 10) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.green_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 2) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.light_blue_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 12) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.cyan_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 6) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.blue_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 4) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.purple_tile_raw, 1),
+			new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 5) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.magenta_tile_raw, 1),
+		    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 13) });
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.white_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 15) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.light_gray_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 7) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.black_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 0) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.brown_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 3) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.red_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 1) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.orange_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 14) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.yellow_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 11) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.lime_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 10) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.green_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 2) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.light_blue_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 12) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.cyan_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 6) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.blue_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 4) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.purple_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 5) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.magenta_diag_tile_raw, 1),
+		    new Object[] { Items.gray_diag_tile_raw, new ItemStack(Item.dyePowder, 1, 13) });
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.white_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 15) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.light_gray_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 7) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.gray_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 8) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.black_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 0) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.brown_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 3) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.red_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 1) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.orange_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 14) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.yellow_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 11) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.lime_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 10) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.green_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 2) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.light_blue_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 12) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.cyan_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 6) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.blue_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 4) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.purple_small_tile_raw, 1),
+		    new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 5) });
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.magenta_small_tile_raw, 1),
+			new Object[] { Items.gray_small_tile_raw, new ItemStack(Item.dyePowder, 1, 13) });
+		
+		//cuoci tutte le mattonelle
+		
+		GameRegistry.addSmelting(Items.white_small_tile_raw.itemID, new ItemStack(Blocks.white_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.light_gray_small_tile_raw.itemID, new ItemStack(Blocks.light_gray_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.gray_small_tile_raw.itemID, new ItemStack(Blocks.gray_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.black_small_tile_raw.itemID, new ItemStack(Blocks.black_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.brown_small_tile_raw.itemID, new ItemStack(Blocks.brown_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.red_small_tile_raw.itemID, new ItemStack(Blocks.red_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.orange_small_tile_raw.itemID, new ItemStack(Blocks.orange_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.yellow_small_tile_raw.itemID, new ItemStack(Blocks.yellow_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.lime_small_tile_raw.itemID, new ItemStack(Blocks.lime_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.green_small_tile_raw.itemID, new ItemStack(Blocks.green_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.light_blue_small_tile_raw.itemID, new ItemStack(Blocks.light_blue_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.cyan_small_tile_raw.itemID, new ItemStack(Blocks.cyan_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.blue_small_tile_raw.itemID, new ItemStack(Blocks.blue_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.purple_small_tile_raw.itemID, new ItemStack(Blocks.purple_small_tile), 0.15f);
+		GameRegistry.addSmelting(Items.magenta_small_tile_raw.itemID, new ItemStack(Blocks.magenta_small_tile), 0.15f);
+		
+		GameRegistry.addSmelting(Items.white_diag_tile_raw.itemID, new ItemStack(Blocks.white_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.light_gray_diag_tile_raw.itemID, new ItemStack(Blocks.light_gray_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.gray_diag_tile_raw.itemID, new ItemStack(Blocks.gray_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.black_diag_tile_raw.itemID, new ItemStack(Blocks.black_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.brown_diag_tile_raw.itemID, new ItemStack(Blocks.brown_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.red_diag_tile_raw.itemID, new ItemStack(Blocks.red_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.orange_diag_tile_raw.itemID, new ItemStack(Blocks.orange_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.yellow_diag_tile_raw.itemID, new ItemStack(Blocks.yellow_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.lime_diag_tile_raw.itemID, new ItemStack(Blocks.lime_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.green_diag_tile_raw.itemID, new ItemStack(Blocks.green_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.light_blue_diag_tile_raw.itemID, new ItemStack(Blocks.light_blue_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.cyan_diag_tile_raw.itemID, new ItemStack(Blocks.cyan_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.blue_diag_tile_raw.itemID, new ItemStack(Blocks.blue_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.purple_diag_tile_raw.itemID, new ItemStack(Blocks.purple_diag_tile), 0.15f);
+		GameRegistry.addSmelting(Items.magenta_diag_tile_raw.itemID, new ItemStack(Blocks.magenta_diag_tile), 0.15f);
+		
+		GameRegistry.addSmelting(Items.white_tile_raw.itemID, new ItemStack(Blocks.white_tile), 0.15f);
+		GameRegistry.addSmelting(Items.light_gray_tile_raw.itemID, new ItemStack(Blocks.light_gray_tile), 0.15f);
+		GameRegistry.addSmelting(Items.gray_tile_raw.itemID, new ItemStack(Blocks.gray_tile), 0.15f);
+		GameRegistry.addSmelting(Items.black_tile_raw.itemID, new ItemStack(Blocks.black_tile), 0.15f);
+		GameRegistry.addSmelting(Items.brown_tile_raw.itemID, new ItemStack(Blocks.brown_tile), 0.15f);
+		GameRegistry.addSmelting(Items.red_tile_raw.itemID, new ItemStack(Blocks.red_tile), 0.15f);
+		GameRegistry.addSmelting(Items.orange_tile_raw.itemID, new ItemStack(Blocks.orange_tile), 0.15f);
+		GameRegistry.addSmelting(Items.yellow_tile_raw.itemID, new ItemStack(Blocks.yellow_tile), 0.15f);
+		GameRegistry.addSmelting(Items.lime_tile_raw.itemID, new ItemStack(Blocks.lime_tile), 0.15f);
+		GameRegistry.addSmelting(Items.green_tile_raw.itemID, new ItemStack(Blocks.green_tile), 0.15f);
+		GameRegistry.addSmelting(Items.light_blue_tile_raw.itemID, new ItemStack(Blocks.light_blue_tile), 0.15f);
+		GameRegistry.addSmelting(Items.cyan_tile_raw.itemID, new ItemStack(Blocks.cyan_tile), 0.15f);
+		GameRegistry.addSmelting(Items.blue_tile_raw.itemID, new ItemStack(Blocks.blue_tile), 0.15f);
+		GameRegistry.addSmelting(Items.purple_tile_raw.itemID, new ItemStack(Blocks.purple_tile), 0.15f);
+		GameRegistry.addSmelting(Items.magenta_tile_raw.itemID, new ItemStack(Blocks.magenta_tile), 0.15f);
+		
+		//altro
 	
 		GameRegistry.addRecipe(new ItemStack(Blocks.litplaster, 1),
 				new Object[] { "WLW", "LPL", "WLW", 'L', Item.lightStoneDust, 'W', Item.bucketWater, 'P', Blocks.plaster});
@@ -60,7 +211,7 @@ public class CraftingHandler {
 				new Object[] { "   ", " TI", "   ", 'I', Item.ingotIron, 'T', Blocks.Traliccio});
 		GameRegistry.addRecipe(new ItemStack(Blocks.TraliccioBraccettoSingolo, 1),
 				new Object[] { "   ", "TII", "   ", 'I', Item.ingotIron, 'T', Blocks.Traliccio});
-		GameRegistry.addRecipe(new ItemStack(Blocks.TraliccioBraccettoSingolo, 1),
+		GameRegistry.addRecipe(new ItemStack(Blocks.TraliccioBraccettoCCTV, 1),
 				new Object[] { "   ", "ITI", "   ", 'I', Item.ingotIron, 'T', Blocks.Traliccio});
 		GameRegistry.addRecipe(new ItemStack(Blocks.Scrivania, 1), new Object [] { "SSS", "I I", "I I", 'I',
 				Item.ingotIron, 'S', Block.stoneSingleSlab});
@@ -273,7 +424,7 @@ public class CraftingHandler {
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.a_LocaleCaldaie, 2),
-				new Object[] { "BBW", "BIB", "BBB",
+				new Object[] { "BBW", "WIW", "BBB",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
@@ -283,7 +434,7 @@ public class CraftingHandler {
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.a_LocaleLogistic, 2),
-				new Object[] { "BBB", "BIW", "BBB",
+				new Object[] { "BBB", "WIW", "BBB",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
@@ -298,7 +449,7 @@ public class CraftingHandler {
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.a_CabinaElettrica, 2),
-				new Object[] { "BBB", "BIB", "BBW",
+				new Object[] { "WWW", "BIB", "BBW",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
@@ -328,7 +479,7 @@ public class CraftingHandler {
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.a_IntElettricoGenerale, 2),
-				new Object[] { "BBW", "BIB", "BWB",
+				new Object[] { "WBW", "BIB", "BWB",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'B', new ItemStack(Item.dyePowder, 1, 4),
 						'I', Item.ingotIron });
@@ -346,7 +497,7 @@ public class CraftingHandler {
 						'R', new ItemStack(Item.dyePowder, 1, 1),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.f_Sirena, 2),
-				new Object[] { "RRW", "RIR", "RRR",
+				new Object[] { "RRW", "RIR", "WRR",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'R', new ItemStack(Item.dyePowder, 1, 1),
 						'I', Item.ingotIron });
@@ -364,7 +515,7 @@ public class CraftingHandler {
 						'L', new ItemStack(Item.dyePowder, 1, 10),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.e_UscitaEmergenza, 2),
-				new Object[] { "LLW", "LIL", "LLL",
+				new Object[] { "WWW", "LIL", "LLL",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'L', new ItemStack(Item.dyePowder, 1, 10),
 						'I', Item.ingotIron });
@@ -374,7 +525,7 @@ public class CraftingHandler {
 						'L', new ItemStack(Item.dyePowder, 1, 10),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.e_RompereVetro, 2),
-				new Object[] { "LLL", "LIW", "LLL",
+				new Object[] { "LWW", "LIW", "LLL",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'L', new ItemStack(Item.dyePowder, 1, 10),
 						'I', Item.ingotIron });
@@ -397,7 +548,7 @@ public class CraftingHandler {
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.p_Laser, 2),
-				new Object[] { "YYW", "YIY", "YYY",
+				new Object[] { "YYW", "WIW", "YYY",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
@@ -407,7 +558,7 @@ public class CraftingHandler {
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.p_Infiammabile, 2),
-				new Object[] { "YYY", "YIW", "YYY",
+				new Object[] { "YWW", "YIW", "YYY",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
@@ -422,7 +573,7 @@ public class CraftingHandler {
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.p_Corrente, 2),
-				new Object[] { "YYY", "YIY", "YYW",
+				new Object[] { "YWW", "YIY", "YYW",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'Y', new ItemStack(Item.dyePowder, 1, 11),
 						'I', Item.ingotIron });
@@ -468,7 +619,7 @@ public class CraftingHandler {
 						'R', new ItemStack(Item.dyePowder, 1, 1),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.d_Fiammifero, 2),
-				new Object[] { "RRR", "RIW", "RRR",
+				new Object[] { "RWW", "RIW", "RRR",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'R', new ItemStack(Item.dyePowder, 1, 1),
 						'I', Item.ingotIron });
@@ -517,10 +668,134 @@ public class CraftingHandler {
 						'B', new ItemStack(Item.dyePowder, 1, 12),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Items.o_RTFM, 2),
-				new Object[] { "BBW", "BIB", "BBB",
+				new Object[] { "BWW", "BIB", "BBB",
 						'W', new ItemStack(Item.dyePowder, 1, 15),
 						'B', new ItemStack(Item.dyePowder, 1, 12),
 						'I', Item.ingotIron });
 		
+		//PORTE
+		
+		GameRegistry.addRecipe(new ItemStack(Items.jungleDoor, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', new ItemStack(Block.planks, 1, 3),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.spruceDoor, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', new ItemStack(Block.planks, 1, 1),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.birchDoor, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', new ItemStack(Block.planks, 1, 2),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.apartmentDoor, 1),
+				new Object[] { "WI ", "WI ", "WI ",
+						'W', new ItemStack(Block.planks, 1, 1),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.jungleDoor, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', new ItemStack(Block.planks, 1, 3),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.jungleDoor2, 1),
+				new Object[] { "WI ", "WI ", "WI ",
+						'W', new ItemStack(Block.planks, 1, 3),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.glassDoor, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door0, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Item.reed,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door1, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.red_plaster,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door2, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.purple_plaster,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door3, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.cyan_plaster,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door4, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', new ItemStack(Block.planks, 1, 0),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door5, 1),
+				new Object[] { "WW ", "WI ", "WI ",
+						'W', new ItemStack(Block.planks, 1, 0),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door6, 1),
+				new Object[] { "WG ", "WI ", "WG ",
+						'W', new ItemStack(Block.planks, 1, 3),
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+
+		GameRegistry.addRecipe(new ItemStack(Items.door7, 1),
+				new Object[] { "GG ", "WI ", "WG ",
+						'W', new ItemStack(Block.planks, 1, 0),
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door8, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.light_blue_terracotta,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door9, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.red_terracotta,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door10, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.white_terracotta,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door11, 1),
+				new Object[] { "WG ", "WI ", "WW ",
+						'W', Block.planks,
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door12, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.thatch,
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door13, 1),
+				new Object[] { "WW ", "WI ", "WW ",
+						'W', Blocks.orange_terracotta,
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door14, 1),
+				new Object[] { "GG ", "WI ", "WW ",
+						'W', Blocks.thatch,
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Items.door15, 1),
+				new Object[] { "WW ", "GI ", "WW ",
+						'W', Blocks.green_terracotta,
+						'G', Block.thinGlass,
+						'I', Item.ingotIron });
+
 	}
 }

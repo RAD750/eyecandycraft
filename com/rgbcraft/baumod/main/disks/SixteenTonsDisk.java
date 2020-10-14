@@ -13,16 +13,16 @@ import net.minecraft.world.World;
 public class SixteenTonsDisk
 extends ItemRecord
 {
-public String recordName = "sixteen-tons";
-public static final String name = "Sixteen Tons";
+public String recordName;
 
 public SixteenTonsDisk(int id)
 {
   super(id, "sixteen-tons");
   setCreativeTab(CreativeTabs.tabMisc);
+  setItemName("Music Disc");
   maxStackSize = 1;
   iconIndex = 8;
-  recordName = "sixteen-tons";
+  recordName = "Sixteen Tons";
 }
 
 public String getTextureFile()
@@ -60,6 +60,6 @@ public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
 
 public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
 {
-  par3List.add("Sixteen Tons");
+  par3List.add("lego11 - " + recordName);
 }
 }

@@ -4,7 +4,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import com.rgbcraft.baumod.main.entities.TileEntityTraliccio;
-import com.rgbcraft.baumod.main.handlers.CreativeHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -22,7 +21,7 @@ public class TraliccioBlock extends BlockContainer {
 		setHardness(0.5F);
 		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
-		setCreativeTab(CreativeHandler.ECCDecorations);
+		setCreativeTab(CreativeTabs.tabDecorations);
 		setBlockName("Traliccio");
 		blockIndexInTexture = 11;
 	}

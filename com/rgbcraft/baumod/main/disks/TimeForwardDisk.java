@@ -13,16 +13,16 @@ import net.minecraft.world.World;
 public class TimeForwardDisk
 extends ItemRecord
 {
-public String recordName = "time-forward";
-public static final String name = "Time, Forward!";
+public String recordName;
 
 public TimeForwardDisk(int id)
 {
   super(id, "time-forward");
   setCreativeTab(CreativeTabs.tabMisc);
+  setItemName("Music Disc");
   maxStackSize = 1;
   iconIndex = 3;
-  recordName = "time-forward";
+  recordName = "Time Forward";
 }
 
 public String getTextureFile()
@@ -60,6 +60,6 @@ public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
 
 public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
 {
-  par3List.add("Time, Forward!");
+  par3List.add("lego11 - " + recordName);
 }
 }

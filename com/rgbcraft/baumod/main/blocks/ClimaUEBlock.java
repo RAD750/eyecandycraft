@@ -3,8 +3,8 @@ package com.rgbcraft.baumod.main.blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import com.rgbcraft.baumod.main.CreativeTab;
 import com.rgbcraft.baumod.main.entities.TileEntityClimaUE;
-import com.rgbcraft.baumod.main.handlers.CreativeHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -24,7 +24,7 @@ public class ClimaUEBlock extends BlockContainer {
 		setHardness(0.5F);
 		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
-		setCreativeTab(CreativeHandler.ECCDecorations);
+		setCreativeTab(CreativeTab.CTDecorations);
 		setBlockName("ClimaUE");
 		blockIndexInTexture = 34;
 	}

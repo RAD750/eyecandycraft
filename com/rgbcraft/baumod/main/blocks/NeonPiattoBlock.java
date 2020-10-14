@@ -4,8 +4,8 @@ package com.rgbcraft.baumod.main.blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import com.rgbcraft.baumod.main.CreativeTab;
 import com.rgbcraft.baumod.main.entities.TileEntityNeonPiatto;
-import com.rgbcraft.baumod.main.handlers.CreativeHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -30,7 +30,7 @@ public class NeonPiattoBlock
     setHardness(0.1F);
     setResistance(0.1F);
     setStepSound(Block.soundGlassFootstep);
-    setCreativeTab(CreativeHandler.ECCDecorations);
+    setCreativeTab(CreativeTab.CTDecorations);
     setBlockName("NeonPiatto");
     setLightValue(1.0F);
     blockIndexInTexture = 9;
