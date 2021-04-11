@@ -1,9 +1,12 @@
 package eyecandycraft.main.handlers;
 
+import java.util.List;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import eyecandycraft.main.blocks.Blocks;
 import eyecandycraft.main.items.Items;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -293,8 +296,29 @@ public class CraftingHandler {
 		GameRegistry.addRecipe(new ItemStack(Blocks.Clima, 1), new Object [] { "III", "IBI", "   ", 'I',
 				Item.ingotIron, 'B', Item.bucketWater});
 		
+		
+		
+		
+		List <ItemStack> inoxOres = OreDictionary.getOres("ingotRefinedIron");
+		if ( inoxOres.size() > 0 ) {
+			ItemStack inox = inoxOres.get(0);
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.corrugatedSteel, 16, 1), new Object [] {"I I", " I ", "I I", 'I', inox});
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare refinedIron, disabilitata recipe secondaria CorrugatedSteel");
+		}
+		
+		List <ItemStack> steelOres = OreDictionary.getOres("ingotSteel");
+		if ( steelOres.size() > 0 ) {
+			ItemStack steel = steelOres.get(0);
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.corrugatedSteel, 32, 1), new Object [] {"I I", " I ", "I I", 'I', steel});
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare ingotSteel, disabilitata recipe secondaria CorrugatedSteel");
+		}
+		
+		
+		
 		//CorrugatedSteel
-		GameRegistry.addShapedRecipe(new ItemStack(Blocks.corrugatedSteel, 8, 1), new Object [] {"I I", "I I", "III", 'I', Item.ingotIron});
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.corrugatedSteel, 8, 1), new Object [] {"I I", " I ", "I I", 'I', Item.ingotIron});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.corrugatedSteel, 1, 3),
 				new Object[] { new ItemStack(Blocks.corrugatedSteel, 1, 1), new ItemStack(Item.dyePowder, 1, 0) });
@@ -320,13 +344,18 @@ public class CraftingHandler {
 				new Object[] { new ItemStack(Blocks.corrugatedSteel, 1, 1), new ItemStack(Item.dyePowder, 1, 11) });
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.corrugatedSteel, 1, 10),
 				new Object[] { new ItemStack(Blocks.corrugatedSteel, 1, 1), new ItemStack(Item.dyePowder, 1, 12) });
-		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.corrugatedSteel, 14),
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.corrugatedSteel, 1, 14),
 				new Object[] { new ItemStack(Blocks.corrugatedSteel, 1, 1), new ItemStack(Item.dyePowder, 1, 13) });
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.corrugatedSteel, 1, 6),
 				new Object[] { new ItemStack(Blocks.corrugatedSteel, 1, 1), new ItemStack(Item.dyePowder, 1, 14) });
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.corrugatedSteel, 1, 0),
 				new Object[] { new ItemStack(Blocks.corrugatedSteel, 1, 1), new ItemStack(Item.dyePowder, 1, 15) });
 		
+		//Panchina
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.PanchinaCentro), new Object [] { "###", "###", "I I", '#', Block.planks, 'I', Item.ingotIron});
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.PanchinaDestra), new Object [] { "###", "###", "  I", '#', Block.planks, 'I', Item.ingotIron});
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.PanchinaSinistra), new ItemStack(Blocks.PanchinaDestra));
 		//Tappeto
 		
 		GameRegistry.addShapedRecipe(new ItemStack(Blocks.tappeto, 3, 0), new Object [] {"   ", "## ", "   ", '#', new ItemStack(Block.cloth, 1, 0)});

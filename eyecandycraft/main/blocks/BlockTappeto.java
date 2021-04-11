@@ -36,6 +36,12 @@ public class BlockTappeto extends Block {
 			return 113 + ((metadata & 8) >> 3) + (metadata & 7) * 16;
 		}
 	}
+	
+	@Override
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+    {
+        return null;
+    }
 
 	@Override
 	public void setBlockBoundsBasedOnState(IBlockAccess world, int x, int y, int z) {

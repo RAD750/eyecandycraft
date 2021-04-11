@@ -80,7 +80,7 @@ public class Blocks {
 	
     public static Block corrugatedSteel, tappeto, fumogeno;
     
-    public static Block PanchinaCentro, PanchinaDx, PanchinaSx, cartellorall, cartellofinerall;
+    public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, cartellorall, cartellofinerall;
 
     
 
@@ -257,10 +257,8 @@ public class Blocks {
 		OB = new OBBlock(928,0);
 		BombolaGas = new BombolaGasBlock(929,0);
 		PanchinaCentro = new PanchinaCentroBlock(930,0);
-		PanchinaDx = new PanchinaDxBlock(931,0);
-		PanchinaSx = new PanchinaSxBlock(932,0);
-		cartellorall = new CartelloRall(933,0);
-		cartellofinerall = new CartelloFineRall(934,0);
+		PanchinaDestra = new PanchinaDestraBlock(931,0);
+		PanchinaSinistra = new PanchinaSinistraBlock(932,0);
 		//cancelletto
 		
 		spruceGate = new BlockFenceGate(1500, 198).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setBlockName("spruceGate").setRequiresSelfNotify();
@@ -758,6 +756,14 @@ public class Blocks {
 		GameRegistry.registerBlock(Bitta, "Bitta");
 		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityBitta.class, "Bitta");
 		
+		
+		//Panchina
+		GameRegistry.registerBlock(PanchinaCentro, "PanchinaCentro");
+		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityPanchinaCentro.class, "PanchinaCentro");
+		GameRegistry.registerBlock(PanchinaDestra, "PanchinaDestra");
+		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityPanchinaDestra.class, "PanchinaDestra");
+		GameRegistry.registerBlock(PanchinaSinistra, "PanchinaSinistra");
+		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityPanchinaSinistra.class, "PanchinaSinistra");
 	}
 
 	public static void RegistraLingua() {
@@ -1008,6 +1014,12 @@ public class Blocks {
 		LanguageRegistry.addName(pink_tintedGlass, "Pink Tinted Glass");
 		LanguageRegistry.addName(brown_tintedGlass, "Brown Tinted Glass");
 		
+		
+		//panchina
+		
+		LanguageRegistry.addName(PanchinaCentro, "Bench");
+		LanguageRegistry.addName(PanchinaSinistra, "Bench (left)");
+		LanguageRegistry.addName(PanchinaDestra, "Bench (right)");
 		
 		//ITEMS (VEDI SOPRA)
 	
