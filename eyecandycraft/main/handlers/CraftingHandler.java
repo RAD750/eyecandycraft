@@ -311,8 +311,18 @@ public class CraftingHandler {
 		if ( steelOres.size() > 0 ) {
 			ItemStack steel = steelOres.get(0);
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.corrugatedSteel, 32, 1), new Object [] {"I I", " I ", "I I", 'I', steel});
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.Transenna, 16), new Object [] {"   ", "###", "###", '#', steel });
 		} else {
-			System.err.println("[Eyecandycraft] Impossibile registrare ingotSteel, disabilitata recipe secondaria CorrugatedSteel");
+			System.err.println("[Eyecandycraft] Impossibile registrare ingotSteel, disabilitata recipe secondaria CorrugatedSteel/Transenna");
+		}
+		
+		List <ItemStack> tungSteelOres = OreDictionary.getOres("ingotTungstenSteel");
+		if ( tungSteelOres.size() > 0 ) {
+			ItemStack tungSteel = tungSteelOres.get(0);
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.corrugatedSteel, 64, 1), new Object [] {"I I", " I ", "I I", 'I', tungSteel});
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.Transenna, 32), new Object [] {"   ", "###", "###", '#', tungSteel });
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare ingotTungstenSteel, disabilitata recipe secondaria CorrugatedSteel/Transenna");
 		}
 		
 		
@@ -490,6 +500,16 @@ public class CraftingHandler {
 				new Object[] { Items.molten_glass, new ItemStack(Item.dyePowder, 1, 14) });
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.white_tintedGlass, 1),
 				new Object[] { Items.molten_glass, new ItemStack(Item.dyePowder, 1, 15) });
+		
+		List <ItemStack> nuggetOres = OreDictionary.getOres("nuggetIron");
+		if ( nuggetOres.size() > 0 ) {
+			ItemStack ironNugget = nuggetOres.get(0);
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.Lanterna), new Object [] {"###", "#T#", "###", '#', ironNugget, 'T', Block.torchWood});
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare refinedIron, disabilitata recipe secondaria CorrugatedSteel");
+		}
+		
+		
 		
 		//CARTELLI
 		
@@ -884,5 +904,28 @@ public class CraftingHandler {
 						'U', ic2.api.Items.getItem("uraniumBlock"),
 						'G', Block.blockGold,
 						'D', Block.blockDiamond});
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.Antenna4G, 1),
+				new Object[] { "CZC", "ADA", "ASA",
+						'C', ic2.api.Items.getItem("electronicCircuit"),
+						'D', GregtechHandler.getGregTechItem(3, 1, 1),
+						'A', GregtechHandler.getGregTechItem(0, 1, 75),
+						'Z', GregtechHandler.getGregTechItem(0, 1, 82),
+						'S', GregtechHandler.getGregTechItem(0, 1, 6)
+		});
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.Antenna5G, 1),
+				new Object[] { "DZD", "N4N", "BSB",
+						'4', new ItemStack(Blocks.Antenna4G, 1),
+						'D', GregtechHandler.getGregTechItem(3, 1, 1),
+						'N', GregtechHandler.getGregTechItem(3, 1, 2),
+						'B', GregtechHandler.getGregTechItem(2, 1, 10),
+						'Z', GregtechHandler.getGregTechItem(0, 1, 82),
+						'S', GregtechHandler.getGregTechItem(0, 1, 6)
+				}
+		);
+				
+		
+		
 	}
 }

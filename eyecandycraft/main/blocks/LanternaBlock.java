@@ -3,7 +3,7 @@ package eyecandycraft.main.blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import eyecandycraft.main.CreativeTab;
-import eyecandycraft.main.entities.TileEntityCCTVCam;
+import eyecandycraft.main.entities.TileEntityLanterna;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -14,22 +14,24 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class CCTVCamBlock extends BlockContainer {
-	public static final String name = "CCTVCam";
+public class LanternaBlock extends BlockContainer {
+	public static final String name = "Lanterna";
 
-	public CCTVCamBlock(int id, int texture) {
+	public LanternaBlock(int id, int texture) {
 		super(id, Material.iron);
 		setHardness(0.5F);
 		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabEyecandyMobilio);
-		setBlockName("CCTVCam");
-		blockIndexInTexture = 29;
+		setBlockName("Lanterna");
+		blockIndexInTexture = 55;
+		this.setLightValue(0.8f);
 	}
-
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
-		return null;
-	}
+	
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+    {
+        return null;
+    }
 
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getSelectedBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
@@ -38,8 +40,7 @@ public class CCTVCamBlock extends BlockContainer {
 	}
 
 	public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int x, int y, int z) {
-		setBlockBounds(0.1F, 0.0F, 0.1F, 0.9F, 0.8F, 0.9F);
-		// setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.27F);
+		setBlockBounds(0.3F, 0.2F, 0.3F, 0.7F, 1.0F, 0.7F);
 	}
 
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity) {
@@ -52,7 +53,7 @@ public class CCTVCamBlock extends BlockContainer {
 			yaw %= 360;
 			int facing = yaw / 45;
 
-			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.CCTVCam.blockID, facing / 2);
+			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.Lanterna.blockID, facing / 2);
 		}
 	}
 
@@ -85,6 +86,6 @@ public class CCTVCamBlock extends BlockContainer {
 	}
 
 	public TileEntity createTileEntity(World world, int meta) {
-		return new TileEntityCCTVCam();
+		return new TileEntityLanterna();
 	}
 }

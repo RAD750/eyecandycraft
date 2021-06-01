@@ -92,7 +92,13 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPanchinaCentro.class, new RenderTablePanchinaCentro());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPanchinaSinistra.class, new RenderTablePanchinaSinistra());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPanchinaDestra.class, new RenderTablePanchinaDestra());
-
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAntenna4G.class, new RenderTableAntenna4G());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAntenna5G.class, new RenderTableAntenna5G());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDecade.class, new RenderTableDecade());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArmadioFTTC.class, new RenderTableArmadioFTTC());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLanterna.class, new RenderTableLanterna());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTransenna.class, new RenderTableTransenna());
+		
 	}
 
 	@Mod.PostInit

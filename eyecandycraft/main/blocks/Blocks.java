@@ -3,6 +3,7 @@ package eyecandycraft.main.blocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import eyecandycraft.main.CreativeTab;
+import eyecandycraft.main.entities.*;
 import eyecandycraft.main.items.ItemBlockTappeto;
 import eyecandycraft.main.items.Items;
 import eyecandycraft.main.items.meta.ItemBlockCorrugatedSteel;
@@ -18,7 +19,7 @@ import net.minecraftforge.common.MinecraftForge;
 
 public class Blocks {
 	
-
+	public static Block half_plaster_slab, full_plaster_slab;
 	
 	// Tutto il resto
 	public static Block unbreakableStone, ubLog, ubCobble, ubstonebricks, ubbirch, ubspruce, grassPath, hay, mortar, ubglass,
@@ -75,16 +76,18 @@ public class Blocks {
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, FaroPavimento, LampionePaloModerno, LampionePaloVecchio;
 	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat, Clima, ClimaUE, Scrivania, Polycom, BocchettaAC;
 	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta, BombolaGas;
+	public static Block ArmadioFTTC, Antenna4G, Antenna5G, Decade; 
 	
 	//METADATA
 	
     public static Block corrugatedSteel, tappeto, fumogeno;
     
-    public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, cartellorall, cartellofinerall;
+    public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna;
 
     
 
 	public static void InizializzaBlocchi() {
+		
 		
 		corrugatedSteel = new BlockCorrugatedSteel(178);
 		fumogeno = new BlockFumogeno(3308);
@@ -202,11 +205,14 @@ public class Blocks {
 		// padella
 		ParabolaSat = new ParabolaBlock(846, 0);
 		AntennaGroundPlane = new AntennaGroundPlaneBlock(847, 0);
+		
 		// AntennaSettori2100MHz = new AntennaSettori2100MHzBlock(848, 0);
 		AntennaSettore900MHz = new AntennaSettore900MHzBlock(849, 0);
 		AntennaYagiVHF = new AntennaYagiVHFBlock(850, 0);
 		AntennaYagiUHF = new AntennaYagiUHFBlock(851, 0);
 		AntennaLogperiodica = new AntennaLogperiodicaBlock(852, 0);
+		Antenna4G = new Antenna4GBlock(853, 0);
+		Antenna5G = new Antenna5GBlock(854, 0);
 		Traliccio = new TraliccioBlock(859, 0);
 		TraliccioBraccettoSingolo = new TraliccioBraccettoSingoloBlock(858, 0);
 		//TraliccioBraccettoDoppio = new TraliccioBraccettoDoppioBlock(857, 0);
@@ -259,6 +265,13 @@ public class Blocks {
 		PanchinaCentro = new PanchinaCentroBlock(930,0);
 		PanchinaDestra = new PanchinaDestraBlock(931,0);
 		PanchinaSinistra = new PanchinaSinistraBlock(932,0);
+		
+		ArmadioFTTC = new ArmadioFTTCBlock(933, 0);
+		Decade = new DecadeBlock(934, 0);
+		
+		Lanterna = new LanternaBlock(935, 0);
+		Transenna = new TransennaBlock(936, 0);
+		
 		//cancelletto
 		
 		spruceGate = new BlockFenceGate(1500, 198).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setBlockName("spruceGate").setRequiresSelfNotify();
@@ -493,7 +506,8 @@ public class Blocks {
 		//
 		
 		GameRegistry.registerBlock(fumogeno, "fumogeno");
-		
+
+
 		GameRegistry.registerBlock(corrugatedSteel, ItemBlockCorrugatedSteel.class, corrugatedSteel.getBlockName());
 		GameRegistry.registerBlock(tappeto, ItemBlockTappeto.class, tappeto.getBlockName());
 		
@@ -558,6 +572,8 @@ public class Blocks {
 		GameRegistry.registerBlock(jungleGate, "jungleGate");
 		
 		//TODO porta
+		
+
 		
 		
 		//Blocchi scortecciati 
@@ -647,123 +663,138 @@ public class Blocks {
 
 		// Padella Satellitare
 		GameRegistry.registerBlock(ParabolaSat, "ParabolaSat");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityParabolaSat.class,
+		GameRegistry.registerTileEntity(TileEntityParabolaSat.class,
 				"ParabolaSatTileEntity");
 		GameRegistry.registerBlock(CartelloEndor, "CartelloEndor");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityCartelloEndor.class,
+		GameRegistry.registerTileEntity(TileEntityCartelloEndor.class,
 				"CartelloEndorTileEntity");
 		GameRegistry.registerBlock(AntennaGroundPlane, "AntennaGroundPlane");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityAntennaGroundPlane.class,
+		GameRegistry.registerTileEntity(TileEntityAntennaGroundPlane.class,
 				"AntennaGroundPlaneTileEntity");
 		GameRegistry.registerBlock(AntennaYagiVHF, "AntennaYagiVHF");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityAntennaYagiVHF.class,
+		GameRegistry.registerTileEntity(TileEntityAntennaYagiVHF.class,
 				"AntennaYagiVHFTileEntity");
 		GameRegistry.registerBlock(AntennaSettore900MHz, "AntennaSettore900MHz");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityAntennaSettore900MHz.class,
+		GameRegistry.registerTileEntity(TileEntityAntennaSettore900MHz.class,
 				"AntennaSettore900MHzTileEntity");
 		GameRegistry.registerBlock(AntennaYagiUHF, "AntennaYagiUHF");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityAntennaYagiUHF.class,
+		GameRegistry.registerTileEntity(TileEntityAntennaYagiUHF.class,
 				"AntennaYagiUHFTileEntity");
 		GameRegistry.registerBlock(AntennaLogperiodica, "AntennaLogperiodica");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityAntennaLogperiodica.class,
+		GameRegistry.registerTileEntity(TileEntityAntennaLogperiodica.class,
 				"AntennaLogperiodicaTileEntity");
 		GameRegistry.registerBlock(Traliccio, "Traliccio");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityTraliccio.class,
+		GameRegistry.registerTileEntity(TileEntityTraliccio.class,
 				"TraliccioTileEntity");
 		GameRegistry.registerBlock(TraliccioBraccettoSingolo, "TraliccioBraccettoSingolo");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityTraliccioBraccettoSingolo.class,
+		GameRegistry.registerTileEntity(TileEntityTraliccioBraccettoSingolo.class,
 				"TraliccioBraccettoSingoloTileEntity");
 		GameRegistry.registerBlock(TraliccioBraccettoSat, "TraliccioBraccettoSat");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityTraliccioBraccettoSat.class,
+		GameRegistry.registerTileEntity(TileEntityTraliccioBraccettoSat.class,
 				"TraliccioBraccettoSatTileEntity");
 		GameRegistry.registerBlock(TraliccioBraccettoCCTV, "TraliccioBraccettoCCTV");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityTraliccioBraccettoCCTV.class,
+		GameRegistry.registerTileEntity(TileEntityTraliccioBraccettoCCTV.class,
 				"TraliccioBraccettoCCTVTileEntity");
 		GameRegistry.registerBlock(CroceSAndrea, "CroceSAndrea");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityCroceSAndrea.class,
+		GameRegistry.registerTileEntity(TileEntityCroceSAndrea.class,
 				"CroceSAndrea");
 		GameRegistry.registerBlock(OB, "OB");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityOB.class,
+		GameRegistry.registerTileEntity(TileEntityOB.class,
 				"OB");
 		GameRegistry.registerBlock(BombolaGas, "BombolaGas");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityBombolaGas.class,
+		GameRegistry.registerTileEntity(TileEntityBombolaGas.class,
 				"BombolaGas");
 		// Atari ST
 		GameRegistry.registerBlock(AtariST, "Atari ST");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityAtariST.class, "AtariSTTileEntity");
+		GameRegistry.registerTileEntity(TileEntityAtariST.class, "AtariSTTileEntity");
 
 		
 		GameRegistry.registerBlock(Portatile, "Portatile");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityPortatile.class, "PortatileTileEntity");
+		GameRegistry.registerTileEntity(TileEntityPortatile.class, "PortatileTileEntity");
 		GameRegistry.registerBlock(ModemSat, "ModemSat");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityModemSat.class, "ModemSat");
+		GameRegistry.registerTileEntity(TileEntityModemSat.class, "ModemSat");
 
 		// Lampade
 
 		GameRegistry.registerBlock(NeonPiatto, "NeonPiatto");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityNeonPiatto.class, "NeonPiatto");
+		GameRegistry.registerTileEntity(TileEntityNeonPiatto.class, "NeonPiatto");
 		GameRegistry.registerBlock(Neon, "Neon");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityNeon.class, "Neon");
+		GameRegistry.registerTileEntity(TileEntityNeon.class, "Neon");
 		GameRegistry.registerBlock(Lampadario, "Lampadario");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityLampadario.class, "Lampadario");
+		GameRegistry.registerTileEntity(TileEntityLampadario.class, "Lampadario");
 		GameRegistry.registerBlock(LampadaScrivania, "LampadaScrivania");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityLampadaScrivania.class, "LampadaScrivania");
+		GameRegistry.registerTileEntity(TileEntityLampadaScrivania.class, "LampadaScrivania");
 		GameRegistry.registerBlock(LampioneGiardino, "LampioneGiardino");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityLampioneGiardino.class, "LampioneGiardino");
+		GameRegistry.registerTileEntity(TileEntityLampioneGiardino.class, "LampioneGiardino");
 		GameRegistry.registerBlock(LampioneMuro, "LampioneMuro");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityLampioneMuro.class, "LampioneMuro");
+		GameRegistry.registerTileEntity(TileEntityLampioneMuro.class, "LampioneMuro");
 		GameRegistry.registerBlock(Faro, "Faro");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityFaro.class, "Faro");
+		GameRegistry.registerTileEntity(TileEntityFaro.class, "Faro");
 		GameRegistry.registerBlock(FaroPavimento, "FaroPavimento");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityFaroPavimento.class, "FaroPavimento");
+		GameRegistry.registerTileEntity(TileEntityFaroPavimento.class, "FaroPavimento");
 		GameRegistry.registerBlock(LampionePaloVecchio, "LampionePaloVecchio");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityLampionePaloVecchio.class, "LampionePaloVecchio");
+		GameRegistry.registerTileEntity(TileEntityLampionePaloVecchio.class, "LampionePaloVecchio");
 		GameRegistry.registerBlock(LampionePaloModerno, "LampionePaloModerno");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityLampionePaloModerno.class, "LampionePaloModerno");
+		GameRegistry.registerTileEntity(TileEntityLampionePaloModerno.class, "LampionePaloModerno");
 	
 		//studio TV/radio
 		
 		GameRegistry.registerBlock(Microfono, "Microfono");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityMicrofono.class, "Microfono");
+		GameRegistry.registerTileEntity(TileEntityMicrofono.class, "Microfono");
 		GameRegistry.registerBlock(Telecamera, "Telecamera");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityTelecamera.class, "Telecamera");
+		GameRegistry.registerTileEntity(TileEntityTelecamera.class, "Telecamera");
 		GameRegistry.registerBlock(ConsoleRegia, "ConsoleRegia");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityConsoleRegia.class, "ConsoleRegia");
+		GameRegistry.registerTileEntity(TileEntityConsoleRegia.class, "ConsoleRegia");
 		GameRegistry.registerBlock(RackRF, "RackRF");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityRackRF.class, "RackRF");
+		GameRegistry.registerTileEntity(TileEntityRackRF.class, "RackRF");
 		GameRegistry.registerBlock(TVLCD, "TVLCD");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityTVLCD.class, "TVLCD");
+		GameRegistry.registerTileEntity(TileEntityTVLCD.class, "TVLCD");
 		GameRegistry.registerBlock(TVOLED, "TVOLED");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityTVOLED.class, "TVOLED");
+		GameRegistry.registerTileEntity(TileEntityTVOLED.class, "TVOLED");
 		GameRegistry.registerBlock(TVOLEDVESA, "TVOLEDVESA");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityTVOLEDVESA.class, "TVOLEDVESA");
+		GameRegistry.registerTileEntity(TileEntityTVOLEDVESA.class, "TVOLEDVESA");
 		GameRegistry.registerBlock(CCTVCam, "CCTVCam");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityCCTVCam.class, "CCTVCam");
+		GameRegistry.registerTileEntity(TileEntityCCTVCam.class, "CCTVCam");
 		GameRegistry.registerBlock(CCTVCamPTZ, "CCTVCamPTZ");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityCCTVCamPTZ.class, "CCTVCamPTZ");
+		GameRegistry.registerTileEntity(TileEntityCCTVCamPTZ.class, "CCTVCamPTZ");
 		GameRegistry.registerBlock(Estintore, "Estintore");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityEstintore.class, "Estintore");
+		GameRegistry.registerTileEntity(TileEntityEstintore.class, "Estintore");
 		GameRegistry.registerBlock(Clima, "Clima");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityClima.class, "Clima");
+		GameRegistry.registerTileEntity(TileEntityClima.class, "Clima");
 		GameRegistry.registerBlock(ClimaUE, "ClimaUE");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityClimaUE.class, "ClimaUE");
+		GameRegistry.registerTileEntity(TileEntityClimaUE.class, "ClimaUE");
 		GameRegistry.registerBlock(Polycom, "Polycom");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityPolycom.class, "Polycom");
+		GameRegistry.registerTileEntity(TileEntityPolycom.class, "Polycom");
 		GameRegistry.registerBlock(Scrivania, "Scrivania");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityScrivania.class, "Scrivania");
+		GameRegistry.registerTileEntity(TileEntityScrivania.class, "Scrivania");
 		GameRegistry.registerBlock(BocchettaAC, "BocchettaAC");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityBocchettaAC.class, "BocchettaAC");
+		GameRegistry.registerTileEntity(TileEntityBocchettaAC.class, "BocchettaAC");
 		GameRegistry.registerBlock(Bitta, "Bitta");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityBitta.class, "Bitta");
+		GameRegistry.registerTileEntity(TileEntityBitta.class, "Bitta");
 		
 		
 		//Panchina
 		GameRegistry.registerBlock(PanchinaCentro, "PanchinaCentro");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityPanchinaCentro.class, "PanchinaCentro");
+		GameRegistry.registerTileEntity(TileEntityPanchinaCentro.class, "PanchinaCentro");
 		GameRegistry.registerBlock(PanchinaDestra, "PanchinaDestra");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityPanchinaDestra.class, "PanchinaDestra");
+		GameRegistry.registerTileEntity(TileEntityPanchinaDestra.class, "PanchinaDestra");
 		GameRegistry.registerBlock(PanchinaSinistra, "PanchinaSinistra");
-		GameRegistry.registerTileEntity(eyecandycraft.main.entities.TileEntityPanchinaSinistra.class, "PanchinaSinistra");
+		GameRegistry.registerTileEntity(TileEntityPanchinaSinistra.class, "PanchinaSinistra");
+		
+		GameRegistry.registerBlock(Antenna4G, "Antenna4G");
+		GameRegistry.registerTileEntity(TileEntityAntenna4G.class, "Antenna4G");
+		GameRegistry.registerBlock(Antenna5G, "Antenna5G");
+		GameRegistry.registerTileEntity(TileEntityAntenna5G.class, "Antenna5G");
+		GameRegistry.registerBlock(ArmadioFTTC, "ArmadioFTTC");
+		GameRegistry.registerTileEntity(TileEntityArmadioFTTC.class, "ArmadioFTTC");
+		GameRegistry.registerBlock(Decade, "Decade");
+		GameRegistry.registerTileEntity(TileEntityDecade.class, "Decade");
+		
+		GameRegistry.registerBlock(Lanterna, "Lanterna");
+		GameRegistry.registerTileEntity(TileEntityLanterna.class, "Lanterna");
+		GameRegistry.registerBlock(Transenna, "Transenna");
+		GameRegistry.registerTileEntity(TileEntityTransenna.class, "Transenna");
+		
 	}
 
 	public static void RegistraLingua() {
@@ -879,6 +910,8 @@ public class Blocks {
 		
 		//TODO porta
 
+
+		
 		LanguageRegistry.addName(spruceDoor, "Spruce Door");
 		
 		//Blocchi scortecciati
@@ -1020,6 +1053,15 @@ public class Blocks {
 		LanguageRegistry.addName(PanchinaCentro, "Bench");
 		LanguageRegistry.addName(PanchinaSinistra, "Bench (left)");
 		LanguageRegistry.addName(PanchinaDestra, "Bench (right)");
+		
+		LanguageRegistry.addName(Antenna4G, "LTE Reflector Antenna (4G FDD MU-MIMO)");
+		LanguageRegistry.addName(Antenna5G, "LTE Reflector Antenna (5G TDD MU-MIMO)");
+		
+		LanguageRegistry.addName(Decade, "Decade telefonica");
+		LanguageRegistry.addName(ArmadioFTTC, "Armadio telefonico FTTC VDSL");
+		
+		LanguageRegistry.addName(Lanterna, "Lanterna");
+		LanguageRegistry.addName(Transenna, "Barrier");
 		
 		//ITEMS (VEDI SOPRA)
 	

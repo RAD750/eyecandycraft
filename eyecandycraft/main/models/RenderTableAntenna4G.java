@@ -8,11 +8,11 @@ import org.lwjgl.opengl.GL11;
 import eyecandycraft.main.blocks.AntennaYagiVHFBlock;
 import eyecandycraft.main.blocks.Blocks;
 
-public class RenderTableCCTVCam extends TileEntitySpecialRenderer {
-	private ModelCCTVCam CCTVCam;
+public class RenderTableAntenna4G extends TileEntitySpecialRenderer {
+	private ModelAntenna4G Antenna4G;
 
-	public RenderTableCCTVCam() {
-		CCTVCam = new ModelCCTVCam();
+	public RenderTableAntenna4G() {
+		Antenna4G = new ModelAntenna4G();
 	}
 
 	public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float scale) {
@@ -21,7 +21,7 @@ public class RenderTableCCTVCam extends TileEntitySpecialRenderer {
 
 		int direction = 2;
 		if (tileentity.getWorldObj().getBlockId(tileentity.xCoord, tileentity.yCoord,
-				tileentity.zCoord) == Blocks.CCTVCam.blockID) {
+				tileentity.zCoord) == Blocks.Antenna4G.blockID) {
 			direction = tileentity.getWorldObj().getBlockMetadata(tileentity.xCoord, tileentity.yCoord,
 					tileentity.zCoord) + 1;
 			if (direction == 1) {
@@ -41,10 +41,11 @@ public class RenderTableCCTVCam extends TileEntitySpecialRenderer {
 
 		GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
 		GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
+
 		GL11.glRotatef(direction * 90, 0.0F, 1.0F, 0.0F);
 
-		bindTextureByName("/eyecandycraft/textures/CCTVCam.png");
-		CCTVCam.render((Entity) null, 0.0F, -0.1F, 0.0F, 0.0F, 0.0F, 0.0625F);
+		bindTextureByName("/eyecandycraft/textures/Antenna4G.png");
+		Antenna4G.render((Entity) null, 0.0F, -0.1F, 0.0F, 0.0F, 0.0F, 0.0625F);
 
 		GL11.glPopMatrix();
 	}

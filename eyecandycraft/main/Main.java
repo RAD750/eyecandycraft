@@ -26,12 +26,12 @@ import net.minecraftforge.common.MinecraftForge;
 
 
 
-@Mod(name="Eyecandycraft", version="2.1", modid="eyecandycraft")
+@Mod(name="Eyecandycraft", version="2.6", modid="eyecandycraft")
 public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "2.1";
+		return "2.6";
 	}
 	
 	@SidedProxy(clientSide="eyecandycraft.main.proxies.ClientProxy", serverSide="eyecandycraft.main.proxies.ServerProxy")
@@ -61,7 +61,6 @@ public class Main extends BaseMod{
 		Items.InizializzaItem();
 		Items.RegistraLingua();
 		FacadeHandler.RegistraFacade();
-		CraftingHandler.AggiungiCrafting();
 		Blocks.InitPorte();
 	}
 	
@@ -69,6 +68,7 @@ public class Main extends BaseMod{
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
 		//proxy per modelli techne
+		CraftingHandler.AggiungiCrafting();
 	    proxy.postInit(event);
 	}
 	

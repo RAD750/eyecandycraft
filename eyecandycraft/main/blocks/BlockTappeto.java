@@ -25,6 +25,7 @@ public class BlockTappeto extends Block {
 		super(id, Material.cloth);
 		this.setCreativeTab(CreativeTab.tabEyecandyMobilio);
 		setBlockName("tappeto");
+		this.setHardness(0.5F);
 	}
 
 	@Override
