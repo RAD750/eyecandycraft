@@ -26,12 +26,12 @@ import net.minecraftforge.common.MinecraftForge;
 
 
 
-@Mod(name="Eyecandycraft", version="2.6", modid="eyecandycraft")
+@Mod(name="Eyecandycraft", version="2.7", modid="eyecandycraft")
 public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "2.6";
+		return "2.7";
 	}
 	
 	@SidedProxy(clientSide="eyecandycraft.main.proxies.ClientProxy", serverSide="eyecandycraft.main.proxies.ServerProxy")

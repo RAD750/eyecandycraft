@@ -82,7 +82,7 @@ public class Blocks {
 	
     public static Block corrugatedSteel, tappeto, fumogeno;
     
-    public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna;
+    public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna, ScalettaMuro, PaloScaletta;
 
     
 
@@ -271,6 +271,9 @@ public class Blocks {
 		
 		Lanterna = new LanternaBlock(935, 0);
 		Transenna = new TransennaBlock(936, 0);
+		
+		ScalettaMuro = new ScalettaMuroBlock(937, 0);
+		PaloScaletta = new PaloScalettaBlock(938, 0);
 		
 		//cancelletto
 		
@@ -648,7 +651,7 @@ public class Blocks {
 		GameRegistry.registerBlock(gray_tintedGlass, "gray_tintedGlass");
 		GameRegistry.registerBlock(light_gray_tintedGlass, "light_gray_tintedGlass");
 		GameRegistry.registerBlock(white_tintedGlass, "white_tintedGlass");
-		GameRegistry.registerBlock(red_tintedGlass, "red_tintedGlass");
+		GameRegistry.registerBlock(red_tintedGlass, "red_tinted12 Glass");
 		GameRegistry.registerBlock(orange_tintedGlass, "orange_tintedGlass");
 		GameRegistry.registerBlock(yellow_tintedGlass, "yellow_tintedGlass");
 		GameRegistry.registerBlock(lime_tintedGlass, "lime_tintedGlass");
@@ -794,6 +797,12 @@ public class Blocks {
 		GameRegistry.registerTileEntity(TileEntityLanterna.class, "Lanterna");
 		GameRegistry.registerBlock(Transenna, "Transenna");
 		GameRegistry.registerTileEntity(TileEntityTransenna.class, "Transenna");
+		
+		GameRegistry.registerBlock(PaloScaletta, "PaloScaletta");
+		GameRegistry.registerTileEntity(TileEntityPaloScaletta.class, "PaloScaletta");
+		
+		GameRegistry.registerBlock(ScalettaMuro, "ScalettaMuro");
+		GameRegistry.registerTileEntity(TileEntityScalettaMuro.class, "ScalettaMuro");
 		
 	}
 
@@ -1062,6 +1071,9 @@ public class Blocks {
 		
 		LanguageRegistry.addName(Lanterna, "Lanterna");
 		LanguageRegistry.addName(Transenna, "Barrier");
+		
+		LanguageRegistry.addName(ScalettaMuro, "Ladder, wall-mount");
+		LanguageRegistry.addName(PaloScaletta, "Ladder, with pole");
 		
 		//ITEMS (VEDI SOPRA)
 	

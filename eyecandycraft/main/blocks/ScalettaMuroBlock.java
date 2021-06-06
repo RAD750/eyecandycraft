@@ -3,26 +3,28 @@ package eyecandycraft.main.blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import eyecandycraft.main.CreativeTab;
-import eyecandycraft.main.entities.TileEntityTraliccioBraccettoSat;
+import eyecandycraft.main.entities.TileEntityScalettaMuro;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class TraliccioBraccettoSatBlock extends BlockContainer {
-	public static final String name = "TraliccioBraccettoSat";
+public class ScalettaMuroBlock extends BlockContainer {
+	public static final String name = "ScalettaMuro";
 
-	public TraliccioBraccettoSatBlock(int id, int texture) {
+	public ScalettaMuroBlock(int id, int texture) {
 		super(id, Material.iron);
 		setHardness(0.5F);
 		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabEyecandyMobilio);
-		setBlockName("TraliccioBraccettoSat");
-		blockIndexInTexture = 14;
+		setBlockName("ScalettaMuro");
+		blockIndexInTexture = 57;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
@@ -37,8 +39,40 @@ public class TraliccioBraccettoSatBlock extends BlockContainer {
 	}
 
 	public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int x, int y, int z) {
-		setBlockBounds(0.4F, 0.0F, 0.4F, 0.6F, 1.0F, 0.6F);
-		// setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.27F);
+	    if (blockAccess.getBlockMetadata(x, y, z) == 1)
+	    {
+	      setBlockBounds(0.27F, 0.0F, 0.0F, 0.0F, 1.0F, 1.0F);
+
+
+	    }
+	    else if (blockAccess.getBlockMetadata(x, y, z) == 2)
+	    {
+	      setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.27F);
+
+
+	    }
+	    else if (blockAccess.getBlockMetadata(x, y, z) == 3)
+	    {
+	      setBlockBounds(1.0F, 0.0F, 0.0F, 0.72F, 1.0F, 1.0F);
+	    }
+	    else
+	    {
+	      setBlockBounds(0.0F, 0.0F, 0.72F, 1.0F, 1.0F, 1.0F);
+	    }
+	}
+
+	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity) {
+		if ((entity instanceof EntityPlayer)) {
+			int yaw = (int) entity.rotationYaw;
+
+			if (yaw < 0)
+				yaw += 360;
+			yaw += 22;
+			yaw %= 360;
+			int facing = yaw / 45;
+
+			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.ScalettaMuro.blockID, facing / 2);
+		}
 	}
 
 	public int getRenderType() {
@@ -70,7 +104,7 @@ public class TraliccioBraccettoSatBlock extends BlockContainer {
 	}
 
 	public TileEntity createTileEntity(World world, int meta) {
-		return new TileEntityTraliccioBraccettoSat();
+		return new TileEntityScalettaMuro();
 	}
 	
     public boolean isLadder(World world, int x, int y, int z)

@@ -72,4 +72,10 @@ public class TraliccioBlock extends BlockContainer {
 	public TileEntity createTileEntity(World world, int meta) {
 		return new TileEntityTraliccio();
 	}
+	
+    public boolean isLadder(World world, int x, int y, int z)
+    {
+        return true;
+    }
+    
 }

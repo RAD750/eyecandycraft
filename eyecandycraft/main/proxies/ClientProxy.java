@@ -98,7 +98,8 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityArmadioFTTC.class, new RenderTableArmadioFTTC());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLanterna.class, new RenderTableLanterna());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTransenna.class, new RenderTableTransenna());
-		
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPaloScaletta.class, new RenderTablePaloScaletta());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityScalettaMuro.class, new RenderTableScalettaMuro());
 	}
 
 	@Mod.PostInit

@@ -18,6 +18,10 @@ public class CraftingHandler {
 		// RECIPE CRAFTING
 		//
 		
+		
+				
+				
+		
 		// mattonelle
 		
 				GameRegistry.addRecipe(new ItemStack(Items.gray_tile_raw, 9),
@@ -312,6 +316,7 @@ public class CraftingHandler {
 			ItemStack steel = steelOres.get(0);
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.corrugatedSteel, 32, 1), new Object [] {"I I", " I ", "I I", 'I', steel});
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.Transenna, 16), new Object [] {"   ", "###", "###", '#', steel });
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.ScalettaMuro, 3), new Object [] { "# #", "###", "# #", '#', steel});
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare ingotSteel, disabilitata recipe secondaria CorrugatedSteel/Transenna");
 		}
@@ -321,11 +326,12 @@ public class CraftingHandler {
 			ItemStack tungSteel = tungSteelOres.get(0);
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.corrugatedSteel, 64, 1), new Object [] {"I I", " I ", "I I", 'I', tungSteel});
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.Transenna, 32), new Object [] {"   ", "###", "###", '#', tungSteel });
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.ScalettaMuro, 6), new Object [] { "# #", "###", "# #", '#', tungSteel});
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare ingotTungstenSteel, disabilitata recipe secondaria CorrugatedSteel/Transenna");
 		}
 		
-		
+		GameRegistry.addRecipe(new ItemStack(Blocks.PaloScaletta, 3), new Object[] { "I# ", " #I", "I# ", 'I', Item.ingotIron, '#', ic2.api.Items.getItem("ironFence")});;
 		
 		//CorrugatedSteel
 		GameRegistry.addShapedRecipe(new ItemStack(Blocks.corrugatedSteel, 8, 1), new Object [] {"I I", " I ", "I I", 'I', Item.ingotIron});

@@ -39,7 +39,7 @@ public class TraliccioBraccettoSingoloBlock extends BlockContainer {
 	}
 
 	public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int x, int y, int z) {
-		setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 1.0F, 0.8F);
+		setBlockBounds(0.4F, 0.0F, 0.4F, 0.6F, 1.0F, 0.6F);
 		// setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.27F);
 	}
 
@@ -88,4 +88,9 @@ public class TraliccioBraccettoSingoloBlock extends BlockContainer {
 	public TileEntity createTileEntity(World world, int meta) {
 		return new TileEntityTraliccioBraccettoSingolo();
 	}
+	
+    public boolean isLadder(World world, int x, int y, int z)
+    {
+        return true;
+    }
 }
