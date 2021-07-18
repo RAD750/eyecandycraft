@@ -24,6 +24,8 @@ public class CraftingHandler {
 		
 		// mattonelle
 		
+				
+		
 				GameRegistry.addRecipe(new ItemStack(Items.gray_tile_raw, 9),
 					new Object[] { "###", "###", "###", '#', Item.clay});
 
@@ -32,6 +34,12 @@ public class CraftingHandler {
 				
 				GameRegistry.addRecipe(new ItemStack(Items.gray_small_tile_raw, 5),
 					new Object[] { "# #", " # ", "# #", '#', Item.clay});
+				
+				GameRegistry.addRecipe(new ItemStack(Block.snow, 6), new Object[] { "   ", "###", "   ", '#', new ItemStack(Block.blockSnow)});
+				
+				GameRegistry.addRecipe(new ItemStack(Blocks.Sirena, 1), new Object[] { "  I", "NII", "  I", 'N', Block.music, 'I', Item.ingotIron});
+				
+				GameRegistry.addRecipe(new ItemStack(Items.o_LGBT), new Object[] { "AAB", "CDD", "EFF", 'A', new ItemStack(Block.cloth, 1, 14), 'B', new ItemStack(Block.cloth, 1, 2), 'C', new ItemStack(Block.cloth, 1, 4), 'D', new ItemStack(Block.cloth, 1, 5), 'E', new ItemStack(Block.cloth, 1, 11), 'F', new ItemStack(Block.cloth, 1, 10)});
 				
 				GameRegistry.addShapelessRecipe(new ItemStack(Items.white_tile_raw, 1),
 				    new Object[] { Items.gray_tile_raw, new ItemStack(Item.dyePowder, 1, 15) });
@@ -317,6 +325,7 @@ public class CraftingHandler {
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.corrugatedSteel, 32, 1), new Object [] {"I I", " I ", "I I", 'I', steel});
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.Transenna, 16), new Object [] {"   ", "###", "###", '#', steel });
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.ScalettaMuro, 3), new Object [] { "# #", "###", "# #", '#', steel});
+			GameRegistry.addRecipe(new ItemStack(Blocks.Chain), new Object[] { " N ", " I ", " N ", 'N', steel, 'I', Item.ingotIron});
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare ingotSteel, disabilitata recipe secondaria CorrugatedSteel/Transenna");
 		}
@@ -904,6 +913,10 @@ public class CraftingHandler {
 						'G', Block.thinGlass,
 						'I', Item.ingotIron });
 		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.door16, 1), new Object[] {new ItemStack(Item.doorSteel), new ItemStack(Block.stoneButton)});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.door17, 1), new Object[] {ic2.api.Items.getItem("reinforcedDoor"), new ItemStack(Block.stoneButton)});
+		
+		
 		GameRegistry.addRecipe(new ItemStack(Items.portaCostosa, 1),
 				new Object[] { "NNU", "NND", "NNG",
 						'N', Item.netherStar,
@@ -931,6 +944,8 @@ public class CraftingHandler {
 				}
 		);
 				
+		GameRegistry.addRecipe(new ItemStack(Blocks.fakeCrate),
+				new Object[] { "#S#", "SSS", "#S#", 'S', Item.stick, '#', Block.planks});
 		
 		
 	}

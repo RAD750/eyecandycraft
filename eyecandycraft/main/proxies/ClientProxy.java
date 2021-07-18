@@ -100,6 +100,8 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTransenna.class, new RenderTableTransenna());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPaloScaletta.class, new RenderTablePaloScaletta());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityScalettaMuro.class, new RenderTableScalettaMuro());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySirena.class, new RenderTableSirena());
+		
 	}
 
 	@Mod.PostInit

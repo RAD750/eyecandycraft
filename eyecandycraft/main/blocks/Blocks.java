@@ -34,7 +34,7 @@ public class Blocks {
 	
 	public static Block spruceGate, birchGate, jungleGate, spruceDoor, birchDoor, jungleDoor, spruceTrapdoor, birchTrapdoor, jungleTrapdoor, apartmentDoor, jungleDoor2, glassDoor;
 	
-	public static Block door0, door1, door2, door3, door4, door5, door6, door7, door8, door9, door10, door11, door12, door13, door14, door15, portaCostosa;
+	public static Block door0, door1, door2, door3, door4, door5, door6, door7, door8, door9, door10, door11, door12, door13, door14, door15, portaCostosa, door16, door17;
 	
 	
 	//blocco scortecciato
@@ -82,7 +82,7 @@ public class Blocks {
 	
     public static Block corrugatedSteel, tappeto, fumogeno;
     
-    public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna, ScalettaMuro, PaloScaletta;
+    public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna, ScalettaMuro, PaloScaletta, Sirena, Chain, fakeCrate;
 
     
 
@@ -92,7 +92,6 @@ public class Blocks {
 		corrugatedSteel = new BlockCorrugatedSteel(178);
 		fumogeno = new BlockFumogeno(3308);
 		tappeto = new BlockTappeto(3309);
-		
 		//mattonella
 		
 				white_diag_tile = new Block(3310, 160, Material.rock).setTextureFile("/eyecandycraft/textures/textures.png")
@@ -205,7 +204,7 @@ public class Blocks {
 		// padella
 		ParabolaSat = new ParabolaBlock(846, 0);
 		AntennaGroundPlane = new AntennaGroundPlaneBlock(847, 0);
-		
+	
 		// AntennaSettori2100MHz = new AntennaSettori2100MHzBlock(848, 0);
 		AntennaSettore900MHz = new AntennaSettore900MHzBlock(849, 0);
 		AntennaYagiVHF = new AntennaYagiVHFBlock(850, 0);
@@ -218,6 +217,7 @@ public class Blocks {
 		//TraliccioBraccettoDoppio = new TraliccioBraccettoDoppioBlock(857, 0);
 		TraliccioBraccettoSat = new TraliccioBraccettoSatBlock(856, 0);
 		TraliccioBraccettoCCTV = new TraliccioBraccettoCCTVBlock(855, 0);
+		Sirena = new SirenaBlock(860, 0);
 
 		// atari ST
 		
@@ -275,6 +275,8 @@ public class Blocks {
 		ScalettaMuro = new ScalettaMuroBlock(937, 0);
 		PaloScaletta = new PaloScalettaBlock(938, 0);
 		
+		Chain = new BlockChain(939, 240, Material.iron);
+		
 		//cancelletto
 		
 		spruceGate = new BlockFenceGate(1500, 198).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setBlockName("spruceGate").setRequiresSelfNotify();
@@ -310,6 +312,8 @@ public class Blocks {
 		door14 = new BlockPorta(1544, 158, Material.wood, "door14");
 		door15 = new BlockPorta(1545, 159, Material.wood, "door15");
 		portaCostosa = new BlockPorta(1546, 38, Material.wood, "portaCostosa");
+		door16 = new BlockPorta(1547, 39, Material.rock, "door16");
+		door17 = new BlockPorta(1548, 40, Material.rock, "door17");
 		
 		//((BlockPorta) Blocks.spruceDoor).setItemDropped(Items.spruceDoor.itemID);
 		
@@ -329,6 +333,9 @@ public class Blocks {
 		
 		
 		// altri
+		
+		fakeCrate = new Block(872, 242, Material.wood).setCreativeTab(CreativeTab.tabEyecandyMateriali).setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setTextureFile("/eyecandycraft/textures/textures.png").setBlockName("fakeCrate");
+		
 	
 		fakeSolarPanel = new FakeSolarPanelBlock(190, 112, Material.iron).setCreativeTab(CreativeTab.tabEyecandyMateriali)
 				.setBlockName("fakeSolarPanel").setHardness(0.5f).setTextureFile("/eyecandycraft/textures/textures.png");
@@ -509,6 +516,9 @@ public class Blocks {
 		//
 		
 		GameRegistry.registerBlock(fumogeno, "fumogeno");
+		
+		GameRegistry.registerBlock(Chain, "Chain");
+		GameRegistry.registerBlock(fakeCrate, "fakeCrate");
 
 
 		GameRegistry.registerBlock(corrugatedSteel, ItemBlockCorrugatedSteel.class, corrugatedSteel.getBlockName());
@@ -793,6 +803,9 @@ public class Blocks {
 		GameRegistry.registerBlock(Decade, "Decade");
 		GameRegistry.registerTileEntity(TileEntityDecade.class, "Decade");
 		
+		GameRegistry.registerBlock(Sirena, "Sirena");
+		GameRegistry.registerTileEntity(TileEntitySirena.class, "Sirena");
+		
 		GameRegistry.registerBlock(Lanterna, "Lanterna");
 		GameRegistry.registerTileEntity(TileEntityLanterna.class, "Lanterna");
 		GameRegistry.registerBlock(Transenna, "Transenna");
@@ -804,6 +817,8 @@ public class Blocks {
 		GameRegistry.registerBlock(ScalettaMuro, "ScalettaMuro");
 		GameRegistry.registerTileEntity(TileEntityScalettaMuro.class, "ScalettaMuro");
 		
+		
+		
 	}
 
 	public static void RegistraLingua() {
@@ -812,6 +827,7 @@ public class Blocks {
 		//
 		
 		LanguageRegistry.addName(fumogeno, "Smoking Block");
+		LanguageRegistry.addName(Chain, "Chain");
 		
 		//ACCIAIO CORRUGATO
 		LanguageRegistry.addName(new ItemStack(corrugatedSteel, 1, 0), "White Corrugated Steel");
@@ -902,6 +918,7 @@ public class Blocks {
 		LanguageRegistry.addName(brown_small_tile, "Brown Small Tile");
 
 
+		LanguageRegistry.addName(fakeCrate, "Fake Storage Crate");
 		LanguageRegistry.addName(fakeSolarPanel, "Fake Solar Panel");
 		LanguageRegistry.addName(litplaster, "Lit Plaster");
 		LanguageRegistry.addName(Clima, "Air Conditioner");
@@ -942,6 +959,7 @@ public class Blocks {
 		LanguageRegistry.addName(AntennaYagiVHF, "VHF Yagi-Uda antenna");
 		LanguageRegistry.addName(AntennaYagiUHF, "UHF Yagi-Uda antenna");
 		LanguageRegistry.addName(AntennaLogperiodica, "Log-periodic antenna");
+		LanguageRegistry.addName(Sirena, "Air raid siren");
 		
 		LanguageRegistry.addName(Traliccio, "Lattice Post");
 		LanguageRegistry.addName(TraliccioBraccettoSingolo, "Lattice Bracket - Antenna");
@@ -1155,6 +1173,9 @@ public class Blocks {
 		((BlockPorta) door13).setItemDropped(Items.door13.itemID);
 		((BlockPorta) door14).setItemDropped(Items.door14.itemID);
 		((BlockPorta) door15).setItemDropped(Items.door15.itemID);
+		((BlockPorta) door16).setItemDropped(Items.door16.itemID);
+		((BlockPorta) door17).setItemDropped(Items.door17.itemID);
+		((BlockPorta) portaCostosa).setItemDropped(Items.portaCostosa.itemID);
 	}
 
 	
