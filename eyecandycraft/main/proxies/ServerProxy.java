@@ -6,6 +6,8 @@ import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import eyecandycraft.main.handlers.LightningHandler;
+import net.minecraftforge.common.MinecraftForge;
 
 public class ServerProxy extends CommonProxy {
 	public ServerProxy() {

@@ -84,11 +84,13 @@ public class Blocks {
     
     public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna, ScalettaMuro, PaloScaletta, Sirena, Chain, fakeCrate;
 
+    public static Block LightningRod;
     
 
 	public static void InizializzaBlocchi() {
 		
-		
+		LightningRod = new LightningRodBlock(3510, 0);
+	
 		corrugatedSteel = new BlockCorrugatedSteel(178);
 		fumogeno = new BlockFumogeno(3308);
 		tappeto = new BlockTappeto(3309);
@@ -674,6 +676,11 @@ public class Blocks {
 		GameRegistry.registerBlock(pink_tintedGlass, "pink_tintedGlass");
 		GameRegistry.registerBlock(brown_tintedGlass, "brown_tintedGlass");
 
+		
+		GameRegistry.registerBlock(LightningRod, "LightningRod");
+		GameRegistry.registerTileEntity(TileEntityLightningRod.class,
+				"LightningRodTileEntity");
+		
 		// Padella Satellitare
 		GameRegistry.registerBlock(ParabolaSat, "ParabolaSat");
 		GameRegistry.registerTileEntity(TileEntityParabolaSat.class,
@@ -825,7 +832,7 @@ public class Blocks {
 		//
 		// LINGUA
 		//
-		
+		LanguageRegistry.addName(LightningRod, "Lightning Rod");
 		LanguageRegistry.addName(fumogeno, "Smoking Block");
 		LanguageRegistry.addName(Chain, "Chain");
 		

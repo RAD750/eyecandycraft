@@ -16,6 +16,7 @@ import cpw.mods.fml.relauncher.Side;
 import eyecandycraft.main.blocks.*;
 import eyecandycraft.main.handlers.CraftingHandler;
 import eyecandycraft.main.handlers.FacadeHandler;
+import eyecandycraft.main.handlers.LightningHandler;
 import eyecandycraft.main.items.Items;
 import eyecandycraft.main.proxies.CommonProxy;
 import net.minecraft.block.Block;
@@ -26,12 +27,12 @@ import net.minecraftforge.common.MinecraftForge;
 
 
 
-@Mod(name="Eyecandycraft", version="2.9.1", modid="eyecandycraft")
+@Mod(name="Eyecandycraft", version="2.10", modid="eyecandycraft")
 public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "2.9.1";
+		return "2.10";
 	}
 	
 	@SidedProxy(clientSide="eyecandycraft.main.proxies.ClientProxy", serverSide="eyecandycraft.main.proxies.ServerProxy")
