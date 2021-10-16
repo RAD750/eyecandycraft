@@ -22,6 +22,29 @@ public class CraftingHandler {
 				
 				
 		
+				//Cartelli
+		
+				GameRegistry.addRecipe(new ItemStack(Items.Sign_acacia, 1),
+						new Object [] { "###", "#M#", " | ", '|', Item.stick, '#', Block.planks, 'M', new ItemStack(Item.dyePowder, 1, 14)});
+				GameRegistry.addRecipe(new ItemStack(Items.Sign_crimson, 1),
+						new Object [] { "###", "#M#", " | ", '|', Item.stick, '#', Block.planks, 'M', new ItemStack(Item.dyePowder, 1, 13)});
+				GameRegistry.addRecipe(new ItemStack(Items.Sign_dark_oak, 1),
+						new Object [] { "###", "#M#", " | ", '|', Item.stick, '#', Block.planks, 'M', new ItemStack(Item.dyePowder, 1, 3)});
+				GameRegistry.addRecipe(new ItemStack(Items.Sign_frame, 1),
+						new Object [] { "###", "#M#", " | ", '|', Item.stick, '#', Block.planks, 'M', Blocks.plaster});
+				GameRegistry.addRecipe(new ItemStack(Items.Sign_jungle, 1),
+						new Object [] { "###", "###", " | ", '|', Item.stick, '#', new ItemStack(Block.planks, 1, 3)});
+				GameRegistry.addRecipe(new ItemStack(Items.Sign_metal, 1),
+						new Object [] { "###", "###", " | ", '|', ic2.api.Items.getItem("ironFence"), '#', Item.ingotIron,});
+				GameRegistry.addShapelessRecipe(new ItemStack(Items.Sign_oak, 1), new Object[] {Item.sign});
+				GameRegistry.addRecipe(new ItemStack(Items.Sign_spruce, 1),
+						new Object [] { "###", "###", " | ", '|', Item.stick, '#', new ItemStack(Block.planks, 1, 1)});
+				GameRegistry.addRecipe(new ItemStack(Items.Sign_warped, 1),
+						new Object [] { "###", "#M#", " | ", '|', Item.stick, '#', Block.planks, 'M', new ItemStack(Item.dyePowder, 1, 6)});
+				GameRegistry.addRecipe(new ItemStack(Items.Sign_white, 1),
+						new Object [] { "###", "#M#", " | ", '|', Item.stick, '#', Block.planks, 'M', new ItemStack(Item.dyePowder, 1, 15)});
+				GameRegistry.addRecipe(new ItemStack(Items.Sign_birch, 1),
+						new Object [] { "###", "###", " | ", '|', Item.stick, '#', new ItemStack(Block.planks, 1, 2)});
 		// mattonelle
 		
 				

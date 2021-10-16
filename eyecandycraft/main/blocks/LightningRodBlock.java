@@ -25,7 +25,6 @@ public class LightningRodBlock extends BlockContainer {
 		setCreativeTab(CreativeTab.tabEyecandyAltro);
 		setBlockName("LightningRod");
 		blockIndexInTexture = 60;
-		this.setLightValue(0.8f);
 	}
 	
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)

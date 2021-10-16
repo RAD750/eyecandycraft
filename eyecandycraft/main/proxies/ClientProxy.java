@@ -8,9 +8,11 @@ import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import eyecandycraft.main.blocks.Blocks;
 import eyecandycraft.main.entities.*;
 //import eyecandycraft.main.handlers.SoundHandler;
 import eyecandycraft.main.models.*;
+import eyecandycraft.main.renderers.TileEntitySignCustomRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundManager;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -102,6 +104,7 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityScalettaMuro.class, new RenderTableScalettaMuro());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySirena.class, new RenderTableSirena());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLightningRod.class, new RenderTableLightningRod());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySignCustom.class, new TileEntitySignCustomRenderer());
 		
 	}
 

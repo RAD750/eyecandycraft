@@ -9,6 +9,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -17,7 +18,9 @@ import eyecandycraft.main.blocks.*;
 import eyecandycraft.main.handlers.CraftingHandler;
 import eyecandycraft.main.handlers.FacadeHandler;
 import eyecandycraft.main.handlers.LightningHandler;
+import eyecandycraft.main.handlers.OredictHandler;
 import eyecandycraft.main.items.Items;
+import eyecandycraft.main.network.*;
 import eyecandycraft.main.proxies.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -28,6 +31,7 @@ import net.minecraftforge.common.MinecraftForge;
 
 
 @Mod(name="Eyecandycraft", version="2.10", modid="eyecandycraft")
+@NetworkMod(channels = {EyeCandyPacket.CHANNEL_NAME}, clientSideRequired = true, serverSideRequired = false, packetHandler = EyeCandyPacketHandler.class)
 public class Main extends BaseMod{
 	
 	@Override
@@ -70,6 +74,7 @@ public class Main extends BaseMod{
 	public void postInit(FMLPostInitializationEvent event) {
 		//proxy per modelli techne
 		CraftingHandler.AggiungiCrafting();
+		OredictHandler.RegistraOreDict();
 	    proxy.postInit(event);
 	}
 	

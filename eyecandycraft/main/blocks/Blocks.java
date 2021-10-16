@@ -86,14 +86,71 @@ public class Blocks {
 
     public static Block LightningRod;
     
+    //cartelli
+    
+    public static Block Sign_acacia_Post;
+    public static Block Sign_acacia_Wall;
+    public static Block Sign_crimson_Post;
+    public static Block Sign_crimson_Wall;
+    public static Block Sign_dark_oak_Post;
+    public static Block Sign_dark_oak_Wall;
+    public static Block Sign_frame_Post;
+    public static Block Sign_frame_Wall;
+    public static Block Sign_jungle_Post;
+    public static Block Sign_jungle_Wall;
+    public static Block Sign_metal_Post;
+    public static Block Sign_metal_Wall;
+    public static Block Sign_oak_Post;
+    public static Block Sign_oak_Wall;
+    public static Block Sign_spruce_Post;
+    public static Block Sign_spruce_Wall;
+    public static Block Sign_warped_Post;
+    public static Block Sign_warped_Wall;
+    public static Block Sign_white_Post;
+    public static Block Sign_white_Wall;
+    public static Block Sign_birch_Post;
+    public static Block Sign_birch_Wall;
+    
 
+
+    
 	public static void InizializzaBlocchi() {
+		
+		//cartelli
+		
+		Sign_acacia_Post = new SignCustomBlock(3230, true, 22974, null, "/eyecandycraft/textures/signs/acacia.png");
+		Sign_acacia_Wall = new SignCustomBlock(3231, false, 22974, Sign_acacia_Post, "/eyecandycraft/textures/signs/acacia.png");
+		Sign_crimson_Post = new SignCustomBlock(3232, true, 22975, null, "/eyecandycraft/textures/signs/crimson.png");
+		Sign_crimson_Wall = new SignCustomBlock(3233, false, 22975, Sign_crimson_Post, "/eyecandycraft/textures/signs/crimson.png");
+		Sign_dark_oak_Post = new SignCustomBlock(3234, true, 22976, null, "/eyecandycraft/textures/signs/dark_oak.png");
+		Sign_dark_oak_Wall = new SignCustomBlock(3235, false, 22976, Sign_dark_oak_Post, "/eyecandycraft/textures/signs/dark_oak.png");
+		Sign_frame_Post = new SignCustomBlock(3236, true, 22977, null, "/eyecandycraft/textures/signs/frame.png");
+		Sign_frame_Wall = new SignCustomBlock(3237, false, 22977, Sign_frame_Post, "/eyecandycraft/textures/signs/frame.png");
+		Sign_jungle_Post = new SignCustomBlock(3238, true, 22978, null, "/eyecandycraft/textures/signs/jungle.png");
+		Sign_jungle_Wall = new SignCustomBlock(3239, false, 22978, Sign_jungle_Post, "/eyecandycraft/textures/signs/jungle.png");
+		Sign_metal_Post = new SignCustomBlock(3240, true, 22979, null, "/eyecandycraft/textures/signs/metal.png");
+		Sign_metal_Wall = new SignCustomBlock(3241, false, 22979, Sign_metal_Post, "/eyecandycraft/textures/signs/metal.png");
+		Sign_oak_Post = new SignCustomBlock(3242, true, 22980, null, "/eyecandycraft/textures/signs/oak.png");
+		Sign_oak_Wall = new SignCustomBlock(3243, false, 22980, Sign_oak_Post, "/eyecandycraft/textures/signs/oak.png");
+		Sign_spruce_Post = new SignCustomBlock(3244, true, 22981, null, "/eyecandycraft/textures/signs/spruce.png");
+		Sign_spruce_Wall = new SignCustomBlock(3245, false, 22981, Sign_spruce_Post, "/eyecandycraft/textures/signs/spruce.png");
+		Sign_warped_Post = new SignCustomBlock(3246, true, 22982, null, "/eyecandycraft/textures/signs/warped.png");
+		Sign_warped_Wall = new SignCustomBlock(3247, false, 22982, Sign_warped_Post, "/eyecandycraft/textures/signs/warped.png");
+		Sign_white_Post = new SignCustomBlock(3248, true, 22983, null, "/eyecandycraft/textures/signs/white.png");
+		Sign_white_Wall = new SignCustomBlock(3249, false, 22983, Sign_white_Post, "/eyecandycraft/textures/signs/white.png");
+		Sign_birch_Post = new SignCustomBlock(3250, true, 22984, null, "/eyecandycraft/textures/signs/birch.png");
+		Sign_birch_Wall = new SignCustomBlock(3251, false, 22984, Sign_birch_Post, "/eyecandycraft/textures/signs/birch.png");
+
+		
 		
 		LightningRod = new LightningRodBlock(3510, 0);
 	
 		corrugatedSteel = new BlockCorrugatedSteel(178);
 		fumogeno = new BlockFumogeno(3308);
 		tappeto = new BlockTappeto(3309);
+		
+		 
+		
 		//mattonella
 		
 				white_diag_tile = new Block(3310, 160, Material.rock).setTextureFile("/eyecandycraft/textures/textures.png")
@@ -516,6 +573,35 @@ public class Blocks {
 		//
 		// REGISTRA TUTTI I BLOCCHI
 		//
+		
+		//Cartelli
+		GameRegistry.registerTileEntity(TileEntitySignCustom.class,
+				"TileEntitySignCustom");
+		
+		GameRegistry.registerBlock(Sign_acacia_Post, "Sign_acacia_Post");
+		GameRegistry.registerBlock(Sign_acacia_Post, "Sign_acacia_Wall");
+		GameRegistry.registerBlock(Sign_birch_Post, "Sign_birch_Post");
+		GameRegistry.registerBlock(Sign_birch_Post, "Sign_birch_Wall");
+		GameRegistry.registerBlock(Sign_crimson_Post, "Sign_crimson_Post");
+		GameRegistry.registerBlock(Sign_crimson_Post, "Sign_crimson_Wall");
+		GameRegistry.registerBlock(Sign_dark_oak_Post, "Sign_dark_oak_Post");
+		GameRegistry.registerBlock(Sign_dark_oak_Post, "Sign_dark_oak_Wall");
+		GameRegistry.registerBlock(Sign_frame_Post, "Sign_frame_Post");
+		GameRegistry.registerBlock(Sign_frame_Post, "Sign_frame_Wall");
+		GameRegistry.registerBlock(Sign_jungle_Post, "Sign_jungle_Post");
+		GameRegistry.registerBlock(Sign_jungle_Post, "Sign_jungle_Wall");
+		GameRegistry.registerBlock(Sign_metal_Post, "Sign_metal_Post");
+		GameRegistry.registerBlock(Sign_metal_Post, "Sign_metal_Wall");
+		GameRegistry.registerBlock(Sign_oak_Post, "Sign_oak_Post");
+		GameRegistry.registerBlock(Sign_oak_Post, "Sign_oak_Wall");
+		GameRegistry.registerBlock(Sign_spruce_Post, "Sign_spruce_Post");
+		GameRegistry.registerBlock(Sign_spruce_Post, "Sign_spruce_Wall");
+		GameRegistry.registerBlock(Sign_warped_Post, "Sign_warped_Post");
+		GameRegistry.registerBlock(Sign_warped_Post, "Sign_warped_Wall");
+		GameRegistry.registerBlock(Sign_white_Post, "Sign_white_Post");
+		GameRegistry.registerBlock(Sign_white_Post, "Sign_white_Wall");
+
+
 		
 		GameRegistry.registerBlock(fumogeno, "fumogeno");
 		

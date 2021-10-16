@@ -48,9 +48,34 @@ public class Items {
 	
 	public static Item door0, door1, door2, door3, door4, door5, door6, door7, door8, door9, door10, door11, door12, door13, door14, door15, portaCostosa, door16, door17;
 	
-	public static void InizializzaItem() {
+	public static Item Sign_acacia;
+	public static Item Sign_crimson;
+	public static Item Sign_dark_oak;
+	public static Item Sign_frame;
+	public static Item Sign_jungle;
+	public static Item Sign_metal;
+	public static Item Sign_oak;
+	public static Item Sign_spruce;
+	public static Item Sign_warped;
+	public static Item Sign_white;
+	public static Item Sign_birch;
 
 	
+	public static void InizializzaItem() {
+
+		Sign_acacia = new ItemSignCustom(22974, Blocks.Sign_acacia_Post, Blocks.Sign_acacia_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(0).setItemName("Sign_acacia");
+		Sign_crimson = new ItemSignCustom(22975, Blocks.Sign_crimson_Post, Blocks.Sign_crimson_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(1).setItemName("Sign_crimson");
+		Sign_dark_oak = new ItemSignCustom(22976, Blocks.Sign_dark_oak_Post, Blocks.Sign_dark_oak_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(2).setItemName("Sign_dark_oak");
+		Sign_frame = new ItemSignCustom(22977, Blocks.Sign_frame_Post, Blocks.Sign_frame_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(3).setItemName("Sign_frame");
+		Sign_jungle = new ItemSignCustom(22978, Blocks.Sign_jungle_Post, Blocks.Sign_jungle_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(4).setItemName("Sign_jungle");
+		Sign_metal = new ItemSignCustom(22979, Blocks.Sign_metal_Post, Blocks.Sign_metal_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(5).setItemName("Sign_metal");
+		Sign_oak = new ItemSignCustom(22980, Blocks.Sign_oak_Post, Blocks.Sign_oak_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(6).setItemName("Sign_oak");
+		Sign_spruce = new ItemSignCustom(22981, Blocks.Sign_spruce_Post, Blocks.Sign_spruce_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(7).setItemName("Sign_spruce");
+		Sign_warped = new ItemSignCustom(22982, Blocks.Sign_warped_Post, Blocks.Sign_warped_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(8).setItemName("Sign_warped");
+		Sign_white = new ItemSignCustom(22983, Blocks.Sign_white_Post, Blocks.Sign_white_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(9).setItemName("Sign_white");
+		Sign_birch = new ItemSignCustom(22984, Blocks.Sign_birch_Post, Blocks.Sign_birch_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(10).setItemName("Sign_birch");
+
+		
 	molten_glass = new Item(24100).setTextureFile("/eyecandycraft/textures/items.png").setIconIndex(1)
 			.setCreativeTab(CreativeTab.tabEyecandyAltro).setItemName("molten_glass").setMaxStackSize(8);
 	
@@ -250,7 +275,17 @@ public class Items {
 	public static void RegistraLingua() {
 		
 		
-		
+		LanguageRegistry.addName(Sign_acacia, "Acacia Sign");
+		LanguageRegistry.addName(Sign_crimson, "Crimson Sign");
+		LanguageRegistry.addName(Sign_dark_oak, "Dark Oak Sign");
+		LanguageRegistry.addName(Sign_frame, "Framed Sign");
+		LanguageRegistry.addName(Sign_jungle, "Jungle Sign");
+		LanguageRegistry.addName(Sign_metal, "Metal Sign");
+		LanguageRegistry.addName(Sign_oak, "Oak Sign");
+		LanguageRegistry.addName(Sign_spruce, "Spruce Sign");
+		LanguageRegistry.addName(Sign_warped, "Warped Sign");
+		LanguageRegistry.addName(Sign_white, "White Sign");
+		LanguageRegistry.addName(Sign_birch, "Birch Sign");
 		
 		LanguageRegistry.addName(straw, "Straw");
 		LanguageRegistry.addName(metro, "Tape Measure");
