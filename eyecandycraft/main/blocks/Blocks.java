@@ -277,8 +277,7 @@ public class Blocks {
 		TraliccioBraccettoSat = new TraliccioBraccettoSatBlock(856, 0);
 		TraliccioBraccettoCCTV = new TraliccioBraccettoCCTVBlock(855, 0);
 		Sirena = new SirenaBlock(860, 0);
-		Antenna80GHz = new Antenna80GHzBlock(861, 0);
-		ARLO = new ARLOBlock(862, 0);
+
 
 		// atari ST
 		
@@ -288,7 +287,8 @@ public class Blocks {
 		AtariST2 = new AtariSTBlock(892, 0);
 		ModemSat = new ModemSatBlock(893, 0);
 		Polycom = new PolycomBlock(894, 0);
-		
+		Antenna80GHz = new Antenna80GHzBlock(895, 0);
+		ARLO = new ARLOBlock(896, 0);
 
 		// lampade
 		NeonPiatto = new NeonPiattoBlock(880, 0);
