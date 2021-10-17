@@ -76,7 +76,7 @@ public class Blocks {
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, FaroPavimento, LampionePaloModerno, LampionePaloVecchio;
 	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat, Clima, ClimaUE, Scrivania, Polycom, BocchettaAC;
 	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta, BombolaGas;
-	public static Block ArmadioFTTC, Antenna4G, Antenna5G, Decade; 
+	public static Block ArmadioFTTC, Antenna4G, Antenna5G, Decade, Antenna80GHz, ARLO; 
 	
 	//METADATA
 	
@@ -277,6 +277,8 @@ public class Blocks {
 		TraliccioBraccettoSat = new TraliccioBraccettoSatBlock(856, 0);
 		TraliccioBraccettoCCTV = new TraliccioBraccettoCCTVBlock(855, 0);
 		Sirena = new SirenaBlock(860, 0);
+		Antenna80GHz = new Antenna80GHzBlock(861, 0);
+		ARLO = new ARLOBlock(862, 0);
 
 		// atari ST
 		
@@ -899,6 +901,12 @@ public class Blocks {
 		GameRegistry.registerBlock(Sirena, "Sirena");
 		GameRegistry.registerTileEntity(TileEntitySirena.class, "Sirena");
 		
+		GameRegistry.registerBlock(Antenna80GHz, "Antenna80GHz");
+		GameRegistry.registerTileEntity(TileEntityAntenna80GHz.class, "Antenna80GHz");
+		
+		GameRegistry.registerBlock(ARLO, "ARLO");
+		GameRegistry.registerTileEntity(TileEntityARLO.class, "ARLO");
+		
 		GameRegistry.registerBlock(Lanterna, "Lanterna");
 		GameRegistry.registerTileEntity(TileEntityLanterna.class, "Lanterna");
 		GameRegistry.registerBlock(Transenna, "Transenna");
@@ -921,6 +929,8 @@ public class Blocks {
 		LanguageRegistry.addName(LightningRod, "Lightning Rod");
 		LanguageRegistry.addName(fumogeno, "Smoking Block");
 		LanguageRegistry.addName(Chain, "Chain");
+		LanguageRegistry.addName(Antenna80GHz, "80 GHz CPE");
+		LanguageRegistry.addName(ARLO, "ARLO");
 		
 		//ACCIAIO CORRUGATO
 		LanguageRegistry.addName(new ItemStack(corrugatedSteel, 1, 0), "White Corrugated Steel");

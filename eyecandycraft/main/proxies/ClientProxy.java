@@ -1,5 +1,11 @@
 package eyecandycraft.main.proxies;
 
+import java.util.logging.Level;
+
+import com.google.common.io.ByteArrayDataInput;
+import com.google.common.io.ByteStreams;
+
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -8,13 +14,22 @@ import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.Player;
 import eyecandycraft.main.blocks.Blocks;
 import eyecandycraft.main.entities.*;
 //import eyecandycraft.main.handlers.SoundHandler;
 import eyecandycraft.main.models.*;
+import eyecandycraft.main.network.EyeCandyPacket;
+import eyecandycraft.main.network.INetworkMember;
 import eyecandycraft.main.renderers.TileEntitySignCustomRenderer;
+import eyecandycraft.main.utils.Game;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundManager;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.network.INetworkManager;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -105,11 +120,27 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySirena.class, new RenderTableSirena());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLightningRod.class, new RenderTableLightningRod());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySignCustom.class, new TileEntitySignCustomRenderer());
-		
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAntenna80GHz.class, new RenderTableAntenna80GHz());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityARLO.class, new RenderTableARLO());
 	}
 
 	@Mod.PostInit
 	public void postInit(FMLPostInitializationEvent event) {
 		super.postInit(event);
 	}
+	
+    @Override
+    public void onPacketReceived(INetworkManager manager, EyeCandyPacket packet, Player player) {
+        super.onPacketReceived(manager, packet, player);
+
+        if (!(player instanceof EntityPlayerMP)) {
+            World world = FMLClientHandler.instance().getClient().theWorld;
+
+            TileEntity tileEntity = world.getBlockTileEntity(packet.x, packet.y, packet.z);
+            if (tileEntity != null && tileEntity instanceof INetworkMember)
+                ((INetworkMember) tileEntity).onClientPacketReceived(packet, (EntityPlayer) player);
+            else
+                Game.log(Level.WARNING, String.format("Received a client packet ID for a non network member!"));
+        }
+    }
 }

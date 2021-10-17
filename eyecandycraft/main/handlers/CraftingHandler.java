@@ -965,7 +965,18 @@ public class CraftingHandler {
 						'Z', GregtechHandler.getGregTechItem(0, 1, 82),
 						'S', GregtechHandler.getGregTechItem(0, 1, 6)
 				}
-		);
+	    );
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.Antenna80GHz, 1),
+				new Object[] { "DZD", "N4N", "BSB",
+						'4', new ItemStack(Blocks.AntennaSettore900MHz, 1),
+						'D', GregtechHandler.getGregTechItem(3, 1, 1),
+						'N', GregtechHandler.getGregTechItem(3, 1, 2),
+						'B', GregtechHandler.getGregTechItem(2, 1, 10),
+						'Z', GregtechHandler.getGregTechItem(0, 1, 82),
+						'S', GregtechHandler.getGregTechItem(0, 1, 6)
+				}
+	    );
 				
 		GameRegistry.addRecipe(new ItemStack(Blocks.fakeCrate),
 				new Object[] { "#S#", "SSS", "#S#", 'S', Item.stick, '#', Block.planks});

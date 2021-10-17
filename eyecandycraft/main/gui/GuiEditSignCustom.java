@@ -67,6 +67,7 @@ public class GuiEditSignCustom extends GuiScreen {
         }
 
         this.entitySign.setEditable(true);
+        this.entitySign.lineBeingEdited = -1;
     }
 
     /**

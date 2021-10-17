@@ -1,15 +1,23 @@
 package eyecandycraft.main.entities;
 
+import java.util.logging.Level;
+
+import com.google.common.io.ByteArrayDataInput;
+
 import eyecandycraft.main.network.EyeCandyPacket;
+import eyecandycraft.main.network.INetworkMember;
 import eyecandycraft.main.network.PacketCustomSign;
 import eyecandycraft.main.utils.ChatColor;
+import eyecandycraft.main.utils.Game;
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet130UpdateSign;
 import net.minecraft.tileentity.TileEntitySign;
+import net.minecraft.util.ChatAllowedCharacters;
 
-public class TileEntitySignCustom extends TileEntitySign {
+public class TileEntitySignCustom extends TileEntitySign implements INetworkMember {
 
 	private Block blockPost;
 	private String textureFile;
@@ -104,5 +112,65 @@ public class TileEntitySignCustom extends TileEntitySign {
 	public TileEntitySignCustom setTextureFile(String textureFile) {
 		this.textureFile = textureFile;
 		return this;
+	}
+
+	@Override
+	public void onClientPacketReceived(EyeCandyPacket packet, EntityPlayer entityPlayer) {
+		PacketCustomSign pkt = null;
+		if(packet instanceof PacketCustomSign) {
+			pkt = (PacketCustomSign) packet;
+		}
+		if(pkt == null) {
+			return;
+		}
+		
+		for (int i = 0; i < 4; ++i) {
+        	this.signText[i] = pkt.signText[i];
+		}
+    	this.setSignColor(pkt.signColor);
+        this.setTextColor(ChatColor.getByChar(pkt.textColor));
+	}
+
+	@Override
+	public void onServerPacketReceived(EyeCandyPacket packet, EntityPlayer entityPlayer) {
+		PacketCustomSign pkt = null;
+		if(packet instanceof PacketCustomSign) {
+			pkt = (PacketCustomSign) packet;
+		}
+		if(pkt == null) {
+			return;
+		}
+		
+		if (!this.isEditable()) {
+            Game.log(Level.WARNING, "Player " + entityPlayer.username + " just tried to change non-editable sign");
+            return;
+        }
+        
+        for (int i = 0; i < 4; ++i) {
+        	this.signText[i] = pkt.signText[i];
+        	
+        	boolean valid = true;
+
+            if (ChatColor.stripColor(this.signText[i]).length() > 15) {
+            	valid = false;
+            }
+            else {
+                for (int j = 0; j < this.signText[i].length(); ++j) {
+                    if (ChatAllowedCharacters.allowedCharacters.indexOf(this.signText[i].charAt(j)) < 0) {
+                    	valid = false;
+                    }
+                }
+            }
+
+            if (!valid) {
+            	this.signText[i] = "!?";
+            }
+        }
+        
+        this.setSignColor(pkt.signColor);
+        this.setTextColor(ChatColor.getByChar(pkt.textColor));
+        
+        this.onInventoryChanged();
+        worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 	}
 }

@@ -1,5 +1,6 @@
 package eyecandycraft.main.network;
 
+import cpw.mods.fml.common.network.Player;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import eyecandycraft.main.entities.TileEntitySignCustom;
@@ -9,14 +10,22 @@ import eyecandycraft.main.utils.Game;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.util.logging.Level;
+
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.network.packet.NetHandler;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ChatAllowedCharacters;
 import net.minecraft.world.World;
 
 public class PacketCustomSign extends EyeCandyPacket {
 
     private TileEntitySignCustom sign;
+    public String[] signText = new String[4];
+    public int signColor;
+    public char textColor;
 
     public PacketCustomSign() {
         super();
@@ -48,39 +57,22 @@ public class PacketCustomSign extends EyeCandyPacket {
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
-    public void readData(DataInputStream data) throws IOException {
-    	World world = Game.getWorld();
-        if (world == null) {
-            return;
-        }
-    	
-    	int x = data.readInt();
-        int y = data.readInt();
-        int z = data.readInt();
-    	
-        if (y < 0 || !world.blockExists(x, y, z)) {
-            return;
-        }
-
-        TileEntity te = world.getBlockTileEntity(x, y, z);
-
-        if (te instanceof TileEntitySignCustom) {
-        	sign = (TileEntitySignCustom) te;
-        } else {
-            return;
+    public void readData(DataInputStream data, Player player) throws IOException {
+        
+    	x = data.readInt();
+        y = data.readInt();
+        z = data.readInt();
+        
+        for (int i = 0; i < 4; ++i) {
+        	signText[i] = readString(data, 64);
         }
         
-        for (int var2 = 0; var2 < 4; ++var2) {
-        	sign.signText[var2] = readString(data, 64);
-        }
-        
-        sign.setSignColor(data.readInt());
-        sign.setTextColor(ChatColor.getByChar(data.readChar()));
+        signColor = data.readInt();
+        textColor = data.readChar();
     }
-
+    
     @Override
     public int getID() {
-        return PacketType.TILE_ENTITY.ordinal();
+        return PacketType.CUSTOM_SIGN.ordinal();
     }
 }

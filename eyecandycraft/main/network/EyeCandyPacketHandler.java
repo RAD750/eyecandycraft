@@ -2,6 +2,8 @@ package eyecandycraft.main.network;
 
 import cpw.mods.fml.common.network.IPacketHandler;
 import cpw.mods.fml.common.network.Player;
+import eyecandycraft.main.Main;
+
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -29,13 +31,14 @@ public class EyeCandyPacketHandler implements IPacketHandler {
 
             EyeCandyPacket.PacketType type = packetTypes[packetID];
             switch (type) {
-                case TILE_ENTITY:
+                case CUSTOM_SIGN:
                     pkt = new PacketCustomSign();
                     break;
                 default:
                     return;
             }
-            pkt.readData(data);
+            pkt.readData(data, player);
+            Main.proxy.onPacketReceived(manager, pkt, player);
         } catch (IOException e) {
             //Game.log(Level.SEVERE, "Exception in PacketHandler.onPacketData {0}", e);
             e.printStackTrace();

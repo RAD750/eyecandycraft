@@ -4,16 +4,21 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+
+import cpw.mods.fml.common.network.Player;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet250CustomPayload;
 
 public abstract class EyeCandyPacket {
 
     public final static String CHANNEL_NAME = "ECC";
+    public int x;
+    public int y;
+    public int z;
 
     public enum PacketType {
 
-        TILE_ENTITY,}
+        CUSTOM_SIGN,}
 
     public Packet getPacket() {
 
@@ -34,10 +39,10 @@ public abstract class EyeCandyPacket {
 
     public abstract void writeData(DataOutputStream data) throws IOException;
 
-    public abstract void readData(DataInputStream data) throws IOException;
+    public abstract void readData(DataInputStream data, Player player) throws IOException;
 
     public abstract int getID();
-
+    
     @Override
     public String toString() {
         return getClass().getSimpleName();

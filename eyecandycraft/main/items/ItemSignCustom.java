@@ -1,12 +1,13 @@
 package eyecandycraft.main.items;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import eyecandycraft.main.CreativeTab;
 import eyecandycraft.main.blocks.Blocks;
 import eyecandycraft.main.entities.TileEntitySignCustom;
 import eyecandycraft.main.gui.GuiEditSignCustom;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.inventory.GuiEditSign;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSign;
@@ -26,7 +27,11 @@ public class ItemSignCustom extends ItemSign {
 		//this.setTextureFile("/eyecandycraft/textures/cartelli.png");
 		this.setCreativeTab(CreativeTab.tabEyecandyAltro);
 	}
-
+	@SideOnly(Side.CLIENT)
+	public void callGui(TileEntitySignCustom var12) {
+		Minecraft.getMinecraft().displayGuiScreen(new GuiEditSignCustom(var12));
+	}
+	
 	@Override
 	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
     {
@@ -75,8 +80,8 @@ public class ItemSignCustom extends ItemSign {
                 --par1ItemStack.stackSize;
                 TileEntitySignCustom var12 = (TileEntitySignCustom)par3World.getBlockTileEntity(par4, par5, par6);
 
-                if (var12 != null && !par3World.isRemote) {
-                	Minecraft.getMinecraft().displayGuiScreen(new GuiEditSignCustom(var12));
+                if (var12 != null && par3World.isRemote) {
+                	callGui(var12);
                     //par2EntityPlayer.displayGUIEditSign(var12);
                 }
 
