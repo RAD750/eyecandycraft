@@ -30,13 +30,13 @@ import net.minecraftforge.common.MinecraftForge;
 
 
 
-@Mod(name="Eyecandycraft", version="2.10", modid="eyecandycraft")
+@Mod(name="Eyecandycraft", version="2.12", modid="eyecandycraft")
 @NetworkMod(channels = {EyeCandyPacket.CHANNEL_NAME}, clientSideRequired = true, serverSideRequired = false, packetHandler = EyeCandyPacketHandler.class)
 public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "2.10";
+		return "2.12";
 	}
 	
 	@SidedProxy(clientSide="eyecandycraft.main.proxies.ClientProxy", serverSide="eyecandycraft.main.proxies.ServerProxy")

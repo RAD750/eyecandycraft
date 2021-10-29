@@ -3,6 +3,92 @@ package eyecandycraft.main.blocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import eyecandycraft.main.CreativeTab;
+import eyecandycraft.main.blocks.custom.ARLOBlock;
+import eyecandycraft.main.blocks.custom.Antenna4GBlock;
+import eyecandycraft.main.blocks.custom.Antenna5GBlock;
+import eyecandycraft.main.blocks.custom.Antenna80GHzBlock;
+import eyecandycraft.main.blocks.custom.AntennaESMBlock;
+import eyecandycraft.main.blocks.custom.AntennaFMDipoloBlock;
+import eyecandycraft.main.blocks.custom.AntennaGroundPlaneBlock;
+import eyecandycraft.main.blocks.custom.AntennaLogperiodicaBlock;
+import eyecandycraft.main.blocks.custom.AntennaPannelloBlock;
+import eyecandycraft.main.blocks.custom.AntennaSettore900MHzBlock;
+import eyecandycraft.main.blocks.custom.AntennaSettoreLTEBlock;
+import eyecandycraft.main.blocks.custom.AntennaYagiUHFBlock;
+import eyecandycraft.main.blocks.custom.AntennaYagiVHFBlock;
+import eyecandycraft.main.blocks.custom.ArmadioFTTCBlock;
+import eyecandycraft.main.blocks.custom.AtariSTBlock;
+import eyecandycraft.main.blocks.custom.BittaBlock;
+import eyecandycraft.main.blocks.custom.BlockChain;
+import eyecandycraft.main.blocks.custom.BlockCorrugatedSteel;
+import eyecandycraft.main.blocks.custom.BlockFumogeno;
+import eyecandycraft.main.blocks.custom.BlockPorta;
+import eyecandycraft.main.blocks.custom.BlockTappeto;
+import eyecandycraft.main.blocks.custom.BocchettaACBlock;
+import eyecandycraft.main.blocks.custom.BombolaGasBlock;
+import eyecandycraft.main.blocks.custom.CCTVCamBlock;
+import eyecandycraft.main.blocks.custom.CCTVCamPTZBlock;
+import eyecandycraft.main.blocks.custom.CartelloEndorBlock;
+import eyecandycraft.main.blocks.custom.ClimaBlock;
+import eyecandycraft.main.blocks.custom.ClimaUEBlock;
+import eyecandycraft.main.blocks.custom.ConsoleRegiaBlock;
+import eyecandycraft.main.blocks.custom.CroceSAndreaBlock;
+import eyecandycraft.main.blocks.custom.DecadeBlock;
+import eyecandycraft.main.blocks.custom.EstensioneBTSBlock;
+import eyecandycraft.main.blocks.custom.EstensioneSingolaBTSBlock;
+import eyecandycraft.main.blocks.custom.EstintoreBlock;
+import eyecandycraft.main.blocks.custom.FakeSolarPanelBlock;
+import eyecandycraft.main.blocks.custom.FaroBlock;
+import eyecandycraft.main.blocks.custom.FaroPavimentoBlock;
+import eyecandycraft.main.blocks.custom.GrassPath;
+import eyecandycraft.main.blocks.custom.HayBlock;
+import eyecandycraft.main.blocks.custom.LampadaScrivaniaBlock;
+import eyecandycraft.main.blocks.custom.LampadarioBlock;
+import eyecandycraft.main.blocks.custom.LampioneGiardinoBlock;
+import eyecandycraft.main.blocks.custom.LampioneMuroBlock;
+import eyecandycraft.main.blocks.custom.LampionePaloModernoBlock;
+import eyecandycraft.main.blocks.custom.LampionePaloVecchioBlock;
+import eyecandycraft.main.blocks.custom.LanternaBlock;
+import eyecandycraft.main.blocks.custom.LightningRodBlock;
+import eyecandycraft.main.blocks.custom.MicrofonoBlock;
+import eyecandycraft.main.blocks.custom.MiniARLOBlock;
+import eyecandycraft.main.blocks.custom.ModemSatBlock;
+import eyecandycraft.main.blocks.custom.NeonBlock;
+import eyecandycraft.main.blocks.custom.NeonPiattoBlock;
+import eyecandycraft.main.blocks.custom.OBBlock;
+import eyecandycraft.main.blocks.custom.PadelloneBlock;
+import eyecandycraft.main.blocks.custom.PaloCimaDoppioBlock;
+import eyecandycraft.main.blocks.custom.PaloCimaSingoloBlock;
+import eyecandycraft.main.blocks.custom.PaloGrossoBlock;
+import eyecandycraft.main.blocks.custom.PaloScalettaBlock;
+import eyecandycraft.main.blocks.custom.PanchinaCentroBlock;
+import eyecandycraft.main.blocks.custom.PanchinaDestraBlock;
+import eyecandycraft.main.blocks.custom.PanchinaSinistraBlock;
+import eyecandycraft.main.blocks.custom.ParabolaBlock;
+import eyecandycraft.main.blocks.custom.PolycomBlock;
+import eyecandycraft.main.blocks.custom.PortatileBlock;
+import eyecandycraft.main.blocks.custom.ROEBlock;
+import eyecandycraft.main.blocks.custom.RackRFBlock;
+import eyecandycraft.main.blocks.custom.ScalettaMuroBlock;
+import eyecandycraft.main.blocks.custom.ScrivaniaBlock;
+import eyecandycraft.main.blocks.custom.SignCustomBlock;
+import eyecandycraft.main.blocks.custom.SirenaBlock;
+import eyecandycraft.main.blocks.custom.StrippedBirchLog;
+import eyecandycraft.main.blocks.custom.StrippedJungleLog;
+import eyecandycraft.main.blocks.custom.StrippedOakLog;
+import eyecandycraft.main.blocks.custom.StrippedSpruceLog;
+import eyecandycraft.main.blocks.custom.TVLCDBlock;
+import eyecandycraft.main.blocks.custom.TVOLEDBlock;
+import eyecandycraft.main.blocks.custom.TVOLEDVESABlock;
+import eyecandycraft.main.blocks.custom.TelecameraBlock;
+import eyecandycraft.main.blocks.custom.TimberFrame;
+import eyecandycraft.main.blocks.custom.TintedGlass;
+import eyecandycraft.main.blocks.custom.TraliccioBlock;
+import eyecandycraft.main.blocks.custom.TraliccioBraccettoCCTVBlock;
+import eyecandycraft.main.blocks.custom.TraliccioBraccettoParabolaBlock;
+import eyecandycraft.main.blocks.custom.TraliccioBraccettoSatBlock;
+import eyecandycraft.main.blocks.custom.TraliccioBraccettoSingoloBlock;
+import eyecandycraft.main.blocks.custom.TransennaBlock;
 import eyecandycraft.main.entities.*;
 import eyecandycraft.main.items.ItemBlockTappeto;
 import eyecandycraft.main.items.Items;
@@ -76,7 +162,8 @@ public class Blocks {
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, FaroPavimento, LampionePaloModerno, LampionePaloVecchio;
 	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat, Clima, ClimaUE, Scrivania, Polycom, BocchettaAC;
 	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta, BombolaGas;
-	public static Block ArmadioFTTC, Antenna4G, Antenna5G, Decade, Antenna80GHz, ARLO; 
+	public static Block ArmadioFTTC, Antenna4G, Antenna5G, Decade, Antenna80GHz, ARLO;
+	public static Block AntennaFMDipolo, AntennaESM, AntennaPannello, AntennaSettoreLTE, EstensioneBTS, EstensioneSingolaBTS, MiniARLO, ROE, TraliccioBraccettoParabola;
 	
 	//METADATA
 	
@@ -85,6 +172,8 @@ public class Blocks {
     public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna, ScalettaMuro, PaloScaletta, Sirena, Chain, fakeCrate;
 
     public static Block LightningRod;
+    
+    public static Block PaloCimaSingolo, PaloCimaDoppio, PaloGrosso, Padellone;
     
     //cartelli
     
@@ -337,6 +426,24 @@ public class Blocks {
 		PaloScaletta = new PaloScalettaBlock(938, 0);
 		
 		Chain = new BlockChain(939, 240, Material.iron);
+		
+		AntennaFMDipolo = new AntennaFMDipoloBlock(3400, 0);
+		AntennaPannello = new AntennaPannelloBlock(3401, 0);
+		AntennaSettoreLTE = new AntennaSettoreLTEBlock(3402, 0);
+		EstensioneBTS = new EstensioneBTSBlock(3403, 0);
+		EstensioneSingolaBTS = new EstensioneSingolaBTSBlock(3404, 0);
+		MiniARLO = new MiniARLOBlock(3405, 0);
+		ROE = new ROEBlock(3406, 0);
+		TraliccioBraccettoParabola = new TraliccioBraccettoParabolaBlock(3407, 0);
+		AntennaESM = new AntennaESMBlock(3408, 0);
+		
+		PaloCimaSingolo = new PaloCimaSingoloBlock(3409, 0);
+		PaloCimaDoppio = new PaloCimaDoppioBlock(3410, 0);
+		PaloGrosso = new PaloGrossoBlock(3411, 0);
+		
+		Padellone = new PadelloneBlock(3412, 0);
+		
+		
 		
 		//cancelletto
 		
@@ -764,6 +871,49 @@ public class Blocks {
 		GameRegistry.registerBlock(pink_tintedGlass, "pink_tintedGlass");
 		GameRegistry.registerBlock(brown_tintedGlass, "brown_tintedGlass");
 
+		//Roba di Kiiw
+		
+		GameRegistry.registerBlock(AntennaFMDipolo, "AntennaFMDipolo");
+		GameRegistry.registerTileEntity(TileEntityAntennaFMDipolo.class,
+				"AntennaFMDipoloTileEntity");
+		
+		GameRegistry.registerBlock(AntennaPannello, "AntennaPannello");
+		GameRegistry.registerTileEntity(TileEntityAntennaPannello.class,
+				"AntennaPannelloTileEntity");
+		
+		GameRegistry.registerBlock(AntennaESM, "AntennaESM");
+		GameRegistry.registerTileEntity(TileEntityAntennaESM.class,
+				"AntennaESMTileEntity");
+
+		GameRegistry.registerBlock(AntennaSettoreLTE, "AntennaSettoreLTE");
+		GameRegistry.registerTileEntity(TileEntityAntennaSettoreLTE.class,
+				"AntennaSettoreLTETileEntity");
+
+		GameRegistry.registerBlock(EstensioneBTS, "EstensioneBTS");
+		GameRegistry.registerTileEntity(TileEntityEstensioneBTS.class,
+				"EstensioneBTSTileEntity");
+
+		GameRegistry.registerBlock(EstensioneSingolaBTS, "EstensioneSingolaBTS");
+		GameRegistry.registerTileEntity(TileEntityEstensioneSingolaBTS.class,
+				"EstensioneSingolaBTSTileEntity");
+		
+		GameRegistry.registerBlock(MiniARLO, "MiniARLO");
+		GameRegistry.registerTileEntity(TileEntityMiniARLO.class,
+				"MiniARLOTileEntity");
+
+		GameRegistry.registerBlock(ROE, "ROE");
+		GameRegistry.registerTileEntity(TileEntityROE.class,
+				"ROETileEntity");
+		
+		GameRegistry.registerBlock(TraliccioBraccettoParabola, "TraliccioBraccettoParabola");
+		GameRegistry.registerTileEntity(TileEntityTraliccioBraccettoParabola.class,
+				"TraliccioBraccettoParabolaTileEntity");
+		
+		GameRegistry.registerBlock(Padellone, "Padellone");
+		GameRegistry.registerTileEntity(TileEntityPadellone.class,
+				"PadelloneTileEntity");
+
+		
 		
 		GameRegistry.registerBlock(LightningRod, "LightningRod");
 		GameRegistry.registerTileEntity(TileEntityLightningRod.class,
@@ -915,6 +1065,15 @@ public class Blocks {
 		GameRegistry.registerBlock(PaloScaletta, "PaloScaletta");
 		GameRegistry.registerTileEntity(TileEntityPaloScaletta.class, "PaloScaletta");
 		
+		GameRegistry.registerBlock(PaloGrosso, "PaloGrosso");
+		GameRegistry.registerTileEntity(TileEntityPaloGrosso.class, "PaloGrosso");
+		
+		GameRegistry.registerBlock(PaloCimaSingolo, "PaloCimaSingolo");
+		GameRegistry.registerTileEntity(TileEntityPaloCimaSingolo.class, "PaloCimaSingolo");
+		
+		GameRegistry.registerBlock(PaloCimaDoppio, "PaloCimaDoppio");
+		GameRegistry.registerTileEntity(TileEntityPaloCimaDoppio.class, "PaloCimaDoppio");
+		
 		GameRegistry.registerBlock(ScalettaMuro, "ScalettaMuro");
 		GameRegistry.registerTileEntity(TileEntityScalettaMuro.class, "ScalettaMuro");
 		
@@ -931,6 +1090,21 @@ public class Blocks {
 		LanguageRegistry.addName(Chain, "Chain");
 		LanguageRegistry.addName(Antenna80GHz, "80 GHz CPE");
 		LanguageRegistry.addName(ARLO, "ARLO");
+		LanguageRegistry.addName(MiniARLO, "MiniARLO");
+		LanguageRegistry.addName(ROE, "ROE");
+		LanguageRegistry.addName(TraliccioBraccettoParabola, "Lattice Post - Par. Refl. Bracket");
+		LanguageRegistry.addName(AntennaFMDipolo, "FM Dipole Antenna");
+		LanguageRegistry.addName(AntennaPannello, "Panel Antenna");
+		LanguageRegistry.addName(AntennaESM, "ESM Antenna");
+		LanguageRegistry.addName(AntennaSettoreLTE, "LTE Sector Antenna");
+		LanguageRegistry.addName(EstensioneBTS, "BTS Extension (Double)");
+		LanguageRegistry.addName(EstensioneSingolaBTS, "BTS Extension (Single)");
+		LanguageRegistry.addName(PaloCimaDoppio, "Telecommunications pole, dual bracket");
+		LanguageRegistry.addName(PaloCimaSingolo, "Telecommunications pole, signle bracket");
+		LanguageRegistry.addName(PaloGrosso, "Telecommunications pole");
+		LanguageRegistry.addName(Padellone, "40GBit/s PtP Link Dish");
+	
+
 		
 		//ACCIAIO CORRUGATO
 		LanguageRegistry.addName(new ItemStack(corrugatedSteel, 1, 0), "White Corrugated Steel");

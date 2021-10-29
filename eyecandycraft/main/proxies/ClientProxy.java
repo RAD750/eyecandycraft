@@ -18,10 +18,10 @@ import cpw.mods.fml.common.network.Player;
 import eyecandycraft.main.blocks.Blocks;
 import eyecandycraft.main.entities.*;
 //import eyecandycraft.main.handlers.SoundHandler;
-import eyecandycraft.main.models.*;
 import eyecandycraft.main.network.EyeCandyPacket;
 import eyecandycraft.main.network.INetworkMember;
 import eyecandycraft.main.renderers.TileEntitySignCustomRenderer;
+import eyecandycraft.main.solid.rendertables.*;
 import eyecandycraft.main.utils.Game;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundManager;
@@ -122,6 +122,19 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySignCustom.class, new TileEntitySignCustomRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAntenna80GHz.class, new RenderTableAntenna80GHz());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityARLO.class, new RenderTableARLO());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMiniARLO.class, new RenderTableMiniARLO());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAntennaFMDipolo.class, new RenderTableAntennaFMDipolo());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAntennaESM.class, new RenderTableAntennaESM());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAntennaPannello.class, new RenderTableAntennaPannello());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAntennaSettoreLTE.class, new RenderTableAntennaSettoreLTE());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityEstensioneBTS.class, new RenderTableEstensioneBTS());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityEstensioneSingolaBTS.class, new RenderTableEstensioneSingolaBTS());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityROE.class, new RenderTableROE());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTraliccioBraccettoParabola.class, new RenderTableTraliccioBraccettoParabola());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPaloGrosso.class, new RenderTablePaloGrosso());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPaloCimaSingolo.class, new RenderTablePaloCimaSingolo());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPaloCimaDoppio.class, new RenderTablePaloCimaDoppio());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPadellone.class, new RenderTablePadellone());
 	}
 
 	@Mod.PostInit
