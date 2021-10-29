@@ -25,7 +25,7 @@ public class TileEntitySignCustomRenderer extends TileEntitySignRenderer {
         float var10 = 0.6666667F;
         float var12;
 
-        if (var9.blockID == sign.getBlockPost().blockID) {
+        if (sign.getBlockPost() == null || var9.blockID == sign.getBlockPost().blockID) {
             GL11.glTranslatef((float)par2 + 0.5F, (float)par4 + 0.75F * var10, (float)par6 + 0.5F);
             float var11 = (float)(sign.getBlockMetadata() * 360) / 16.0F;
             GL11.glRotatef(-var11, 0.0F, 1.0F, 0.0F);
