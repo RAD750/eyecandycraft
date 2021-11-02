@@ -129,6 +129,10 @@ public class GuiEditSignCustom extends GuiScreen {
         GL11.glRotatef(180.0F, 0.0F, 1.0F, 0.0F);
         Block var5 = this.entitySign.getBlockType();
 
+        if(var5 == null) {
+        	return;
+        }
+        
         if (var5.equals(entitySign.getBlockPost())) {
             float var6 = (float)(this.entitySign.getBlockMetadata() * 360) / 16.0F;
             GL11.glRotatef(var6, 0.0F, 1.0F, 0.0F);
