@@ -131,7 +131,7 @@ public class SignCustomBlock extends BlockSign {
 				case "dyePink":
 					textColor = ChatColor.LIGHT_PURPLE;
 					break;
-				case "darkGreyPainter":
+				case "darkGrayPainter":
 					signColor = 0x474F52;
 					break;
 				case "dyeGray":
