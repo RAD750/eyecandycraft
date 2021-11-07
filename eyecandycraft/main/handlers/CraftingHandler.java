@@ -33,18 +33,18 @@ public class CraftingHandler {
 				GameRegistry.addRecipe(new ItemStack(Items.Sign_frame, 3),
 						new Object [] { "###", "#M#", " | ", '|', Item.stick, '#', Block.planks, 'M', Blocks.plaster});
 				GameRegistry.addRecipe(new ItemStack(Items.Sign_jungle, 3),
-						new Object [] { "###", "###", " | ", '|', Item.stick, '#', new ItemStack(Block.planks, 1, 3)});
+						new Object [] { "###", "#|#", " | ", '|', Item.stick, '#', new ItemStack(Block.planks, 1, 3)});
 				GameRegistry.addRecipe(new ItemStack(Items.Sign_metal, 3),
 						new Object [] { "###", "###", " | ", '|', ic2.api.Items.getItem("ironFence"), '#', Item.ingotIron,});
 				GameRegistry.addShapelessRecipe(new ItemStack(Items.Sign_oak, 1), new Object[] {Item.sign});
 				GameRegistry.addRecipe(new ItemStack(Items.Sign_spruce, 3),
-						new Object [] { "###", "###", " | ", '|', Item.stick, '#', new ItemStack(Block.planks, 1, 1)});
+						new Object [] { "###", "#|#", " | ", '|', Item.stick, '#', new ItemStack(Block.planks, 1, 1)});
 				GameRegistry.addRecipe(new ItemStack(Items.Sign_warped, 3),
 						new Object [] { "###", "#M#", " | ", '|', Item.stick, '#', Block.planks, 'M', new ItemStack(Item.dyePowder, 1, 6)});
 				GameRegistry.addRecipe(new ItemStack(Items.Sign_white, 3),
 						new Object [] { "###", "#M#", " | ", '|', Item.stick, '#', Block.planks, 'M', new ItemStack(Item.dyePowder, 1, 15)});
 				GameRegistry.addRecipe(new ItemStack(Items.Sign_birch, 3),
-						new Object [] { "###", "###", " | ", '|', Item.stick, '#', new ItemStack(Block.planks, 1, 2)});
+						new Object [] { "###", "#|#", " | ", '|', Item.stick, '#', new ItemStack(Block.planks, 1, 2)});
 		// mattonelle
 		
 				

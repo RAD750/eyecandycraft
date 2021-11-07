@@ -29,7 +29,7 @@ public class ModelTraliccioBraccettoParabola extends ModelBase {
     ModelRenderer CB3D;
     ModelRenderer Gancio;
     ModelRenderer Braccetto2aaa;
-    ModelRenderer LEALNSONODELLEMERDE;
+    ModelRenderer CB3Z;
     ModelRenderer Braccetto2a;
   
   public ModelTraliccioBraccettoParabola()
@@ -159,25 +159,25 @@ public class ModelTraliccioBraccettoParabola extends ModelBase {
       setRotation(CB3D, 0F, 0F, 0.7853982F);
       Gancio = new ModelRenderer(this, 0, 24);
       Gancio.addBox(0F, 0F, 0F, 1, 3, 3);
-      Gancio.setRotationPoint(-3F, 13F, -1.5F);
+      Gancio.setRotationPoint(-3F, 13.5F, -1.5F);
       Gancio.setTextureSize(32, 32);
       Gancio.mirror = true;
       setRotation(Gancio, 0F, 0F, 0F);
       Braccetto2aaa = new ModelRenderer(this, 0, 21);
       Braccetto2aaa.addBox(0F, 0F, 0F, 4, 1, 1);
-      Braccetto2aaa.setRotationPoint(-7F, 14F, -1.5F);
+      Braccetto2aaa.setRotationPoint(-7F, 14.5F, -1.5F);
       Braccetto2aaa.setTextureSize(32, 32);
       Braccetto2aaa.mirror = true;
       setRotation(Braccetto2aaa, 0F, 0F, 0F);
-      LEALNSONODELLEMERDE = new ModelRenderer(this, 0, 24);
-      LEALNSONODELLEMERDE.addBox(0F, 0F, 0F, 1, 3, 3);
-      LEALNSONODELLEMERDE.setRotationPoint(-8F, 13F, -1.5F);
-      LEALNSONODELLEMERDE.setTextureSize(32, 32);
-      LEALNSONODELLEMERDE.mirror = true;
-      setRotation(LEALNSONODELLEMERDE, 0F, 0F, 0F);
+      CB3Z = new ModelRenderer(this, 0, 24);
+      CB3Z.addBox(0F, 0F, 0F, 1, 3, 3);
+      CB3Z.setRotationPoint(-8F, 13.5F, -1.5F);
+      CB3Z.setTextureSize(32, 32);
+      CB3Z.mirror = true;
+      setRotation(CB3Z, 0F, 0F, 0F);
       Braccetto2a = new ModelRenderer(this, 0, 21);
       Braccetto2a.addBox(0F, 0F, 0F, 4, 1, 1);
-      Braccetto2a.setRotationPoint(-7F, 14F, 0.5F);
+      Braccetto2a.setRotationPoint(-7F, 14.5F, 0.5F);
       Braccetto2a.setTextureSize(32, 32);
       Braccetto2a.mirror = true;
       setRotation(Braccetto2a, 0F, 0F, 0F);
@@ -209,7 +209,7 @@ public class ModelTraliccioBraccettoParabola extends ModelBase {
     CB3D.render(f5);
     Gancio.render(f5);
     Braccetto2aaa.render(f5);
-    LEALNSONODELLEMERDE.render(f5);
+    CB3Z.render(f5);
     Braccetto2a.render(f5);
   }
   

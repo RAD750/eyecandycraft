@@ -14,6 +14,7 @@ import eyecandycraft.main.blocks.custom.AntennaLogperiodicaBlock;
 import eyecandycraft.main.blocks.custom.AntennaPannelloBlock;
 import eyecandycraft.main.blocks.custom.AntennaSettore900MHzBlock;
 import eyecandycraft.main.blocks.custom.AntennaSettoreLTEBlock;
+import eyecandycraft.main.blocks.custom.AntennaSettoreLTEMIMOBlock;
 import eyecandycraft.main.blocks.custom.AntennaYagiUHFBlock;
 import eyecandycraft.main.blocks.custom.AntennaYagiVHFBlock;
 import eyecandycraft.main.blocks.custom.ArmadioFTTCBlock;
@@ -173,7 +174,7 @@ public class Blocks {
 
     public static Block LightningRod;
     
-    public static Block PaloCimaSingolo, PaloCimaDoppio, PaloGrosso, Padellone;
+    public static Block PaloCimaSingolo, PaloCimaDoppio, PaloGrosso, Padellone, AntennaSettoreLTEMIMO;
     
     //cartelli
     
@@ -442,7 +443,7 @@ public class Blocks {
 		PaloGrosso = new PaloGrossoBlock(3411, 0);
 		
 		Padellone = new PadelloneBlock(3412, 0);
-		
+		AntennaSettoreLTEMIMO = new AntennaSettoreLTEMIMOBlock(3413, 0);
 		
 		
 		//cancelletto
@@ -888,6 +889,11 @@ public class Blocks {
 		GameRegistry.registerBlock(AntennaSettoreLTE, "AntennaSettoreLTE");
 		GameRegistry.registerTileEntity(TileEntityAntennaSettoreLTE.class,
 				"AntennaSettoreLTETileEntity");
+		
+		GameRegistry.registerBlock(AntennaSettoreLTEMIMO, "AntennaSettoreLTEMIMO");
+		GameRegistry.registerTileEntity(TileEntityAntennaSettoreLTEMIMO.class,
+				"AntennaSettoreLTEMIMOTileEntity");
+
 
 		GameRegistry.registerBlock(EstensioneBTS, "EstensioneBTS");
 		GameRegistry.registerTileEntity(TileEntityEstensioneBTS.class,
@@ -1097,6 +1103,7 @@ public class Blocks {
 		LanguageRegistry.addName(AntennaPannello, "Panel Antenna");
 		LanguageRegistry.addName(AntennaESM, "ESM Antenna");
 		LanguageRegistry.addName(AntennaSettoreLTE, "LTE Sector Antenna");
+		LanguageRegistry.addName(AntennaSettoreLTEMIMO, "LTE Sector Antenna (2x2 MIMO)");
 		LanguageRegistry.addName(EstensioneBTS, "BTS Extension (Double)");
 		LanguageRegistry.addName(EstensioneSingolaBTS, "BTS Extension (Single)");
 		LanguageRegistry.addName(PaloCimaDoppio, "Telecommunications pole, dual bracket");
