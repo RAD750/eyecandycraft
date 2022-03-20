@@ -17,7 +17,7 @@ public class Items {
 	
 	//DISCHI
 	
-	public static Item ArrakisDisk, SavaraDisk, DaggerfallDisk, TimeForwardDisk, TakeTheATrainDisk, ChattanoogaChooChooDisk, BeyondTheSeaDisk, SolidAsARockDisk, SixteenTonsDisk;
+	public static Item ArrakisDisk, SavaraDisk, DaggerfallDisk, TimeForwardDisk, TakeTheATrainDisk, ChattanoogaChooChooDisk, BeyondTheSeaDisk, SolidAsARockDisk, SixteenTonsDisk, CBDisk;
 	
 	//CARTELLI
 	public static Item black_tile_raw, white_tile_raw, orange_tile_raw, magenta_tile_raw, light_blue_tile_raw,
@@ -59,6 +59,8 @@ public class Items {
 	public static Item Sign_warped;
 	public static Item Sign_white;
 	public static Item Sign_birch;
+	
+	public static Item SafeSnooper;
 
 	
 	public static void InizializzaItem() {
@@ -87,6 +89,10 @@ public class Items {
 	
 	pacco = new Item(24102).setTextureFile("/eyecandycraft/textures/items.png").setIconIndex(47)
 			.setCreativeTab(CreativeTab.tabEyecandyAltro).setItemName("pacco").setMaxStackSize(1);
+	
+	/*SafeSnooper = new SafeSnooper(24103).setTextureFile("/eyecandycraft/textures/items.png").setIconIndex(40)
+			.setCreativeTab(CreativeTab.tabEyecandyAltro).setItemName("safesnooper").setMaxStackSize(1);
+	*/
 	
 	a_CentraleTermica = new ItemCartello(24301, "a_CentraleTermica", 0);
 	a_LocalePompe = new ItemCartello(24302, "a_LocalePompe", 1);
@@ -236,7 +242,8 @@ public class Items {
 	GameRegistry.registerItem(SolidAsARockDisk, "SolidAsARockDisk");
 	SixteenTonsDisk= new SixteenTonsDisk(24208);
 	GameRegistry.registerItem(SixteenTonsDisk, "SixteenTonsDisk");
-	
+	CBDisk= new CBDisk(24209);
+	GameRegistry.registerItem(CBDisk, "CBDisk");
 	//PORTA
 	
 	spruceDoor = new ItemPorta(24400, 4, Blocks.spruceDoor).setItemName("itemSpruceDoor");
@@ -291,6 +298,8 @@ public class Items {
 		LanguageRegistry.addName(metro, "Tape Measure");
 		LanguageRegistry.addName(molten_glass, "Molten Glass");
 		LanguageRegistry.addName(pacco, "Parcel");
+		//LanguageRegistry.addName(SafeSnooper, "Safe Snooper");
+
 		
 		LanguageRegistry.addName(a_CentraleTermica, "Cartello Centrale Termica");
 		LanguageRegistry.addName(a_LocalePompe, "Cartello Locale Pompe");
@@ -439,6 +448,8 @@ public class Items {
 		LanguageRegistry.addName(blue_tile_raw, "Blue Raw Tile");
 		LanguageRegistry.addName(purple_tile_raw, "Purple Raw Tile");
 		LanguageRegistry.addName(magenta_tile_raw, "Magenta Raw Tile");
+		
+		LanguageRegistry.addName(CBDisk, "Music Disc");
 	}
 }
 

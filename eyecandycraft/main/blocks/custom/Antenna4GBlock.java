@@ -89,4 +89,5 @@ public class Antenna4GBlock extends BlockContainer {
 	public TileEntity createTileEntity(World world, int meta) {
 		return new TileEntityAntenna4G();
 	}
+	
 }

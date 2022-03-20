@@ -55,7 +55,7 @@ public class ClientProxy extends CommonProxy {
 		MinecraftForgeClient.preloadTexture("/eyecandycraft/textures/porte_block.png");
 		MinecraftForgeClient.preloadTexture("/eyecandycraft/textures/porte_item.png");
 
-		System.out.println("[Eyecandycraft] Preloading texture completato, fanculo a greg");
+		System.out.println("[Eyecandycraft] Preloading texture completato");
 
 
 

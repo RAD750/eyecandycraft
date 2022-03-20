@@ -8,7 +8,7 @@ import eyecandycraft.main.items.Items;
 
 public class FacadeHandler {
 	public static void RegistraFacade() {
-		
+	/*
 		FacadeManager.addFacade(new ItemStack(Blocks.terracotta));
 		FacadeManager.addFacade(new ItemStack(Blocks.gray_terracotta));
 		FacadeManager.addFacade(new ItemStack(Blocks.light_gray_terracotta));
@@ -49,6 +49,6 @@ public class FacadeHandler {
 		FacadeManager.addFacade(new ItemStack(Blocks.timberframecrossbrace));
 		FacadeManager.addFacade(new ItemStack(Blocks.hazardstripe));
 		FacadeManager.addFacade(new ItemStack(Blocks.hazardstripe));
-
+	*/
 	}
 }

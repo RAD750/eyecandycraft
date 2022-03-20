@@ -1,5 +1,7 @@
 package eyecandycraft.main.blocks.custom;
 
+import java.util.Random;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import eyecandycraft.main.CreativeTab;
@@ -72,14 +74,6 @@ public class AntennaSettoreLTEBlock extends BlockContainer {
 
 	public boolean renderAsNormalBlock() {
 		return false;
-	}
-
-	public int idDropped(int par1, int par2) {
-		return blockID;
-	}
-
-	public int quantityDropped() {
-		return 1;
 	}
 
 	public TileEntity createNewTileEntity(World world) {
