@@ -19,7 +19,7 @@ public static final String name = "Camp Buddy - Greatest Memories";
 public CBDisk(int id)
 {
   super(id, "cb-greatest-memories");
-  iconIndex = 3;
+  iconIndex = 4;
   recordName = "cb-greatest-memories";
 }
 

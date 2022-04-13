@@ -1,5 +1,7 @@
 package eyecandycraft.main.blocks;
 
+import javax.sound.midi.Soundbank;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import eyecandycraft.main.CreativeTab;
@@ -21,7 +23,6 @@ import eyecandycraft.main.blocks.custom.ArmadioFTTCBlock;
 import eyecandycraft.main.blocks.custom.AtariSTBlock;
 import eyecandycraft.main.blocks.custom.BittaBlock;
 import eyecandycraft.main.blocks.custom.BlockChain;
-import eyecandycraft.main.blocks.custom.BlockCorrugatedSteel;
 import eyecandycraft.main.blocks.custom.BlockFumogeno;
 import eyecandycraft.main.blocks.custom.BlockPorta;
 import eyecandycraft.main.blocks.custom.BlockTappeto;
@@ -90,13 +91,18 @@ import eyecandycraft.main.blocks.custom.TraliccioBraccettoParabolaBlock;
 import eyecandycraft.main.blocks.custom.TraliccioBraccettoSatBlock;
 import eyecandycraft.main.blocks.custom.TraliccioBraccettoSingoloBlock;
 import eyecandycraft.main.blocks.custom.TransennaBlock;
+import eyecandycraft.main.blocks.custom.meta.BlockCorrugatedSteel;
+import eyecandycraft.main.blocks.custom.meta.BlockMetaPane;
+import eyecandycraft.main.blocks.custom.meta.BlockMetaBlockAlpha;
 import eyecandycraft.main.entities.*;
 import eyecandycraft.main.items.ItemBlockTappeto;
 import eyecandycraft.main.items.Items;
 import eyecandycraft.main.items.meta.ItemBlockCorrugatedSteel;
+import eyecandycraft.main.items.meta.ItemBlockMetaBlockAlpha;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockGlass;
+import net.minecraft.block.StepSound;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -106,8 +112,7 @@ import net.minecraftforge.common.MinecraftForge;
 
 public class Blocks {
 	
-	public static Block half_plaster_slab, full_plaster_slab;
-	
+
 	// Tutto il resto
 	public static Block unbreakableStone, ubLog, ubCobble, ubstonebricks, ubbirch, ubspruce, grassPath, hay, mortar, ubglass,
 			timberframe, timberframecrossbrace, thatch, plaster, litplaster, hazardstripe, black_tintedGlass, fakeSolarPanel, permaDirt;
@@ -168,7 +173,7 @@ public class Blocks {
 	
 	//METADATA
 	
-    public static Block corrugatedSteel, tappeto, fumogeno;
+    public static Block corrugatedSteel, metaBlockAlpha, tappeto, fumogeno;
     
     public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna, ScalettaMuro, PaloScaletta, Sirena, Chain, fakeCrate;
 
@@ -201,10 +206,13 @@ public class Blocks {
     public static Block Sign_birch_Post;
     public static Block Sign_birch_Wall;
     
+    public static Block wireMesh;
 
 
     
 	public static void InizializzaBlocchi() {
+		
+		wireMesh = new BlockMetaPane(191, 0, 1, Material.iron, true, 0.5f, 0.7f);
 		
 		//cartelli
 		
@@ -236,6 +244,7 @@ public class Blocks {
 		LightningRod = new LightningRodBlock(3510, 0);
 	
 		corrugatedSteel = new BlockCorrugatedSteel(178);
+		metaBlockAlpha = new BlockMetaBlockAlpha(186);
 		fumogeno = new BlockFumogeno(3308);
 		tappeto = new BlockTappeto(3309);
 		
@@ -539,8 +548,6 @@ public class Blocks {
 		timberframecrossbrace = new TimberFrame(185, 13, Material.rock, 2)
 				.setTextureFile("/eyecandycraft/textures/textures.png").setCreativeTab(CreativeTab.tabEyecandyMateriali)
 				.setBlockName("timberframecrossbrace").setHardness(1.8f);
-		thatch = new Block(186, 15, Material.leaves).setTextureFile("/eyecandycraft/textures/textures.png")
-				.setCreativeTab(CreativeTab.tabEyecandyMateriali).setBlockName("thatch").setHardness(0.5f);
 		hazardstripe = new Block(195, 51, Material.rock).setTextureFile("/eyecandycraft/textures/textures.png")
 				.setBlockName("hzstripe").setCreativeTab(CreativeTab.tabEyecandyMateriali).setHardness(1.0f);
 
@@ -684,6 +691,8 @@ public class Blocks {
 		// REGISTRA TUTTI I BLOCCHI
 		//
 		
+		GameRegistry.registerBlock(wireMesh, "wireMesh");
+		
 		//Cartelli
 		GameRegistry.registerTileEntity(TileEntitySignCustom.class,
 				"TileEntitySignCustom");
@@ -720,6 +729,8 @@ public class Blocks {
 
 
 		GameRegistry.registerBlock(corrugatedSteel, ItemBlockCorrugatedSteel.class, corrugatedSteel.getBlockName());
+		GameRegistry.registerBlock(metaBlockAlpha, ItemBlockMetaBlockAlpha.class, metaBlockAlpha.getBlockName());
+
 		GameRegistry.registerBlock(tappeto, ItemBlockTappeto.class, tappeto.getBlockName());
 		
 		//mattonella
@@ -813,7 +824,6 @@ public class Blocks {
 		GameRegistry.registerBlock(mortar, "mortar");
 		GameRegistry.registerBlock(timberframe, "timberframe");
 		GameRegistry.registerBlock(timberframecrossbrace, "timberframecrossbrace");
-		GameRegistry.registerBlock(thatch, "thatch");
 		GameRegistry.registerBlock(plaster, "plaster");
 		GameRegistry.registerBlock(hazardstripe, "hzstripe");
 
@@ -1091,6 +1101,9 @@ public class Blocks {
 		//
 		// LINGUA
 		//
+		
+		LanguageRegistry.addName(wireMesh, "Wire Mesh");
+		
 		LanguageRegistry.addName(LightningRod, "Lightning Rod");
 		LanguageRegistry.addName(fumogeno, "Smoking Block");
 		LanguageRegistry.addName(Chain, "Chain");
@@ -1130,6 +1143,24 @@ public class Blocks {
 		LanguageRegistry.addName(new ItemStack(corrugatedSteel, 1, 13), "Purple Corrugated Steel");
 		LanguageRegistry.addName(new ItemStack(corrugatedSteel, 1, 14), "Magenta Corrugated Steel");
 		LanguageRegistry.addName(new ItemStack(corrugatedSteel, 1, 15), "Pink Corrugated Steel");
+		
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 0), "Thatch");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 1), "Bricks, light");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 2), "Bricks, light (darker)");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 3), "Bricks, light, small");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 4), "Bricks, light, small (darker)");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 5), "Bricks, brown");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 6), "Bricks, granite");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 7), "Bricks, sundried");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 8), "Bricks, regular, dark joints");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 9), "Bricks, regular");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 10), "Bricks, mortar");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 11), "Bricks, gneiss");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 12), "Bricks, weathered");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 13), "Bricks, glazed");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 14), "Ytong bricks");
+		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 15), "Asbestos cement bricks");
+		
 		
 		LanguageRegistry.addName(new ItemStack(tappeto, 1, 0), "White Carpet");
 		LanguageRegistry.addName(new ItemStack(tappeto, 1, 1), "Orange Carpet");
@@ -1299,7 +1330,6 @@ public class Blocks {
 		LanguageRegistry.addName(mortar, "Mortar Wall");
 		LanguageRegistry.addName(timberframe, "Timberframe");
 		LanguageRegistry.addName(timberframecrossbrace, "Timberframe Cross-Brace");
-		LanguageRegistry.addName(thatch, "Thatch");
 		LanguageRegistry.addName(hazardstripe, "Hazard Stripes");
 
 		// Plaster colorati
@@ -1392,7 +1422,6 @@ public class Blocks {
 		MinecraftForge.setBlockHarvestLevel(mortar, "pickaxe", 0);
 		MinecraftForge.setBlockHarvestLevel(timberframe, "pickaxe", 0);
 		MinecraftForge.setBlockHarvestLevel(timberframecrossbrace, "pickaxe", 0);
-		MinecraftForge.setBlockHarvestLevel(thatch, "axe", 0);
 		MinecraftForge.setBlockHarvestLevel(plaster, "pickaxe", 0);
 		MinecraftForge.setBlockHarvestLevel(hazardstripe, "pickaxe", 0);
 		MinecraftForge.setBlockHarvestLevel(mortar, "pickaxe", 0);

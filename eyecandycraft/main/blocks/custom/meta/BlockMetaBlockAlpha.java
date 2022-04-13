@@ -1,4 +1,4 @@
-package eyecandycraft.main.blocks.custom;
+package eyecandycraft.main.blocks.custom.meta;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -6,11 +6,11 @@ import eyecandycraft.main.CreativeTab;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BlockCorrugatedSteel extends Block {
-	public BlockCorrugatedSteel(int id) {
+public class BlockMetaBlockAlpha extends Block {
+	public BlockMetaBlockAlpha(int id) {
 		super(id, Material.iron);
-		this.setBlockName("corrugatedSteel");
-		this.setTextureFile("/eyecandycraft/textures/textures.png");
+		this.setBlockName("metaBlockAlpha");
+		this.setTextureFile("/eyecandycraft/textures/metaBlocks.png");
 		this.setCreativeTab(CreativeTab.tabEyecandyMateriali);
 		this.setHardness(1.0F);
 		this.setResistance(7.0F);
@@ -24,6 +24,6 @@ public class BlockCorrugatedSteel extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getBlockTextureFromSideAndMetadata(int side, int metadata) {
-		return 224 + metadata;
+		return 0 + metadata;
 	}
 }

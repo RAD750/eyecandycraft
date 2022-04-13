@@ -8,6 +8,7 @@ import eyecandycraft.main.items.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSign;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -314,7 +315,7 @@ public class CraftingHandler {
 				new Object[] { "LCL", "CLC", "LCL", 'L', Block.wood, 'C', Item.clay });
 		GameRegistry.addRecipe(new ItemStack(Blocks.timberframe, 16),
 				new Object[] { "LCL", "LCL", "LCL", 'L', Block.wood, 'C', Item.clay });
-		GameRegistry.addRecipe(new ItemStack(Blocks.thatch, 16), new Object[] { "   ", "SS ", "SS ", 'S', Items.straw });
+		GameRegistry.addRecipe(new ItemStack(Blocks.metaBlockAlpha, 16, 0), new Object[] { "   ", "SS ", "SS ", 'S', Items.straw });
 		GameRegistry.addRecipe(new ItemStack(Blocks.plaster, 16), new Object[] { "   ", " T ", "MCW", 'T', Items.straw, 'M',
 				new ItemStack(Item.dyePowder, 1, 15), 'C', Item.clay, 'W', Item.bucketWater });
 		GameRegistry.addRecipe(new ItemStack(Blocks.hazardstripe, 16), new Object[] { "YBY", "BMB", "YBY", 'Y',
@@ -341,6 +342,101 @@ public class CraftingHandler {
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare refinedIron, disabilitata recipe secondaria CorrugatedSteel");
 		}
+		
+		//mattoni
+		
+		ItemStack brick = new ItemStack(Item.brick, 1);
+		ItemStack whiteDye = new ItemStack(Item.dyePowder, 1, 15);
+		ItemStack grayDye = new ItemStack(Item.dyePowder, 1, 8);
+		ItemStack brownDye = new ItemStack(Item.dyePowder, 1, 3);
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.metaBlockAlpha, 2, 1), new Object[] {
+				"   ", "BW ", "WB ", 'B', brick, 'W', whiteDye
+		});
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.metaBlockAlpha, 2, 2), new Object[] {
+				"   ", "BG ", "GB ", 'B', brick, 'G', grayDye
+		});
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.metaBlockAlpha, 5, 3), new Object[] {
+				"BWB", "WBW", "BWB", 'B', brick, 'W', whiteDye
+		});
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.metaBlockAlpha, 5, 4), new Object[] {
+				"BGB", "GBG", "BGB", 'B', brick, 'G', grayDye
+		});
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.metaBlockAlpha, 2, 5), new Object[] {
+				"   ", "BD ", "DB ", 'B', brick, 'D', brownDye
+		});
+		
+		List <ItemStack> granite = OreDictionary.getOres("rockGranito");
+		if ( granite.size() > 0 ) {
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.metaBlockAlpha, 4, 6), new Object[] {
+					"   ", "## ", "## ", '#', granite.get(0)
+			});
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare Granito, disabilitata recipe mattoni granito");
+		}
+		
+		GameRegistry.addSmelting(Block.brick.blockID, new ItemStack(Blocks.metaBlockAlpha, 1, 7),0);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.metaBlockAlpha, 1, 8), new Object [] {
+				new ItemStack(Block.brick, 1), grayDye
+		});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.metaBlockAlpha, 1, 9), new Object [] {
+				new ItemStack(Block.brick, 1), whiteDye
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.metaBlockAlpha, 4, 10), new Object[] {
+				"   ", "## ", "## ", '#', new ItemStack(Blocks.mortar)
+		});
+		
+		List <ItemStack> gneiss = OreDictionary.getOres("rockGneiss");
+		if ( gneiss.size() > 0 ) {
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.metaBlockAlpha, 4, 11), new Object[] {
+					"   ", "## ", "## ", '#', gneiss.get(0)
+			});
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare Gneiss, disabilitata recipe mattoni gneiss");
+		}
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.metaBlockAlpha, 8, 12), new Object[] {
+				"###", "#W#", "###", '#', new ItemStack(Blocks.metaBlockAlpha, 1, 9), 'W', new ItemStack(Item.bucketWater)
+		});
+		
+		List <ItemStack> chrysotile = OreDictionary.getOres("gemChrysotile");
+		if ( chrysotile.size() > 0 ) {
+			GregtechHandler.addBlastRecipe(
+					new ItemStack(Blocks.metaBlockAlpha, 1, 10),
+					chrysotile.get(0),
+					new ItemStack(Blocks.metaBlockAlpha, 1, 13),
+					GregtechHandler.getGregTechItem(1, 1, 62),
+					600,
+					350,
+					1800
+					);
+			GregtechHandler.addBlastRecipe(
+					new ItemStack(Item.clay, 4),
+					chrysotile.get(0),
+					new ItemStack(Blocks.metaBlockAlpha, 1, 15),
+					GregtechHandler.getGregTechItem(1, 1, 62),
+					100,
+					1870,
+					1200
+					);
+		} else {
+			System.err.println("[Eyecandycraft] Non trovo il crisotilo, niente mesotelioma per te! (E nemmeno glazed bricks e asbestos-cement bricks)");
+		}
+		
+		GregtechHandler.addBlastRecipe(
+				new ItemStack(Block.sand, 1),
+				new ItemStack(Item.clay, 1),
+				new ItemStack(Blocks.metaBlockAlpha, 1, 14),
+				GregtechHandler.getGregTechItem(1, 1, 62),
+				1600,
+				150,
+				1100
+				);
+		
+		
+
 		
 		List <ItemStack> steelOres = OreDictionary.getOres("ingotSteel");
 		if ( steelOres.size() > 0 ) {
@@ -911,10 +1007,10 @@ public class CraftingHandler {
 						'W', Block.planks,
 						'G', Block.thinGlass,
 						'I', Item.ingotIron });
-		
+	
 		GameRegistry.addRecipe(new ItemStack(Items.door12, 1),
 				new Object[] { "WW ", "WI ", "WW ",
-						'W', Blocks.thatch,
+						'W', new ItemStack(Blocks.metaBlockAlpha, 1, 0),
 						'G', Block.thinGlass,
 						'I', Item.ingotIron });
 		
@@ -926,7 +1022,7 @@ public class CraftingHandler {
 		
 		GameRegistry.addRecipe(new ItemStack(Items.door14, 1),
 				new Object[] { "GG ", "WI ", "WW ",
-						'W', Blocks.thatch,
+						'W', new ItemStack(Blocks.metaBlockAlpha, 1, 0),
 						'G', Block.thinGlass,
 						'I', Item.ingotIron });
 		
@@ -981,6 +1077,7 @@ public class CraftingHandler {
 		GameRegistry.addRecipe(new ItemStack(Blocks.fakeCrate),
 				new Object[] { "#S#", "SSS", "#S#", 'S', Item.stick, '#', Block.planks});
 		
+		GregtechHandler.addWiremillRecipe(new ItemStack(Block.fenceIron, 1), new ItemStack(Blocks.wireMesh, 1), 200, 20);
 		
 	}
 }
