@@ -61,15 +61,17 @@ public class Metro extends Item {
 					}
 
 					float dist = (float) (deltaX * deltaY * deltaZ);
+					float area = (float) (deltaX * deltaZ);
+
 					switch (count) {
 					case 0:
-						player.sendChatToPlayer("\247eMisura: " + Float.toString(dist) + " m³");
+						player.sendChatToPlayer("\247eMisura di \247bvolume\247e: " + Float.toString(dist) + " m³ (\247barea\247e: " + Float.toString(area) + " m²");
 						break;
 					case 1:
-						player.sendChatToPlayer("\247eMisura: " + Float.toString(dist) + " m²");
+						player.sendChatToPlayer("\247eMisura di \247barea\247e: " + Float.toString(dist) + " m²");
 						break;
 					case 2:
-						player.sendChatToPlayer("\247eMisura: " + Float.toString(dist) + " m");
+						player.sendChatToPlayer("\247eMisura di \247bdistanza\247e: " + Float.toString(dist) + " m");
 						break;
 					default:
 						break;
@@ -111,15 +113,16 @@ public class Metro extends Item {
 
 
 					float dist = (float) (deltaX * deltaY * deltaZ);
+					float area = (float) (deltaX * deltaZ);
 					switch (count) {
 					case 0:
-						player.sendChatToPlayer("\247eMisura: " + Float.toString(dist) + " m³");
+						player.sendChatToPlayer("\247eMisura di \247bvolume\247e: " + Float.toString(dist) + " m³ (\247barea\247e: " + Float.toString(area) + " m²)");
 						break;
 					case 1:
-						player.sendChatToPlayer("\247eMisura: " + Float.toString(dist) + " m²");
+						player.sendChatToPlayer("\247eMisura di \247barea\247e: " + Float.toString(dist) + " m²");
 						break;
 					case 2:
-						player.sendChatToPlayer("\247eMisura: " + Float.toString(dist) + " m");
+						player.sendChatToPlayer("\247eMisura di \247bdistanza\247e: " + Float.toString(dist) + " m");
 						break;
 					default:
 						break;

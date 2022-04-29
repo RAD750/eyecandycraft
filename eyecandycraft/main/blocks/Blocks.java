@@ -42,6 +42,7 @@ import eyecandycraft.main.blocks.custom.EstintoreBlock;
 import eyecandycraft.main.blocks.custom.FakeSolarPanelBlock;
 import eyecandycraft.main.blocks.custom.FaroBlock;
 import eyecandycraft.main.blocks.custom.FaroPavimentoBlock;
+import eyecandycraft.main.blocks.custom.FountainBlock;
 import eyecandycraft.main.blocks.custom.GrassPath;
 import eyecandycraft.main.blocks.custom.HayBlock;
 import eyecandycraft.main.blocks.custom.LampadaScrivaniaBlock;
@@ -177,7 +178,7 @@ public class Blocks {
     
     public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna, ScalettaMuro, PaloScaletta, Sirena, Chain, fakeCrate;
 
-    public static Block LightningRod;
+    public static Block LightningRod, Fountain;
     
     public static Block PaloCimaSingolo, PaloCimaDoppio, PaloGrosso, Padellone, AntennaSettoreLTEMIMO;
     
@@ -436,6 +437,7 @@ public class Blocks {
 		PaloScaletta = new PaloScalettaBlock(938, 0);
 		
 		Chain = new BlockChain(939, 240, Material.iron);
+		Fountain = new FountainBlock(942, 0);
 		
 		AntennaFMDipolo = new AntennaFMDipoloBlock(3400, 0);
 		AntennaPannello = new AntennaPannelloBlock(3401, 0);
@@ -453,6 +455,7 @@ public class Blocks {
 		
 		Padellone = new PadelloneBlock(3412, 0);
 		AntennaSettoreLTEMIMO = new AntennaSettoreLTEMIMOBlock(3413, 0);
+		
 		
 		
 		//cancelletto
@@ -726,7 +729,7 @@ public class Blocks {
 		
 		GameRegistry.registerBlock(Chain, "Chain");
 		GameRegistry.registerBlock(fakeCrate, "fakeCrate");
-
+		
 
 		GameRegistry.registerBlock(corrugatedSteel, ItemBlockCorrugatedSteel.class, corrugatedSteel.getBlockName());
 		GameRegistry.registerBlock(metaBlockAlpha, ItemBlockMetaBlockAlpha.class, metaBlockAlpha.getBlockName());
@@ -1093,7 +1096,8 @@ public class Blocks {
 		GameRegistry.registerBlock(ScalettaMuro, "ScalettaMuro");
 		GameRegistry.registerTileEntity(TileEntityScalettaMuro.class, "ScalettaMuro");
 		
-		
+		GameRegistry.registerBlock(Fountain, "Fountain");
+		GameRegistry.registerTileEntity(TileEntityFountain.class, "Fountain");
 		
 	}
 
@@ -1123,7 +1127,7 @@ public class Blocks {
 		LanguageRegistry.addName(PaloCimaSingolo, "Telecommunications pole, signle bracket");
 		LanguageRegistry.addName(PaloGrosso, "Telecommunications pole");
 		LanguageRegistry.addName(Padellone, "40GBit/s PtP Link Dish");
-	
+		LanguageRegistry.addName(Fountain, "Fountain");
 
 		
 		//ACCIAIO CORRUGATO
