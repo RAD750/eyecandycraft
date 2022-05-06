@@ -7,16 +7,10 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import eyecandycraft.main.CreativeTab;
 import eyecandycraft.main.blocks.Blocks;
 import eyecandycraft.main.items.Metro;
-import eyecandycraft.main.items.musicDisks.*;
-
 public class Items {
 	
 	//ITEMS
 	public static Item molten_glass, straw, metro, pacco;
-	
-	//DISCHI
-	
-	public static Item ArrakisDisk, SavaraDisk, DaggerfallDisk, TimeForwardDisk, TakeTheATrainDisk, ChattanoogaChooChooDisk, BeyondTheSeaDisk, SolidAsARockDisk, SixteenTonsDisk, CBDisk;
 	
 	//CARTELLI
 	public static Item black_tile_raw, white_tile_raw, orange_tile_raw, magenta_tile_raw, light_blue_tile_raw,
@@ -218,31 +212,7 @@ public class Items {
 	purple_small_tile_raw = new ItemMattonella(24091, "purple_small_tile_raw", 221);
 	magenta_small_tile_raw = new ItemMattonella(24092, "magenta_small_tile_raw", 222);
 	pink_small_tile_raw = new ItemMattonella(24093, "pink_small_tile_raw", 223);
-	
-	
-	
-	//DISCHI
-	
-	ArrakisDisk = new ArrakisDisk(24200);
-	GameRegistry.registerItem(ArrakisDisk, "ArrakisDisk");
-	SavaraDisk = new SavaraDisk(24201);
-	GameRegistry.registerItem(SavaraDisk, "SavaraDisk");
-	DaggerfallDisk = new DaggerfallDisk(24202);
-	GameRegistry.registerItem(DaggerfallDisk, "DaggerfallDisk");
-	TimeForwardDisk= new TimeForwardDisk(24203);
-	GameRegistry.registerItem(TimeForwardDisk, "TimeForwardDisk");
-	TakeTheATrainDisk= new TakeTheATrainDisk(24204);
-	GameRegistry.registerItem(TakeTheATrainDisk, "TakeTheATrainDisk");
-	ChattanoogaChooChooDisk= new ChattanoogaChooChooDisk(24205);
-	GameRegistry.registerItem(ChattanoogaChooChooDisk, "ChattanoogaChooChooDisk");
-	BeyondTheSeaDisk= new BeyondTheSeaDisk(24206);
-	GameRegistry.registerItem(BeyondTheSeaDisk, "BeyondTheSeaDisk");
-	SolidAsARockDisk= new SolidAsARockDisk(24207);
-	GameRegistry.registerItem(SolidAsARockDisk, "SolidAsARockDisk");
-	SixteenTonsDisk= new SixteenTonsDisk(24208);
-	GameRegistry.registerItem(SixteenTonsDisk, "SixteenTonsDisk");
-	CBDisk= new CBDisk(24209);
-	GameRegistry.registerItem(CBDisk, "CBDisk");
+
 	//PORTA
 	
 	spruceDoor = new ItemPorta(24400, 4, Blocks.spruceDoor).setItemName("itemSpruceDoor");
@@ -447,8 +417,6 @@ public class Items {
 		LanguageRegistry.addName(blue_tile_raw, "Blue Raw Tile");
 		LanguageRegistry.addName(purple_tile_raw, "Purple Raw Tile");
 		LanguageRegistry.addName(magenta_tile_raw, "Magenta Raw Tile");
-		
-		LanguageRegistry.addName(CBDisk, "Music Disc");
 	}
 }
 
