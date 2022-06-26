@@ -230,19 +230,36 @@ public class CraftingHandler {
 		GameRegistry.addShapedRecipe(new ItemStack(Blocks.birchLog), new Object[] { "WW ", "WW ", 'W', new ItemStack(Block.wood, 1, 2) });
 		GameRegistry.addShapedRecipe(new ItemStack(Blocks.jungleLog), new Object[] { "WW ", "WW ", 'W', new ItemStack(Block.wood, 1, 3) });
 		
+		
+		
 		// Antenne
-		GameRegistry.addRecipe(new ItemStack(Blocks.ParabolaSat, 1),
-				new Object[] { "II ", "II ", "  R", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(Blocks.AntennaGroundPlane, 1),
-				new Object[] { " I ", " R ", "I I", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(Blocks.AntennaLogperiodica, 1),
-				new Object[] { "II ", "RII", "II ", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(Blocks.AntennaYagiVHF, 1),
-				new Object[] { "I I", "III", "IRI", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(Blocks.AntennaYagiUHF, 1),
-				new Object[] { "I  ", "RII", "I  ", 'I', Item.ingotIron, 'R', Item.redstone });
-		GameRegistry.addRecipe(new ItemStack(Blocks.AntennaSettore900MHz, 1),
-				new Object[] { " I ", "RRR", " I ", 'I', Item.ingotIron, 'R', Item.redstone });
+		
+		List <ItemStack> duraluminOres = OreDictionary.getOres("ingotDuralumin");
+		if ( duraluminOres.size() > 0 ) {
+			ItemStack duralumin = duraluminOres.get(0);
+			ItemStack amplifier = ic2.api.Items.getItem("electronicCircuit");
+			ItemStack lna = ic2.api.Items.getItem("advancedCircuit");
+			GameRegistry.addRecipe(new ItemStack(Blocks.ParabolaSat, 1),
+					new Object[] { "II ", "II ", "  R", 'I', duralumin, 'R', lna });
+			GameRegistry.addRecipe(new ItemStack(Blocks.AntennaGroundPlane, 1),
+					new Object[] { " I ", " R ", "I I", 'I', duralumin, 'R', lna });
+			GameRegistry.addRecipe(new ItemStack(Blocks.AntennaLogperiodica, 1),
+					new Object[] { "II ", "RII", "II ", 'I', duralumin, 'R', amplifier });
+			GameRegistry.addRecipe(new ItemStack(Blocks.AntennaVDipole, 1),
+					new Object[] { "I I", " R ", " I ", 'I', duralumin, 'R', amplifier });
+			GameRegistry.addRecipe(new ItemStack(Blocks.AntennaYagiVHF, 1),
+					new Object[] { "I I", "III", "IRI", 'I', duralumin, 'R', amplifier });
+			GameRegistry.addRecipe(new ItemStack(Blocks.AntennaYagiUHF, 1),
+					new Object[] { "I  ", "RII", "I  ", 'I', duralumin, 'R', amplifier });
+			GameRegistry.addRecipe(new ItemStack(Blocks.AntennaSettore900MHz, 1),
+					new Object[] { " I ", "RRR", " I ", 'I', duralumin, 'R', amplifier });
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare duralumin, disabilitate ricette antenne!!!");
+		}
+		
+
+		
+		
 		GameRegistry.addRecipe(new ItemStack(Blocks.Traliccio, 4),
 				new Object[] { "I I", "III", "I I", 'I', Item.ingotIron});
 		GameRegistry.addRecipe(new ItemStack(Blocks.TraliccioBraccettoSat, 1),

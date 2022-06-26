@@ -17,6 +17,7 @@ import eyecandycraft.main.blocks.custom.AntennaPannelloBlock;
 import eyecandycraft.main.blocks.custom.AntennaSettore900MHzBlock;
 import eyecandycraft.main.blocks.custom.AntennaSettoreLTEBlock;
 import eyecandycraft.main.blocks.custom.AntennaSettoreLTEMIMOBlock;
+import eyecandycraft.main.blocks.custom.AntennaVDipoleBlock;
 import eyecandycraft.main.blocks.custom.AntennaYagiUHFBlock;
 import eyecandycraft.main.blocks.custom.AntennaYagiVHFBlock;
 import eyecandycraft.main.blocks.custom.ArmadioFTTCBlock;
@@ -164,7 +165,7 @@ public class Blocks {
 
 	// Tutti i modelli Techne
 	public static Block ParabolaSat, ParabolaSatTest2, AntennaGroundPlane, AntennaSettore900MHz, AntennaSettore2100MHz, AntennaYagiVHF,
-			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat, TraliccioBraccettoCCTV;
+			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat, TraliccioBraccettoCCTV, AntennaVDipole;
 	public static Block Microfono, Telecamera, ConsoleRegia, TVLCD, TVOLED, TVOLEDVESA, CCTVCam, CCTVCamPTZ;
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, FaroPavimento, LampionePaloModerno, LampionePaloVecchio;
 	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat, Clima, ClimaUE, Scrivania, Polycom, BocchettaAC;
@@ -364,7 +365,7 @@ public class Blocks {
 		ParabolaSat = new ParabolaBlock(846, 0);
 		AntennaGroundPlane = new AntennaGroundPlaneBlock(847, 0);
 	
-		// AntennaSettori2100MHz = new AntennaSettori2100MHzBlock(848, 0);
+		AntennaVDipole = new AntennaVDipoleBlock(848, 0);
 		AntennaSettore900MHz = new AntennaSettore900MHzBlock(849, 0);
 		AntennaYagiVHF = new AntennaYagiVHFBlock(850, 0);
 		AntennaYagiUHF = new AntennaYagiUHFBlock(851, 0);
@@ -898,6 +899,10 @@ public class Blocks {
 		GameRegistry.registerBlock(AntennaESM, "AntennaESM");
 		GameRegistry.registerTileEntity(TileEntityAntennaESM.class,
 				"AntennaESMTileEntity");
+		
+		GameRegistry.registerBlock(AntennaVDipole, "AntennaVDipole");
+		GameRegistry.registerTileEntity(TileEntityAntennaVDipole.class,
+				"AntennaVDipoleTileEntity");
 
 		GameRegistry.registerBlock(AntennaSettoreLTE, "AntennaSettoreLTE");
 		GameRegistry.registerTileEntity(TileEntityAntennaSettoreLTE.class,
@@ -1399,6 +1404,7 @@ public class Blocks {
 		LanguageRegistry.addName(PanchinaSinistra, "Bench (left)");
 		LanguageRegistry.addName(PanchinaDestra, "Bench (right)");
 		
+		LanguageRegistry.addName(AntennaVDipole, "V-Dipole Satellite Antenna");
 		LanguageRegistry.addName(Antenna4G, "LTE Reflector Antenna (4G FDD MU-MIMO)");
 		LanguageRegistry.addName(Antenna5G, "LTE Reflector Antenna (5G TDD MU-MIMO)");
 		
