@@ -20,7 +20,7 @@ public class CraftingHandler {
 		//
 		
 		//ez recipe
-		
+	
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.stick, 24), new Object[] {new ItemStack(Block.wood), new ItemStack(Block.wood), new ItemStack(Block.wood)});
 		GameRegistry.addShapedRecipe(new ItemStack(Block.chest, 4), new Object[] {"###", "# #", "###", '#', new ItemStack(Block.wood)});
 		//Cartelli
@@ -253,6 +253,9 @@ public class CraftingHandler {
 					new Object[] { "I  ", "RII", "I  ", 'I', duralumin, 'R', amplifier });
 			GameRegistry.addRecipe(new ItemStack(Blocks.AntennaSettore900MHz, 1),
 					new Object[] { " I ", "RRR", " I ", 'I', duralumin, 'R', amplifier });
+			
+			GameRegistry.addRecipe(new ItemStack(Blocks.fakeVent, 4),
+					new Object[] { "III", "IVI", "III", 'I', duralumin, 'V', new ItemStack(Block.fenceIron)});
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare duralumin, disabilitate ricette antenne!!!");
 		}
@@ -438,8 +441,13 @@ public class CraftingHandler {
 					1870,
 					1200
 					);
+			GameRegistry.addRecipe(new ItemStack(Items.doorFireProof, 1), new Object[] {
+					"AAA", "LDL", "AAA", 'A', chrysotile.get(0), 'L', new ItemStack(Block.lever), 'D',ic2.api.Items.getItem("reinforcedDoor")
+				});
+
 		} else {
 			System.err.println("[Eyecandycraft] Non trovo il crisotilo, niente mesotelioma per te! (E nemmeno glazed bricks e asbestos-cement bricks)");
+			GameRegistry.addShapelessRecipe(new ItemStack(Items.doorFireProof, 1), new Object[] {ic2.api.Items.getItem("reinforcedDoor"), new ItemStack(Block.lever)});
 		}
 		
 		GregtechHandler.addBlastRecipe(
@@ -1053,7 +1061,10 @@ public class CraftingHandler {
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.door16, 1), new Object[] {new ItemStack(Item.doorSteel), new ItemStack(Block.stoneButton)});
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.door17, 1), new Object[] {ic2.api.Items.getItem("reinforcedDoor"), new ItemStack(Block.stoneButton)});
+
 		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.doorMetal, 1), new Object[] {new ItemStack(Item.doorSteel), new ItemStack(Block.stoneButton), new ItemStack(Item.ingotIron)});
+
 		
 		GameRegistry.addRecipe(new ItemStack(Items.portaCostosa, 1),
 				new Object[] { "NNU", "NND", "NNG",
@@ -1097,6 +1108,7 @@ public class CraftingHandler {
 				new Object[] { "#S#", "SSS", "#S#", 'S', Item.stick, '#', Block.planks});
 		
 		GregtechHandler.addWiremillRecipe(new ItemStack(Block.fenceIron, 1), new ItemStack(Blocks.wireMesh, 1), 200, 20);
+		
 		
 	}
 }

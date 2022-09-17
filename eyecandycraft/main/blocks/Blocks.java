@@ -117,7 +117,7 @@ public class Blocks {
 
 	// Tutto il resto
 	public static Block unbreakableStone, ubLog, ubCobble, ubstonebricks, ubbirch, ubspruce, grassPath, hay, mortar, ubglass,
-			timberframe, timberframecrossbrace, thatch, plaster, litplaster, hazardstripe, black_tintedGlass, fakeSolarPanel, permaDirt;
+			timberframe, timberframecrossbrace, thatch, plaster, litplaster, hazardstripe, black_tintedGlass, fakeSolarPanel, permaDirt, fakeVent;
 
 	// Plasters
 	public static Block orange_plaster, magenta_plaster, light_blue_plaster, yellow_plaster, lime_plaster, pink_plaster,
@@ -128,7 +128,7 @@ public class Blocks {
 	
 	public static Block spruceGate, birchGate, jungleGate, spruceDoor, birchDoor, jungleDoor, spruceTrapdoor, birchTrapdoor, jungleTrapdoor, apartmentDoor, jungleDoor2, glassDoor;
 	
-	public static Block door0, door1, door2, door3, door4, door5, door6, door7, door8, door9, door10, door11, door12, door13, door14, door15, portaCostosa, door16, door17;
+	public static Block door0, door1, door2, door3, door4, door5, door6, door7, door8, door9, door10, door11, door12, door13, door14, door15, portaCostosa, door16, door17, doorFireProof, doorMetal;
 	
 	
 	//blocco scortecciato
@@ -496,6 +496,8 @@ public class Blocks {
 		portaCostosa = new BlockPorta(1546, 38, Material.wood, "portaCostosa");
 		door16 = new BlockPorta(1547, 39, Material.rock, "door16");
 		door17 = new BlockPorta(1548, 40, Material.rock, "door17");
+		doorFireProof = new BlockPorta(1549, 41, Material.rock, "doorFireProof");
+		doorMetal = new BlockPorta(1550, 42, Material.iron, "doorMetal");
 		
 		//((BlockPorta) Blocks.spruceDoor).setItemDropped(Items.spruceDoor.itemID);
 		
@@ -521,14 +523,21 @@ public class Blocks {
 	
 		fakeSolarPanel = new FakeSolarPanelBlock(190, 112, Material.iron).setCreativeTab(CreativeTab.tabEyecandyMateriali)
 				.setBlockName("fakeSolarPanel").setHardness(0.5f).setTextureFile("/eyecandycraft/textures/textures.png");
+		fakeVent = new Block(873, 243, Material.iron).setCreativeTab(CreativeTab.tabEyecandyMateriali)
+				.setBlockName("fakeVent").setHardness(0.6f).setStepSound(Block.soundMetalFootstep).setTextureFile("/eyecandycraft/textures/textures.png");
+
 		
 		permaDirt = new Block(870, 2, Material.ground).setCreativeTab(CreativeTab.tabEyecandyMateriali).setBlockName("permaDirt").setHardness(0.3f).setStepSound(Block.soundGravelFootstep);
+
 		
 		litplaster = new Block(940, 67, Material.glass).setCreativeTab(CreativeTab.tabEyecandyMateriali).setBlockName("litplaster").setHardness(0.2f).setLightValue(1.0F)
 				.setTextureFile("/eyecandycraft/textures/textures.png").setStepSound(Block.soundGlassFootstep);
 		
 		ubglass = new BlockGlass(871, 49, Material.glass, false).setCreativeTab(CreativeTab.tabEyecandyMateriali).setBlockUnbreakable().setResistance(6000000.0F)
 				.setBlockName("ubglass");
+
+		
+		
 		unbreakableStone = new Block(173, 1, Material.rock).setCreativeTab(CreativeTab.tabEyecandyMateriali)
 				.setBlockName("ubstone").setBlockUnbreakable().setResistance(6000000.0F);
 		ubLog = new Block(174, 4, Material.wood).setBlockUnbreakable().setResistance(6000000.0F).setCreativeTab(CreativeTab.tabEyecandyMateriali)
@@ -730,6 +739,8 @@ public class Blocks {
 		
 		GameRegistry.registerBlock(Chain, "Chain");
 		GameRegistry.registerBlock(fakeCrate, "fakeCrate");
+		GameRegistry.registerBlock(fakeVent, "fakeVent");
+
 		
 
 		GameRegistry.registerBlock(corrugatedSteel, ItemBlockCorrugatedSteel.class, corrugatedSteel.getBlockName());
@@ -1244,6 +1255,8 @@ public class Blocks {
 
 		LanguageRegistry.addName(fakeCrate, "Fake Storage Crate");
 		LanguageRegistry.addName(fakeSolarPanel, "Fake Solar Panel");
+		LanguageRegistry.addName(fakeVent, "Fake Air Vent");
+
 		LanguageRegistry.addName(litplaster, "Lit Plaster");
 		LanguageRegistry.addName(Clima, "Air Conditioner");
 		LanguageRegistry.addName(ClimaUE, "Air Conditioner - Outdoor Unit");
@@ -1499,6 +1512,8 @@ public class Blocks {
 		((BlockPorta) door16).setItemDropped(Items.door16.itemID);
 		((BlockPorta) door17).setItemDropped(Items.door17.itemID);
 		((BlockPorta) portaCostosa).setItemDropped(Items.portaCostosa.itemID);
+		((BlockPorta) doorFireProof).setItemDropped(Items.doorFireProof.itemID);
+		((BlockPorta) doorMetal).setItemDropped(Items.doorMetal.itemID);
 	}
 
 	

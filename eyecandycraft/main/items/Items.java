@@ -39,7 +39,7 @@ public class Items {
 	
 	public static Item spruceDoor, birchDoor, jungleDoor, apartmentDoor, jungleDoor2, glassDoor;
 	
-	public static Item door0, door1, door2, door3, door4, door5, door6, door7, door8, door9, door10, door11, door12, door13, door14, door15, portaCostosa, door16, door17;
+	public static Item door0, door1, door2, door3, door4, door5, door6, door7, door8, door9, door10, door11, door12, door13, door14, door15, portaCostosa, door16, door17, doorMetal, doorFireProof;
 	
 	public static Item Sign_acacia;
 	public static Item Sign_crimson;
@@ -242,6 +242,8 @@ public class Items {
 	portaCostosa = new ItemPorta(24426, 32, Blocks.portaCostosa).setItemName("itemPortaCostosa");
 	door16 = new ItemPorta(24427, 33, Blocks.door16).setItemName("itemDoor16");
 	door17 = new ItemPorta(24428, 34, Blocks.door17).setItemName("itemDoor17");
+	doorMetal = new ItemPorta(24429, 35, Blocks.doorMetal).setItemName("itemDoorMetal");
+	doorFireProof = new ItemPorta(24430, 36, Blocks.doorFireProof).setItemName("itemFireProof");
 	
 	}
 	
@@ -351,6 +353,8 @@ public class Items {
 		LanguageRegistry.addName(door15, "Door, Type 16");
 		LanguageRegistry.addName(door16, "Door, Type 17");
 		LanguageRegistry.addName(door17, "Door, Type 18");
+		LanguageRegistry.addName(doorMetal, "Door, Metal");
+		LanguageRegistry.addName(doorFireProof, "Door, Fire Proof");
 		LanguageRegistry.addName(portaCostosa, "Very Expensive Door (for stupidly rich people)");
 		
 		LanguageRegistry.addName(white_small_tile_raw, "White Small Raw Tile");
