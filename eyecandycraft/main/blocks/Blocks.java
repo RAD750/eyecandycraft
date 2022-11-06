@@ -22,6 +22,7 @@ import eyecandycraft.main.blocks.custom.AntennaYagiUHFBlock;
 import eyecandycraft.main.blocks.custom.AntennaYagiVHFBlock;
 import eyecandycraft.main.blocks.custom.ArmadioFTTCBlock;
 import eyecandycraft.main.blocks.custom.AtariSTBlock;
+import eyecandycraft.main.blocks.custom.BarbedWireBlock;
 import eyecandycraft.main.blocks.custom.BittaBlock;
 import eyecandycraft.main.blocks.custom.BlockChain;
 import eyecandycraft.main.blocks.custom.BlockFumogeno;
@@ -32,11 +33,14 @@ import eyecandycraft.main.blocks.custom.BombolaGasBlock;
 import eyecandycraft.main.blocks.custom.CCTVCamBlock;
 import eyecandycraft.main.blocks.custom.CCTVCamPTZBlock;
 import eyecandycraft.main.blocks.custom.CartelloEndorBlock;
+import eyecandycraft.main.blocks.custom.CavoBlock;
 import eyecandycraft.main.blocks.custom.ClimaBlock;
 import eyecandycraft.main.blocks.custom.ClimaUEBlock;
 import eyecandycraft.main.blocks.custom.ConsoleRegiaBlock;
 import eyecandycraft.main.blocks.custom.CroceSAndreaBlock;
 import eyecandycraft.main.blocks.custom.DecadeBlock;
+import eyecandycraft.main.blocks.custom.DocciaBlock;
+import eyecandycraft.main.blocks.custom.DocciaMiscelatoreBlock;
 import eyecandycraft.main.blocks.custom.EstensioneBTSBlock;
 import eyecandycraft.main.blocks.custom.EstensioneSingolaBTSBlock;
 import eyecandycraft.main.blocks.custom.EstintoreBlock;
@@ -69,6 +73,8 @@ import eyecandycraft.main.blocks.custom.PanchinaCentroBlock;
 import eyecandycraft.main.blocks.custom.PanchinaDestraBlock;
 import eyecandycraft.main.blocks.custom.PanchinaSinistraBlock;
 import eyecandycraft.main.blocks.custom.ParabolaBlock;
+import eyecandycraft.main.blocks.custom.PersianeBlock;
+import eyecandycraft.main.blocks.custom.PersianeMezzaBlock;
 import eyecandycraft.main.blocks.custom.PolycomBlock;
 import eyecandycraft.main.blocks.custom.PortatileBlock;
 import eyecandycraft.main.blocks.custom.ROEBlock;
@@ -169,7 +175,7 @@ public class Blocks {
 	public static Block Microfono, Telecamera, ConsoleRegia, TVLCD, TVOLED, TVOLEDVESA, CCTVCam, CCTVCamPTZ;
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, FaroPavimento, LampionePaloModerno, LampionePaloVecchio;
 	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat, Clima, ClimaUE, Scrivania, Polycom, BocchettaAC;
-	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta, BombolaGas;
+	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta, BombolaGas, Cavo;
 	public static Block ArmadioFTTC, Antenna4G, Antenna5G, Decade, Antenna80GHz, ARLO;
 	public static Block AntennaFMDipolo, AntennaESM, AntennaPannello, AntennaSettoreLTE, EstensioneBTS, EstensioneSingolaBTS, MiniARLO, ROE, TraliccioBraccettoParabola;
 	
@@ -179,7 +185,7 @@ public class Blocks {
     
     public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna, ScalettaMuro, PaloScaletta, Sirena, Chain, fakeCrate;
 
-    public static Block LightningRod, Fountain;
+    public static Block LightningRod, Fountain, Doccia, DocciaMiscelatore, Persiane, PersianeMezza, BarbedWire;
     
     public static Block PaloCimaSingolo, PaloCimaDoppio, PaloGrosso, Padellone, AntennaSettoreLTEMIMO;
     
@@ -440,6 +446,14 @@ public class Blocks {
 		Chain = new BlockChain(939, 240, Material.iron);
 		Fountain = new FountainBlock(942, 0);
 		
+		Cavo = new CavoBlock(943, 0);
+		Persiane = new PersianeBlock(944, 0);
+		PersianeMezza = new PersianeMezzaBlock(945, 0);
+		Doccia = new DocciaBlock(946, 0);
+		DocciaMiscelatore = new DocciaMiscelatoreBlock(947, 0);
+		BarbedWire = new BarbedWireBlock(948, 0);
+		
+		
 		AntennaFMDipolo = new AntennaFMDipoloBlock(3400, 0);
 		AntennaPannello = new AntennaPannelloBlock(3401, 0);
 		AntennaSettoreLTE = new AntennaSettoreLTEBlock(3402, 0);
@@ -497,7 +511,7 @@ public class Blocks {
 		door16 = new BlockPorta(1547, 39, Material.rock, "door16");
 		door17 = new BlockPorta(1548, 40, Material.rock, "door17");
 		doorFireProof = new BlockPorta(1549, 41, Material.rock, "doorFireProof");
-		doorMetal = new BlockPorta(1550, 42, Material.iron, "doorMetal");
+		doorMetal = new BlockPorta(1550, 42, Material.rock, "doorMetal");
 		
 		//((BlockPorta) Blocks.spruceDoor).setItemDropped(Items.spruceDoor.itemID);
 		
@@ -1115,6 +1129,24 @@ public class Blocks {
 		GameRegistry.registerBlock(Fountain, "Fountain");
 		GameRegistry.registerTileEntity(TileEntityFountain.class, "Fountain");
 		
+		GameRegistry.registerBlock(Cavo, "Cavo");
+		GameRegistry.registerTileEntity(TileEntityCavo.class, "Cavo");
+		
+		GameRegistry.registerBlock(BarbedWire, "BarbedWire");
+		GameRegistry.registerTileEntity(TileEntityBarbedWire.class, "BarbedWire");
+		
+		GameRegistry.registerBlock(Doccia, "Doccia");
+		GameRegistry.registerTileEntity(TileEntityDoccia.class, "Doccia");
+		
+		GameRegistry.registerBlock(DocciaMiscelatore, "DocciaMiscelatore");
+		GameRegistry.registerTileEntity(TileEntityDocciaMiscelatore.class, "DocciaMiscelatore");
+		
+		GameRegistry.registerBlock(Persiane, "Persiane");
+		GameRegistry.registerTileEntity(TileEntityPersiane.class, "Persiane");
+		
+		GameRegistry.registerBlock(PersianeMezza, "PersianeMezza");
+		GameRegistry.registerTileEntity(TileEntityPersianeMezza.class, "PersianeMezza");
+		
 	}
 
 	public static void RegistraLingua() {
@@ -1124,6 +1156,12 @@ public class Blocks {
 		
 		LanguageRegistry.addName(wireMesh, "Wire Mesh");
 		
+		LanguageRegistry.addName(Cavo, "Cable Stay");
+		LanguageRegistry.addName(BarbedWire, "Barbed Wire");
+		LanguageRegistry.addName(Doccia, "Shower Head");
+		LanguageRegistry.addName(DocciaMiscelatore, "Shower Tap");
+		LanguageRegistry.addName(Persiane, "Blinds");
+		LanguageRegistry.addName(PersianeMezza, "Blinds, Half");
 		LanguageRegistry.addName(LightningRod, "Lightning Rod");
 		LanguageRegistry.addName(fumogeno, "Smoking Block");
 		LanguageRegistry.addName(Chain, "Chain");

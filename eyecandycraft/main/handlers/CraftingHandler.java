@@ -256,8 +256,17 @@ public class CraftingHandler {
 			
 			GameRegistry.addRecipe(new ItemStack(Blocks.fakeVent, 4),
 					new Object[] { "III", "IVI", "III", 'I', duralumin, 'V', new ItemStack(Block.fenceIron)});
+			
+			GameRegistry.addRecipe(new ItemStack(Blocks.Persiane, 1),
+					new Object[] {"###", "#C#", "###", '#', duralumin, 'C', new ItemStack(Item.dyePowder, 1, 2)});
+			GameRegistry.addRecipe(new ItemStack(Blocks.PersianeMezza, 1),
+					new Object[] {"## ", "#C ", "## ", '#', duralumin, 'C', new ItemStack(Item.dyePowder, 1, 2)});
+			GameRegistry.addRecipe(new ItemStack(Blocks.Doccia, 1),
+					new Object[] {"## ", " # ", "#B#", '#', duralumin, 'B', new ItemStack(Item.bucketEmpty, 1)});
+			GameRegistry.addRecipe(new ItemStack(Blocks.DocciaMiscelatore, 1),
+					new Object[] {" # ", "C#F", "   ", '#', duralumin, 'C', new ItemStack(Item.dyePowder, 1, 1), 'F', new ItemStack(Item.dyePowder, 1, 4)});
 		} else {
-			System.err.println("[Eyecandycraft] Impossibile registrare duralumin, disabilitate ricette antenne!!!");
+			System.err.println("[Eyecandycraft] Impossibile registrare duralumin, disabilitate ricette antenne e persiane!!!!");
 		}
 		
 
@@ -471,6 +480,9 @@ public class CraftingHandler {
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.ScalettaMuro, 3), new Object [] { "# #", "###", "# #", '#', steel});
 			GameRegistry.addRecipe(new ItemStack(Blocks.Chain), new Object[] { " N ", " I ", " N ", 'N', steel, 'I', Item.ingotIron});
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.Fountain, 2), new Object[] {" # ", "#B#", "#C#", 'C', Item.cauldron, 'B', Item.bucketWater, '#', steel});
+			GameRegistry.addRecipe(new ItemStack(Blocks.Cavo, 2), new Object[] { "## ", " # ", " ##", '#', steel});
+			GregtechHandler.addWiremillRecipe(steel, new ItemStack(Blocks.BarbedWire), 220, 120);
+			
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare ingotSteel, disabilitata recipe secondaria CorrugatedSteel/Transenna");
 		}
