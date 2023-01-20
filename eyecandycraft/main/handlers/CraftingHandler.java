@@ -481,6 +481,8 @@ public class CraftingHandler {
 			GameRegistry.addRecipe(new ItemStack(Blocks.Chain), new Object[] { " N ", " I ", " N ", 'N', steel, 'I', Item.ingotIron});
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.Fountain, 2), new Object[] {" # ", "#B#", "#C#", 'C', Item.cauldron, 'B', Item.bucketWater, '#', steel});
 			GameRegistry.addRecipe(new ItemStack(Blocks.Cavo, 2), new Object[] { "## ", " # ", " ##", '#', steel});
+			GregtechHandler.addWiremillRecipe(new ItemStack(Blocks.Cavo, 1), new ItemStack(Blocks.CavoMedio, 2), 60, 32);
+			GregtechHandler.addWiremillRecipe(new ItemStack(Blocks.CavoMedio, 1), new ItemStack(Blocks.CavoPiccolo, 2), 60, 32);
 			GregtechHandler.addWiremillRecipe(steel, new ItemStack(Blocks.BarbedWire), 220, 120);
 			
 		} else {

@@ -34,6 +34,8 @@ import eyecandycraft.main.blocks.custom.CCTVCamBlock;
 import eyecandycraft.main.blocks.custom.CCTVCamPTZBlock;
 import eyecandycraft.main.blocks.custom.CartelloEndorBlock;
 import eyecandycraft.main.blocks.custom.CavoBlock;
+import eyecandycraft.main.blocks.custom.CavoMedioBlock;
+import eyecandycraft.main.blocks.custom.CavoPiccoloBlock;
 import eyecandycraft.main.blocks.custom.ClimaBlock;
 import eyecandycraft.main.blocks.custom.ClimaUEBlock;
 import eyecandycraft.main.blocks.custom.ConsoleRegiaBlock;
@@ -175,7 +177,7 @@ public class Blocks {
 	public static Block Microfono, Telecamera, ConsoleRegia, TVLCD, TVOLED, TVOLEDVESA, CCTVCam, CCTVCamPTZ;
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, FaroPavimento, LampionePaloModerno, LampionePaloVecchio;
 	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, ModemSat, Clima, ClimaUE, Scrivania, Polycom, BocchettaAC;
-	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta, BombolaGas, Cavo;
+	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta, BombolaGas, Cavo, CavoMedio, CavoPiccolo;
 	public static Block ArmadioFTTC, Antenna4G, Antenna5G, Decade, Antenna80GHz, ARLO;
 	public static Block AntennaFMDipolo, AntennaESM, AntennaPannello, AntennaSettoreLTE, EstensioneBTS, EstensioneSingolaBTS, MiniARLO, ROE, TraliccioBraccettoParabola;
 	
@@ -447,6 +449,9 @@ public class Blocks {
 		Fountain = new FountainBlock(942, 0);
 		
 		Cavo = new CavoBlock(943, 0);
+		CavoPiccolo = new CavoPiccoloBlock(1020, 0);
+		CavoMedio = new CavoMedioBlock(949, 0);
+
 		Persiane = new PersianeBlock(944, 0);
 		PersianeMezza = new PersianeMezzaBlock(945, 0);
 		Doccia = new DocciaBlock(946, 0);
@@ -1132,6 +1137,12 @@ public class Blocks {
 		GameRegistry.registerBlock(Cavo, "Cavo");
 		GameRegistry.registerTileEntity(TileEntityCavo.class, "Cavo");
 		
+		GameRegistry.registerBlock(CavoPiccolo, "CavoPiccolo");
+		GameRegistry.registerTileEntity(TileEntityCavoPiccolo.class, "CavoPiccolo");
+		
+		GameRegistry.registerBlock(CavoMedio, "CavoMedio");
+		GameRegistry.registerTileEntity(TileEntityCavoMedio.class, "CavoMedio");
+		
 		GameRegistry.registerBlock(BarbedWire, "BarbedWire");
 		GameRegistry.registerTileEntity(TileEntityBarbedWire.class, "BarbedWire");
 		
@@ -1157,6 +1168,8 @@ public class Blocks {
 		LanguageRegistry.addName(wireMesh, "Wire Mesh");
 		
 		LanguageRegistry.addName(Cavo, "Cable Stay");
+		LanguageRegistry.addName(CavoMedio, "Cable Stay (medium)");
+		LanguageRegistry.addName(CavoPiccolo, "Cable Stay (small)");
 		LanguageRegistry.addName(BarbedWire, "Barbed Wire");
 		LanguageRegistry.addName(Doccia, "Shower Head");
 		LanguageRegistry.addName(DocciaMiscelatore, "Shower Tap");

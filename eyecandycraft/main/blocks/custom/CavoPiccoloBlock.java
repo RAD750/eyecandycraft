@@ -4,8 +4,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import eyecandycraft.main.CreativeTab;
 import eyecandycraft.main.blocks.Blocks;
-import eyecandycraft.main.entities.TileEntityPolycom;
-import eyecandycraft.main.handlers.Sounds;
+import eyecandycraft.main.entities.TileEntityCavo;
+import eyecandycraft.main.entities.TileEntityCavoPiccolo;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -16,23 +16,23 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class PolycomBlock extends BlockContainer {
-	public static final String name = "Polycom";
+public class CavoPiccoloBlock extends BlockContainer {
+	public static final String name = "CavoPiccolo";
 
-	public PolycomBlock(int id, int texture) {
+	public CavoPiccoloBlock(int id, int texture) {
 		super(id, Material.iron);
 		setHardness(0.5F);
 		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabEyecandyMobilio);
-		setBlockName("Polycom");
-		blockIndexInTexture = 37;
+		setBlockName("CavoPiccolo");
+		blockIndexInTexture = 83;
 	}
 
-    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
-    {
-        return null;
-    }
+	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
+		this.setBlockBoundsBasedOnState(par1World, par2, par3, par4);
+		return super.getCollisionBoundingBoxFromPool(par1World, par2, par3, par4);
+	}
 
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getSelectedBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
@@ -55,7 +55,7 @@ public class PolycomBlock extends BlockContainer {
 			yaw %= 360;
 			int facing = yaw / 45;
 
-			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.Polycom.blockID, facing / 2);
+			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.CavoPiccolo.blockID, facing / 2);
 		}
 	}
 
@@ -88,14 +88,6 @@ public class PolycomBlock extends BlockContainer {
 	}
 
 	public TileEntity createTileEntity(World world, int meta) {
-		return new TileEntityPolycom();
+		return new TileEntityCavoPiccolo();
 	}
-	/*
-	@Override
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
-		if (world.isRemote) {
-			world.playSoundEffect(x, y, z, "furniture.EyecandyPhone", 1f, 1);
-		}
-		return true;
-	}*/
 }

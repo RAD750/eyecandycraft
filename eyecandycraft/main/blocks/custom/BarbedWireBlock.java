@@ -8,10 +8,12 @@ import eyecandycraft.main.entities.TileEntityBarbedWire;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -89,4 +91,9 @@ public class BarbedWireBlock extends BlockContainer {
 	public TileEntity createTileEntity(World world, int meta) {
 		return new TileEntityBarbedWire();
 	}
+	
+    public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
+    {
+        par5Entity.attackEntityFrom(DamageSource.cactus, 10);
+    }
 }
