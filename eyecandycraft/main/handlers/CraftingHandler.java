@@ -1124,5 +1124,84 @@ public class CraftingHandler {
 		GregtechHandler.addWiremillRecipe(new ItemStack(Block.fenceIron, 1), new ItemStack(Blocks.wireMesh, 1), 200, 20);
 		
 		
+		// Redstone blocks
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.redstoneBlocks, 1, 0), 
+				new Object[] { "###", "#B#", "###",
+						'#', new ItemStack(Item.redstone), 
+						'B', new ItemStack(Block.stone)
+				}
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.redstoneBlocks, 1, 1), 
+				new Object[] { "###", "#B#", "###",
+						'#', new ItemStack(Item.redstone), 
+						'B', new ItemStack(Block.cobblestone)
+				}
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.redstoneBlocks, 1, 2), 
+				new Object[] { "###", "#B#", "###",
+						'#', new ItemStack(Item.redstone), 
+						'B', new ItemStack(Block.stoneBrick)
+				}
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.redstoneBlocks, 1, 3), 
+				new Object[] { "###", "#B#", "###",
+						'#', new ItemStack(Item.redstone), 
+						'B', new ItemStack(Block.planks, 1, 0)
+				}
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.redstoneBlocks, 1, 4), 
+				new Object[] { "###", "#B#", "###",
+						'#', new ItemStack(Item.redstone), 
+						'B', new ItemStack(Block.planks, 1, 2)
+				}
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.redstoneBlocks, 1, 5), 
+				new Object[] { "###", "#B#", "###",
+						'#', new ItemStack(Item.redstone), 
+						'B', new ItemStack(Block.planks, 1, 3)
+				}
+		);		
+		GameRegistry.addRecipe(new ItemStack(Blocks.redstoneBlocks, 1, 6), 
+				new Object[] { "###", "#B#", "###",
+						'#', new ItemStack(Item.redstone), 
+						'B', railcraft.common.api.core.items.ItemRegistry.getItem("cube.concrete.block", 1)
+				}
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.redstoneBlocks, 1, 7), 
+				new Object[] { "###", "#B#", "###",
+						'#', new ItemStack(Item.redstone), 
+						'B', new ItemStack(Blocks.plaster)
+				}
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.redstoneBlocks, 1, 8), 
+				new Object[] { "###", "#B#", "###",
+						'#', new ItemStack(Block.stone), 
+						'B', new ItemStack(Item.redstone)
+				}
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.redstoneBlocks, 1, 9), 
+				new Object[] { "###", "#B#", "###",
+						'#', new ItemStack(Item.redstone), 
+						'B', new ItemStack(Blocks.fakeVent)
+				}
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.HardenedStoneSlab, 8),
+				new Object[] { "###", "#D#", "###",
+						'#', new ItemStack(Block.stoneDoubleSlab, 1),
+						'D', GregtechHandler.getGregTechItem(1, 1, 240)
+						
+				}
+		);
+		
 	}
 }

@@ -103,12 +103,14 @@ import eyecandycraft.main.blocks.custom.TraliccioBraccettoSingoloBlock;
 import eyecandycraft.main.blocks.custom.TransennaBlock;
 import eyecandycraft.main.blocks.custom.meta.BlockCorrugatedSteel;
 import eyecandycraft.main.blocks.custom.meta.BlockMetaPane;
+import eyecandycraft.main.blocks.custom.meta.BlockRedstoneBlocks;
 import eyecandycraft.main.blocks.custom.meta.BlockMetaBlockAlpha;
 import eyecandycraft.main.entities.*;
 import eyecandycraft.main.items.ItemBlockTappeto;
 import eyecandycraft.main.items.Items;
 import eyecandycraft.main.items.meta.ItemBlockCorrugatedSteel;
 import eyecandycraft.main.items.meta.ItemBlockMetaBlockAlpha;
+import eyecandycraft.main.items.meta.ItemBlockRedstoneBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockGlass;
@@ -217,12 +219,19 @@ public class Blocks {
     public static Block Sign_birch_Wall;
     
     public static Block wireMesh;
+    public static Block redstoneBlocks;
+    
+    public static Block HardenedStoneSlab;
 
 
     
 	public static void InizializzaBlocchi() {
 		
 		wireMesh = new BlockMetaPane(191, 0, 1, Material.iron, true, 0.5f, 0.7f);
+		
+		HardenedStoneSlab = new Block(200, 254, Material.rock).setCreativeTab(CreativeTab.tabEyecandyMateriali)
+				.setBlockName("hardenedStoneSlab").setHardness(1.0f).setStepSound(Block.soundStoneFootstep).setTextureFile("/eyecandycraft/textures/textures.png");
+
 		
 		//cartelli
 		
@@ -255,6 +264,8 @@ public class Blocks {
 	
 		corrugatedSteel = new BlockCorrugatedSteel(178);
 		metaBlockAlpha = new BlockMetaBlockAlpha(186);
+		redstoneBlocks = new BlockRedstoneBlocks(3100);
+		
 		fumogeno = new BlockFumogeno(3308);
 		tappeto = new BlockTappeto(3309);
 		
@@ -764,7 +775,9 @@ public class Blocks {
 
 		GameRegistry.registerBlock(corrugatedSteel, ItemBlockCorrugatedSteel.class, corrugatedSteel.getBlockName());
 		GameRegistry.registerBlock(metaBlockAlpha, ItemBlockMetaBlockAlpha.class, metaBlockAlpha.getBlockName());
+		GameRegistry.registerBlock(redstoneBlocks, ItemBlockRedstoneBlocks.class, redstoneBlocks.getBlockName());
 
+		
 		GameRegistry.registerBlock(tappeto, ItemBlockTappeto.class, tappeto.getBlockName());
 		
 		//mattonella
@@ -1158,6 +1171,10 @@ public class Blocks {
 		GameRegistry.registerBlock(PersianeMezza, "PersianeMezza");
 		GameRegistry.registerTileEntity(TileEntityPersianeMezza.class, "PersianeMezza");
 		
+		
+		GameRegistry.registerBlock(HardenedStoneSlab, "hardenedStoneSlab");
+
+		
 	}
 
 	public static void RegistraLingua() {
@@ -1166,6 +1183,8 @@ public class Blocks {
 		//
 		
 		LanguageRegistry.addName(wireMesh, "Wire Mesh");
+		
+		LanguageRegistry.addName(HardenedStoneSlab, "Hardened Stone Slab");
 		
 		LanguageRegistry.addName(Cavo, "Cable Stay");
 		LanguageRegistry.addName(CavoMedio, "Cable Stay (medium)");
@@ -1249,6 +1268,18 @@ public class Blocks {
 		LanguageRegistry.addName(new ItemStack(tappeto, 1, 13), "Green Carpet");
 		LanguageRegistry.addName(new ItemStack(tappeto, 1, 14), "Red Carpet");
 		LanguageRegistry.addName(new ItemStack(tappeto, 1, 15), "Black Carpet");
+		
+		//Fake Redstone
+		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 0), "Redstone Emitter, Stone");
+		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 1), "Redstone Emitter, Cobblestone");
+		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 2), "Redstone Emitter, Stone Bricks");
+		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 3), "Redstone Emitter, Oak Wood Planks");
+		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 4), "Redstone Emitter, Spruce Wood Planks");
+		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 5), "Redstone Emitter, Birch Wood Planks");
+		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 6), "Redstone Emitter, Concrete");
+		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 7), "Redstone Emitter, White Plaster");
+		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 8), "Real Redstone Block");
+		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 9), "Redstone Emitter, Fake Vent");
 		
 		
 		//mattonelle

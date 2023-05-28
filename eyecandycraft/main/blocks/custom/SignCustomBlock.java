@@ -9,6 +9,7 @@ import eyecandycraft.main.items.Items;
 import eyecandycraft.main.utils.ChatColor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSign;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
