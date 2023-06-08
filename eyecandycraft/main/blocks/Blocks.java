@@ -101,6 +101,7 @@ import eyecandycraft.main.blocks.custom.TraliccioBraccettoParabolaBlock;
 import eyecandycraft.main.blocks.custom.TraliccioBraccettoSatBlock;
 import eyecandycraft.main.blocks.custom.TraliccioBraccettoSingoloBlock;
 import eyecandycraft.main.blocks.custom.TransennaBlock;
+import eyecandycraft.main.blocks.custom.meta.BlockColouredConcrete;
 import eyecandycraft.main.blocks.custom.meta.BlockCorrugatedSteel;
 import eyecandycraft.main.blocks.custom.meta.BlockMetaPane;
 import eyecandycraft.main.blocks.custom.meta.BlockRedstoneBlocks;
@@ -108,6 +109,7 @@ import eyecandycraft.main.blocks.custom.meta.BlockMetaBlockAlpha;
 import eyecandycraft.main.entities.*;
 import eyecandycraft.main.items.ItemBlockTappeto;
 import eyecandycraft.main.items.Items;
+import eyecandycraft.main.items.meta.ItemBlockColouredConcrete;
 import eyecandycraft.main.items.meta.ItemBlockCorrugatedSteel;
 import eyecandycraft.main.items.meta.ItemBlockMetaBlockAlpha;
 import eyecandycraft.main.items.meta.ItemBlockRedstoneBlocks;
@@ -185,7 +187,7 @@ public class Blocks {
 	
 	//METADATA
 	
-    public static Block corrugatedSteel, metaBlockAlpha, tappeto, fumogeno;
+    public static Block corrugatedSteel, metaBlockAlpha, tappeto, fumogeno, colouredConcrete;
     
     public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna, ScalettaMuro, PaloScaletta, Sirena, Chain, fakeCrate;
 
@@ -231,7 +233,8 @@ public class Blocks {
 		
 		HardenedStoneSlab = new Block(200, 254, Material.rock).setCreativeTab(CreativeTab.tabEyecandyMateriali)
 				.setBlockName("hardenedStoneSlab").setHardness(1.0f).setStepSound(Block.soundStoneFootstep).setTextureFile("/eyecandycraft/textures/textures.png");
-
+		
+		
 		
 		//cartelli
 		
@@ -265,6 +268,8 @@ public class Blocks {
 		corrugatedSteel = new BlockCorrugatedSteel(178);
 		metaBlockAlpha = new BlockMetaBlockAlpha(186);
 		redstoneBlocks = new BlockRedstoneBlocks(3100);
+		colouredConcrete = new BlockColouredConcrete(201);
+		
 		
 		fumogeno = new BlockFumogeno(3308);
 		tappeto = new BlockTappeto(3309);
@@ -735,6 +740,7 @@ public class Blocks {
 		//
 		
 		GameRegistry.registerBlock(wireMesh, "wireMesh");
+		GameRegistry.registerBlock(colouredConcrete, "colouredConcrete");
 		
 		//Cartelli
 		GameRegistry.registerTileEntity(TileEntitySignCustom.class,
@@ -776,6 +782,7 @@ public class Blocks {
 		GameRegistry.registerBlock(corrugatedSteel, ItemBlockCorrugatedSteel.class, corrugatedSteel.getBlockName());
 		GameRegistry.registerBlock(metaBlockAlpha, ItemBlockMetaBlockAlpha.class, metaBlockAlpha.getBlockName());
 		GameRegistry.registerBlock(redstoneBlocks, ItemBlockRedstoneBlocks.class, redstoneBlocks.getBlockName());
+		GameRegistry.registerBlock(colouredConcrete, ItemBlockColouredConcrete.class, colouredConcrete.getBlockName());
 
 		
 		GameRegistry.registerBlock(tappeto, ItemBlockTappeto.class, tappeto.getBlockName());
@@ -1233,6 +1240,24 @@ public class Blocks {
 		LanguageRegistry.addName(new ItemStack(corrugatedSteel, 1, 13), "Purple Corrugated Steel");
 		LanguageRegistry.addName(new ItemStack(corrugatedSteel, 1, 14), "Magenta Corrugated Steel");
 		LanguageRegistry.addName(new ItemStack(corrugatedSteel, 1, 15), "Pink Corrugated Steel");
+		
+		
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 0), "Red Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 1), "Orange Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 2), "Yellow Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 3), "Lime Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 4), "Green Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 5), "Cyan Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 6), "Light Blue Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 7), "Blue Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 8), "Purple Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 9), "Magenta Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 10), "Pink Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 11), "Brown Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 12), "Black Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 13), "Gray Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 14), "Light Gray Coloured Concrete");
+		LanguageRegistry.addName(new ItemStack(colouredConcrete, 1, 15), "White Coloured Concrete");
 		
 		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 0), "Thatch");
 		LanguageRegistry.addName(new ItemStack(metaBlockAlpha, 1, 1), "Bricks, light");
