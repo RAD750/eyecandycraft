@@ -21,22 +21,22 @@ public class CraftingHandler {
 		
 		//colori
 		
-        final ItemStack blackDye = new ItemStack(Item.dyePowder, 0);  
-        final ItemStack redDye = new ItemStack(Item.dyePowder, 1);  
-        final ItemStack greenDye = new ItemStack(Item.dyePowder, 2);  
-        final ItemStack brownDye = new ItemStack(Item.dyePowder, 3);  
-        final ItemStack blueDye = new ItemStack(Item.dyePowder, 4);  
-        final ItemStack purpleDye = new ItemStack(Item.dyePowder, 5);  
-        final ItemStack cyanDye = new ItemStack(Item.dyePowder, 6);  
-        final ItemStack lightGrayDye = new ItemStack(Item.dyePowder, 7);  
-        final ItemStack grayDye = new ItemStack(Item.dyePowder, 8);  
-        final ItemStack pinkDye = new ItemStack(Item.dyePowder, 9);  
-        final ItemStack limeDye = new ItemStack(Item.dyePowder, 10);  
-        final ItemStack yellowDye = new ItemStack(Item.dyePowder, 11);  
-        final ItemStack lightBlueDye = new ItemStack(Item.dyePowder, 12);  
-        final ItemStack magentaDye = new ItemStack(Item.dyePowder, 13);  
-        final ItemStack orangeDye = new ItemStack(Item.dyePowder, 14);  
-        final ItemStack whiteDye = new ItemStack(Item.dyePowder, 15);    
+        final ItemStack blackDye = new ItemStack(Item.dyePowder, 1, 0);  
+        final ItemStack redDye = new ItemStack(Item.dyePowder, 1, 1);  
+        final ItemStack greenDye = new ItemStack(Item.dyePowder, 1, 2);  
+        final ItemStack brownDye = new ItemStack(Item.dyePowder, 1, 3);  
+        final ItemStack blueDye = new ItemStack(Item.dyePowder, 1, 4);  
+        final ItemStack purpleDye = new ItemStack(Item.dyePowder, 1, 5);  
+        final ItemStack cyanDye = new ItemStack(Item.dyePowder, 1, 6);  
+        final ItemStack lightGrayDye = new ItemStack(Item.dyePowder, 1, 7);  
+        final ItemStack grayDye = new ItemStack(Item.dyePowder, 1, 8);  
+        final ItemStack pinkDye = new ItemStack(Item.dyePowder, 1, 9);  
+        final ItemStack limeDye = new ItemStack(Item.dyePowder, 1, 10);  
+        final ItemStack yellowDye = new ItemStack(Item.dyePowder, 1, 11);  
+        final ItemStack lightBlueDye = new ItemStack(Item.dyePowder, 1, 12);  
+        final ItemStack magentaDye = new ItemStack(Item.dyePowder, 1, 13);  
+        final ItemStack orangeDye = new ItemStack(Item.dyePowder, 1, 14);  
+        final ItemStack whiteDye = new ItemStack(Item.dyePowder, 1, 15);    
         
         
         //coloredConcrete
