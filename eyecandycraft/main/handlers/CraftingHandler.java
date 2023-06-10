@@ -43,67 +43,67 @@ public class CraftingHandler {
         
         final ItemStack concrete = railcraft.common.api.core.items.ItemRegistry.getItem("cube.concrete.block", 1);
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 0), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 0), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', redDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 1), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 1), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', orangeDye
         });
 
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 2), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 2), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', yellowDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 3), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 3), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', limeDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 4), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 4), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', greenDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 5), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 5), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', cyanDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 6), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 6), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', lightBlueDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 7), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 7), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', blueDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 8), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 8), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', purpleDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 9), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 9), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', magentaDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 10), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 10), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', pinkDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 11), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 11), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', brownDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 12), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 12), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', blackDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 13), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 13), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', grayDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 14), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 14), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', lightGrayDye
         });
         
-        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 1, 15), new Object [] {
+        GameRegistry.addShapedRecipe(new ItemStack(Blocks.colouredConcrete, 8, 15), new Object [] {
         		"###", "#D#", "###", '#', concrete, 'D', whiteDye
         });
 		
