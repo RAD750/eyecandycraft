@@ -1040,6 +1040,32 @@ public class CraftingHandler {
 						'B', new ItemStack(Item.dyePowder, 1, 12),
 						'I', Item.ingotIron });
 		
+		//TRAPDOOR
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.spruceTrapdoor, 1),
+				new Object[] { "WWW", "IWW", "   ",
+						'W', new ItemStack(Block.planks, 1, 1),
+						'I', Item.ingotIron });
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.birchTrapdoor, 1),
+				new Object[] { "WWW", "IWW", "   ",
+						'W', new ItemStack(Block.planks, 1, 2),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Blocks.jungleTrapdoor, 1),
+				new Object[] { "WWW", "IWW", "   ",
+						'W', new ItemStack(Block.planks, 1, 4),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Blocks.apartmentTrapdoor, 1),
+				new Object[] { "IWW", "IWW", "   ",
+						'W', new ItemStack(Block.planks, 1, 1),
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Blocks.ironTrapdoor, 1),
+				new Object[] { "I I", "III", "I  ",
+						'I', Item.ingotIron });
+		GameRegistry.addRecipe(new ItemStack(Blocks.tombino, 1),
+				new Object[] { "III", "III", "I I",
+						'I', Item.ingotIron });
+		
 		//PORTE
 		
 		GameRegistry.addRecipe(new ItemStack(Items.jungleDoor, 1),

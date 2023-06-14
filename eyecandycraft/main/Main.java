@@ -30,13 +30,13 @@ import net.minecraftforge.common.MinecraftForge;
 
 
 
-@Mod(name="Eyecandycraft", version="2.6a", modid="eyecandycraft")
+@Mod(name="Eyecandycraft", version="2.7", modid="eyecandycraft")
 @NetworkMod(channels = {EyeCandyPacket.CHANNEL_NAME}, clientSideRequired = true, serverSideRequired = false, packetHandler = EyeCandyPacketHandler.class)
 public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "2.6a";
+		return "2.7";
 	}
 	
 	@SidedProxy(clientSide="eyecandycraft.main.proxies.ClientProxy", serverSide="eyecandycraft.main.proxies.ServerProxy")
@@ -76,6 +76,7 @@ public class Main extends BaseMod{
 		CraftingHandler.AggiungiCrafting();
 		OredictHandler.RegistraOreDict();
 	    proxy.postInit(event);
+	    //railcraft.common.api.core.items.ItemRegistry.printItemTags();
 	}
 	
 	

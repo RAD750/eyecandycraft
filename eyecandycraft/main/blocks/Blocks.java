@@ -28,6 +28,7 @@ import eyecandycraft.main.blocks.custom.BlockChain;
 import eyecandycraft.main.blocks.custom.BlockFumogeno;
 import eyecandycraft.main.blocks.custom.BlockPorta;
 import eyecandycraft.main.blocks.custom.BlockTappeto;
+import eyecandycraft.main.blocks.custom.BlockTombino;
 import eyecandycraft.main.blocks.custom.BocchettaACBlock;
 import eyecandycraft.main.blocks.custom.BombolaGasBlock;
 import eyecandycraft.main.blocks.custom.CCTVCamBlock;
@@ -116,6 +117,7 @@ import eyecandycraft.main.items.meta.ItemBlockRedstoneBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockGlass;
+import net.minecraft.block.BlockTrapDoor;
 import net.minecraft.block.StepSound;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -138,7 +140,7 @@ public class Blocks {
 
 	// porte, trapdoor e cancelletti
 	
-	public static Block spruceGate, birchGate, jungleGate, spruceDoor, birchDoor, jungleDoor, spruceTrapdoor, birchTrapdoor, jungleTrapdoor, apartmentDoor, jungleDoor2, glassDoor;
+	public static Block spruceGate, birchGate, jungleGate, spruceDoor, birchDoor, jungleDoor, spruceTrapdoor, birchTrapdoor, jungleTrapdoor, apartmentTrapdoor, ironTrapdoor, apartmentDoor, jungleDoor2, glassDoor;
 	
 	public static Block door0, door1, door2, door3, door4, door5, door6, door7, door8, door9, door10, door11, door12, door13, door14, door15, portaCostosa, door16, door17, doorFireProof, doorMetal;
 	
@@ -187,7 +189,7 @@ public class Blocks {
 	
 	//METADATA
 	
-    public static Block corrugatedSteel, metaBlockAlpha, tappeto, fumogeno, colouredConcrete;
+    public static Block corrugatedSteel, metaBlockAlpha, tappeto, fumogeno, colouredConcrete, tombino;
     
     public static Block PanchinaCentro, PanchinaDestra, PanchinaSinistra, Transenna, Lanterna, ScalettaMuro, PaloScaletta, Sirena, Chain, fakeCrate;
 
@@ -504,6 +506,12 @@ public class Blocks {
 		
 		//TODO porta
 		//spruceTrapdoor = new Porte(1503, Material.wood).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("doorWood").setRequiresSelfNotify();
+		spruceTrapdoor =  new BlockTombino(1510, Material.wood, "spruceTrapdoor", 1.0F, 55, true);
+		birchTrapdoor =  new BlockTombino(1511, Material.wood, "birchTrapdoor", 1.0F, 56, true);
+		jungleTrapdoor =  new BlockTombino(1512, Material.wood, "jungleTrapdoor", 1.0F, 57, true);
+		apartmentTrapdoor =  new BlockTombino(1513, Material.wood, "apartmentTrapdoor", 1.0F, 58, true);
+		ironTrapdoor =  new BlockTombino(1514, Material.iron, "ironTrapdoor", 3.0F, 59, false);
+		tombino = new BlockTombino(1515, Material.iron, "tombino", 3.0F, 60, false);
 		
 		spruceDoor = new BlockPorta(1503, 32, Material.wood, "spruceDoor");
 		birchDoor = new BlockPorta(1504, 33, Material.wood, "birchDoor");
@@ -741,6 +749,13 @@ public class Blocks {
 		
 		GameRegistry.registerBlock(wireMesh, "wireMesh");
 		GameRegistry.registerBlock(colouredConcrete, "colouredConcrete");
+		
+		GameRegistry.registerBlock(spruceTrapdoor, "spruceTrapdoor");		
+		GameRegistry.registerBlock(birchTrapdoor, "birchTrapdoor");
+		GameRegistry.registerBlock(jungleTrapdoor, "jungleTrapdoor");
+		GameRegistry.registerBlock(apartmentTrapdoor, "apartmentTrapdoor");
+		GameRegistry.registerBlock(ironTrapdoor, "ironTrapdoor");
+		GameRegistry.registerBlock(tombino, "tombino");
 		
 		//Cartelli
 		GameRegistry.registerTileEntity(TileEntitySignCustom.class,
@@ -1380,7 +1395,12 @@ public class Blocks {
 		
 		//TODO porta
 
-
+		LanguageRegistry.addName(spruceTrapdoor, "Spruce Trapdoor");
+		LanguageRegistry.addName(birchTrapdoor, "Birch Trapdoor");
+		LanguageRegistry.addName(jungleTrapdoor, "Jungle Trapdoor");
+		LanguageRegistry.addName(apartmentTrapdoor, "Apartment Trapdoor");
+		LanguageRegistry.addName(ironTrapdoor, "Iron Trapdoor");
+		LanguageRegistry.addName(tombino, "Manhole");
 		
 		LanguageRegistry.addName(spruceDoor, "Spruce Door");
 		
