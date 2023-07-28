@@ -1,52 +1,35 @@
 package eyecandycraft.main.solid.rendertables;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import org.lwjgl.opengl.GL11;
 
 import eyecandycraft.main.blocks.Blocks;
-import eyecandycraft.main.blocks.custom.LampionePaloModernoBlock;
 import eyecandycraft.main.solid.models.ModelLampionePaloModerno;
+import eyecandycraft.main.utils.Game;
 
 public class RenderTableLampionePaloModerno extends TileEntitySpecialRenderer {
-	private ModelLampionePaloModerno LampionePaloModerno;
+    private final ModelLampionePaloModerno LampionePaloModerno;
 
-	public RenderTableLampionePaloModerno() {
-		LampionePaloModerno = new ModelLampionePaloModerno();
-	}
+    public RenderTableLampionePaloModerno() {
+        LampionePaloModerno = new ModelLampionePaloModerno();
+    }
 
-	public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float scale) {
-		int metadata = tileentity.getWorldObj().getBlockMetadata(tileentity.xCoord, tileentity.yCoord,
-				tileentity.zCoord);
+    public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float scale) {
+        int direction = Game.getDirection(tileentity);
 
-		int direction = 2;
-		if (tileentity.getWorldObj().getBlockId(tileentity.xCoord, tileentity.yCoord,
-				tileentity.zCoord) == Blocks.LampionePaloModerno.blockID) {
-			direction = tileentity.getWorldObj().getBlockMetadata(tileentity.xCoord, tileentity.yCoord,
-					tileentity.zCoord) + 1;
-			if (direction == 1) {
-				direction = 3;
-			} else if (direction == 3) {
-				direction = 1;
-			} else if (direction == 2) {
-				direction = 4;
-			} else if (direction == 4) {
-				direction = 2;
-			}
-		}
-		GL11.glPushMatrix();
+        GL11.glPushMatrix();
 
-		// GL11.glTranslated(x + 0.5D, y - 0.45D, z + 0.5D);
-		GL11.glTranslated(x + 0.5D, y + 1.5D, z + 0.5D);
+        // GL11.glTranslated(x + 0.5D, y - 0.45D, z + 0.5D);
+        GL11.glTranslated(x + 0.5D, y + 1.5D, z + 0.5D);
 
-		GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
-		GL11.glRotatef(direction * 90, 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
+        GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef(direction * 90, 0.0F, 1.0F, 0.0F);
 
-		bindTextureByName("/eyecandycraft/textures/LampionePaloModerno.png");
-		LampionePaloModerno.render((Entity) null, 0.0F, -0.1F, 0.0F, 0.0F, 0.0F, 0.0625F);
+        bindTextureByName("/eyecandycraft/textures/LampionePaloModerno.png");
+        LampionePaloModerno.render(null, 0.0F, -0.1F, 0.0F, 0.0F, 0.0F, 0.0625F);
 
-		GL11.glPopMatrix();
-	}
+        GL11.glPopMatrix();
+    }
 }

@@ -5,6 +5,7 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,10 +13,10 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 /**
- *
  * @author CovertJaguar <railcraft.wikispaces.com>
  */
 public class Game {
@@ -46,27 +47,27 @@ public class Game {
     public static boolean isObfuscated() {
         return !World.class.getSimpleName().equals("World");
     }
-    
+
     public static Item getItemByName(String name) {
-        for(int i=0; i < Item.itemsList.length; i++) {
+        for (int i = 0; i < Item.itemsList.length; i++) {
             if (Item.itemsList[i] != null && Item.itemsList[i].getItemName() != null) {
-                if(Item.itemsList[i].getItemName().equals(name)) {
+                if (Item.itemsList[i].getItemName().equals(name)) {
                     return Item.itemsList[i];
                 }
             }
         }
         return null;
     }
-    
+
     public static Block getBlockByName(String name) {
-        for(int i=0; i < Block.blocksList.length; i++) {
+        for (int i = 0; i < Block.blocksList.length; i++) {
             if (Block.blocksList[i] != null && Block.blocksList[i].getBlockName() != null) {
-                if(Block.blocksList[i].getBlockName().equals(name)) {
+                if (Block.blocksList[i].getBlockName().equals(name)) {
                     return Block.blocksList[i];
                 }
             }
         }
-        
+
         return null;
     }
 
@@ -99,5 +100,21 @@ public class Game {
         StringBuilder msg = new StringBuilder(mod);
         msg.append(" failed validation, terminating. Please re-download ").append(mod).append(".");
         log.log(Level.SEVERE, msg.toString());
+    }
+
+    public static int getDirection(TileEntity tileentity) {
+        int direction;
+        direction = tileentity.getWorldObj().getBlockMetadata(tileentity.xCoord, tileentity.yCoord,
+                tileentity.zCoord) + 1;
+        if (direction == 1) {
+            direction = 3;
+        } else if (direction == 3) {
+            direction = 1;
+        } else if (direction == 2) {
+            direction = 4;
+        } else if (direction == 4) {
+            direction = 2;
+        }
+        return direction;
     }
 }

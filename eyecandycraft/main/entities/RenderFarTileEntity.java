@@ -8,6 +8,6 @@ public class RenderFarTileEntity extends TileEntity {
     @SideOnly(Side.CLIENT)
     @Override
     public double func_82115_m() {
-        return 65536.0D;
+        return 1600.0D;
     }
 }
