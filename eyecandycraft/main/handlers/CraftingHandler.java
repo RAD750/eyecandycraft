@@ -19,6 +19,8 @@ public class CraftingHandler {
 		// RECIPE CRAFTING
 		//
 		
+		GameRegistry.addShapelessRecipe(new ItemStack(Block.stoneSingleSlab), new Object[] {Block.stoneDoubleSlab});
+		
 		//colori
 		
         final ItemStack blackDye = new ItemStack(Item.dyePowder, 1, 0);  
@@ -1053,7 +1055,7 @@ public class CraftingHandler {
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Blocks.jungleTrapdoor, 1),
 				new Object[] { "WWW", "IWW", "   ",
-						'W', new ItemStack(Block.planks, 1, 4),
+						'W', new ItemStack(Block.planks, 1, 3),
 						'I', Item.ingotIron });
 		GameRegistry.addRecipe(new ItemStack(Blocks.apartmentTrapdoor, 1),
 				new Object[] { "IWW", "IWW", "   ",
@@ -1319,6 +1321,15 @@ public class CraftingHandler {
 						
 				}
 		);
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.TrussBridge, 4),
+				new Object[] {"###", " # ", "###", 
+						'#', railcraft.common.api.core.items.ItemRegistry.getItem("post.metal.black", 1)
+				});
+		GameRegistry.addRecipe(new ItemStack(Blocks.TrussBridgeAbutment, 4),
+				new Object[] {"  #", " ##", "###", 
+						'#', railcraft.common.api.core.items.ItemRegistry.getItem("post.metal.black", 1)
+				});
 		
 	}
 }

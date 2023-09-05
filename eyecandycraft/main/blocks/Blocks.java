@@ -186,6 +186,7 @@ public class Blocks {
 	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta, BombolaGas, Cavo, CavoMedio, CavoPiccolo;
 	public static Block ArmadioFTTC, Antenna4G, Antenna5G, Decade, Antenna80GHz, ARLO;
 	public static Block AntennaFMDipolo, AntennaESM, AntennaPannello, AntennaSettoreLTE, EstensioneBTS, EstensioneSingolaBTS, MiniARLO, ROE, TraliccioBraccettoParabola;
+	public static Block TrussBridgeAbutment, TrussBridge;
 	
 	//METADATA
 	
@@ -404,7 +405,8 @@ public class Blocks {
 		TraliccioBraccettoSat = new TraliccioBraccettoSatBlock(856, 0);
 		TraliccioBraccettoCCTV = new TraliccioBraccettoCCTVBlock(855, 0);
 		Sirena = new SirenaBlock(860, 0);
-
+		TrussBridgeAbutment = new eyecandycraft.main.blocks.custom.TrussBridgeAbutment(861, 0);
+		TrussBridge = new eyecandycraft.main.blocks.custom.TrussBridge(862, 0);
 
 		// atari ST
 		
@@ -1196,6 +1198,11 @@ public class Blocks {
 		
 		GameRegistry.registerBlock(HardenedStoneSlab, "hardenedStoneSlab");
 
+		GameRegistry.registerBlock(TrussBridgeAbutment, "TrussBridgeAbutment");
+		GameRegistry.registerTileEntity(TileEntityTrussBridgeAbutment.class, "TrussBridgeAbutment");
+		
+		GameRegistry.registerBlock(TrussBridge, "TrussBridge");
+		GameRegistry.registerTileEntity(TileEntityTrussBridge.class, "TrussBridge");
 		
 	}
 
@@ -1204,6 +1211,9 @@ public class Blocks {
 		// LINGUA
 		//
 		
+		LanguageRegistry.addName(TrussBridgeAbutment, "Truss Bridge Abutment");
+		LanguageRegistry.addName(TrussBridge, "Truss Bridge Part");
+
 		LanguageRegistry.addName(wireMesh, "Wire Mesh");
 		
 		LanguageRegistry.addName(HardenedStoneSlab, "Hardened Stone Slab");

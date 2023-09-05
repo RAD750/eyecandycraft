@@ -7,13 +7,13 @@ import org.lwjgl.opengl.GL11;
 
 import eyecandycraft.main.blocks.Blocks;
 import eyecandycraft.main.blocks.custom.AntennaYagiVHFBlock;
-import eyecandycraft.main.solid.models.ModelAntenna4G;
+import eyecandycraft.main.solid.models.ModelTrussBridgeAbutment;
 
-public class RenderTableAntenna4G extends TileEntitySpecialRenderer {
-	private ModelAntenna4G Antenna4G;
+public class RenderTableTrussBridgeAbutment extends TileEntitySpecialRenderer {
+	private ModelTrussBridgeAbutment TrussBridgeAbutment;
 
-	public RenderTableAntenna4G() {
-		Antenna4G = new ModelAntenna4G();
+	public RenderTableTrussBridgeAbutment() {
+		TrussBridgeAbutment = new ModelTrussBridgeAbutment();
 	}
 
 	public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float scale) {
@@ -22,7 +22,7 @@ public class RenderTableAntenna4G extends TileEntitySpecialRenderer {
 
 		int direction = 2;
 		if (tileentity.getWorldObj().getBlockId(tileentity.xCoord, tileentity.yCoord,
-				tileentity.zCoord) == Blocks.Antenna4G.blockID) {
+				tileentity.zCoord) == Blocks.TrussBridgeAbutment.blockID) {
 			direction = tileentity.getWorldObj().getBlockMetadata(tileentity.xCoord, tileentity.yCoord,
 					tileentity.zCoord) + 1;
 			if (direction == 1) {
@@ -37,16 +37,13 @@ public class RenderTableAntenna4G extends TileEntitySpecialRenderer {
 		}
 		GL11.glPushMatrix();
 
-		// GL11.glTranslated(x + 0.5D, y - 0.45D, z + 0.5D);
-		GL11.glTranslated(x + 0.5D, y + 1.5D, z + 0.5D);
-
+		GL11.glTranslated(x + 0.5D, y + 2.5D, z + 0.5D);
 		GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
 
 		GL11.glRotatef(direction * 90, 0.0F, 1.0F, 0.0F);
 
-		bindTextureByName("/eyecandycraft/textures/Antzenna4G.png");
-		Antenna4G.render((Entity) null, 0.0F, -0.1F, 0.0F, 0.0F, 0.0F, 0.0625F);
+		bindTextureByName("/eyecandycraft/textures/TrussBridgeAbutment.png");
+		TrussBridgeAbutment.render((Entity) null, 0.0F, -0.1F, 0.0F, 0.0F, 0.0F, 0.0625F);
 
 		GL11.glPopMatrix();
 	}

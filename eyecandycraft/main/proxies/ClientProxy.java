@@ -56,6 +56,7 @@ public class ClientProxy extends CommonProxy {
 		MinecraftForgeClient.preloadTexture("/eyecandycraft/textures/porte_item.png");
 		MinecraftForgeClient.preloadTexture("/eyecandycraft/textures/metaBlocks.png");
 		MinecraftForgeClient.preloadTexture("/eyecandycraft/textures/metaPane.png");
+		MinecraftForgeClient.preloadTexture("/eyecandycraft/textures/colouredConcrete.png");
 
 
 		System.out.println("[Eyecandycraft] Preloading texture completato");
@@ -149,6 +150,8 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBarbedWire.class, new RenderTableBarbedWire());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCavoMedio.class, new RenderTableCavoMedio());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCavoPiccolo.class, new RenderTableCavoPiccolo());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTrussBridgeAbutment.class, new RenderTableTrussBridgeAbutment());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTrussBridge.class, new RenderTableTrussBridge());
 
 	}
 

@@ -1,7 +1,9 @@
 package eyecandycraft.main.items;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityItemFrame;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemHangingEntity;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import eyecandycraft.main.CreativeTab;
@@ -54,9 +56,13 @@ public class Items {
 	public static Item Sign_birch;
 	
 	public static Item SafeSnooper;
+	public static Item invisibleItemFrame;
+	
 
 	
 	public static void InizializzaItem() {
+		
+		
 
 		Sign_acacia = new ItemSignCustom(22974, Blocks.Sign_acacia_Post, Blocks.Sign_acacia_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(0).setItemName("Sign_acacia");
 		Sign_crimson = new ItemSignCustom(22975, Blocks.Sign_crimson_Post, Blocks.Sign_crimson_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(1).setItemName("Sign_crimson");
@@ -70,7 +76,7 @@ public class Items {
 		Sign_white = new ItemSignCustom(22983, Blocks.Sign_white_Post, Blocks.Sign_white_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(9).setItemName("Sign_white");
 		Sign_birch = new ItemSignCustom(22984, Blocks.Sign_birch_Post, Blocks.Sign_birch_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(10).setItemName("Sign_birch");
 
-		
+	
 	molten_glass = new Item(24100).setTextureFile("/eyecandycraft/textures/items.png").setIconIndex(1)
 			.setCreativeTab(CreativeTab.tabEyecandyAltro).setItemName("molten_glass").setMaxStackSize(8);
 	
@@ -86,6 +92,9 @@ public class Items {
 	/*SafeSnooper = new SafeSnooper(24103).setTextureFile("/eyecandycraft/textures/items.png").setIconIndex(40)
 			.setCreativeTab(CreativeTab.tabEyecandyAltro).setItemName("safesnooper").setMaxStackSize(1);
 	*/
+	
+	//invisibleItemFrame = new ItemCustomHangingEntity(24104, EntityCustomItemFrame.class, "invisibleItemFrame").setIconCoord(14, 12);
+
 	
 	a_CentraleTermica = new ItemCartello(24301, "a_CentraleTermica", 0);
 	a_LocalePompe = new ItemCartello(24302, "a_LocalePompe", 1);
