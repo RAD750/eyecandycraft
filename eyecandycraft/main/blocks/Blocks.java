@@ -405,8 +405,8 @@ public class Blocks {
 		TraliccioBraccettoSat = new TraliccioBraccettoSatBlock(856, 0);
 		TraliccioBraccettoCCTV = new TraliccioBraccettoCCTVBlock(855, 0);
 		Sirena = new SirenaBlock(860, 0);
-		TrussBridgeAbutment = new eyecandycraft.main.blocks.custom.TrussBridgeAbutment(861, 0);
-		TrussBridge = new eyecandycraft.main.blocks.custom.TrussBridge(862, 0);
+		TrussBridgeAbutment = new eyecandycraft.main.blocks.custom.TrussBridgeAbutment(866, 0);
+		TrussBridge = new eyecandycraft.main.blocks.custom.TrussBridge(867, 0);
 
 		// atari ST
 		
