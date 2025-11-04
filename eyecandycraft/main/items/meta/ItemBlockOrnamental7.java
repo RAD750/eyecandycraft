@@ -25,7 +25,7 @@ public class ItemBlockOrnamental7 extends ItemBlock {
 	@Override
 	public void getSubItems(int id, CreativeTabs ct, List subBlocks) {
 		// i max = numero massimo di blocchi nel metadata
-		for (int i = 0; i <= 15; i++) {
+		for (int i = 2; i <= 8; i++) {
 			subBlocks.add(new ItemStack(id, 1, i));
 		}
 	}
