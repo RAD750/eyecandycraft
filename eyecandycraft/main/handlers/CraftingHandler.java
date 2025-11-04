@@ -487,6 +487,7 @@ public class CraftingHandler {
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.metaBlockAlpha, 4, 6), new Object[] {
 					"   ", "## ", "## ", '#', granite.get(0)
 			});
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 7), new Object[] {granite.get(0), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare Granito, disabilitata recipe mattoni granito");
 		}
@@ -510,6 +511,7 @@ public class CraftingHandler {
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.metaBlockAlpha, 4, 11), new Object[] {
 					"   ", "## ", "## ", '#', gneiss.get(0)
 			});
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 3), new Object[] {gneiss.get(0), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare Gneiss, disabilitata recipe mattoni gneiss");
 		}
@@ -572,6 +574,9 @@ public class CraftingHandler {
 			GregtechHandler.addWiremillRecipe(new ItemStack(Blocks.Cavo, 1), new ItemStack(Blocks.CavoMedio, 2), 60, 32);
 			GregtechHandler.addWiremillRecipe(new ItemStack(Blocks.CavoMedio, 1), new ItemStack(Blocks.CavoPiccolo, 2), 60, 32);
 			GregtechHandler.addWiremillRecipe(steel, new ItemStack(Blocks.BarbedWire), 220, 120);
+			GameRegistry.addRecipe(new ItemStack(Items.chisel, 1),
+					new Object[] {" # ", "#  ", "   ", 
+						'#', steel});
 			
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare ingotSteel, disabilitata recipe secondaria CorrugatedSteel/Transenna");
@@ -1330,6 +1335,332 @@ public class CraftingHandler {
 				new Object[] {"  #", " ##", "###", 
 						'#', railcraft.common.api.core.items.ItemRegistry.getItem("post.metal.black", 1)
 				});
+		
+		
+		//ROBA COL CHISEL
+		
+		// Andesite Bricks Paving
+		List <ItemStack> andesite = OreDictionary.getOres("rockAndesite");
+		if ( andesite.size() > 0 ) {
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 0), new Object[] {andesite.get(0), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 8), new Object[] {
+					"## ", "## ", "## ", '#', andesite.get(0)
+			});
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 5), new Object[] {
+					"#X#", "X#X", "#X#", '#', andesite.get(0), 'X', new ItemStack(Blocks.blockOrnamental3, 1, 8)
+			});
+			
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 6), new Object[] {
+					"#X ", "   ", "   ", '#', andesite.get(0), 'X', new ItemStack(Blocks.blockOrnamental3, 1, 8)
+			});
+			
+			
+			
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare Andesite, disabilitata recipe con andesite");
+		}
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 1), new Object[] {new ItemStack(Block.obsidian), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 2), new Object[] {new ItemStack(Block.brick), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+
+		//gneiss di la 
+		
+		List <ItemStack> serpentinite = OreDictionary.getOres("rockSerpentinite");
+		if ( serpentinite.size() > 0 ) {
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 4), new Object[] {serpentinite.get(0), new ItemStack(Items.chisel)});
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare serpentinite, disabilitata recipe con serpentinite");
+		}
+		
+		List <ItemStack> basalt = OreDictionary.getOres("stoneBasalt");
+		if ( basalt.size() > 0 ) {
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 5), new Object[] {basalt.get(0), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 12), new Object[] {basalt.get(0), new ItemStack(Items.chisel)});
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental3, 8, 11), new Object[] {
+					"###", "#C#", "###", 'c', new ItemStack(Items.chisel), '#', basalt.get(0)
+			});
+			List <ItemStack> marble = OreDictionary.getOres("stoneMarble");
+			if ( marble.size() > 0 ) {
+				GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 6), new Object[] {marble.get(0), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+				GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental1, 4, 13),
+						new Object[] {"#X ", "X# ", "   ", '#', basalt.get(0), 'X', marble.get(0)});
+				
+				
+			} else {
+				System.err.println("[Eyecandycraft] Impossibile registrare marble, disabilitata recipe con marble");
+			}
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare basalt, disabilitata recipe con basalt");
+		}
+				
+		
+		
+		//granito di la
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 8), new Object[] {new ItemStack(Block.stoneBrick, 1, 1), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 9), new Object[] {new ItemStack(Blocks.terracotta), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+
+		//TODO redsand
+		//GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 10), new Object[] {new ItemStack(Blocks.terracotta), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+		
+		List <ItemStack> tufo = OreDictionary.getOres("rockTufo");
+		if ( tufo.size() > 0 ) {
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 11), new Object[] {tufo.get(0), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+			
+			
+			ic2.api.Ic2Recipes.addCompressorRecipe(new ItemStack(Blocks.blockOrnamental2, 1, 1), new ItemStack(Blocks.blockOrnamental2, 1, 0));
+			
+			GameRegistry.addSmelting(tufo.get(0).itemID, new ItemStack(Blocks.blockOrnamental2, 1, 2), 0.5F);
+			
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental2, 1, 1), new Object[] {
+					"###", "#A#", "###", '#', tufo.get(0), 'A', GregtechHandler.getGregTechItem(1, 1, 63)
+			});
+			
+			
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare tufo, disabilitata recipe con tufo");
+		}
+		
+		List <ItemStack> ardesia = OreDictionary.getOres("rockArdesia");
+		if ( ardesia.size() > 0 ) {
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental7, 1, 0), new Object[] { ardesia.get(0) });
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 12), new Object[] {ardesia.get(0), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+			
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental4, 1, 3), new Object[] {
+					"###", "#A#", "###", '#', ardesia.get(0), 'A', new ItemStack(Blocks.blockOrnamental7, 1, 3)
+			});
+			
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental7, 1, 3), new Object[] {
+					"## ", "## ", "## ", '#', ardesia.get(0)
+			});
+			
+			
+			
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare ardesia, disabilitata recipe con ardesia");
+		}
+		
+		// checkerboard di sopra
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 14), new Object[] {new ItemStack(Blocks.blockOrnamental6, 1, 1), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental1, 1, 15), new Object[] {new ItemStack(Block.stoneBrick), new ItemStack(Item.clay), new ItemStack(Items.chisel)});
+
+		//ITEM 2
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental2, 1, 3), new Object[] {
+			"## ", "## ", "   ", '#', new ItemStack(Block.stoneDoubleSlab, 1, 7)	
+		});
+
+		List <ItemStack> salt = OreDictionary.getOres("dustSalt");
+		if ( salt.size() > 0 ) {
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental2, 1, 4), new Object[] {
+					"## ", "## ", "   ", '#', salt.get(0)	
+			});
+		} else {
+			System.err.println("[Eyecandycraft] Impossibile registrare salt, disabilitata recipe con salt");
+		}
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental2, 1, 5), new Object[] {
+				" b ", "bBb", " b ", 'b', new ItemStack(Item.brick), 'B', new ItemStack(Block.brick)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental2, 4, 5), new Object[] {
+				" b ", "bBb", " b ", 'b', new ItemStack(Item.brick), 'B', new ItemStack(Block.brick)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental2, 2, 6), new Object[] {
+				"bbb", "b b", "bbb", 'b', new ItemStack(Item.brick)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental2, 2, 7), new Object[] {
+				"bbb", "b b", "bbb", 'b', new ItemStack(Block.stone)
+		});
+		
+		ic2.api.Ic2Recipes.addCompressorRecipe(new ItemStack(Block.stone), new ItemStack(Blocks.blockOrnamental2, 1, 8));
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental2, 2, 8), new Object[] {
+				"bbb", "bvb", "bbb", 'b', new ItemStack(Blocks.blockOrnamental2, 2, 7), 'v', new ItemStack(Block.vine)
+		});
+		
+		//si passa alle smooth stone tiles direttamente
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental2, 1, 13), new Object[] {
+				"## ", "## ", "   ", '#', new ItemStack(Block.stoneSingleSlab)	
+		});
+		
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental2, 1, 14), new Object[] {new ItemStack(Block.stoneSingleSlab), new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental2, 1, 15), new Object[] {new ItemStack(Blocks.blockOrnamental3, 1, 0), new ItemStack(Items.chisel)});
+
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 0), new Object[] {new ItemStack(Block.stoneDoubleSlab, 1, 7), new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental3, 2, 1), new Object[] {
+				"bbb", "bvb", "bbb", 'b', new ItemStack(Item.brick), 'v', new ItemStack(Block.vine)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental3, 4, 2), new Object[] {
+				"## ", "## ", "   ", '#', new ItemStack(Blocks.blockOrnamental3, 1, 8)
+		});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 4), new Object[] {new ItemStack(Blocks.blockOrnamental3, 1, 8), new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 3), new Object[] {new ItemStack(Blocks.blockOrnamental3, 1, 4), new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 9), new Object[] {new ItemStack(Blocks.blockOrnamental3, 1, 10), new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 10), new Object[] {new ItemStack(Blocks.blockOrnamental3, 1, 3), new ItemStack(Items.chisel)});
+		
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 7), new Object[] {
+				"###", "#C#", "###", 'c', new ItemStack(Items.chisel), '#', new ItemStack(Blocks.blockOrnamental3, 1, 8)
+		});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 10), new Object[] {new ItemStack(Blocks.blockOrnamental3, 1, 3), new ItemStack(Items.chisel)});
+
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental6, 1, 8), new Object[] {
+				"## ", "## ", "   ", '#', new ItemStack(Blocks.blockOrnamental6, 1, 6)
+		});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 15), new Object[] {new ItemStack(Blocks.blockOrnamental6, 1, 8), new ItemStack(Items.chisel)});
+
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 13), new Object[] {new ItemStack(Blocks.blockOrnamental3, 1, 15), new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental3, 1, 14), new Object[] {new ItemStack(Blocks.blockOrnamental3, 1, 13), new ItemStack(Items.chisel)});
+		
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental6, 1, 12), new Object[] {
+				"###", "###", "###", '#', new ItemStack(Item.dyePowder, 1, 15)
+		});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental4, 1, 0), new Object[] {new ItemStack(Blocks.blockOrnamental6, 1, 12), new ItemStack(Items.chisel)});
+
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental4, 4, 1), new Object[] {
+				" # ", "#C#", " # ", 'c', new ItemStack(Items.chisel), '#', new ItemStack(Blocks.blockOrnamental6, 1, 12)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental4, 8, 2), new Object[] {
+				"###", "#C#", "###", 'c', new ItemStack(Items.chisel), '#', new ItemStack(Blocks.blockOrnamental6, 1, 12)
+		});
+		
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental7, 1, 1), new Object[] { new ItemStack(Blocks.blockOrnamental7, 1, 0) });
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental7, 4, 0), new Object[] {
+				"## ", "## ", "## ", '#', new ItemStack(Blocks.blockOrnamental7, 1 ,0)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental4, 4, 7), new Object[] {
+				" # ", "#C#", " # ", 'c', new ItemStack(Items.chisel), '#', new ItemStack(Blocks.blockOrnamental4, 1, 6)
+		});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental4, 1, 4), new Object[] { new ItemStack(Blocks.blockOrnamental4, 1, 6),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental4, 1, 5), new Object[] { new ItemStack(Blocks.blockOrnamental4, 1, 4),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental4, 1, 8), new Object[] { new ItemStack(Blocks.blockOrnamental4, 1, 5),
+				new ItemStack(Items.chisel)});
+
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental4, 1, 9), new Object[] { new ItemStack(Blocks.blockOrnamental4, 1, 8),
+				new ItemStack(Items.chisel)});
+		
+		ic2.api.Ic2Recipes.addCompressorRecipe(new ItemStack(Block.cobblestone), new ItemStack(Blocks.blockOrnamental4, 1, 13));
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental4, 1, 11), new Object[] { new ItemStack(Blocks.blockOrnamental4, 1, 13),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental4, 1, 12), new Object[] { new ItemStack(Blocks.blockOrnamental4, 1, 11),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental4, 1, 14), new Object[] { new ItemStack(Blocks.blockOrnamental4, 1, 12),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental4, 8, 15), new Object[] {
+				"# #", "# #", "# #", '#', new ItemStack(Blocks.blockOrnamental4, 1 ,10)
+		});
+		
+		//TODO 5,1,1 -> diorite levigata + chisel
+		//TODO 8x 5,1,0 -> diorite al centro + 8x diorite levigata a cerchio 
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental4, 6, 10), new Object[] {
+				"###", " C ", "###", '#', new ItemStack(Blocks.blockOrnamental4, 1 ,13), 'C', new ItemStack(Items.chisel)
+		});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental5, 1, 2), new Object[] { new ItemStack(Blocks.blockOrnamental5, 1, 1),
+				new ItemStack(Items.chisel)});
+
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental5, 1, 3), new Object[] { new ItemStack(Block.blockSteel),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental5, 8, 4), new Object[] {
+				"###", "#C#", "###", '#', new ItemStack(Block.blockSteel), 'C', new ItemStack(Items.chisel)
+		});
+		
+		//TODO Quartz block + chisel
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental5, 1, 12), new Object[] { new ItemStack(Blocks.blockOrnamental5, 1, 13),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental5, 1, 8), new Object[] { new ItemStack(Blocks.blockOrnamental5, 1, 12),
+				new ItemStack(Items.chisel)});
+		
+		//TODO 8x 5,1,7 -> 8x quartz block a cerchio attorno al chisel
+		//TODO 8x 5,1,9 -> 8x 5,1,7 a cerchio attorno a un quartz block
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental5, 4, 10), new Object[] {
+				"## ", "## ", "## ", '#', new ItemStack(Blocks.blockOrnamental5, 1 ,9)
+		});
+		
+		ic2.api.Ic2Recipes.addCompressorRecipe(new ItemStack(Block.stone), new ItemStack(Blocks.blockOrnamental6, 1, 0));
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental6, 1, 5), new Object[] { new ItemStack(Blocks.blockOrnamental6, 1, 0),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental6, 1, 1), new Object[] { new ItemStack(Blocks.blockOrnamental6, 1, 5),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental6, 1, 2), new Object[] { new ItemStack(Blocks.blockOrnamental6, 1, 1),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental5, 1, 15), new Object[] { new ItemStack(Blocks.blockOrnamental6, 1, 3)});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental5, 1, 15), new Object[] {
+				"###", "#C#", "###", '#', new ItemStack(Blocks.blockOrnamental6, 1, 0), 'C', new ItemStack(Blocks.blockOrnamental6, 1 , 5)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental6, 1, 3), new Object[] {
+				"###", "#C#", "###", '#', new ItemStack(Blocks.blockOrnamental6, 1, 0), 'C', new ItemStack(Blocks.blockOrnamental5, 1 , 15)
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.blockOrnamental6, 4, 9), new Object[] {
+				"## ", "## ", "## ", '#', new ItemStack(Blocks.blockOrnamental6, 1 ,6)
+		});
+		
+		ic2.api.Ic2Recipes.addCompressorRecipe(new ItemStack(Blocks.blockOrnamental6, 1, 9), new ItemStack(Blocks.blockOrnamental6, 1, 10));
+
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental6, 1, 11), new Object[] { new ItemStack(Blocks.blockOrnamental6, 1, 9),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental6, 1, 15), new Object[] { new ItemStack(Block.leaves)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental6, 1, 14), new Object[] { new ItemStack(Block.plantRed), new ItemStack(Blocks.blockOrnamental6, 1, 15)});
+		
+		ic2.api.Ic2Recipes.addMaceratorRecipe(new ItemStack(Blocks.blockCobbledArdesia), new ItemStack(Blocks.blockOrnamental7, 1, 2));
+		
+		ic2.api.Ic2Recipes.addCompressorRecipe(new ItemStack(Blocks.blockOrnamental7, 1, 4), new ItemStack(Blocks.blockOrnamental7, 1, 5));
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental7, 1, 7), new Object[] { new ItemStack(Blocks.blockOrnamental7, 1, 4),
+				new ItemStack(Items.chisel)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.blockOrnamental7, 1, 8), new Object[] { new ItemStack(Blocks.blockOrnamental7, 1, 7),
+				new ItemStack(Items.chisel)});
+		
+		ic2.api.Ic2Recipes.addCompressorRecipe(new ItemStack(Blocks.blockOrnamental7, 1, 7), new ItemStack(Blocks.blockOrnamental7, 1, 6));
+
 		
 	}
 }

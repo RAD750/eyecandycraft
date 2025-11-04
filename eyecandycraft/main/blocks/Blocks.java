@@ -39,6 +39,7 @@ import eyecandycraft.main.blocks.custom.CavoMedioBlock;
 import eyecandycraft.main.blocks.custom.CavoPiccoloBlock;
 import eyecandycraft.main.blocks.custom.ClimaBlock;
 import eyecandycraft.main.blocks.custom.ClimaUEBlock;
+import eyecandycraft.main.blocks.custom.CobbledArdesia;
 import eyecandycraft.main.blocks.custom.ConsoleRegiaBlock;
 import eyecandycraft.main.blocks.custom.CroceSAndreaBlock;
 import eyecandycraft.main.blocks.custom.DecadeBlock;
@@ -105,15 +106,13 @@ import eyecandycraft.main.blocks.custom.TransennaBlock;
 import eyecandycraft.main.blocks.custom.meta.BlockColouredConcrete;
 import eyecandycraft.main.blocks.custom.meta.BlockCorrugatedSteel;
 import eyecandycraft.main.blocks.custom.meta.BlockMetaPane;
+import eyecandycraft.main.blocks.custom.meta.*;
 import eyecandycraft.main.blocks.custom.meta.BlockRedstoneBlocks;
 import eyecandycraft.main.blocks.custom.meta.BlockMetaBlockAlpha;
 import eyecandycraft.main.entities.*;
 import eyecandycraft.main.items.ItemBlockTappeto;
 import eyecandycraft.main.items.Items;
-import eyecandycraft.main.items.meta.ItemBlockColouredConcrete;
-import eyecandycraft.main.items.meta.ItemBlockCorrugatedSteel;
-import eyecandycraft.main.items.meta.ItemBlockMetaBlockAlpha;
-import eyecandycraft.main.items.meta.ItemBlockRedstoneBlocks;
+import eyecandycraft.main.items.meta.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockGlass;
@@ -227,6 +226,8 @@ public class Blocks {
     public static Block redstoneBlocks;
     
     public static Block HardenedStoneSlab;
+    
+    public static Block blockOrnamental1, blockOrnamental2, blockOrnamental3, blockOrnamental4, blockOrnamental5, blockOrnamental6, blockOrnamental7, blockCobbledArdesia;
 
 
     
@@ -272,7 +273,18 @@ public class Blocks {
 		metaBlockAlpha = new BlockMetaBlockAlpha(186);
 		redstoneBlocks = new BlockRedstoneBlocks(3100);
 		colouredConcrete = new BlockColouredConcrete(201);
+		blockOrnamental1 = new BlockOrnamental1(3101);
+		blockOrnamental2 = new BlockOrnamental2(3102);
+		blockOrnamental3 = new BlockOrnamental3(3103);
+		blockOrnamental4 = new BlockOrnamental4(3104);
+		blockOrnamental5 = new BlockOrnamental5(3105);
+		blockOrnamental6 = new BlockOrnamental6(3106);
+		blockOrnamental7 = new BlockOrnamental7(3107);
 		
+		blockCobbledArdesia = new CobbledArdesia(3108, 97, Material.rock).setTextureFile("/eyecandycraft/textures/ornamentalBlocks.png")
+				.setBlockName("cobbledArdesia").setCreativeTab(CreativeTab.tabEyecandyMateriali).setHardness(1.0f);
+		
+	
 		
 		fumogeno = new BlockFumogeno(3308);
 		tappeto = new BlockTappeto(3309);
@@ -800,7 +812,13 @@ public class Blocks {
 		GameRegistry.registerBlock(metaBlockAlpha, ItemBlockMetaBlockAlpha.class, metaBlockAlpha.getBlockName());
 		GameRegistry.registerBlock(redstoneBlocks, ItemBlockRedstoneBlocks.class, redstoneBlocks.getBlockName());
 		GameRegistry.registerBlock(colouredConcrete, ItemBlockColouredConcrete.class, colouredConcrete.getBlockName());
-
+		GameRegistry.registerBlock(blockOrnamental1, ItemBlockOrnamental1.class, blockOrnamental1.getBlockName());
+		GameRegistry.registerBlock(blockOrnamental2, ItemBlockOrnamental2.class, blockOrnamental2.getBlockName());
+		GameRegistry.registerBlock(blockOrnamental3, ItemBlockOrnamental3.class, blockOrnamental3.getBlockName());
+		GameRegistry.registerBlock(blockOrnamental4, ItemBlockOrnamental4.class, blockOrnamental4.getBlockName());
+		GameRegistry.registerBlock(blockOrnamental5, ItemBlockOrnamental5.class, blockOrnamental5.getBlockName());
+		GameRegistry.registerBlock(blockOrnamental6, ItemBlockOrnamental6.class, blockOrnamental6.getBlockName());
+		GameRegistry.registerBlock(blockOrnamental7, ItemBlockOrnamental7.class, blockOrnamental7.getBlockName());
 		
 		GameRegistry.registerBlock(tappeto, ItemBlockTappeto.class, tappeto.getBlockName());
 		
@@ -1204,6 +1222,8 @@ public class Blocks {
 		GameRegistry.registerBlock(TrussBridge, "TrussBridge");
 		GameRegistry.registerTileEntity(TileEntityTrussBridge.class, "TrussBridge");
 		
+		GameRegistry.registerBlock(blockCobbledArdesia, "cobbledArdesia");
+		
 	}
 
 	public static void RegistraLingua() {
@@ -1330,6 +1350,120 @@ public class Blocks {
 		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 7), "Redstone Emitter, White Plaster");
 		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 8), "Real Redstone Block");
 		LanguageRegistry.addName(new ItemStack(redstoneBlocks, 1, 9), "Redstone Emitter, Fake Vent");
+		
+		//BlockOrnamental1
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 0), "Andesite Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 1), "Obsidian Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 2), "Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 3), "Gneiss Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 4), "Serpentinite Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 5), "Basalt Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 6), "White Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 7), "Granite Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 8), "Mossy Stone Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 9), "Terracotta Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 10), "Red Sand Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 11), "Tuff Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 12), "Slate Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 13), "Checkerboard Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 14), "Blackstone Roofing");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental1, 1, 15), "Stone Bricks Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 0), "Cracked Tuff Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 1), "Tuff Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 2), "Polished Tuff");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 3), "Smooth Stone Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 4), "Salt Block");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 5), "Opus Mixtum");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 6), "Opus Reticolatum");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 7), "Stone Blocks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 8), "Cracked Stone Blocks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 9), "Mossy Stone Blocks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 10), "Cracked Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 11), "Cracked Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 12), "Cracked Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 13), "Smooth Stone Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 14), "Polished Smooth Stone");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental2, 1, 15), "Smooth Diagonal Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 0), "Smooth Regular Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 1), "Mossy Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 2), "Andesite Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 3), "Andesite Small Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 4), "Andesite Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 5), "Andesite Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 6), "Andesite Chequered");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 7), "Andesite Decorated Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 8), "Polished Andesite");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 9), "Andesite Diagonal Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 10), "Andesite Regular Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 11), "Basalt Decorated Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 12), "Basalt Regular Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 13), "Blackstone Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 14), "Blackstone Diagonal Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental3, 1, 15), "Blackstone Regular Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 0), "Avory Decorated Circle");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 1), "Avory Decorated Cross");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 2), "Avory Decorated Square");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 3), "Ardesia Grate");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 4), "Ardesia Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 5), "Ardesia Small Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 6), "Polished Ardesia");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 7), "Bush-hammered Ardesia");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 8), "Ardesia Diagonal Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 9), "Ardesia Square Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 10), "Compressed Stone Grate");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 11), "Mass Compressed Stone");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 12), "Small Compressed Stone");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 13), "Compressed Stone Tile");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 14), "Square Compressed Stone");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental4, 1, 15), "Compressed Stone Grate");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 0), "Diorite Decorated Paving");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 1), "Diorite Regular Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 2), "Diorite Diagonal Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 3), "Iron Decorated Block");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 4), "Iron Bordered Block");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 5), "Smooth Blackstone Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 6), "Smooth Blackstone Grate");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 7), "Quartz Bordered Block");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 8), "Quatz Sqaure Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 9), "Quartz Circle Decorated Block");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 10), "Quartz Ionc Decorated Block");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 11), "Qaurtz Diagonal Tile");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 12), "Quartz Small Square Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 13), "Quartz Regular Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 14), "Stone Opus Testaceum");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental5, 1, 15), "Ston Square Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 0), "Stone Big Square Tile");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 1), "Stone Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 2), "Small Stone Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 3), "Stone Bordered Opus Testaceum");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 4), "Stone Diagonal Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 5), "Stone Regular Tiles");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 6), "Blackstone");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 7), "Cracked Blackstone");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 8), "Polished Blackstone");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 9), "Blackstone Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 10), "Blackstone Cracked Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 11), "Blackstone Chiseld Brick");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 12), "Raw Salt Block");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 13), "Quartz Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 14), "Azalea Blooming Leaves");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental6, 1, 15), "Azalea Leaves");
+		
+		/*
+		LanguageRegistry.addName(new ItemStack(blockOrnamental7, 1, 0), "Cobbled Ardesia Side");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental7, 1, 1), "Cobbled Ardesia Top");*/
+		
+		
+		LanguageRegistry.addName(new ItemStack(blockOrnamental7, 1, 2), "Macereted Cobbled Ardesia");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental7, 1, 3), "Polished Cobbled Ardesia ");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental7, 1, 4), "Ardesia Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental7, 1, 5), "Cracked Ardesia Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental7, 1, 6), "Ardesia Cracked Small Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental7, 1, 7), "Ardesia Small Bricks");
+		LanguageRegistry.addName(new ItemStack(blockOrnamental7, 1, 8), "Ardesia Chiseled Block");
+		
+		LanguageRegistry.addName(blockCobbledArdesia, "Cobbled Ardesia");
+
 		
 		
 		//mattonelle

@@ -57,6 +57,7 @@ public class Items {
 	
 	public static Item SafeSnooper;
 	public static Item invisibleItemFrame;
+	public static Item chisel;
 	
 
 	
@@ -88,6 +89,8 @@ public class Items {
 	
 	pacco = new Item(24102).setTextureFile("/eyecandycraft/textures/items.png").setIconIndex(47)
 			.setCreativeTab(CreativeTab.tabEyecandyAltro).setItemName("pacco").setMaxStackSize(1);
+	
+	chisel = new ItemChisel(24103);
 	
 	/*SafeSnooper = new SafeSnooper(24103).setTextureFile("/eyecandycraft/textures/items.png").setIconIndex(40)
 			.setCreativeTab(CreativeTab.tabEyecandyAltro).setItemName("safesnooper").setMaxStackSize(1);
@@ -430,6 +433,8 @@ public class Items {
 		LanguageRegistry.addName(blue_tile_raw, "Blue Raw Tile");
 		LanguageRegistry.addName(purple_tile_raw, "Purple Raw Tile");
 		LanguageRegistry.addName(magenta_tile_raw, "Magenta Raw Tile");
+		
+		LanguageRegistry.addName(chisel, "Steel Chisel");
 	}
 }
 

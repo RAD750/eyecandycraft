@@ -34,6 +34,7 @@ public class Metro extends Item {
 				sposX = x;
 				sposY = y;
 				sposZ = z;
+			
 
 				if (eposX != null && eposY != null && eposZ != null) {
 					int deltaX = Math.abs(sposX - eposX) + 1;
