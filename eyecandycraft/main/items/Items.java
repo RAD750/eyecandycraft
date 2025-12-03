@@ -1,14 +1,9 @@
 package eyecandycraft.main.items;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.item.EntityItemFrame;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemHangingEntity;
-import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import eyecandycraft.main.CreativeTab;
 import eyecandycraft.main.blocks.Blocks;
-import eyecandycraft.main.items.Metro;
+import net.minecraft.item.Item;
 public class Items {
 	
 	//ITEMS
@@ -58,11 +53,13 @@ public class Items {
 	public static Item SafeSnooper;
 	public static Item invisibleItemFrame;
 	public static Item chisel;
+	public static Item estintore;
 	
 
 	
 	public static void InizializzaItem() {
 		
+
 		
 
 		Sign_acacia = new ItemSignCustom(22974, Blocks.Sign_acacia_Post, Blocks.Sign_acacia_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(0).setItemName("Sign_acacia");
@@ -92,9 +89,12 @@ public class Items {
 	
 	chisel = new ItemChisel(24103);
 	
-	/*SafeSnooper = new SafeSnooper(24103).setTextureFile("/eyecandycraft/textures/items.png").setIconIndex(40)
+	SafeSnooper = new SafeSnooper(24104).setTextureFile("/eyecandycraft/textures/items.png").setIconIndex(40)
 			.setCreativeTab(CreativeTab.tabEyecandyAltro).setItemName("safesnooper").setMaxStackSize(1);
-	*/
+	
+	estintore = new ItemEstintore(24105);
+	
+
 	
 	//invisibleItemFrame = new ItemCustomHangingEntity(24104, EntityCustomItemFrame.class, "invisibleItemFrame").setIconCoord(14, 12);
 
@@ -281,7 +281,7 @@ public class Items {
 		LanguageRegistry.addName(metro, "Tape Measure");
 		LanguageRegistry.addName(molten_glass, "Molten Glass");
 		LanguageRegistry.addName(pacco, "Parcel");
-		//LanguageRegistry.addName(SafeSnooper, "Safe Snooper");
+		LanguageRegistry.addName(SafeSnooper, "Safe Snooper");
 
 		
 		LanguageRegistry.addName(a_CentraleTermica, "Cartello Centrale Termica");
@@ -435,6 +435,7 @@ public class Items {
 		LanguageRegistry.addName(magenta_tile_raw, "Magenta Raw Tile");
 		
 		LanguageRegistry.addName(chisel, "Steel Chisel");
+		LanguageRegistry.addName(estintore, "Unlocked Fire Extinguisher");
 	}
 }
 

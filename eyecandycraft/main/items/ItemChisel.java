@@ -19,15 +19,17 @@ public class ItemChisel extends Item {
 		this.setMaxDamage(100);
 		this.setItemName("chisel");
 		this.setMaxStackSize(1);
-		this.setContainerItem(Items.chisel);		
+		this.setContainerItem(this);		
 		this.setCreativeTab(CreativeTab.tabEyecandyAltro);
 	}
 	
 	@Override
-	public boolean doesContainerItemLeaveCraftingGrid(ItemStack par1ItemStack) {
-		return false;
-	}
+    public boolean doesContainerItemLeaveCraftingGrid(ItemStack par1ItemStack)
+    {
+        return false;
+    }
 	
+	@Override
 	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int side,
 			float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {

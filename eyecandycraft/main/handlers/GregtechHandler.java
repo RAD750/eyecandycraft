@@ -49,4 +49,36 @@ public class GregtechHandler {
 		} catch (Exception e) {}
 		return false;
 	}
+	
+	/**
+	 * Adds a Chemical Recipe
+	 * @param aInput1 must be != null
+	 * @param aInput2 must be != null
+	 * @param aOutput1 must be != null
+	 * @param aDuration must be > 0
+	 */
+	public static boolean addChemicalRecipe(ItemStack aInput1, ItemStack aInput2, ItemStack aOutput1, int aDuration) {
+		try {
+			Class.forName("gregtechmod.GT_Mod").getMethod("addChemicalRecipe", ItemStack.class, ItemStack.class, ItemStack.class, int.class).invoke(null, aInput1, aInput2, aOutput1, aDuration);
+			return true;
+		} catch (Exception e) {}
+		return false;
+	}
+	
+	/**
+	 * Adds a Canning Machine Recipe
+	 * @param aInput1 must be != null
+	 * @param aOutput1 must be != null
+	 * @param aDuration must be > 0, 100 ticks is standard.
+	 * @param aEUt should be > 0, 1 EU/t is standard.
+	 */
+	public static boolean addCannerRecipe(ItemStack aInput1, ItemStack aInput2, ItemStack aOutput1, ItemStack aOutput2, int aDuration, int aEUt) {
+		try {
+			Class.forName("gregtechmod.GT_Mod").getMethod("addCannerRecipe", ItemStack.class, ItemStack.class, ItemStack.class, ItemStack.class, int.class, int.class).invoke(null, aInput1, aInput2, aOutput1, aOutput2, aDuration, aEUt);
+			return true;
+		} catch (Exception e) {}
+		return false;
+	}
+
+	
 }

@@ -4,32 +4,30 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import eyecandycraft.main.CreativeTab;
 import eyecandycraft.main.blocks.Blocks;
-import eyecandycraft.main.entities.TileEntityEstintore;
-import eyecandycraft.main.items.Items;
+import eyecandycraft.main.entities.TileEntityEstintoreAutoVuoto;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 
-public class EstintoreBlock extends BlockContainer {
-	public static final String name = "Estintore";
+public class EstintoreAutoVuotoBlock extends BlockContainer {
+	public static final String name = "EstintoreAutoVuoto";
 
-	public EstintoreBlock(int id, int texture) {
+	public EstintoreAutoVuotoBlock(int id, int texture) {
 		super(id, Material.iron);
-		setHardness(2.5F);
-		setResistance(2.5F);
+		setHardness(0.5F);
+		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabEyecandyMobilio);
-		setBlockName("Estintore");
-		blockIndexInTexture = 32;
+		setBlockName("EstintoreAutoVuoto");
+		blockIndexInTexture = 88;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
@@ -44,26 +42,7 @@ public class EstintoreBlock extends BlockContainer {
 	}
 
 	public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int x, int y, int z) {
-		if (blockAccess.getBlockMetadata(x, y, z) == 1)
-	    {
-	      setBlockBounds(0.1F, 0.0F, 0.0F, 0.0F, 1.0F, 1.0F);
-
-
-	    }
-	    else if (blockAccess.getBlockMetadata(x, y, z) == 2)
-	    {
-	      setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.1F);
-
-
-	    }
-	    else if (blockAccess.getBlockMetadata(x, y, z) == 3)
-	    {
-	      setBlockBounds(1.0F, 0.0F, 0.0F, 0.9F, 1.0F, 1.0F);
-	    }
-	    else
-	    {
-	      setBlockBounds(0.0F, 0.0F, 0.9F, 1.0F, 1.0F, 1.0F);
-	    }
+	      setBlockBounds(0.2F, 0.2F, 0.2F, 0.8F, 0.8F, 0.8F);
 	}
 
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity) {
@@ -76,7 +55,8 @@ public class EstintoreBlock extends BlockContainer {
 			yaw %= 360;
 			int facing = yaw / 45;
 
-			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.Estintore.blockID, facing / 2);
+			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.EstintoreAutoVuoto.blockID, facing / 2);
+
 		}
 	}
 
@@ -109,27 +89,14 @@ public class EstintoreBlock extends BlockContainer {
 	}
 
 	public TileEntity createTileEntity(World world, int meta) {
-		return new TileEntityEstintore();
-	}
-	
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer par5EntityPlayer, int side, float par7, float par8, float par9)
-    {
-    	world.removeBlockTileEntity(x, y, z);
-    	world.setBlockWithNotify(x, y, z, 0);
-    	this.dropBlockAsItem_do(world, x, y, z, new ItemStack(Items.estintore));
-        return true;
-    }
-    
-    //estintore sciopa se lo picchi
-	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int metadata)
-	{
-		EntityPlayer player = world.getClosestPlayer(x, y, z, 5);
-		world.createExplosion(player, x, y, z, 0.5F, blockConstructorCalled);
+		return new TileEntityEstintoreAutoVuoto();
 	}
 	
     public boolean canDropFromExplosion(Explosion par1Explosion)
     {
         return false;
     }
+	
+
 	
 }

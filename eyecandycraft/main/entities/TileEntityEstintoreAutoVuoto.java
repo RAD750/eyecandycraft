@@ -5,8 +5,8 @@ import ic2.api.IWrenchable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
-public class TileEntityEstintore extends RenderFarTileEntity implements IWrenchable {
-	public TileEntityEstintore() {
+public class TileEntityEstintoreAutoVuoto extends RenderFarTileEntity implements IWrenchable {
+	public TileEntityEstintoreAutoVuoto() {
 	}
 
 	@Override
@@ -35,6 +35,6 @@ public class TileEntityEstintore extends RenderFarTileEntity implements IWrencha
 
 	@Override
 	public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
-		return new ItemStack(Blocks.Estintore);
+		return new ItemStack(Blocks.EstintoreAutoVuoto);
 	}
 }

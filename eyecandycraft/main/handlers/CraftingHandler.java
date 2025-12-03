@@ -440,8 +440,11 @@ public class CraftingHandler {
 		GameRegistry.addRecipe(new ItemStack(Blocks.hazardstripe, 16), new Object[] { "YBY", "BMB", "YBY", 'Y',
 				new ItemStack(Item.dyePowder, 1, 11), 'B', new ItemStack(Item.dyePowder, 1, 0), 'M', Blocks.mortar });
 
-		GameRegistry.addRecipe(new ItemStack(Blocks.Estintore, 1), new Object [] { " I ", "IBI", "IBI", 'I',
-				Item.ingotIron, 'B', Item.bucketWater});
+		
+
+		
+		
+		
 		
 		GameRegistry.addRecipe(new ItemStack(Blocks.Polycom, 1), new Object [] { " I ", " N ", " I ", 'I',
 				Item.ingotIron, 'N', new ItemStack(Item.dyePowder, 1, 0)});
@@ -577,6 +580,24 @@ public class CraftingHandler {
 			GameRegistry.addRecipe(new ItemStack(Items.chisel, 1),
 					new Object[] {" # ", "#  ", "   ", 
 						'#', steel});
+			
+			GameRegistry.addRecipe(new ItemStack(Blocks.EstintoreAutoVuoto, 1), new Object [] { "III", "I I", "ICI", 'I',
+					steel, 'C', ic2.api.Items.getItem("mixedMetalIngot")});
+			GameRegistry.addRecipe(new ItemStack(Items.estintore, 1, 98), new Object [] { " I ", "I I", "I I", 'I',
+					steel});
+			
+			
+			List <ItemStack> MAPOres = OreDictionary.getOres("monammoniumPhosphate");
+			if (MAPOres.size() > 0) {
+				ItemStack MAP = MAPOres.get(0);
+				MAP.stackSize = 6;
+				GregtechHandler.addCannerRecipe(new ItemStack(Items.estintore, 1, 98), MAP, new ItemStack(Blocks.Estintore), null, 40, 1);
+				MAP.stackSize = 9;
+				GregtechHandler.addCannerRecipe(new ItemStack(Blocks.EstintoreAutoVuoto), MAP, new ItemStack(Blocks.EstintoreAuto), null, 40, 1);
+				
+			} else {
+				System.err.println("[Eyecandycraft] Impossibile registrare MAP, disabilitata recipe estintore");
+			}
 			
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare ingotSteel, disabilitata recipe secondaria CorrugatedSteel/Transenna");
@@ -1662,5 +1683,10 @@ public class CraftingHandler {
 		ic2.api.Ic2Recipes.addCompressorRecipe(new ItemStack(Blocks.blockOrnamental7, 1, 7), new ItemStack(Blocks.blockOrnamental7, 1, 6));
 
 		
+		//CF SLAB
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.cfSingleSlabA, 6, 7), new Object[] { "   ", "   ", "###", '#', ic2.api.Items.getItem("constructionFoam")});
+		
+		
+
 	}
 }

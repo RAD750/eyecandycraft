@@ -4,32 +4,30 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import eyecandycraft.main.CreativeTab;
 import eyecandycraft.main.blocks.Blocks;
-import eyecandycraft.main.entities.TileEntityEstintore;
-import eyecandycraft.main.items.Items;
+import eyecandycraft.main.entities.TileEntityEstintoreAuto;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 
-public class EstintoreBlock extends BlockContainer {
-	public static final String name = "Estintore";
+public class EstintoreAutoBlock extends BlockContainer {
+	public static final String name = "EstintoreAuto";
 
-	public EstintoreBlock(int id, int texture) {
+	public EstintoreAutoBlock(int id, int texture) {
 		super(id, Material.iron);
-		setHardness(2.5F);
-		setResistance(2.5F);
+		setHardness(0.5F);
+		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabEyecandyMobilio);
-		setBlockName("Estintore");
-		blockIndexInTexture = 32;
+		setBlockName("EstintoreAuto");
+		blockIndexInTexture = 87;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
@@ -44,26 +42,7 @@ public class EstintoreBlock extends BlockContainer {
 	}
 
 	public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int x, int y, int z) {
-		if (blockAccess.getBlockMetadata(x, y, z) == 1)
-	    {
-	      setBlockBounds(0.1F, 0.0F, 0.0F, 0.0F, 1.0F, 1.0F);
-
-
-	    }
-	    else if (blockAccess.getBlockMetadata(x, y, z) == 2)
-	    {
-	      setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.1F);
-
-
-	    }
-	    else if (blockAccess.getBlockMetadata(x, y, z) == 3)
-	    {
-	      setBlockBounds(1.0F, 0.0F, 0.0F, 0.9F, 1.0F, 1.0F);
-	    }
-	    else
-	    {
-	      setBlockBounds(0.0F, 0.0F, 0.9F, 1.0F, 1.0F, 1.0F);
-	    }
+	      setBlockBounds(0.2F, 0.2F, 0.2F, 0.8F, 0.8F, 0.8F);
 	}
 
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity) {
@@ -75,8 +54,8 @@ public class EstintoreBlock extends BlockContainer {
 			yaw += 22;
 			yaw %= 360;
 			int facing = yaw / 45;
-
-			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.Estintore.blockID, facing / 2);
+			
+			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.EstintoreAuto.blockID, facing / 2);
 		}
 	}
 
@@ -109,17 +88,42 @@ public class EstintoreBlock extends BlockContainer {
 	}
 
 	public TileEntity createTileEntity(World world, int meta) {
-		return new TileEntityEstintore();
+		return new TileEntityEstintoreAuto();
 	}
-	
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer par5EntityPlayer, int side, float par7, float par8, float par9)
+    
+	@Override
+    public boolean isFlammable(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
     {
-    	world.removeBlockTileEntity(x, y, z);
-    	world.setBlockWithNotify(x, y, z, 0);
-    	this.dropBlockAsItem_do(world, x, y, z, new ItemStack(Items.estintore));
         return true;
     }
-    
+	
+	@Override
+	public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face) {
+		return 300;
+	}
+	
+	@Override
+    public int getFireSpreadSpeed(World world, int x, int y, int z, int metadata, ForgeDirection face)
+    {
+		final int EXTINGUISHER_RANGE = 5;
+		EntityPlayer player = world.getClosestPlayer(x, y, z, -1);
+		world.playSoundEffect(x, y, z, "random.fizz", 1.0F, 0.2F);
+		
+		for (int ix = x-EXTINGUISHER_RANGE; ix < x+EXTINGUISHER_RANGE; ix++) {
+			for (int iy = y-EXTINGUISHER_RANGE*2; iy < y; iy++) { //il range va dalla y dell'estintore in giù, quindi sono 10m
+				for (int iz  = z-EXTINGUISHER_RANGE; iz < z+EXTINGUISHER_RANGE; iz++) {
+					world.extinguishFire(player, ix, iy, iz, 1);
+					
+					
+				}
+			}	  
+		}
+		
+		world.setBlockAndMetadataWithNotify(x, y, z, Blocks.EstintoreAutoVuoto.blockID, metadata);
+		
+        return 1;
+    }
+	
     //estintore sciopa se lo picchi
 	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int metadata)
 	{
@@ -131,5 +135,7 @@ public class EstintoreBlock extends BlockContainer {
     {
         return false;
     }
+	
+
 	
 }
