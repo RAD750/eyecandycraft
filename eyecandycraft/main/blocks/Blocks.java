@@ -89,6 +89,7 @@ import eyecandycraft.main.entities.TileEntityPolycom;
 import eyecandycraft.main.entities.TileEntityPortatile;
 import eyecandycraft.main.entities.TileEntityROE;
 import eyecandycraft.main.entities.TileEntityRackRF;
+import eyecandycraft.main.entities.TileEntityRilevatoreFumo;
 import eyecandycraft.main.entities.TileEntityScalettaMuro;
 import eyecandycraft.main.entities.TileEntityScrivania;
 import eyecandycraft.main.entities.TileEntitySignCustom;
@@ -139,7 +140,7 @@ public class Blocks {
 	// Plasters
 	public static Block orange_plaster, magenta_plaster, light_blue_plaster, yellow_plaster, lime_plaster, pink_plaster,
 			gray_plaster, light_gray_plaster, cyan_plaster, blue_plaster, purple_plaster, green_plaster, brown_plaster,
-			red_plaster, black_plaster;
+			red_plaster, black_plaster, PetrolImpregnatedPlankBlock;
 
 	// porte, trapdoor e cancelletti
 	
@@ -185,7 +186,7 @@ public class Blocks {
 			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat, TraliccioBraccettoCCTV, AntennaVDipole;
 	public static Block Microfono, Telecamera, ConsoleRegia, TVLCD, TVOLED, TVOLEDVESA, CCTVCam, CCTVCamPTZ;
 	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, FaroPavimento, LampionePaloModerno, LampionePaloVecchio;
-	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, EstintoreAuto, EstintoreAutoVuoto, ModemSat, Clima, ClimaUE, Scrivania, Polycom, BocchettaAC;
+	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, RilevatoreFumo, EstintoreAuto, EstintoreAutoVuoto, ModemSat, Clima, ClimaUE, Scrivania, Polycom, BocchettaAC;
 	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta, BombolaGas, Cavo, CavoMedio, CavoPiccolo;
 	public static Block ArmadioFTTC, Antenna4G, Antenna5G, Decade, Antenna80GHz, ARLO;
 	public static Block AntennaFMDipolo, AntennaESM, AntennaPannello, AntennaSettoreLTE, EstensioneBTS, EstensioneSingolaBTS, MiniARLO, ROE, TraliccioBraccettoParabola;
@@ -531,9 +532,10 @@ public class Blocks {
 		Padellone = new PadelloneBlock(3412, 0);
 		AntennaSettoreLTEMIMO = new AntennaSettoreLTEMIMOBlock(3413, 0);
 		
-		EstintoreAuto = new EstintoreAutoBlock(950, 0);
-		EstintoreAutoVuoto = new EstintoreAutoVuotoBlock(951, 0);
-		
+		EstintoreAuto = new EstintoreAutoBlock(1610, 0);
+		EstintoreAutoVuoto = new EstintoreAutoVuotoBlock(1611, 0);
+		RilevatoreFumo = new RilevatoreFumoBlock(1612, 0);
+		PetrolImpregnatedPlankBlock = new PetrolImpregnatedPlankBlock(1613, 0);
 		
 		//cancelletto
 		
@@ -1155,6 +1157,9 @@ public class Blocks {
 		GameRegistry.registerTileEntity(TileEntityEstintoreAuto.class, "EstintoreAuto");
 		GameRegistry.registerBlock(EstintoreAutoVuoto, "EstintoreAutoVuoto");
 		GameRegistry.registerTileEntity(TileEntityEstintoreAutoVuoto.class, "EstintoreAutoVuoto");
+		GameRegistry.registerBlock(RilevatoreFumo, "RilevatoreFumo");
+		GameRegistry.registerBlock(PetrolImpregnatedPlankBlock, "PetrolImpregnatedPlankBlock");
+		GameRegistry.registerTileEntity(TileEntityRilevatoreFumo.class, "RilevatoreFumo");
 		GameRegistry.registerBlock(Clima, "Clima");
 		GameRegistry.registerTileEntity(TileEntityClima.class, "Clima");
 		GameRegistry.registerBlock(ClimaUE, "ClimaUE");
@@ -1295,6 +1300,7 @@ public class Blocks {
 		LanguageRegistry.addName(PaloGrosso, "Telecommunications pole");
 		LanguageRegistry.addName(Padellone, "40GBit/s PtP Link Dish");
 		LanguageRegistry.addName(Fountain, "Fountain");
+		LanguageRegistry.addName(RilevatoreFumo, "Smoke detector");
 
 		
 		//ACCIAIO CORRUGATO
@@ -1833,6 +1839,8 @@ public class Blocks {
 		((BlockPorta) portaCostosa).setItemDropped(Items.portaCostosa.itemID);
 		((BlockPorta) doorFireProof).setItemDropped(Items.doorFireProof.itemID);
 		((BlockPorta) doorMetal).setItemDropped(Items.doorMetal.itemID);
+		
+		//Block.setBurnProperties(222, 300, 300);
 	}
 
 	

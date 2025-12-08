@@ -4,7 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import eyecandycraft.main.CreativeTab;
 import eyecandycraft.main.blocks.Blocks;
-import eyecandycraft.main.entities.TileEntityOB;
+import eyecandycraft.main.entities.TileEntityRilevatoreFumo;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -12,20 +12,24 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.world.EnumSkyBlock;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 
-public class OBBlock extends BlockContainer {
-	public static final String name = "OB";
+public class RilevatoreFumoBlock extends BlockContainer {
+	public static final String name = "RilevatoreFumo";
+	public long lastWorldTime = 0;
 
-	public OBBlock(int id, int texture) {
+	public RilevatoreFumoBlock(int id, int texture) {
 		super(id, Material.iron);
 		setHardness(0.5F);
 		setResistance(0.5F);
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabEyecandyMobilio);
-		setBlockName("OB");
-		blockIndexInTexture = 44;
+		setBlockName("RilevatoreFumo");
+		blockIndexInTexture = 87;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
@@ -40,40 +44,8 @@ public class OBBlock extends BlockContainer {
 	}
 
 	public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int x, int y, int z) {
-		if (blockAccess.getBlockMetadata(x, y, z) == 1)
-	    {
-	      setBlockBounds(0.1F, 0.0F, 0.0F, 0.0F, 1.0F, 1.0F);
-
-
-	    }
-	    else if (blockAccess.getBlockMetadata(x, y, z) == 2)
-	    {
-	      setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.1F);
-
-
-	    }
-	    else if (blockAccess.getBlockMetadata(x, y, z) == 3)
-	    {
-	      setBlockBounds(1.0F, 0.0F, 0.0F, 0.9F, 1.0F, 1.0F);
-	    }
-	    else
-	    {
-	      setBlockBounds(0.0F, 0.0F, 0.9F, 1.0F, 1.0F, 1.0F);
-	    }
-	}
-
-	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity) {
-		if ((entity instanceof EntityPlayer)) {
-			int yaw = (int) entity.rotationYaw;
-
-			if (yaw < 0)
-				yaw += 360;
-			yaw += 22;
-			yaw %= 360;
-			int facing = yaw / 45;
-
-			world.setBlockAndMetadataWithNotify(x, y, z, Blocks.OB.blockID, facing / 2);
-		}
+		// setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.27F);
+		setBlockBounds(0.3F, 0.8F, 0.3F, 0.7F, 1.0F, 0.7F);
 	}
 
 	public int getRenderType() {
@@ -93,11 +65,11 @@ public class OBBlock extends BlockContainer {
 	}
 
 	public int idDropped(int par1, int par2) {
-		return blockID;
+		return 0;
 	}
 
 	public int quantityDropped() {
-		return 1;
+		return 0;
 	}
 
 	public TileEntity createNewTileEntity(World world) {
@@ -105,14 +77,39 @@ public class OBBlock extends BlockContainer {
 	}
 
 	public TileEntity createTileEntity(World world, int meta) {
-		return new TileEntityOB();
+		return new TileEntityRilevatoreFumo();
+	}
+    
+	@Override
+    public boolean isFlammable(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
+    {
+        return false;
+    }
+	
+	@Override
+	public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face) {
+		return 0;
 	}
 	
 	@Override
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
-		if (!world.isRemote) {
-			world.playSoundEffect(x, y, z, "eyecandycraft_ob", 1.0F, 1.0F);
+    public int getFireSpreadSpeed(World world, int x, int y, int z, int metadata, ForgeDirection face)
+    {
+		if (!world.isRemote && (lastWorldTime != world.getWorldTime()) && (world.getWorldTime() - lastWorldTime > 20)) {
+			world.playSoundEffect(x, y, z, "eyecandycraft_FireAlarm", 1.0F, 1.0F);
+			lastWorldTime = world.getWorldTime();
+			
 		}
-		return false;
-	}
+		return 300;
+    }
+	
+	
+	@Override
+    public boolean onBlockActivated(World world, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
+    {
+		if (!world.isRemote && (lastWorldTime != world.getWorldTime()) && (world.getWorldTime() - lastWorldTime > 20)) {
+			world.playSoundEffect(par2, par3, par4, "eyecandycraft_FireAlarm", 1.0F, 1.0F);
+			lastWorldTime = world.getWorldTime();
+		}
+        return false;
+    }
 }

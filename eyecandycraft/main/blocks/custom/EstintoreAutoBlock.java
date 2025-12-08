@@ -94,12 +94,12 @@ public class EstintoreAutoBlock extends BlockContainer {
 	@Override
     public boolean isFlammable(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
     {
-        return true;
+        return false;
     }
 	
 	@Override
 	public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face) {
-		return 300;
+		return 0;
 	}
 	
 	@Override

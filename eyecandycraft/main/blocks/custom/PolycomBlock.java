@@ -90,12 +90,12 @@ public class PolycomBlock extends BlockContainer {
 	public TileEntity createTileEntity(World world, int meta) {
 		return new TileEntityPolycom();
 	}
-	/*
+	
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
-		if (world.isRemote) {
-			world.playSoundEffect(x, y, z, "furniture.EyecandyPhone", 1f, 1);
+		if (!world.isRemote) {
+			world.playSoundEffect(x, y, z, "eyecandycraft_tel", 0.1F, 1.0F);
 		}
-		return true;
-	}*/
+		return false;
+	}
 }
