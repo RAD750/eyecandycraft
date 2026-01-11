@@ -128,6 +128,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 
 
 public class Blocks {
@@ -1158,6 +1159,11 @@ public class Blocks {
 		GameRegistry.registerBlock(EstintoreAutoVuoto, "EstintoreAutoVuoto");
 		GameRegistry.registerTileEntity(TileEntityEstintoreAutoVuoto.class, "EstintoreAutoVuoto");
 		GameRegistry.registerBlock(RilevatoreFumo, "RilevatoreFumo");
+		
+		
+		//WORKAROUND PERCHÈ SONO UN COGLIONE
+		OreDictionary.registerOre("SmokeDetector", RilevatoreFumo);
+		
 		GameRegistry.registerBlock(PetrolImpregnatedPlankBlock, "PetrolImpregnatedPlankBlock");
 		GameRegistry.registerTileEntity(TileEntityRilevatoreFumo.class, "RilevatoreFumo");
 		GameRegistry.registerBlock(Clima, "Clima");
@@ -1840,8 +1846,20 @@ public class Blocks {
 		((BlockPorta) doorFireProof).setItemDropped(Items.doorFireProof.itemID);
 		((BlockPorta) doorMetal).setItemDropped(Items.doorMetal.itemID);
 		
-		//Block.setBurnProperties(222, 300, 300);
 	}
 
+	
+	public static void InitFlammability() {
+		//Foam
+		Block.setBurnProperties(222, 300, 300);
+		//Foam solido
+		Block.setBurnProperties(221, 100, 100);
+		//Asfalto
+		Block.setBurnProperties(2100, 100, 100);
+		//MErda
+		Block.setBurnProperties(901, 50, 50);
+		//Motori BC
+		Block.setBurnProperties(161, 100, 100);
+	}
 	
 }

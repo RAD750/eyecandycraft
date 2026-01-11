@@ -29,7 +29,7 @@ public class RilevatoreFumoBlock extends BlockContainer {
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabEyecandyMobilio);
 		setBlockName("RilevatoreFumo");
-		blockIndexInTexture = 87;
+		blockIndexInTexture = 90;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {

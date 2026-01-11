@@ -30,13 +30,13 @@ import net.minecraftforge.common.MinecraftForge;
 
 
 
-@Mod(name="Eyecandycraft", version="3.3", modid="eyecandycraft")
+@Mod(name="Eyecandycraft", version="3.4", modid="eyecandycraft", dependencies="after:betterelectrics")
 @NetworkMod(channels = {EyeCandyPacket.CHANNEL_NAME}, clientSideRequired = true, serverSideRequired = false, packetHandler = EyeCandyPacketHandler.class)
 public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "3.3";
+		return "3.4";
 	}
 	
 	@SidedProxy(clientSide="eyecandycraft.main.proxies.ClientProxy", serverSide="eyecandycraft.main.proxies.ServerProxy")
@@ -67,6 +67,7 @@ public class Main extends BaseMod{
 		Items.RegistraLingua();
 		FacadeHandler.RegistraFacade();
 		Blocks.InitPorte();
+		Blocks.InitFlammability();
 	}
 	
 	
