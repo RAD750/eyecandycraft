@@ -72,6 +72,7 @@ import eyecandycraft.main.entities.TileEntityMicrofono;
 import eyecandycraft.main.entities.TileEntityMiniARLO;
 import eyecandycraft.main.entities.TileEntityModemSat;
 import eyecandycraft.main.entities.TileEntityNeon;
+import eyecandycraft.main.entities.TileEntityNeonMuro;
 import eyecandycraft.main.entities.TileEntityNeonPiatto;
 import eyecandycraft.main.entities.TileEntityOB;
 import eyecandycraft.main.entities.TileEntityPadellone;
@@ -186,7 +187,7 @@ public class Blocks {
 	public static Block ParabolaSat, ParabolaSatTest2, AntennaGroundPlane, AntennaSettore900MHz, AntennaSettore2100MHz, AntennaYagiVHF,
 			AntennaYagiUHF, AntennaLogperiodica, Traliccio, TraliccioBraccettoSingolo, TraliccioBraccettoDoppio, TraliccioBraccettoSat, TraliccioBraccettoCCTV, AntennaVDipole;
 	public static Block Microfono, Telecamera, ConsoleRegia, TVLCD, TVOLED, TVOLEDVESA, CCTVCam, CCTVCamPTZ;
-	public static Block LampadaOlceseRicci, Neon, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, FaroPavimento, LampionePaloModerno, LampionePaloVecchio;
+	public static Block LampadaOlceseRicci, Neon, NeonMuro, NeonPiatto, Lampadario, LampadaScrivania, LampioneGiardino, LampioneMuro, Faro, FaroPavimento, LampionePaloModerno, LampionePaloVecchio;
 	public static Block AtariST, AtariST2, Portatile, RadioScanner, Estintore, RilevatoreFumo, EstintoreAuto, EstintoreAutoVuoto, ModemSat, Clima, ClimaUE, Scrivania, Polycom, BocchettaAC;
 	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta, BombolaGas, Cavo, CavoMedio, CavoPiccolo;
 	public static Block ArmadioFTTC, Antenna4G, Antenna5G, Decade, Antenna80GHz, ARLO;
@@ -455,6 +456,7 @@ public class Blocks {
 		ARLO = new ARLOBlock(896, 0);
 
 		// lampade
+		
 		NeonPiatto = new NeonPiattoBlock(880, 0);
 		Lampadario = new LampadarioBlock(881, 0);
 		LampadaScrivania = new LampadaScrivaniaBlock(882, 0);
@@ -464,6 +466,7 @@ public class Blocks {
 		LampionePaloModerno = new LampionePaloModernoBlock(886, 0);
 		LampionePaloVecchio = new LampionePaloVecchioBlock(887, 0);
 		Neon = new NeonBlock(888, 0);
+		NeonMuro = new NeonMuroBlock(889, 0);
 		FaroPavimento = new FaroPavimentoBlock(941,0);
 		
 		//roba studio TV/radio
@@ -1110,7 +1113,10 @@ public class Blocks {
 		GameRegistry.registerTileEntity(TileEntityModemSat.class, "ModemSat");
 
 		// Lampade
-
+		
+		
+		GameRegistry.registerBlock(NeonMuro, "NeonMuro");
+		GameRegistry.registerTileEntity(TileEntityNeonMuro.class, "NeonMuro");
 		GameRegistry.registerBlock(NeonPiatto, "NeonPiatto");
 		GameRegistry.registerTileEntity(TileEntityNeonPiatto.class, "NeonPiatto");
 		GameRegistry.registerBlock(Neon, "Neon");

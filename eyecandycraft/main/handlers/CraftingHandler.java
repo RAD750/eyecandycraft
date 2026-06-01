@@ -1687,6 +1687,9 @@ public class CraftingHandler {
 		GameRegistry.addShapedRecipe(new ItemStack(Blocks.cfSingleSlabA, 6, 7), new Object[] { "   ", "   ", "###", '#', ic2.api.Items.getItem("constructionFoam")});
 		
 		
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.Neon), new Object[] {new ItemStack(Blocks.NeonMuro)});
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.NeonMuro), new Object[] {new ItemStack(Blocks.Neon)});
+		
 
 	}
 }
