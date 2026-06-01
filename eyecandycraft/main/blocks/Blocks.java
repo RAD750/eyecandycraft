@@ -1625,7 +1625,7 @@ public class Blocks {
 		// Lampade
 		LanguageRegistry.addName(NeonPiatto, "LED Panel Fixture");
 		LanguageRegistry.addName(Neon, "Fluorescent Fixture");
-		LanguageRegistry.addName(Neon, "Fluorescent Fixture (wall-mount)");
+		LanguageRegistry.addName(NeonMuro, "Fluorescent Fixture (wall-mount)");
 		LanguageRegistry.addName(Lampadario, "Pendant Fixture");
 		LanguageRegistry.addName(LampadaScrivania, "Desk Lamp");
 		LanguageRegistry.addName(LampioneGiardino, "Garden Light");
