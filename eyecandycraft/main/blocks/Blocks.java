@@ -94,6 +94,7 @@ import eyecandycraft.main.entities.TileEntityRilevatoreFumo;
 import eyecandycraft.main.entities.TileEntityScalettaMuro;
 import eyecandycraft.main.entities.TileEntityScrivania;
 import eyecandycraft.main.entities.TileEntitySignCustom;
+import eyecandycraft.main.entities.TileEntitySignTIV;
 import eyecandycraft.main.entities.TileEntitySirena;
 import eyecandycraft.main.entities.TileEntityTVLCD;
 import eyecandycraft.main.entities.TileEntityTVOLED;
@@ -275,7 +276,8 @@ public class Blocks {
 		Sign_birch_Post = new SignCustomBlock(3250, true, 22984, null, "/eyecandycraft/textures/signs/birch.png");
 		Sign_birch_Wall = new SignCustomBlock(3251, false, 22984, Sign_birch_Post, "/eyecandycraft/textures/signs/birch.png");
 		
-		TIV_Post = new SignTIVBlock(3252, false, 22985, null, "/eyecandycraft/textures/signs/birch.png");
+		TIV_Post = new SignTIVBlock(3252, true, 22985, null, "/eyecandycraft/textures/signs/tiv.png");
+		TIV_Wall = new SignTIVBlock(3253, false, 22985, TIV_Post, "/eyecandycraft/textures/signs/tiv.png");
 
 		
 		
@@ -809,6 +811,7 @@ public class Blocks {
 		//Cartelli
 		GameRegistry.registerTileEntity(TileEntitySignCustom.class,
 				"TileEntitySignCustom");
+		GameRegistry.registerTileEntity(TileEntitySignTIV.class, "TileEntitySignTIV");
 		
 		GameRegistry.registerBlock(Sign_acacia_Post, "Sign_acacia_Post");
 		GameRegistry.registerBlock(Sign_acacia_Wall, "Sign_acacia_Wall");
@@ -834,6 +837,7 @@ public class Blocks {
 		GameRegistry.registerBlock(Sign_white_Wall, "Sign_white_Wall");
 		
 		GameRegistry.registerBlock(TIV_Post, "TIV_Post");
+		GameRegistry.registerBlock(TIV_Wall, "TIV_Wall");
 
 
 		
@@ -1314,7 +1318,7 @@ public class Blocks {
 		LanguageRegistry.addName(EstensioneBTS, "BTS Extension (Double)");
 		LanguageRegistry.addName(EstensioneSingolaBTS, "BTS Extension (Single)");
 		LanguageRegistry.addName(PaloCimaDoppio, "Telecommunications pole, dual bracket");
-		LanguageRegistry.addName(PaloCimaSingolo, "Telecommunications pole, signle bracket");
+		LanguageRegistry.addName(PaloCimaSingolo, "Telecommunications pole, single bracket");
 		LanguageRegistry.addName(PaloGrosso, "Telecommunications pole");
 		LanguageRegistry.addName(Padellone, "40GBit/s PtP Link Dish");
 		LanguageRegistry.addName(Fountain, "Fountain");

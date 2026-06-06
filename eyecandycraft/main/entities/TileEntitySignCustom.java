@@ -19,7 +19,7 @@ import net.minecraft.util.ChatAllowedCharacters;
 
 public class TileEntitySignCustom extends TileEntitySign implements INetworkMember {
 
-	private Block blockPost;
+	private Block blockPost; 
 	private String textureFile;
 	
 	private ChatColor textColor;
@@ -42,6 +42,7 @@ public class TileEntitySignCustom extends TileEntitySign implements INetworkMemb
         par1NBTTagCompound.setByte("TextFormat", (byte)textFormat.getChar());
     }
 
+   
     /**
      * Reads a tile entity from NBT.
      */

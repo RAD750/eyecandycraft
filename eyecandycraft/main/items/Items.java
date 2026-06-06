@@ -50,6 +50,10 @@ public class Items {
 	public static Item Sign_white;
 	public static Item Sign_birch;
 	
+	public static Item Sign_TIV;
+	public static Item Sign_ETCS_imperativo;
+	public static Item Sign_ETCS_finesezione;
+	
 	public static Item SafeSnooper;
 	public static Item invisibleItemFrame;
 	public static Item chisel;
@@ -74,7 +78,9 @@ public class Items {
 		Sign_white = new ItemSignCustom(22983, Blocks.Sign_white_Post, Blocks.Sign_white_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(9).setItemName("Sign_white");
 		Sign_birch = new ItemSignCustom(22984, Blocks.Sign_birch_Post, Blocks.Sign_birch_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(10).setItemName("Sign_birch");
 
-	
+	Sign_TIV = new ItemSignTIV(22985, Blocks.TIV_Post, Blocks.TIV_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(11).setItemName("Sign_TIV");
+		
+		
 	molten_glass = new Item(24100).setTextureFile("/eyecandycraft/textures/items.png").setIconIndex(1)
 			.setCreativeTab(CreativeTab.tabEyecandyAltro).setItemName("molten_glass").setMaxStackSize(8);
 	
@@ -276,6 +282,8 @@ public class Items {
 		LanguageRegistry.addName(Sign_warped, "Warped Sign");
 		LanguageRegistry.addName(Sign_white, "White Sign");
 		LanguageRegistry.addName(Sign_birch, "Birch Sign");
+		
+		LanguageRegistry.addName(Sign_TIV, "Cartello indicatore velocità");
 		
 		LanguageRegistry.addName(straw, "Straw");
 		LanguageRegistry.addName(metro, "Tape Measure");

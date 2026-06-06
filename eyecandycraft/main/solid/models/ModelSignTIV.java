@@ -16,7 +16,7 @@ public class ModelSignTIV extends ModelBase
 
     public ModelSignTIV()
     {
-        this.signBoard.addBox(-8.0F, -14.0F, -1.0F, 24, 8, 2, 0.0F);
+        this.signBoard.addBox(-6.0F, -14.0F, -1.0F, 12, 12, 2, 0.0F);
         this.signStick = new ModelRenderer(this, 0, 14);
         this.signStick.addBox(-1.0F, -2.0F, -1.0F, 2, 14, 2, 0.0F);
     }

@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.tileentity.TileEntitySignRenderer;
 import net.minecraft.tileentity.TileEntitySign;
 import eyecandycraft.main.blocks.Blocks;
 import eyecandycraft.main.entities.TileEntitySignCustom;
+import eyecandycraft.main.entities.TileEntitySignTIV;
 import eyecandycraft.main.solid.models.ModelSignTIV;
 import eyecandycraft.main.utils.ChatColor;
 
@@ -20,7 +21,7 @@ public class TileEntitySignTIVCustomRenderer extends TileEntitySignRenderer {
 	@Override
 	public void renderTileEntitySignAt(TileEntitySign signPar, double par2, double par4, double par6, float par8) {
 		updateCounter++;
-		TileEntitySignCustom sign = (TileEntitySignCustom) signPar;
+		TileEntitySignTIV sign = (TileEntitySignTIV) signPar;
         Block var9 = sign.getBlockType();
         GL11.glPushMatrix();
         float var10 = 0.6666667F;

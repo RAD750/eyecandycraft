@@ -4,7 +4,7 @@ import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import eyecandycraft.main.entities.TileEntitySignCustom;
+import eyecandycraft.main.entities.TileEntitySignTIV;
 import eyecandycraft.main.items.Items;
 import eyecandycraft.main.utils.ChatColor;
 import net.minecraft.block.Block;
@@ -41,9 +41,13 @@ public class SignTIVBlock extends BlockSign {
      */
 	@Override
     public TileEntity createNewTileEntity(World par1World) {
-        return new TileEntitySignCustom()
+        TileEntity te = new TileEntitySignTIV()
         		.setBlockPost(blockPost)
         		.setTextureFile(textureFile);
+    	TileEntitySignTIV sign = (TileEntitySignTIV)te;
+    	sign.setTextColor(ChatColor.WHITE);
+        return te;
+        
     }
 	
 	/**
@@ -68,7 +72,7 @@ public class SignTIVBlock extends BlockSign {
      */
 	@Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float par6, float par7, float par8) {
-		TileEntitySignCustom sign = (TileEntitySignCustom)world.getBlockTileEntity((int)x, (int)y, (int)z);
+		TileEntitySignTIV sign = (TileEntitySignTIV)world.getBlockTileEntity((int)x, (int)y, (int)z);
 		ItemStack item = player.getHeldItem();
 		ChatColor textColor = null;
 		ChatColor textFormat = null;
