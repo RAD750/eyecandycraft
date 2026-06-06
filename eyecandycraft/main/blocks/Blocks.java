@@ -229,6 +229,8 @@ public class Blocks {
     public static Block Sign_birch_Post;
     public static Block Sign_birch_Wall;
     
+    public static Block TIV_Wall, TIV_Post; 
+    
     public static Block wireMesh;
     public static Block redstoneBlocks;
     
@@ -272,6 +274,8 @@ public class Blocks {
 		Sign_white_Wall = new SignCustomBlock(3249, false, 22983, Sign_white_Post, "/eyecandycraft/textures/signs/white.png");
 		Sign_birch_Post = new SignCustomBlock(3250, true, 22984, null, "/eyecandycraft/textures/signs/birch.png");
 		Sign_birch_Wall = new SignCustomBlock(3251, false, 22984, Sign_birch_Post, "/eyecandycraft/textures/signs/birch.png");
+		
+		TIV_Post = new SignTIVBlock(3252, false, 22985, null, "/eyecandycraft/textures/signs/birch.png");
 
 		
 		
@@ -807,27 +811,29 @@ public class Blocks {
 				"TileEntitySignCustom");
 		
 		GameRegistry.registerBlock(Sign_acacia_Post, "Sign_acacia_Post");
-		GameRegistry.registerBlock(Sign_acacia_Post, "Sign_acacia_Wall");
+		GameRegistry.registerBlock(Sign_acacia_Wall, "Sign_acacia_Wall");
 		GameRegistry.registerBlock(Sign_birch_Post, "Sign_birch_Post");
-		GameRegistry.registerBlock(Sign_birch_Post, "Sign_birch_Wall");
+		GameRegistry.registerBlock(Sign_birch_Wall, "Sign_birch_Wall");
 		GameRegistry.registerBlock(Sign_crimson_Post, "Sign_crimson_Post");
-		GameRegistry.registerBlock(Sign_crimson_Post, "Sign_crimson_Wall");
+		GameRegistry.registerBlock(Sign_crimson_Wall, "Sign_crimson_Wall");
 		GameRegistry.registerBlock(Sign_dark_oak_Post, "Sign_dark_oak_Post");
-		GameRegistry.registerBlock(Sign_dark_oak_Post, "Sign_dark_oak_Wall");
+		GameRegistry.registerBlock(Sign_dark_oak_Wall, "Sign_dark_oak_Wall");
 		GameRegistry.registerBlock(Sign_frame_Post, "Sign_frame_Post");
-		GameRegistry.registerBlock(Sign_frame_Post, "Sign_frame_Wall");
+		GameRegistry.registerBlock(Sign_frame_Wall, "Sign_frame_Wall");
 		GameRegistry.registerBlock(Sign_jungle_Post, "Sign_jungle_Post");
-		GameRegistry.registerBlock(Sign_jungle_Post, "Sign_jungle_Wall");
+		GameRegistry.registerBlock(Sign_jungle_Wall, "Sign_jungle_Wall");
 		GameRegistry.registerBlock(Sign_metal_Post, "Sign_metal_Post");
-		GameRegistry.registerBlock(Sign_metal_Post, "Sign_metal_Wall");
+		GameRegistry.registerBlock(Sign_metal_Wall, "Sign_metal_Wall");
 		GameRegistry.registerBlock(Sign_oak_Post, "Sign_oak_Post");
-		GameRegistry.registerBlock(Sign_oak_Post, "Sign_oak_Wall");
+		GameRegistry.registerBlock(Sign_oak_Wall, "Sign_oak_Wall");
 		GameRegistry.registerBlock(Sign_spruce_Post, "Sign_spruce_Post");
-		GameRegistry.registerBlock(Sign_spruce_Post, "Sign_spruce_Wall");
+		GameRegistry.registerBlock(Sign_spruce_Wall, "Sign_spruce_Wall");
 		GameRegistry.registerBlock(Sign_warped_Post, "Sign_warped_Post");
-		GameRegistry.registerBlock(Sign_warped_Post, "Sign_warped_Wall");
+		GameRegistry.registerBlock(Sign_warped_Wall, "Sign_warped_Wall");
 		GameRegistry.registerBlock(Sign_white_Post, "Sign_white_Post");
-		GameRegistry.registerBlock(Sign_white_Post, "Sign_white_Wall");
+		GameRegistry.registerBlock(Sign_white_Wall, "Sign_white_Wall");
+		
+		GameRegistry.registerBlock(TIV_Post, "TIV_Post");
 
 
 		
