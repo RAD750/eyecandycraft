@@ -94,6 +94,7 @@ import eyecandycraft.main.entities.TileEntityRilevatoreFumo;
 import eyecandycraft.main.entities.TileEntityScalettaMuro;
 import eyecandycraft.main.entities.TileEntityScrivania;
 import eyecandycraft.main.entities.TileEntitySignCustom;
+import eyecandycraft.main.entities.TileEntitySignETCS;
 import eyecandycraft.main.entities.TileEntitySignTIV;
 import eyecandycraft.main.entities.TileEntitySirena;
 import eyecandycraft.main.entities.TileEntityTVLCD;
@@ -231,6 +232,8 @@ public class Blocks {
     public static Block Sign_birch_Wall;
     
     public static Block TIV_Wall, TIV_Post; 
+    public static Block ETCS_stopmarker_Post, ETCS_stopmarker_Wall, ETCS_locationmarker_Post, ETCS_locationmarker_Wall;
+    public static Block ETCS_stopmarker_Post_d, ETCS_stopmarker_Wall_d, ETCS_locationmarker_Post_d, ETCS_locationmarker_Wall_d;
     
     public static Block wireMesh;
     public static Block redstoneBlocks;
@@ -278,8 +281,18 @@ public class Blocks {
 		
 		TIV_Post = new SignTIVBlock(3252, true, 22985, null, "/eyecandycraft/textures/signs/tiv.png");
 		TIV_Wall = new SignTIVBlock(3253, false, 22985, TIV_Post, "/eyecandycraft/textures/signs/tiv.png");
-
 		
+		ETCS_stopmarker_Post = new SignETCSBlock(3254, true, 22986, null, "/eyecandycraft/textures/signs/etcs_stopmarker.png");
+		ETCS_stopmarker_Wall = new SignETCSBlock(3255, false, 22986, null, "/eyecandycraft/textures/signs/etcs_stopmarker.png");
+		
+		ETCS_locationmarker_Post = new SignETCSBlock(3256, true, 22987, null, "/eyecandycraft/textures/signs/etcs_locationmarker.png");
+		ETCS_locationmarker_Wall = new SignETCSBlock(3257, false, 22987, null, "/eyecandycraft/textures/signs/etcs_locationmarker.png");
+		
+		ETCS_stopmarker_Post_d = new SignETCSBlock(3258, true, 22988, null, "/eyecandycraft/textures/signs/etcs_stopmarker_d.png");
+		ETCS_stopmarker_Wall_d = new SignETCSBlock(3259, false, 22988, null, "/eyecandycraft/textures/signs/etcs_stopmarker_d.png");
+		
+		ETCS_locationmarker_Post_d = new SignETCSBlock(3260, true, 22989, null, "/eyecandycraft/textures/signs/etcs_locationmarker_d.png");
+		ETCS_locationmarker_Wall_d = new SignETCSBlock(3261, false, 22989, null, "/eyecandycraft/textures/signs/etcs_locationmarker_d.png");
 		
 		LightningRod = new LightningRodBlock(3510, 0);
 	
@@ -812,6 +825,7 @@ public class Blocks {
 		GameRegistry.registerTileEntity(TileEntitySignCustom.class,
 				"TileEntitySignCustom");
 		GameRegistry.registerTileEntity(TileEntitySignTIV.class, "TileEntitySignTIV");
+		GameRegistry.registerTileEntity(TileEntitySignETCS.class, "TileEntitySignETCS");
 		
 		GameRegistry.registerBlock(Sign_acacia_Post, "Sign_acacia_Post");
 		GameRegistry.registerBlock(Sign_acacia_Wall, "Sign_acacia_Wall");
@@ -838,7 +852,12 @@ public class Blocks {
 		
 		GameRegistry.registerBlock(TIV_Post, "TIV_Post");
 		GameRegistry.registerBlock(TIV_Wall, "TIV_Wall");
-
+		
+		GameRegistry.registerBlock(ETCS_stopmarker_Post, "ETCS_stopmarker_Post");
+		GameRegistry.registerBlock(ETCS_stopmarker_Wall, "ETCS_stopmarker_Wall");
+		
+		GameRegistry.registerBlock(ETCS_locationmarker_Post, "ETCS_locationmarker_Post");
+		GameRegistry.registerBlock(ETCS_locationmarker_Wall, "ETCS_locationmarker_Wall");
 
 		
 		GameRegistry.registerBlock(fumogeno, "fumogeno");

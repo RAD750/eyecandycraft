@@ -51,8 +51,10 @@ public class Items {
 	public static Item Sign_birch;
 	
 	public static Item Sign_TIV;
-	public static Item Sign_ETCS_imperativo;
-	public static Item Sign_ETCS_finesezione;
+	public static Item Sign_ETCS_locationmarker;
+	public static Item Sign_ETCS_stopmarker;
+	public static Item Sign_ETCS_locationmarker_d;
+	public static Item Sign_ETCS_stopmarker_d;
 	
 	public static Item SafeSnooper;
 	public static Item invisibleItemFrame;
@@ -79,7 +81,11 @@ public class Items {
 		Sign_birch = new ItemSignCustom(22984, Blocks.Sign_birch_Post, Blocks.Sign_birch_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(10).setItemName("Sign_birch");
 
 	Sign_TIV = new ItemSignTIV(22985, Blocks.TIV_Post, Blocks.TIV_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(11).setItemName("Sign_TIV");
-		
+	Sign_ETCS_stopmarker = new ItemSignETCS(22986, Blocks.ETCS_stopmarker_Post, Blocks.ETCS_stopmarker_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(12).setItemName("Sign_ETCS_stopmarker");
+	Sign_ETCS_locationmarker = new ItemSignETCS(22987, Blocks.ETCS_locationmarker_Post, Blocks.ETCS_locationmarker_Wall).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(13).setItemName("Sign_ETCS_locationmarker");	
+	
+	Sign_ETCS_stopmarker_d = new ItemSignETCS(22988, Blocks.ETCS_stopmarker_Post_d, Blocks.ETCS_stopmarker_Wall_d).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(14).setItemName("Sign_ETCS_stopmarker_d");
+	Sign_ETCS_locationmarker_d = new ItemSignETCS(22989, Blocks.ETCS_locationmarker_Post_d, Blocks.ETCS_locationmarker_Wall_d).setTextureFile("/eyecandycraft/textures/signs/icons/signs.png").setIconIndex(15).setItemName("Sign_ETCS_locationmarker_d");
 		
 	molten_glass = new Item(24100).setTextureFile("/eyecandycraft/textures/items.png").setIconIndex(1)
 			.setCreativeTab(CreativeTab.tabEyecandyAltro).setItemName("molten_glass").setMaxStackSize(8);
@@ -284,6 +290,10 @@ public class Items {
 		LanguageRegistry.addName(Sign_birch, "Birch Sign");
 		
 		LanguageRegistry.addName(Sign_TIV, "Cartello indicatore velocità");
+		LanguageRegistry.addName(Sign_ETCS_locationmarker, "ETCS Location Marker");
+		LanguageRegistry.addName(Sign_ETCS_stopmarker, "ETCS Stop Marker");
+		LanguageRegistry.addName(Sign_ETCS_locationmarker_d, "ETCS Location Marker");
+		LanguageRegistry.addName(Sign_ETCS_stopmarker_d, "ETCS Stop Marker");
 		
 		LanguageRegistry.addName(straw, "Straw");
 		LanguageRegistry.addName(metro, "Tape Measure");

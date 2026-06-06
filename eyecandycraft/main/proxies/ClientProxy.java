@@ -21,6 +21,7 @@ import eyecandycraft.main.entities.*;
 import eyecandycraft.main.network.EyeCandyPacket;
 import eyecandycraft.main.network.INetworkMember;
 import eyecandycraft.main.renderers.TileEntitySignCustomRenderer;
+import eyecandycraft.main.renderers.TileEntitySignETCSCustomRenderer;
 import eyecandycraft.main.renderers.TileEntitySignTIVCustomRenderer;
 import eyecandycraft.main.solid.rendertables.*;
 import eyecandycraft.main.utils.Game;
@@ -130,6 +131,7 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLightningRod.class, new RenderTableLightningRod());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySignCustom.class, new TileEntitySignCustomRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySignTIV.class, new TileEntitySignTIVCustomRenderer());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySignETCS.class, new TileEntitySignETCSCustomRenderer());
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAntenna80GHz.class, new RenderTableAntenna80GHz());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityARLO.class, new RenderTableARLO());

@@ -40,6 +40,8 @@ public class CraftingHandler {
         final ItemStack orangeDye = new ItemStack(Item.dyePowder, 1, 14);  
         final ItemStack whiteDye = new ItemStack(Item.dyePowder, 1, 15);    
         
+
+        
         
         //coloredConcrete
         
@@ -355,6 +357,27 @@ public class CraftingHandler {
 					new Object[] {"## ", " # ", "#B#", '#', duralumin, 'B', new ItemStack(Item.bucketEmpty, 1)});
 			GameRegistry.addRecipe(new ItemStack(Blocks.DocciaMiscelatore, 1),
 					new Object[] {" # ", "C#F", "   ", '#', duralumin, 'C', new ItemStack(Item.dyePowder, 1, 1), 'F', new ItemStack(Item.dyePowder, 1, 4)});
+			
+	        //cartelli
+	        
+	        GameRegistry.addShapedRecipe(new ItemStack(Items.Sign_TIV), new Object[] {
+	        		"#D#", "#D#", " F ", '#', duralumin, 'D', blackDye, 'F', ic2.api.Items.getItem("ironFence")
+	        });
+	        GameRegistry.addShapedRecipe(new ItemStack(Items.Sign_ETCS_stopmarker), new Object[] {
+	        		"#BY", "#W#", " F ", '#', duralumin, 'B', blueDye, 'Y', yellowDye, 'F', ic2.api.Items.getItem("ironFence")
+	        });
+	        GameRegistry.addShapedRecipe(new ItemStack(Items.Sign_ETCS_stopmarker_d), new Object[] {
+	        		"YB#", "#W#", " F ", '#', duralumin, 'B', blueDye, 'Y', yellowDye, 'F', ic2.api.Items.getItem("ironFence")
+	        });
+	        
+	        GameRegistry.addShapedRecipe(new ItemStack(Items.Sign_ETCS_stopmarker), new Object[] {
+	        		"#WB", "#W#", " F ", '#', duralumin, 'B', blackDye, 'Y', whiteDye, 'F', ic2.api.Items.getItem("ironFence")
+	        });
+	        GameRegistry.addShapedRecipe(new ItemStack(Items.Sign_ETCS_stopmarker_d), new Object[] {
+	        		"BW#", "#W#", " F ", '#', duralumin, 'B', blackDye, 'W', whiteDye, 'F', ic2.api.Items.getItem("ironFence")
+	        });
+	        
+			
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare duralumin, disabilitate ricette antenne e persiane!!!!");
 		}
