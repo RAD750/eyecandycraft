@@ -15,8 +15,7 @@ public class ModelAntenna80GHz extends ModelBase
     ModelRenderer Disco3;
     ModelRenderer Disco4;
     ModelRenderer Shape3;
-    ModelRenderer Disco5;
-  
+    ModelRenderer Disco5;  
   public ModelAntenna80GHz()
   {
     textureWidth = 64;
@@ -27,7 +26,7 @@ public class ModelAntenna80GHz extends ModelBase
       Shape1.setRotationPoint(-3F, 12F, 7F);
       Shape1.setTextureSize(64, 32);
       Shape1.mirror = true;
-      setRotation(Shape1, 0F, 0F, 0F);
+      setRotation(Shape1, 0.0F, 0F, 0F);
       Shape2A = new ModelRenderer(this, 16, 0);
       Shape2A.addBox(0F, 0F, 0F, 2, 10, 1);
       Shape2A.setRotationPoint(-1F, 10F, 6F);

@@ -91,6 +91,8 @@ import eyecandycraft.main.entities.TileEntityPortatile;
 import eyecandycraft.main.entities.TileEntityROE;
 import eyecandycraft.main.entities.TileEntityRackRF;
 import eyecandycraft.main.entities.TileEntityRilevatoreFumo;
+import eyecandycraft.main.entities.TileEntitySbarra;
+import eyecandycraft.main.entities.TileEntitySbarraAlzata;
 import eyecandycraft.main.entities.TileEntityScalettaMuro;
 import eyecandycraft.main.entities.TileEntityScrivania;
 import eyecandycraft.main.entities.TileEntitySignCustom;
@@ -194,7 +196,8 @@ public class Blocks {
 	public static Block RackRF, RackIT, RackNet, CartelloEndor, CroceSAndrea, OB, Bitta, BombolaGas, Cavo, CavoMedio, CavoPiccolo;
 	public static Block ArmadioFTTC, Antenna4G, Antenna5G, Decade, Antenna80GHz, ARLO;
 	public static Block AntennaFMDipolo, AntennaESM, AntennaPannello, AntennaSettoreLTE, EstensioneBTS, EstensioneSingolaBTS, MiniARLO, ROE, TraliccioBraccettoParabola;
-	public static Block TrussBridgeAbutment, TrussBridge;
+	public static Block TrussBridgeAbutment, TrussBridge, Sbarra, SbarraAlzata;
+	
 	
 	//METADATA
 	
@@ -244,6 +247,10 @@ public class Blocks {
 
 
     public static BlockHalfSlab cfSlabA, cfSingleSlabA, cfSlabB, cfSingleSlabB;
+    
+    
+    public static Block TransparentBarrier;
+    
     
 	public static void InizializzaBlocchi() {
 		
@@ -462,6 +469,9 @@ public class Blocks {
 		Sirena = new SirenaBlock(860, 0);
 		TrussBridgeAbutment = new eyecandycraft.main.blocks.custom.TrussBridgeAbutment(866, 0);
 		TrussBridge = new eyecandycraft.main.blocks.custom.TrussBridge(867, 0);
+		Sbarra = new SbarraBlock(868, 0, false);
+		SbarraAlzata = new SbarraAlzataBlock(869, 0);
+		
 
 		// atari ST
 		
@@ -559,6 +569,7 @@ public class Blocks {
 		EstintoreAutoVuoto = new EstintoreAutoVuotoBlock(1611, 0);
 		RilevatoreFumo = new RilevatoreFumoBlock(1612, 0);
 		PetrolImpregnatedPlankBlock = new PetrolImpregnatedPlankBlock(1613, 0);
+		TransparentBarrier = new TransparentBarrierBlock(1614, 0, Material.circuits);
 		
 		//cancelletto
 		
@@ -1299,6 +1310,13 @@ public class Blocks {
 		
 		GameRegistry.registerBlock(blockCobbledArdesia, "cobbledArdesia");
 		
+		GameRegistry.registerBlock(Sbarra, "Sbarra");
+		GameRegistry.registerTileEntity(TileEntitySbarra.class, "Sbarra");
+		GameRegistry.registerBlock(SbarraAlzata, "SbarraAlzata");
+		GameRegistry.registerTileEntity(TileEntitySbarraAlzata.class, "SbarraAlzata");
+		
+		GameRegistry.registerBlock(TransparentBarrier, "Barrier Part");
+		
 	}
 
 	public static void RegistraLingua() {
@@ -1308,6 +1326,11 @@ public class Blocks {
 		
 		LanguageRegistry.addName(TrussBridgeAbutment, "Truss Bridge Abutment");
 		LanguageRegistry.addName(TrussBridge, "Truss Bridge Part");
+		
+		LanguageRegistry.addName(Sbarra, "Level Crossing Barrier");
+		LanguageRegistry.addName(SbarraAlzata, "You ran into a serious Bug, if you have legitly aquired this item please report it immidietely");
+		LanguageRegistry.addName(TransparentBarrier, "Barrier Part");
+
 
 		LanguageRegistry.addName(wireMesh, "Wire Mesh");
 		

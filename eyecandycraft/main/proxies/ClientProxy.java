@@ -162,6 +162,8 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTrussBridgeAbutment.class, new RenderTableTrussBridgeAbutment());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTrussBridge.class, new RenderTableTrussBridge());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityRilevatoreFumo.class, new RenderTableRilevatoreFumo());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySbarra.class, new RenderTableSbarra());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySbarraAlzata.class, new RenderTableSbarraAlzata());
 
 	}
 

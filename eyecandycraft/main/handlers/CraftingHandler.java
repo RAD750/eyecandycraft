@@ -324,6 +324,8 @@ public class CraftingHandler {
 		
 		
 		
+		
+		
 		// Antenne
 		
 		List <ItemStack> duraluminOres = OreDictionary.getOres("ingotDuralumin");
@@ -357,6 +359,8 @@ public class CraftingHandler {
 					new Object[] {"## ", " # ", "#B#", '#', duralumin, 'B', new ItemStack(Item.bucketEmpty, 1)});
 			GameRegistry.addRecipe(new ItemStack(Blocks.DocciaMiscelatore, 1),
 					new Object[] {" # ", "C#F", "   ", '#', duralumin, 'C', new ItemStack(Item.dyePowder, 1, 1), 'F', new ItemStack(Item.dyePowder, 1, 4)});
+			
+			GameRegistry.addShapedRecipe(new ItemStack(Blocks.Sbarra), new Object[] { "AAA", "P  ", "A  ", 'A', duralumin, 'P', Block.pistonBase});
 			
 	        //cartelli
 	        
