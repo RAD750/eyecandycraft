@@ -52,6 +52,7 @@ import eyecandycraft.main.entities.TileEntityCroceSAndrea;
 import eyecandycraft.main.entities.TileEntityDecade;
 import eyecandycraft.main.entities.TileEntityDoccia;
 import eyecandycraft.main.entities.TileEntityDocciaMiscelatore;
+import eyecandycraft.main.entities.TileEntityElektronikaClock;
 import eyecandycraft.main.entities.TileEntityEstensioneBTS;
 import eyecandycraft.main.entities.TileEntityEstensioneSingolaBTS;
 import eyecandycraft.main.entities.TileEntityEstintore;
@@ -111,6 +112,7 @@ import eyecandycraft.main.entities.TileEntityTraliccioBraccettoSingolo;
 import eyecandycraft.main.entities.TileEntityTransenna;
 import eyecandycraft.main.entities.TileEntityTrussBridge;
 import eyecandycraft.main.entities.TileEntityTrussBridgeAbutment;
+import eyecandycraft.main.entities.TileEntityWallClock;
 import eyecandycraft.main.items.ItemBlockTappeto;
 import eyecandycraft.main.items.Items;
 import eyecandycraft.main.items.meta.ItemBlockColouredConcrete;
@@ -207,7 +209,7 @@ public class Blocks {
 
     public static Block LightningRod, Fountain, Doccia, DocciaMiscelatore, Persiane, PersianeMezza, BarbedWire;
     
-    public static Block PaloCimaSingolo, PaloCimaDoppio, PaloGrosso, Padellone, AntennaSettoreLTEMIMO;
+    public static Block PaloCimaSingolo, PaloCimaDoppio, PaloGrosso, Padellone, AntennaSettoreLTEMIMO, WallClock, ElektronikaClock;
     
     //cartelli
     
@@ -538,6 +540,9 @@ public class Blocks {
 		Cavo = new CavoBlock(943, 0);
 		CavoPiccolo = new CavoPiccoloBlock(1020, 0);
 		CavoMedio = new CavoMedioBlock(949, 0);
+		
+		WallClock = new WallClockBlock(951, 0);
+		ElektronikaClock = new ElektronikaClockBlock(952, 0);
 
 		Persiane = new PersianeBlock(944, 0);
 		PersianeMezza = new PersianeMezzaBlock(945, 0);
@@ -1225,6 +1230,12 @@ public class Blocks {
 		GameRegistry.registerBlock(Bitta, "Bitta");
 		GameRegistry.registerTileEntity(TileEntityBitta.class, "Bitta");
 		
+		GameRegistry.registerBlock(WallClock, "WallClock");
+		GameRegistry.registerTileEntity(TileEntityWallClock.class, "WallClock");
+		
+		GameRegistry.registerBlock(ElektronikaClock, "ElektronikaClock");
+		GameRegistry.registerTileEntity(TileEntityElektronikaClock.class, "ElektronikaClock");
+		
 		
 		//Panchina
 		GameRegistry.registerBlock(PanchinaCentro, "PanchinaCentro");
@@ -1623,6 +1634,8 @@ public class Blocks {
 		LanguageRegistry.addName(fakeVent, "Fake Air Vent");
 
 		LanguageRegistry.addName(litplaster, "Lit Plaster");
+		LanguageRegistry.addName(WallClock, "Wall Mount Digital Clock");
+		LanguageRegistry.addName(ElektronikaClock, "Alarm Clock (Elektronika)");
 		LanguageRegistry.addName(Clima, "Air Conditioner");
 		LanguageRegistry.addName(ClimaUE, "Air Conditioner - Outdoor Unit");
 		LanguageRegistry.addName(Polycom, "Business Phone");
