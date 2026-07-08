@@ -382,7 +382,7 @@ public class CraftingHandler {
 	        });
 	        
 	        GameRegistry.addRecipe(new ItemStack(Blocks.WallClock), new Object[] { "PPP", "PGP", "PCP", 'P', duralumin, 'G', Block.thinGlass, 'C', ic2.api.Items.getItem("electronicCircuit")});
-	        GameRegistry.addRecipe(new ItemStack(Blocks.ElektronikaClock), new Object[] { "WWW", "WGW", "WWW", 'W', Block.planks, 'G', Block.thinGlass, 'C', ic2.api.Items.getItem("electronicCircuit")});
+	        GameRegistry.addRecipe(new ItemStack(Blocks.ElektronikaClock), new Object[] { "WWW", "WGW", "WCW", 'W', Block.planks, 'G', Block.thinGlass, 'C', ic2.api.Items.getItem("electronicCircuit")});
       
 			
 		} else {
