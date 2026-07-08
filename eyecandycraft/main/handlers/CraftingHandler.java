@@ -381,6 +381,9 @@ public class CraftingHandler {
 	        		"BW#", "#W#", " F ", '#', duralumin, 'B', blackDye, 'W', whiteDye, 'F', ic2.api.Items.getItem("ironFence")
 	        });
 	        
+	        GameRegistry.addRecipe(new ItemStack(Blocks.WallClock), new Object[] { "PPP", "PGP", "PCP", 'P', duralumin, 'G', Block.thinGlass, 'C', ic2.api.Items.getItem("electronicCircuit")});
+	        GameRegistry.addRecipe(new ItemStack(Blocks.ElektronikaClock), new Object[] { "WWW", "WGW", "WWW", 'W', Block.planks, 'G', Block.thinGlass, 'C', ic2.api.Items.getItem("electronicCircuit")});
+      
 			
 		} else {
 			System.err.println("[Eyecandycraft] Impossibile registrare duralumin, disabilitate ricette antenne e persiane!!!!");
@@ -399,7 +402,7 @@ public class CraftingHandler {
 				new Object[] { "   ", "ITI", "   ", 'I', Item.ingotIron, 'T', Blocks.Traliccio});
 		GameRegistry.addRecipe(new ItemStack(Blocks.Scrivania, 1), new Object [] { "SSS", "I I", "I I", 'I',
 				Item.ingotIron, 'S', Block.stoneSingleSlab});
-		
+
 		// Lampade
 		GameRegistry.addRecipe(new ItemStack(Blocks.NeonPiatto, 1), new Object[] { "IGI", "GLG", "IGI", 'I', Item.ingotIron,
 				'G', Block.thinGlass, 'L', Item.lightStoneDust });

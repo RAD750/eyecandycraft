@@ -30,7 +30,7 @@ import net.minecraftforge.common.MinecraftForge;
 
 
 
-@Mod(name="Eyecandycraft", version="3.7.0", modid="eyecandycraft", dependencies="after:betterelectrics")
+@Mod(name="Eyecandycraft", version="3.7.0", modid="eyecandycraft", dependencies="after:betterelectrics; after:oilgasoverhaul")
 @NetworkMod(channels = {EyeCandyPacket.CHANNEL_NAME}, clientSideRequired = true, serverSideRequired = false, packetHandler = EyeCandyPacketHandler.class)
 public class Main extends BaseMod{
 	
