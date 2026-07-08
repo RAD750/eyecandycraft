@@ -25,7 +25,7 @@ public class ElektronikaClockBlock extends BlockContainer {
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabEyecandyMobilio);
 		setBlockName("ElektronikaClock");
-		blockIndexInTexture = 35;
+		blockIndexInTexture = 94;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {

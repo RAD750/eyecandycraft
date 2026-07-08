@@ -61,8 +61,8 @@ public class RenderTableWallClock extends TileEntitySpecialRenderer {
 	    GL11.glTranslatef(0.0f, 0.0f, 42.0f);
 	    
 	    
-	    int w3 = fr.getStringWidth("14.3 °C");
-	    fr.drawString("14.3 °C", (-w3 / 2), 100, 0xFF1000);
+	    int w3 = fr.getStringWidth("Er.r °C");
+	    fr.drawString("Er.r °C", (-w3 / 2), 100, 0xFF1000);
 	    
         final int time = (int)((FMLClientHandler.instance().getClient().theWorld.getWorldTime() - 18000L) % 24000L);
         final int hours = time / 1000;

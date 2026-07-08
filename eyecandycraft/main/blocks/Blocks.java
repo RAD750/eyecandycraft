@@ -541,8 +541,8 @@ public class Blocks {
 		CavoPiccolo = new CavoPiccoloBlock(1020, 0);
 		CavoMedio = new CavoMedioBlock(949, 0);
 		
-		WallClock = new WallClockBlock(951, 0);
-		ElektronikaClock = new ElektronikaClockBlock(952, 0);
+		WallClock = new WallClockBlock(1615, 0);
+		ElektronikaClock = new ElektronikaClockBlock(1616, 0);
 
 		Persiane = new PersianeBlock(944, 0);
 		PersianeMezza = new PersianeMezzaBlock(945, 0);

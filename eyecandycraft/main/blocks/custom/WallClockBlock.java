@@ -25,7 +25,7 @@ public class WallClockBlock extends BlockContainer {
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabEyecandyMobilio);
 		setBlockName("WallClock");
-		blockIndexInTexture = 35;
+		blockIndexInTexture = 93;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
